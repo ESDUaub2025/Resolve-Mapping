@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Data
+data/AlphaEarth/
+output/tiles/
+data/Processed_Training_Data.csv
+
+# OS
+.DS_Store
+Thumbs.db

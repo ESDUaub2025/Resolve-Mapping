@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interactive Map (MapLibre + deck.gl)</title>
+	<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="sidebar-wrapper" class="sidebar-wrapper">
+		<div id="sidebar">
+			<div class="sidebar-header">
+				<h3 id="i18n-controls">Controls</h3>
+				<button id="lang-toggle" aria-label="Switch language" title="Switch language">AR</button>
+				<button id="collapse-btn" aria-label="Toggle sidebar" aria-controls="sidebar" aria-expanded="true">⟨</button>
+			</div>
+			<hr>
+			<strong id="i18n-base-map">Base map</strong>
+			<label><input type="radio" name="basemap" class="basemap-radio" value="osm" checked> <span id="i18n-basemap-osm">Streets (OSM)</span></label>
+			<label><input type="radio" name="basemap" class="basemap-radio" value="esri"> <span id="i18n-basemap-esri">Satellite (Esri)</span></label>
+			<label><input type="radio" name="basemap" class="basemap-radio" value="carto-light"> <span id="i18n-basemap-carto-light">Carto Light</span></label>
+			<label><input type="radio" name="basemap" class="basemap-radio" value="carto-dark"> <span id="i18n-basemap-carto-dark">Carto Dark</span></label>
+			<label><input type="radio" name="basemap" class="basemap-radio" value="opentopo"> <span id="i18n-basemap-opentopo">OpenTopo</span></label>
+			
+			<hr>
+			<strong id="i18n-layers">Layers</strong>
+			<label><input type="checkbox" class="layer-toggle" data-layer="water-points" disabled> <span class="label-icon" id="icon-water"></span> <span id="i18n-layer-water">Water</span></label>
+			<label><input type="checkbox" class="layer-toggle" data-layer="energy-points" disabled> <span class="label-icon" id="icon-energy"></span> <span id="i18n-layer-energy">Energy</span></label>
+			<label><input type="checkbox" class="layer-toggle" data-layer="food-points" disabled> <span class="label-icon" id="icon-food"></span> <span id="i18n-layer-food">Food</span></label>
+			<label><input type="checkbox" class="layer-toggle" data-layer="general-points" disabled> <span class="label-icon" id="icon-general"></span> <span id="i18n-layer-general">General</span></label>
+			<label><input type="checkbox" class="layer-toggle" data-layer="regen-points" disabled> <span class="label-icon" id="icon-regen"></span> <span id="i18n-layer-regen">Regenerative Ag</span></label>
+			<label><input type="checkbox" class="layer-toggle" data-layer="preservations-poly" disabled> <span class="label-icon" id="icon-preservations"></span> <span id="i18n-layer-preservations">Preservations</span></label>
+			<label><input type="checkbox" class="layer-toggle" data-layer="fire-points-raw" disabled> <span class="label-icon" id="icon-fire-pts"></span> <span id="i18n-layer-fire-points">Fire points</span></label>
+			<label><input type="checkbox" id="toggle-heatmap" disabled> <span class="label-icon" id="icon-fire"></span> <span id="i18n-heatmap">Fire density (deck.gl)</span></label>
+			<hr>
+			<strong id="i18n-ai-layers">AI Analysis Layers</strong>
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-regen" disabled> <span class="label-icon" id="icon-ai-regen"></span> <span id="i18n-ai-regen">Regenerative Adoption</span></label>
+			<div id="desc-ai-regen" class="layer-desc"></div>
+			
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-water" disabled> <span class="label-icon" id="icon-ai-water"></span> <span id="i18n-ai-water">Water Risk</span></label>
+			<div id="desc-ai-water" class="layer-desc"></div>
+			
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-econ" disabled> <span class="label-icon" id="icon-ai-econ"></span> <span id="i18n-ai-econ">Economic Resilience</span></label>
+			<div id="desc-ai-econ" class="layer-desc"></div>
+
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-labor" disabled> <span class="label-icon" id="icon-ai-labor"></span> <span id="i18n-ai-labor">Labor Availability</span></label>
+			<div id="desc-ai-labor" class="layer-desc"></div>
+
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-climate" disabled> <span class="label-icon" id="icon-ai-climate"></span> <span id="i18n-ai-climate">Climate Vulnerability</span></label>
+			<div id="desc-ai-climate" class="layer-desc"></div>
+			<hr>
+			<div class="hint" id="i18n-hint">Data loads automatically. Toggle layers and click pins to view details on the right.</div>
+		</div>
+		<button id="sidebar-bookmark" class="sidebar-bookmark" aria-label="Toggle sidebar" aria-controls="sidebar" aria-expanded="true">⟨</button>
+	</div>
+	<div id="map"></div>
+	<div id="details" class="collapsed">
+		<div class="details-header">
+			<h3>Details</h3>
+			<button id="details-close" aria-label="Close details">×</button>
+		</div>
+		<div id="details-content"></div>
+	</div>
+
+	<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+	<script src="https://unpkg.com/deck.gl@9.0.36/dist.min.js"></script>
+	<script src="https://unpkg.com/@deck.gl/mapbox@9.0.36/dist.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
+
+
