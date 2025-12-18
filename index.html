@@ -2,18 +2,68 @@
 <html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Interactive Map (MapLibre + deck.gl)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="description" content="Interactive agricultural data map for Mount Lebanon & Chouf District, Lebanon. Explore water, energy, food, and regenerative agriculture data with AI-powered analysis layers.">
+	<meta name="keywords" content="Lebanon agriculture, Mount Lebanon farming, sustainable agriculture, water management, regenerative farming, agricultural data">
+	<meta name="author" content="Agricultural Data Project">
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Lebanon Agricultural Data Map">
+	<meta property="og:description" content="Interactive map showcasing agricultural data and AI analysis for Mount Lebanon & Chouf District">
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content="Lebanon Agricultural Data Map">
+	<meta property="twitter:description" content="Interactive agricultural data visualization with AI-powered insights">
+	
+	<title>Lebanon Agricultural Data Map - Interactive Visualization</title>
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+	
 	<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 </head>
 <body>
+	<!-- Loading Overlay -->
+	<div id="loading-overlay" class="loading-overlay">
+		<div class="loading-spinner">
+			<div class="spinner"></div>
+			<p>Loading map data...</p>
+		</div>
+	</div>
+	
+	<!-- Top Navigation Bar -->
+	<nav class="top-navbar">
+		<div class="navbar-left">
+			<button id="sidebar-toggle" class="navbar-btn" aria-label="Toggle sidebar" title="Toggle sidebar">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<line x1="3" y1="6" x2="21" y2="6"/>
+					<line x1="3" y1="12" x2="21" y2="12"/>
+					<line x1="3" y1="18" x2="21" y2="18"/>
+				</svg>
+				<span id="navbar-controls-text">Controls</span>
+			</button>
+		</div>
+		<div class="navbar-center">
+			<h1 class="navbar-title" id="navbar-title">Lebanon Agricultural Data Map</h1>
+		</div>
+		<div class="navbar-right">
+			<button id="lang-toggle" class="navbar-btn lang-btn" aria-label="Switch language" title="Switch language">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="12" cy="12" r="10"/>
+					<path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+				</svg>
+				<span id="lang-toggle-text">AR</span>
+			</button>
+		</div>
+	</nav>
+	
 	<div id="sidebar-wrapper" class="sidebar-wrapper">
 		<div id="sidebar">
 			<div class="sidebar-header">
 				<h3 id="i18n-controls">Controls</h3>
-				<button id="lang-toggle" aria-label="Switch language" title="Switch language">AR</button>
-				<button id="collapse-btn" aria-label="Toggle sidebar" aria-controls="sidebar" aria-expanded="true">⟨</button>
 			</div>
 			<hr>
 			<strong id="i18n-base-map">Base map</strong>
@@ -24,7 +74,10 @@
 			<label><input type="radio" name="basemap" class="basemap-radio" value="opentopo"> <span id="i18n-basemap-opentopo">OpenTopo</span></label>
 			
 			<hr>
-			<strong id="i18n-layers">Layers</strong>
+			<div class="section-header">
+				<strong id="i18n-layers">Layers</strong>
+				<span class="section-badge" id="layer-count">0</span>
+			</div>
 			<label><input type="checkbox" class="layer-toggle" data-layer="water-points" disabled> <span class="label-icon" id="icon-water"></span> <span id="i18n-layer-water">Water</span></label>
 			<label><input type="checkbox" class="layer-toggle" data-layer="energy-points" disabled> <span class="label-icon" id="icon-energy"></span> <span id="i18n-layer-energy">Energy</span></label>
 			<label><input type="checkbox" class="layer-toggle" data-layer="food-points" disabled> <span class="label-icon" id="icon-food"></span> <span id="i18n-layer-food">Food</span></label>
@@ -34,38 +87,56 @@
 			<label><input type="checkbox" class="layer-toggle" data-layer="fire-points-raw" disabled> <span class="label-icon" id="icon-fire-pts"></span> <span id="i18n-layer-fire-points">Fire points</span></label>
 			<label><input type="checkbox" id="toggle-heatmap" disabled> <span class="label-icon" id="icon-fire"></span> <span id="i18n-heatmap">Fire density (deck.gl)</span></label>
 			<hr>
-			<strong id="i18n-ai-layers">AI Analysis Layers</strong>
-			<label><input type="checkbox" class="layer-toggle" data-layer="ai-regen" disabled> <span class="label-icon" id="icon-ai-regen"></span> <span id="i18n-ai-regen">Regenerative Adoption</span></label>
+			<div class="section-header ai-section">
+				<strong id="i18n-ai-layers">AI Analysis Layers</strong>
+				<span class="ai-badge" title="Powered by Machine Learning">AI</span>
+			</div>
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-regen"> <span class="label-icon" id="icon-ai-regen"></span> <span id="i18n-ai-regen">Regenerative Adoption</span></label>
 			<div id="desc-ai-regen" class="layer-desc"></div>
-			
-			<label><input type="checkbox" class="layer-toggle" data-layer="ai-water" disabled> <span class="label-icon" id="icon-ai-water"></span> <span id="i18n-ai-water">Water Risk</span></label>
+
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-water"> <span class="label-icon" id="icon-ai-water"></span> <span id="i18n-ai-water">Water Risk</span></label>
 			<div id="desc-ai-water" class="layer-desc"></div>
-			
-			<label><input type="checkbox" class="layer-toggle" data-layer="ai-econ" disabled> <span class="label-icon" id="icon-ai-econ"></span> <span id="i18n-ai-econ">Economic Resilience</span></label>
+
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-econ"> <span class="label-icon" id="icon-ai-econ"></span> <span id="i18n-ai-econ">Economic Resilience</span></label>
 			<div id="desc-ai-econ" class="layer-desc"></div>
 
-			<label><input type="checkbox" class="layer-toggle" data-layer="ai-labor" disabled> <span class="label-icon" id="icon-ai-labor"></span> <span id="i18n-ai-labor">Labor Availability</span></label>
-			<div id="desc-ai-labor" class="layer-desc"></div>
+			<!-- Labor layer disabled - insufficient training data -->
+			<!-- <label><input type="checkbox" class="layer-toggle" data-layer="ai-labor" disabled> <span class="label-icon" id="icon-ai-labor"></span> <span id="i18n-ai-labor">Labor Availability</span></label>
+			<div id="desc-ai-labor" class="layer-desc"></div> -->
 
-			<label><input type="checkbox" class="layer-toggle" data-layer="ai-climate" disabled> <span class="label-icon" id="icon-ai-climate"></span> <span id="i18n-ai-climate">Climate Vulnerability</span></label>
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-climate"> <span class="label-icon" id="icon-ai-climate"></span> <span id="i18n-ai-climate">Climate Vulnerability</span></label>
 			<div id="desc-ai-climate" class="layer-desc"></div>
 			<hr>
 			<div class="hint" id="i18n-hint">Data loads automatically. Toggle layers and click pins to view details on the right.</div>
 		</div>
-		<button id="sidebar-bookmark" class="sidebar-bookmark" aria-label="Toggle sidebar" aria-controls="sidebar" aria-expanded="true">⟨</button>
 	</div>
-	<div id="map"></div>
-	<div id="details" class="collapsed">
+	<div id="map" role="application" aria-label="Interactive agricultural data map"></div>
+	<div id="details" class="collapsed" role="complementary" aria-label="Feature details panel">
 		<div class="details-header">
-			<h3>Details</h3>
-			<button id="details-close" aria-label="Close details">×</button>
+			<h3 id="i18n-details-title">Details</h3>
+			<button id="details-close" aria-label="Close details" title="Close details panel">×</button>
 		</div>
-		<div id="details-content"></div>
+		<div id="details-content" role="region" aria-live="polite"></div>
+	</div>
+
+	<!-- Zoom Controls -->
+	<div class="map-controls">
+		<button class="map-control-btn" id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+		<button class="map-control-btn" id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button>
+		<button class="map-control-btn" id="reset-view" aria-label="Reset view" title="Reset to initial view">⌖</button>
 	</div>
 
 	<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
 	<script src="https://unpkg.com/deck.gl@9.0.36/dist.min.js"></script>
 	<script src="https://unpkg.com/@deck.gl/mapbox@9.0.36/dist.min.js"></script>
+	
+	<!-- New Architecture Modules -->
+	<script src="app/modules/state/store.js"></script>
+	<script src="app/modules/data/loader.js"></script>
+	<script src="app/modules/filters/filter-engine.js"></script>
+	<script src="app/modules/i18n/property-schemas.js"></script>
+	
+	<!-- Main Application -->
 	<script src="app.js"></script>
 </body>
 </html>

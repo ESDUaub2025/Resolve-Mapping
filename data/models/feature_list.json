@@ -1,0 +1,42 @@
+{
+  "features": [
+    "energy__5",
+    "energy__6",
+    "energy__7",
+    "energy__8",
+    "energy__9",
+    "energy__10",
+    "energy__11",
+    "energy__12",
+    "water_scarcity_months",
+    "water_sufficiency_score",
+    "has_solar",
+    "manual_labor_pct",
+    "crop_diversity",
+    "production_level_score",
+    "has_animals",
+    "farm_size_score",
+    "climate_aware",
+    "regen_technique_count",
+    "fertilizer_reliance_score",
+    "pesticide_reliance_score",
+    "resource_intensity",
+    "has_regen_practice",
+    "low_fertilizer",
+    "water_insufficient",
+    "small_farm",
+    "small_production",
+    "high_chem_depend",
+    "high_manual_labor",
+    "medium_large_farm",
+    "climate_observed",
+    "has_climate_impact"
+  ],
+  "targets": [
+    "target_regen_adoption",
+    "target_water_risk",
+    "target_economic_vuln",
+    "target_labor_shortage",
+    "target_climate_vuln"
+  ]
+}

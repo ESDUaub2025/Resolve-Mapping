@@ -1,0 +1,53 @@
+{
+  "theme": "Energy",
+  "timestamp": "2025-12-17T16:47:28.118039Z",
+  "sources": {
+    "arabic": {
+      "path": "data/layers/Arabic/Energy_1.0.csv",
+      "rows": 57,
+      "columns": [
+        "القرية",
+        "Y",
+        "X",
+        "مصدر الطاقة",
+        "كمية الطاقة المستخدمة خلال موسم الذروة",
+        "يدويا%",
+        "ديزل%",
+        "شبكة%",
+        "بنزين%",
+        "شمسية%",
+        "Diesel L/Week (Avg)",
+        "Benzine L/Week (Avg)",
+        "kW/Week (Avg)"
+      ]
+    },
+    "english": {
+      "path": "data/layers/English/Energy_1.0.en.csv",
+      "rows": 57,
+      "columns": [
+        "القرية",
+        "Y",
+        "X",
+        "مصدر الطاقة",
+        "كمية الطاقة المستخدمة خلال موسم الذروة",
+        "يدويا%",
+        "ديزل%",
+        "شبكة%",
+        "بنزين%",
+        "شمسية%",
+        "Diesel L/Week (Avg)",
+        "Benzine L/Week (Avg)",
+        "kW/Week (Avg)"
+      ]
+    }
+  },
+  "output": {
+    "featureCount": 57,
+    "stableIdFormat": "{theme}_{row}_{coordinateHash8}",
+    "sampleIds": [
+      "Energy_0_4107c1c0",
+      "Energy_1_6d3d1e86",
+      "Energy_2_61fe31b9"
+    ]
+  }
+}

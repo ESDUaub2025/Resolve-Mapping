@@ -1,0 +1,40 @@
+{
+  "source_file": "Energy_1.0.csv",
+  "language": "Arabic",
+  "timestamp": "2025-12-17T16:57:56.157499",
+  "source_hash": "dc5d4dc7d0045332a82558299736b87113df96fa89981eb5e8c395c0e08aaf1d",
+  "output_hash": "7bc63bc276cea6a6413fdeee4be961545041673b980aab5a376e27b99317348d",
+  "schema": {
+    "row_count": 57,
+    "column_count": 13,
+    "columns": [
+      "القرية:",
+      "Y",
+      "X",
+      "مصدر الطاقة:",
+      "كمية الطاقة المستخدمة خلال موسم الذروة :",
+      "يدويا%:",
+      "ديزل%:",
+      "شبكة%:",
+      "بنزين%:",
+      "شمسية%:",
+      "Diesel L/Week (Avg):",
+      "Benzine L/Week (Avg):",
+      "kW/Week (Avg):"
+    ]
+  },
+  "features": {
+    "total_created": 57,
+    "with_valid_geometry": 57,
+    "with_null_geometry": 0
+  },
+  "warnings": [],
+  "validation": {
+    "passed": true,
+    "row_feature_match": true
+  },
+  "coordinate_system": {
+    "crs": "WGS84",
+    "epsg": "EPSG:4326"
+  }
+}

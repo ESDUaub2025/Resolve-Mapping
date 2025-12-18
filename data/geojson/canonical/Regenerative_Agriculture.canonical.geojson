@@ -1,0 +1,2093 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_0_abf291ea",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.670304,
+          33.695838
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_0_abf291ea",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "الباروك",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية | روث حيواني | كمبوست عضوي | ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية |  مكافحة فيزيائية مصائد أبواب مزدوجة | مبيدات محلية الصنع | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Barouk",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers | Animal manure Organic compost |",
+            "_5": "Partial credit",
+            "_6": "Biological control, natural enemies, biocides  Physical control double door traps | Homemade pesticides | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_1_dc759c0a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.646694,
+          33.72188
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_1_dc759c0a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "البيرة",
+            "_3": " باستخدام مواد عضوية",
+            "_4": "أسمدة كيميائية |  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Bireh",
+            "_3": "Using organic materials",
+            "_4": "Chemical fertilizers |  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_2_c2dd1b49",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.510862,
+          33.664744
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_2_c2dd1b49",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "الجاهلية",
+            "_3": " باستخدام مواد عضوية | دمج المخصبات الحيوية",
+            "_4": "أسمدة كيميائية",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Jahiliyeh",
+            "_3": "Using organic materials Incorporation of biofertilizers",
+            "_4": "Chemical fertilizers",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_3_ef230c8a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4787639,
+          33.7827596
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_3_ef230c8a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "الدامور",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية  | روث حيواني |  كمبوست عضوي |مخصبات حيوية | ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية | مكافحة فيزيائية مصائد أبواب مزدوجة... | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Damour",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers | Animal manure  Organic compost | biofertilizers |",
+            "_5": "Partial credit",
+            "_6": "Biological control, natural enemies, biocides Physical control double door traps... | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_4_1b9c47c2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.482801,
+          33.666052
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_4_1b9c47c2",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "الدبية",
+            "_3": "مكافحة حيوية للآفات التسميد العضوي",
+            "_4": "مخصبات حيوية",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات| مكافحة فيزيائية مصائد أبواب مزدوجة...",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Debbiyeh",
+            "_3": "Biological pest control with organic fertilization",
+            "_4": "Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides Anti-physical traps double doors...",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_5_cbc92a17",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.429031,
+          33.677016
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_5_cbc92a17",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "الدبيه",
+            "_3": " باستخدام مواد عضوية التسميد العضوي",
+            "_4": "أسمدة كيميائية |  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات| مبيدات محلية الصنع",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Al-Debbiyeh",
+            "_3": "Using organic materials for organic fertilization",
+            "_4": "Chemical fertilizers |  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides Homemade pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_6_a5feb19b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.425372,
+          33.687186
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_6_a5feb19b",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "السعديات",
+            "_3": " باستخدام مواد عضوية",
+            "_4": "أسمدة كيميائية  | روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات | مكافحة فيزيائية مصائد أبواب مزدوجة...",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Al-Saadiyat",
+            "_3": "Using organic materials",
+            "_4": "Chemical fertilizers | Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides | Anti-physical traps double doors...",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_7_81d53a8c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.589248,
+          33.676788
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_7_81d53a8c",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "السمقانية",
+            "_3": " باستخدام مواد عضوية التسميد العضوي",
+            "_4": "روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Al-Simqaniyeh",
+            "_3": "Using organic materials for organic fertilization",
+            "_4": "Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_8_72291497",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.668402,
+          33.718891
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_8_72291497",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "الكحلونية",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية| روث حيواني | كمبوست عضوي | مخصبات حيوية |     ",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية | مكافحة كيميائية مبيدات | مبيدات حيوية مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Kahlouniyeh",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers| Animal manure Organic compost | Biofertilizers |",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Biological control, natural enemies, biocides Chemical control pesticides | Homemade biopesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_9_e1c72c09",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.612749,
+          33.654373
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_9_e1c72c09",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "المختارة",
+            "_3": "التسميد العضوي",
+            "_4": "أسمدة كيميائية  كمبوست عضوي",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Mokhtara",
+            "_3": "Organic fertilization",
+            "_4": "Chemical fertilizers, organic compost",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_10_5ba82c2f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.45055,
+          33.71328
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_10_5ba82c2f",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "المشرف",
+            "_3": "تقليل أو عدم الحراثة  باستخدام مواد عضوية التسميد العضوي | دمج بقايا المحاصيل/الأعشاب",
+            "_4": "روث حيواني | كمبوست عضوي  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Moshref",
+            "_3": "Reducing or not tilling using organic materials. Organic fertilization Incorporation of crop residues/weeds",
+            "_4": "Animal manure Organic compost of animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_11_345057d5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.540722,
+          33.605432
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_11_345057d5",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "المطلة",
+            "_3": null,
+            "_4": null,
+            "_5": "لا يتم استخدامها",
+            "_6": "مبيدات محلية الصنع",
+            "_7": "لا يتم استخدامها"
+          },
+          "en": {
+            "القرية": "Al-Mtalleh",
+            "_3": null,
+            "_4": null,
+            "_5": "It is not used",
+            "_6": "Homemade pesticides",
+            "_7": "It is not used"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_12_a1222413",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.462913,
+          33.601294
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_12_a1222413",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "المغيزيه",
+            "_3": " باستخدام مواد عضوية مكافحة حيوية للآفات التسميد العضوي",
+            "_4": "أسمدة كيميائية   روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Mughayziyeh",
+            "_3": "Using organic materials to control biological pests and organic fertilization",
+            "_4": "Chemical fertilizers, animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides Homemade pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_13_17429a18",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.680277,
+          33.728073
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_13_17429a18",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "الورهانية",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية |  روث حيواني | مخصبات حيوية",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة كيميائية مبيدات | مكافحة فيزيائية مصائد أبواب مزدوجة...",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Al-Warhaniyeh",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers |  Animal manure Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Chemical control pesticides | Anti-physical traps double doors...",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_14_87451fe9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.614259,
+          33.595011
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_14_87451fe9",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "باتر",
+            "_3": " باستخدام مواد عضوية محاصيل غطائية التسميد العضوي تدوير المحاصيل | تقليل أو عدم الحراثة | تقليل أو عدم الحراثة دمج المخصبات الحيوية",
+            "_4": "أسمدة كيميائية |  روث حيواني | روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات | مكافحة بيولوجية أعداء طبيعيون| مبيدات حيوية",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Bater",
+            "_3": "Using Organic Materials Cover Crops Organic Fertilization Crop Rotation | Reduce or no tillage Reducing or no-tillage incorporating biofertilizers",
+            "_4": "Chemical fertilizers |  Animal manure Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides | Biological control of natural enemies Biocides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_15_d529b394",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.655584,
+          33.693903
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_15_d529b394",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بتلون",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "| أسمدة كيميائية|  كمبوست عضوي | روث حيواني ",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة بيولوجية أعداء طبيعيون |مبيدات حيوية | مكافحة فيزيائية مصائد أبواب مزدوجة... | مكافحة كيميائية مبيدات | ",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Btalloun",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "| Chemical fertilizers|  Organic compost | Animal manure",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Biological control of natural enemies | Biopesticides | Physical control double door traps... | Chemical control pesticides |",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_16_f0231aa4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.424124,
+          33.641065
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_16_f0231aa4",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "برجا",
+            "_3": "التغطية العضوية |  باستخدام مواد عضوية التسميد العضوي | تقليل أو عدم الحراثة  باستخدام مواد عضوية",
+            "_4": "أسمدة كيميائية |  روث حيواني  | كمبوست عضوي |  ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Barja",
+            "_3": "Organic coverage  Using organic materials for organic fertilization Reduce or no tillage using organic materials",
+            "_4": "Chemical fertilizers |  Animal manure Organic compost |",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_17_2d698a43",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.653917,
+          33.707677
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_17_2d698a43",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بريح",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "كمبوست عضوي| مخصبات حيوية| الكبريت العنصري",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية مكافحة فيزيائية مصائد أبواب مزدوجة...",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Breih",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Organic compost Biofertilizers Elemental sulfur",
+            "_5": "Partial credit",
+            "_6": "Biological control Natural enemies Biopesticides Physical control Double door traps...",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_18_03672029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.659813,
+          33.716078
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_18_03672029",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بريح الشوف",
+            "_3": " باستخدام مواد عضوية إعادة تدوير نفايات الطعام/الكمبوست التسميد العضوي",
+            "_4": "كمبوست عضوي|  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية مكافحة فيزيائية مصائد أبواب مزدوجة...",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Breih El Chouf",
+            "_3": "Using organic materials, food waste recycling/compost, and organic composting",
+            "_4": "Organic compost  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Biological control Natural enemies Biopesticides Physical control Double door traps...",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_19_28bb7f96",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.557639,
+          33.708825
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_19_28bb7f96",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بشتفين",
+            "_3": " باستخدام مواد عضوية التسميد العضوي | تقليل أو عدم الحراثة",
+            "_4": "أسمدة كيميائية | روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Bshtfine",
+            "_3": "Using organic materials for organic fertilization Reduce or no tillage",
+            "_4": "Chemical fertilizers | Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_20_7fc748b1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.623642,
+          33.655394
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_20_7fc748b1",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بطمة",
+            "_3": "التسميد العضوي تدوير المحاصيل |  باستخدام مواد عضوية التسميد العضوي",
+            "_4": "كمبوست عضوي | كمبوست عضوي | روث حيواني |",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Btameh",
+            "_3": "Organic fertilization and crop rotation  Using organic materials for organic fertilization",
+            "_4": "Organic compost | Organic compost | Animal manure",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_21_74d54372",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.639126,
+          33.662688
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_21_74d54372",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بطمه",
+            "_3": "التسميد العضوي |  باستخدام مواد عضوية التسميد العضوي",
+            "_4": "روث حيواني | كمبوست عضوي | روث حيواني",
+            "_5": "لا يتم استخدامها",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Btameh",
+            "_3": "Organic Fertilization |  Using organic materials for organic fertilization",
+            "_4": "Animal manure Organic compost | Animal manure",
+            "_5": "It is not used",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_22_545ad60a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.619518,
+          33.630581
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_22_545ad60a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بعذران",
+            "_3": null,
+            "_4": "أسمدة كيميائية|  كمبوست عضوي|  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Baatharan",
+            "_3": null,
+            "_4": "Chemical fertilizers|  Organic compost  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_23_67178fb1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.56628,
+          33.67203
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_23_67178fb1",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بعقلين",
+            "_3": "التسميد العضوي |  باستخدام مواد عضوية |  باستخدام مواد عضوية التغطية العضوية التسميد العضوي تدوير المحاصيل",
+            "_4": "أسمدة كيميائية|   روث حيواني| كمبوست عضوي | ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Baaqline",
+            "_3": "Organic Fertilization |  Using organic materials  Using organic materials, organic mulching, organic fertilization and crop rotation",
+            "_4": "Chemical fertilizers|   Animal manure Organic compost |",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_24_5b3057d8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.493755,
+          33.583396
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_24_5b3057d8",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "بكيفا",
+            "_3": " باستخدام مواد عضوية",
+            "_4": "كمبوست عضوي",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Bkifa",
+            "_3": "Using organic materials",
+            "_4": "Organic compost",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_25_95aed15a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.604515,
+          33.656347
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_25_95aed15a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "جديدة الشوف",
+            "_3": "دمج المخصبات الحيوية",
+            "_4": "روث حيواني",
+            "_5": "لا يتم استخدامها",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Jadideh El Chouf",
+            "_3": "Incorporation of biofertilizers",
+            "_4": "Animal manure",
+            "_5": "It is not used",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_26_c02db0b2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.609278,
+          33.609427
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_26_c02db0b2",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "حارة جندل الشوف",
+            "_3": " باستخدام مواد عضوية التسميد العضوي",
+            "_4": "أسمدة كيميائية|   روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Haret Jandal El Chouf",
+            "_3": "Using organic materials for organic fertilization",
+            "_4": "Chemical fertilizers|   Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_27_98f787ff",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.510269,
+          33.576496
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_27_98f787ff",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "خربة بسري",
+            "_3": " باستخدام مواد عضوية التسميد العضوي",
+            "_4": "كمبوست عضوي|  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "لا يتم استخدامها"
+          },
+          "en": {
+            "القرية": "Khirbet Bosri",
+            "_3": "Using organic materials for organic fertilization",
+            "_4": "Organic compost  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "It is not used"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_28_b3acfa58",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.642387,
+          33.637458
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_28_b3acfa58",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "خريبة الشوف",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية|   روث حيواني | كمبوست عضوي |",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات| مبيدات محلية الصنع |  مكافحة بيولوجية أعداء طبيعيون| مبيدات حيوية",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Khraybeh El Chouf",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers|   Animal manure Organic compost |",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides Homemade pesticides |  Biological control of natural enemies Biocides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_29_311fb676",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.502321,
+          33.643133
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_29_311fb676",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "داريا الشوف",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية | روث حيواني | كمبوست عضوي|",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Daraya El Chouf",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers | Animal manure Organic compost",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_30_70b5f67d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.505803,
+          33.689205
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_30_70b5f67d",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "دميت الشوف",
+            "_3": " باستخدام مواد عضوية",
+            "_4": "أسمدة كيميائية|  كمبوست عضوي|  روث حيواني  |",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة فيزيائية مصائد أبواب مزدوجة... | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Dmit El Chouf",
+            "_3": "Using organic materials",
+            "_4": "Chemical fertilizers|  Organic compost  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Physical control double door traps... | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_31_a0507882",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.556728,
+          33.693074
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_31_a0507882",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "دير القمر",
+            "_3": "تقليل أو عدم الحراثة  باستخدام مواد عضوية دمج بقايا المحاصيل/الأعشاب | تقليل أو عدم الحراثة مكافحة حيوية للآفات",
+            "_4": "أسمدة كيميائية | روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات | مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Deir El Qamar",
+            "_3": "Minimize or no-till using organic materials, incorporating crop residues/weeds | Reduced or no-tillage is a vital pest control",
+            "_4": "Chemical fertilizers | Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides | Homemade pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_32_f3cee0a3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.542311,
+          33.683105
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_32_f3cee0a3",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "دير دوريت",
+            "_3": " باستخدام مواد عضوية | تقليل أو عدم الحراثة  باستخدام مواد عضوية دمج المخصبات الحيوية مكافحة حيوية للآفات التسميد العضوي",
+            "_4": "أسمدة كيميائية |   كمبوست عضوي|  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Deir Dourit",
+            "_3": "Using organic materials Reducing or no tillage using organic materials, incorporating biofertilizers, biological pest control, organic fertilization",
+            "_4": "Chemical fertilizers |   Organic compost  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_33_d98df48a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.525734,
+          33.694595
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_33_d98df48a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "ديربابا",
+            "_3": "تقليل أو عدم الحراثة | تقليل أو عدم الحراثة التسميد العضوي",
+            "_4": "أسمدة كيميائية|   روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Deir Baba",
+            "_3": "Reduce or no tillage Reducing or no-tillage organic fertilization",
+            "_4": "Chemical fertilizers|   Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_34_c20c5d68",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.703264,
+          33.797697
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_34_c20c5d68",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "شارون",
+            "_3": null,
+            "_4": "أسمدة كيميائية",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Charoun",
+            "_3": null,
+            "_4": "Chemical fertilizers",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_35_fa5adf6b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.488343,
+          33.618669
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_35_fa5adf6b",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "شحيم",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "روث حيواني | فضلات الاكل والقشور | ",
+            "_5": "لا يتم استخدامها",
+            "_6": "مبيدات محلية الصنع | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Chahim",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Animal manure Food waste and peels",
+            "_5": "It is not used",
+            "_6": "Homemade pesticides | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_36_527622fb",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.562627,
+          33.693597
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_36_527622fb",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "شواليق دير القمر",
+            "_3": null,
+            "_4": "أسمدة كيميائية",
+            "_5": null,
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Chawalik Deir El Qamar",
+            "_3": null,
+            "_4": "Chemical fertilizers",
+            "_5": null,
+            "_6": "Chemical control pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_37_82f8986d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.512598,
+          33.622739
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_37_82f8986d",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "عانوت",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية |  روث حيواني |  مخصبات حيوية  ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Aanout",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers |  Animal manure  Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_38_dc102b1a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.568355,
+          33.662292
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_38_dc102b1a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "عترين",
+            "_3": " باستخدام مواد عضوية إعادة تدوير نفايات الطعام/الكمبوست التسميد العضوي",
+            "_4": "كمبوست عضوي|  روث حيواني",
+            "_5": "لا يتم استخدامها",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون| مبيدات حيوية",
+            "_7": "لا يتم استخدامها"
+          },
+          "en": {
+            "القرية": "Atrine",
+            "_3": "Using organic materials, food waste recycling/compost, and organic composting",
+            "_4": "Organic compost  Animal manure",
+            "_5": "It is not used",
+            "_6": "Biological control of natural enemies Biocides",
+            "_7": "It is not used"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_39_4ac8a983",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.407042,
+          33.589719
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_39_4ac8a983",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "علمان",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية |   روث حيواني |  كمبوست عضوي  | مخصبات حيوية",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Aalman",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers |   Animal manure  Organic compost | Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_40_adfe7122",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.607415,
+          33.639731
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_40_adfe7122",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "عماطور",
+            "_3": " باستخدام مواد عضوية التسميد العضوي |  باستخدام مواد عضوية دمج بقايا المحاصيل/الأعشاب التسميد العضوي",
+            "_4": "أسمدة كيميائية |  كمبوست عضوي|  روث حيواني | مخصبات حيوية  ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات | مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Ammatour",
+            "_3": "Using organic materials for organic fertilization  Using organic materials incorporating crop residues/weeds for organic fertilization",
+            "_4": "Chemical fertilizers |  Organic compost  Animal manure Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides | Biological control, natural enemies, biocides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_41_64be7ae4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.693978,
+          33.741301
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_41_64be7ae4",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "عين زحلتا",
+            "_3": "إعادة تدوير نفايات الطعام/الكمبوست دمج بقايا المحاصيل/الأعشاب | محاصيل غطائية تدوير المحاصيل",
+            "_4": "أسمدة كيميائية  قليل جدا | روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Ain Zahlta",
+            "_3": "Food Waste Recycling/Composting Crop/Weed Residue Incorporation | Cover crops Rotate crops",
+            "_4": "Very little chemical fertilizers Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_42_5052e7fa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.61163,
+          33.64424
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_42_5052e7fa",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "عين قاني",
+            "_3": "التسميد العضوي",
+            "_4": "روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Ain Qani",
+            "_3": "Organic fertilization",
+            "_4": "Animal manure",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_43_aa600452",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.6172,
+          33.670896
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_43_aa600452",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "عين وزين",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "كمبوست عضوي |   روث حيواني | مخصبات حيوية",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Ain W Zain",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Organic compost |   Animal manure Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Biological control, natural enemies, biocides Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_44_0835a48d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.562358,
+          33.635037
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_44_0835a48d",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "غريفة",
+            "_3": " باستخدام مواد عضوية |  باستخدام مواد عضويةبعد حراثة الأرض عدة مرات بإستخدام الأبغال, يستخدم روثهم (زبلهم) لتسميد الأرض",
+            "_4": "روث حيواني ",
+            "_5": "لا يتم استخدامها",
+            "_6": "مكافحة فيزيائية مصائد أبواب مزدوجة... | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Gharifeh",
+            "_3": "Using organic materials  Using Organic Materials After plowing the land several times using mules, their dung (manure) is used to fertilize the land.",
+            "_4": "Animal manure",
+            "_5": "It is not used",
+            "_6": "Physical control double door traps... | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_45_58eed2be",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.454315,
+          33.617061
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_45_58eed2be",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "كترمايا الشوف",
+            "_3": "تقليل أو عدم الحراثة التسميد العضوي",
+            "_4": "روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Ktermaya El Chouf",
+            "_3": "Reducing or no-tillage organic fertilization",
+            "_4": "Animal manure",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_46_689948ef",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.588746,
+          33.644029
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_46_689948ef",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "كحلونية الشوف",
+            "_3": "تقليل أو عدم الحراثة  باستخدام مواد عضوية التغطية العضوية",
+            "_4": "مخصبات حيوية|  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Kahlouniyeh El Chouf",
+            "_3": "Reduce or no tillage by using organic materials. Organic mulching",
+            "_4": "Biofertilizers  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control, pesticides, biological control, natural enemies, biopesticides, homemade pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_47_551693ed",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.588947,
+          33.644724
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_47_551693ed",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "كحلونيه الشوف",
+            "_3": " باستخدام مواد عضوية إعادة تدوير نفايات الطعام/الكمبوست",
+            "_4": "سماد حيواني طبيعي",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Kahlouniyeh El Chouf",
+            "_3": "Using organic materials to recycle food waste/compost",
+            "_4": "Natural animal fertilizer",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_48_0f3ced9c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50962,
+          33.688383
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_48_0f3ced9c",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "كفرحيم",
+            "_3": " |  باستخدام مواد عضوية التسميد العضوي تسميد ارض من سواد ماعز | دمج المخصبات الحيوية سواد ماعز",
+            "_4": "روث حيواني سواد ماعز | كمبوست عضوي",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية",
+            "_7": "لا يتم استخدامها"
+          },
+          "en": {
+            "القرية": "Kfarhaym",
+            "_3": "|  Using organic materials, organic fertilization, fertilizing land from black goats Incorporation of biofertilizers blackening goats",
+            "_4": "Goat black animal dung Organic compost",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Biological control, natural enemies, biocides",
+            "_7": "It is not used"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_49_df9c6a14",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.537408,
+          33.694374
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_49_df9c6a14",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "كفرفاقود",
+            "_3": " باستخدام مواد عضوية إعادة تدوير نفايات الطعام/الكمبوست دمج بقايا المحاصيل/الأعشاب التسميد العضوي | تقليل أو عدم الحراثة التسميد العضوي",
+            "_4": "كمبوست عضوي |  روث حيواني | كمبوست عضوي |مخصبات حيوية",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية | مكافحة فيزيائية مصائد أبواب مزدوجة...",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Kfarfakoud",
+            "_3": "Using organic materials Food waste recycling/compost Incorporation of crop/weed residues Organic composting | Reducing or no-tillage organic fertilization",
+            "_4": "Organic compost |  Animal manure Organic compost | Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Biological control, natural enemies, biocides Anti-physical traps double doors...",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_50_0348d8da",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.63186,
+          33.691903
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_50_0348d8da",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "كفرنبرخ",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية |  روث حيواني |  كمبوست عضوي |   مخصبات حيوية | روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات | مكافحة كيميائية مبيدات مبيدات محلية الصنع",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Kfarnabrakh",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers |  Animal manure  Organic compost |   Biofertilizers | Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides | Chemical control pesticides Homemade pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_51_86d8b21a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.622299,
+          33.716625
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_51_86d8b21a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مجدل المعوش",
+            "_3": " باستخدام مواد عضوية التسميد العضوي |  باستخدام مواد عضوية دمج بقايا المحاصيل/الأعشاب التسميد العضوي",
+            "_4": "أسمدة كيميائية  كمبوست عضوي  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات | مكافحة كيميائية مبيدات مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Majdel El Meouch",
+            "_3": "Using organic materials for organic fertilization  Using organic materials incorporating crop residues/weeds for organic fertilization",
+            "_4": "Chemical fertilizers, organic compost, animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides | Chemical control, pesticides, biological control, natural enemies, biological pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_52_594f473f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.662419,
+          33.629608
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_52_594f473f",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مرستى",
+            "_3": " باستخدام مواد عضوية إعادة تدوير نفايات الطعام/الكمبوست التغطية العضوية التسميد العضوي",
+            "_4": "كمبوست عضوي  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Mrosti",
+            "_3": "Using organic materials, food waste recycling/compost, organic mulching, organic composting",
+            "_4": "Organic compost of animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_53_b94ecdb8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.649698,
+          33.627146
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_53_b94ecdb8",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مرستي",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية |   روث حيواني |    كمبوست عضوي |  مخصبات حيوية  | غسل تعقيم بالجنزارة ",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية | مكافحة فيزيائية مصائد أبواب مزدوجة... | مكافحة كيميائية مبيدات |",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Mrosti",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers |   Animal manure    Organic compost |  Biofertilizers | Sterilization washing in the carcass",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Biological control, natural enemies, biocides Physical control double door traps... | Chemical control pesticides |",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_54_2900cf32",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.485018,
+          33.603431
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_54_2900cf32",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مزبود",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية |  روث حيواني |",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية مبيدات محلية الصنع | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Mazboud",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers |  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Biological control, natural enemies, biopesticides, homemade pesticides | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_55_3f76373f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.592496,
+          33.628981
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_55_3f76373f",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مزرعة الشوف",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية|   روث حيواني| تدوير بقايا الطعام | سماد الدجاج | كمبوست عضوي     ",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة فيزيائية مصائد أبواب مزدوجة... | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Mazraat El Chouf",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers|   Animal manure Recycling food waste Chicken manure Organic compost",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Physical control double door traps... | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_56_400b3b4a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.587016,
+          33.629449
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_56_400b3b4a",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مزرعةالشوف",
+            "_3": " باستخدام مواد عضوية التسميد العضوي",
+            "_4": "كمبوست عضوي|  روث حيواني",
+            "_5": "لا يتم استخدامها",
+            "_6": "مكافحة كيميائية مبيدات مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Mazraat El Chouf",
+            "_3": "Using organic materials for organic fertilization",
+            "_4": "Organic compost  Animal manure",
+            "_5": "It is not used",
+            "_6": "Chemical control, pesticides, biological control, natural enemies, biological pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_57_559cfb4b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.587199,
+          33.625626
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_57_559cfb4b",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مزرعه الشوف",
+            "_3": "التسميد العضوي",
+            "_4": "أسمدة كيميائية | روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مبيدات محلية الصنع | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Mazraat El Chouf",
+            "_3": "Organic fertilization",
+            "_4": "Chemical fertilizers | Animal manure",
+            "_5": "Partial credit",
+            "_6": "Homemade pesticides | Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_58_a4ce8f9e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50846,
+          33.589858
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_58_a4ce8f9e",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "مزمورة",
+            "_3": "تقليل أو عدم الحراثة  باستخدام مواد عضوية التسميد العضوي",
+            "_4": "أسمدة كيميائية|  كمبوست عضوي|  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات مبيدات محلية الصنع",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Mazmoura",
+            "_3": "Reducing or not tilling by using organic materials and organic fertilization",
+            "_4": "Chemical fertilizers|  Organic compost  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides Homemade pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_59_0eeb5287",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.667699,
+          33.682638
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_59_0eeb5287",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "معاصر الشوف",
+            "_3": " التسميد العضوي | إعادة تدوير نفايات الطعام/الكمبوست| تدوير المحاصيل | مكافحة حيوية للآفات | تقليل أو عدم الحراثة | محاصيل غطائية ",
+            "_4": "أسمدة كيميائية  | روث حيواني  | كمبوست عضوي| مخصبات حيوية|   ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية مكافحة فيزيائية مصائد أبواب مزدوجة... | ",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Maaser El Chouf",
+            "_3": "Organic Fertilization | Food waste recycling/compost Crop rotation Biological pest control Reduce or no tillage Cover crops",
+            "_4": "Chemical fertilizers | Animal manure Organic compost Biofertilizers",
+            "_5": "Partial credit",
+            "_6": "Biological control Natural enemies Biocides Physical control Traps Double doors... |",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_60_0fc07d62",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.621215,
+          33.601531
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_60_0fc07d62",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "نيحا الشوف",
+            "_3": " باستخدام مواد عضوية |  باستخدام مواد عضوية دمج المخصبات الحيوية التسميد العضوي | تقليل أو عدم الحراثة التسميد العضوي",
+            "_4": "روث حيواني | كمبوست عضوي| ",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة بيولوجية أعداء طبيعيون مبيدات حيوية | مكافحة كيميائية مبيدات",
+            "_7": "اعتماد جزئي"
+          },
+          "en": {
+            "القرية": "Niha El Chouf",
+            "_3": "Using organic materials  Using organic materials, incorporating biofertilizers, organic fertilization Reducing or no-tillage organic fertilization",
+            "_4": "Animal manure Organic compost",
+            "_5": "Partial credit",
+            "_6": "Biological control, natural enemies, biocides Chemical control pesticides",
+            "_7": "Partial credit"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_61_7a0600f6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.673121,
+          33.73178
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_61_7a0600f6",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "ورهانية",
+            "_3": " باستخدام مواد عضوية إعادة تدوير نفايات الطعام/الكمبوست محاصيل غطائية التسميد العضوي تدوير المحاصيل",
+            "_4": "أسمدة كيميائية |  روث حيواني",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Warhaniyeh",
+            "_3": "Using Organic Materials Food Waste Recycling/Compost Cover Crops Organic Composting Crop Recycling",
+            "_4": "Chemical fertilizers |  Animal manure",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Regenerative_Agriculture_62_ac1750d1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.531821,
+          33.679451
+        ]
+      },
+      "properties": {
+        "featureId": "Regenerative_Agriculture_62_ac1750d1",
+        "theme": "Regenerative_Agriculture",
+        "values": {
+          "ar": {
+            "القرية": "ديردوريت",
+            "_3": "التسميد العضوي",
+            "_4": "أسمدة كيميائية",
+            "_5": "اعتماد جزئي",
+            "_6": "مكافحة كيميائية مبيدات",
+            "_7": "اعتماد كلي"
+          },
+          "en": {
+            "القرية": "Deir Dourit",
+            "_3": "Organic fertilization",
+            "_4": "Chemical fertilizers",
+            "_5": "Partial credit",
+            "_6": "Chemical control pesticides",
+            "_7": "Total dependence"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "theme": "Regenerative_Agriculture",
+    "generatedAt": "2025-12-17T16:47:28.166881Z",
+    "featureCount": 63,
+    "sources": {
+      "arabic": "data/layers/Arabic/Regenerative_1.0.csv",
+      "english": "data/layers/English/Regenerative_1.0.en.csv"
+    }
+  }
+}

@@ -1,0 +1,2198 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "Food_0_b041ddfd",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.485018,
+          33.612411
+        ]
+      },
+      "properties": {
+        "featureId": "Food_0_b041ddfd",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "مزبود",
+            "_3": "افوكا خضره الزيتون والحمضيات والافوكادو وخروب",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات العسل منتجات الألبان اللبنة، الجبنة)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "ارانب  دجاج بيّاض دجاج  (لحم)   بط",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Mazboud",
+            "_3": "Avoca green olives, citrus fruits, avocado and carob",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Olive oil Pickled vegetables (e.g. cucumber, maqdous) Dried herbs Thyme Jams or preserves Honey Dairy products Labneh, cheese)",
+            "_7": "Some homes (30–60%)",
+            "_8": "Rabbits, chickens, layers, chickens (meat), ducks",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_1_1714f533",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.502321,
+          33.652113
+        ]
+      },
+      "properties": {
+        "featureId": "Food_1_1714f533",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "داريا الشوف",
+            "_3": "الخضروات خضار فول حمص زعتر زيتون البندورة خيار خس بقدونس شتول",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  ",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) أخرى الأعشاب المجففة الزعتر) منتجات الألبان اللبنة، الجبنة)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "اغنام  دجاج بيّاض بط  ديك رومي  دجاج (لحم)",
+            "_9": "بين 51 و100",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Daraya El Chouf",
+            "_3": "Vegetables, vegetables, beans, chickpeas, thyme, olives, tomatoes, cucumber, lettuce, parsley, seedlings",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Olive oil Pickled vegetables (such as cucumber, maqdous) Other dried herbs (thyme) Dairy products (labneh, cheese)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Sheep, laying hens, ducks, turkey, chicken (meat)",
+            "_9": "Between 51 and 100",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_2_558704e5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.407042,
+          33.598699
+        ]
+      },
+      "properties": {
+        "featureId": "Food_2_558704e5",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "علمان",
+            "_3": "أشجار الحمضيات و الافوكاتو القشطة الموز العنّاب الكلمنتين الليمون حمضيات زيتون قشطة ليمون كارونبولا مونستر فروت كلمنتين افندي",
+            "_4": "كل السنة",
+            "_5": "إنتاج صغير ",
+            "_6": "أخرى الأعشاب المجففة (مثل الزعتر) زيت الزيتون الخضروات المخللة الخيار، المقدوس) العسل منتجات الألبان اللبنة، الجبنة)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "الماعز  دجاج بيّاض  دجاج  (لحم)  ",
+            "_9": " و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية الحبوب مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Aalman",
+            "_3": "Citrus and Avocado Cream Banana Jujube Clementine Lemon Citrus Olive Lemon Cream Caronbola Monster Fruit Clementine Mandarin",
+            "_4": "All year",
+            "_5": "Small production",
+            "_6": "Other dried herbs (such as thyme), olive oil, pickled vegetables, cucumber, maqdous, honey, dairy products, labneh, cheese.",
+            "_7": "Most homes (60–80%)",
+            "_8": "Goat Layer Chicken Chicken (Meat)",
+            "_9": "And 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, grains, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_3_d3723910",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.537408,
+          33.703354
+        ]
+      },
+      "properties": {
+        "featureId": "Food_3_d3723910",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "كفرفاقود",
+            "_3": "الفاصوليا والقرع بصل واشجار الجنارك والزيتون فاصوليا فول باستا فلورا زيتون",
+            "_4": "كل السنة",
+            "_5": "إنتاج متوسط",
+            "_6": "الأعشاب المجففة (مثل الزعتر) منتجات الألبان اللبنة، الجبنة) زيت الزيتون",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض   أخرى  ",
+            "_9": "أقل من 20",
+            "_10": "مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Kfarfakoud",
+            "_3": "Beans and squash, onions, chinar trees, and olives. Beans, fava beans, pasta, flora, olives",
+            "_4": "All year",
+            "_5": "Average production",
+            "_6": "Dried herbs (such as thyme) Dairy products (labneh, cheese) Olive oil",
+            "_7": "Some homes (30–60%)",
+            "_8": "Other laying hens",
+            "_9": "Less than 20",
+            "_10": "Domestic or agricultural waste is a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_4_b5ab46db",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.621215,
+          33.610511
+        ]
+      },
+      "properties": {
+        "featureId": "Food_4_b5ab46db",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "نيحا الشوف",
+            "_3": "اشجار مثمرة زيتون وخضار",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) العسل دبس العنب المربيات أو المحفوظات منتجات الألبان اللبنة، الجبنة)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": " النحل  ",
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Niha El Chouf",
+            "_3": "Fruit trees, olives and vegetables",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Olive oil, pickled vegetables (such as cucumber, maqdous), dried herbs, thyme, honey, grape molasses, jams or preserves, dairy products, labneh, cheese)",
+            "_7": "Some homes (30–60%)",
+            "_8": "Bees",
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_5_1827a786",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.693978,
+          33.750281
+        ]
+      },
+      "properties": {
+        "featureId": "Food_5_1827a786",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "عين زحلتا",
+            "_3": "التفاح والاجاص تفاح بقوليات",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "المربيات أو المحفوظات زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) أخرى",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بلدي  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية"
+          },
+          "en": {
+            "القرية": "Ain Zahlta",
+            "_3": "Apples and pears are legumes",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Jams or preserves Olive oil Pickled vegetables (e.g. cucumber, maqdous) Dried herbs (thyme) Other",
+            "_7": "Most homes (60–80%)",
+            "_8": "My chicken",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_6_0bd575fd",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.482801,
+          33.675032
+        ]
+      },
+      "properties": {
+        "featureId": "Food_6_0bd575fd",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "الدبيه",
+            "_3": "أشجار مثمرة وخضار بندوره خيار فول جميع الشتول",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Al-Debbiyeh",
+            "_3": "Fruit trees and vegetables, tomatoes, cucumbers, beans, all seedlings",
+            "_4": "June July August",
+            "_5": "Small production medium production",
+            "_6": "Olive oil, pickled vegetables (e.g. cucumber, maqdous), dried herbs, thyme, jams or preserves",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_7_e035a478",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.425372,
+          33.696166
+        ]
+      },
+      "properties": {
+        "featureId": "Food_7_e035a478",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "السعديات",
+            "_3": "لا يوجد محصولان محصول واحد اشجار جوافة",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج كبير",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) المربيات أو المحفوظات",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": "دجاج بيّاض",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية"
+          },
+          "en": {
+            "القرية": "Al-Saadiyat",
+            "_3": "There are no two crops, one crop. Guava trees",
+            "_4": "June July August",
+            "_5": "Small production big production",
+            "_6": "Pickled vegetables (eg cucumber, maqdous) Jams or preserves",
+            "_7": "Few houses (< 30%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_8_3d8ea964",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.45055,
+          33.72226
+        ]
+      },
+      "properties": {
+        "featureId": "Food_8_3d8ea964",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "المشرف",
+            "_3": "مو ز وليمون أفوكادو قشطة وليتشي موز افوكادو",
+            "_4": "كل السنة",
+            "_5": "إنتاج كبير  إنتاج متوسط",
+            "_6": "زيت الزيتون الأعشاب المجففة (مثل الزعتر) الخضروات المخللة الخيار، المقدوس)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Al-Moshref",
+            "_3": "Banana, lemon, avocado, cream, lychee, banana, avocado",
+            "_4": "All year",
+            "_5": "Large production Medium production",
+            "_6": "Olive oil, dried herbs (such as thyme), pickled vegetables, cucumbers, maqdoos)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_9_f86b4549",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.609278,
+          33.618407
+        ]
+      },
+      "properties": {
+        "featureId": "Food_9_f86b4549",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "حاره جندل الشوف",
+            "_3": "زيتون وخضروات",
+            "_4": "من شهر ايلول تشرين الثاني",
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) المربيات أو المحفوظات",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض",
+            "_9": "أقل من 20",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Haret Jandal El Chouf",
+            "_3": "Olives and vegetables",
+            "_4": "From September to November",
+            "_5": "Small production",
+            "_6": "Olive oil, pickled vegetables (eg cucumber, maqdous), jams or preserves",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_10_c5bf8568",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.531821,
+          33.688431
+        ]
+      },
+      "properties": {
+        "featureId": "Food_10_c5bf8568",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "ديردوريت",
+            "_3": "فاصولياء وفواكة",
+            "_4": "ايارالى شهر تشرين الثاني",
+            "_5": "إنتاج متوسط",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس)",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": "دجاج بيّاض",
+            "_9": "أقل من 20",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Deir Dourit",
+            "_3": "Beans and fruits",
+            "_4": "May to November",
+            "_5": "Average production",
+            "_6": "Pickled vegetables (such as cucumber, maqdoos)",
+            "_7": "Few houses (< 30%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_11_d2db7ada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.512598,
+          33.631719
+        ]
+      },
+      "properties": {
+        "featureId": "Food_11_d2db7ada",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "عانوت",
+            "_3": "البندورة و اللوبيا خيار كوسا ملفوف خس فول حمص لوبية لقطين فاصولياء",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير ",
+            "_6": "زيت الزيتون الأعشاب المجففة (مثل الزعتر) العسل الخضروات المخللة الخيار، المقدوس)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Aanout",
+            "_3": "Tomatoes, cowpeas, cucumber, zucchini, cabbage, lettuce, beans, chickpeas, cowpea, pumpkin, and kidney beans",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Olive oil, dried herbs (such as thyme), honey, pickled vegetables, cucumbers, maqdoos)",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_12_7d499a62",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.61163,
+          33.65322
+        ]
+      },
+      "properties": {
+        "featureId": "Food_12_7d499a62",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "عين قاني",
+            "_3": "مقتي لوبية",
+            "_4": null,
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) المربيات أو المحفوظات العسل منتجات الألبان اللبنة، الجبنة)",
+            "_7": "جميع المنازل تقريباً",
+            "_8": "دجاج بيّاض",
+            "_9": "بين 20 و50",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Ain Qani",
+            "_3": "I hate Lubia",
+            "_4": null,
+            "_5": "Small production",
+            "_6": "Olive oil, pickled vegetables (such as cucumber, maqdous), jams or preserves, honey, dairy products, labneh, cheese)",
+            "_7": "Almost all homes",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_13_d880e14b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.454315,
+          33.626041
+        ]
+      },
+      "properties": {
+        "featureId": "Food_13_d880e14b",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "كترمايا الشوف",
+            "_3": "خصار",
+            "_4": "كانون الاول",
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون الأعشاب المجففة (مثل الزعتر) منتجات الألبان اللبنة، الجبنة)",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": "دجاج بيّاض",
+            "_9": "أقل من 20",
+            "_10": "علف تجاري جاهز"
+          },
+          "en": {
+            "القرية": "Ktermaya El Chouf",
+            "_3": "Khasar",
+            "_4": "December",
+            "_5": "Small production",
+            "_6": "Olive oil, dried herbs (such as thyme), dairy products (labneh, cheese)",
+            "_7": "Few houses (< 30%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "Ready commercial feed"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_14_ae098357",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.612749,
+          33.663353
+        ]
+      },
+      "properties": {
+        "featureId": "Food_14_ae098357",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "مختاره",
+            "_3": "تفاح زيتون",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "العسل أخرى",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض",
+            "_9": "أقل من 20",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Mokhtara",
+            "_3": "Apple olives",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Other honey",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_15_3d7bf19e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.604515,
+          33.665327
+        ]
+      },
+      "properties": {
+        "featureId": "Food_15_3d7bf19e",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "جديده الشوف",
+            "_3": "خس و مقتي",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون العسل",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": "دجاج بيّاض ديك رومي",
+            "_9": "بين 51 و100",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Jadideh El Chouf",
+            "_3": "Lettuce and abhorrence",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Olive oil honey",
+            "_7": "Few houses (< 30%)",
+            "_8": "Layer chicken, turkey",
+            "_9": "Between 51 and 100",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_16_b202d91d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.63186,
+          33.700883
+        ]
+      },
+      "properties": {
+        "featureId": "Food_16_b202d91d",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "كفرنبرخ",
+            "_3": "أشجار مثمرة التفاح البندورة خيار مقتي بندوره كوسا فاصوليا",
+            "_4": "كل السنة",
+            "_5": "إنتاج متوسط",
+            "_6": "أخرى الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات الخضروات المخللة الخيار، المقدوس) زيت الزيتون العسل دبس العنب",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض بط  ديك رومي  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Kfarnabrakh",
+            "_3": "Fruit trees, apples, tomatoes, cucumbers, tomatoes, zucchini, beans",
+            "_4": "All year",
+            "_5": "Average production",
+            "_6": "Others Dried herbs (such as thyme) Jams or preserves Pickled vegetables (cucumbers, maqdous) Olive oil Honey Grape molasses",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying chicken, duck, turkey",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_17_2844cef0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.510862,
+          33.673724
+        ]
+      },
+      "properties": {
+        "featureId": "Food_17_2844cef0",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "الجاهليه",
+            "_3": "البندورة وخيار خيار و فاصوليا",
+            "_4": "ايار حزيران تموز",
+            "_5": "إنتاج صغير",
+            "_6": "أخرى زيت الزيتون منتجات الألبان (مثل اللبنة، الجبنة)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض   دجاج  (لحم)",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية"
+          },
+          "en": {
+            "القرية": "Al-Jahiliyeh",
+            "_3": "Tomatoes, cucumber and beans",
+            "_4": "May June July",
+            "_5": "Small production",
+            "_6": "Others olive oil Dairy products (such as labneh, cheese)",
+            "_7": "Some homes (30–60%)",
+            "_8": "Layer chicken (meat)",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_18_d6b7e1f9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.588746,
+          33.653009
+        ]
+      },
+      "properties": {
+        "featureId": "Food_18_d6b7e1f9",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "كحلونيه الشوف",
+            "_3": "أشجار الزيتون والخضروات بندوره خيار كل شي",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير ",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات منتجات الألبان اللبنة، الجبنة) زيت الزيتون العسل",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  دجاج  (لحم)",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Kahlouniyeh El Chouf",
+            "_3": "Olive trees, vegetables, tomatoes, cucumbers, everything",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Pickled vegetables (such as cucumber, maqdous) Dried herbs Thyme) Jams or preserves Dairy products Labneh, cheese Olive oil Honey",
+            "_7": "Most homes (60–80%)",
+            "_8": "Layer chicken (meat)",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_19_c4ba2f37",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.623642,
+          33.664374
+        ]
+      },
+      "properties": {
+        "featureId": "Food_19_c4ba2f37",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "بطمه",
+            "_3": "الزيتونخيمة زراعية البندورة بقدونس خيار خضار موسمي بندوره",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج متوسط",
+            "_6": "المربيات أو المحفوظات زيت الزيتون الأعشاب المجففة (مثل الزعتر) دبس العنب منتجات الألبان اللبنة، الجبنة)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض  دجاج  (لحم)   فري  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Btameh",
+            "_3": "Olives, agricultural tent, tomatoes, parsley, cucumber, seasonal vegetables, tomatoes",
+            "_4": "June July August",
+            "_5": "Small production medium production",
+            "_6": "Jams or preserves Olive oil Dried herbs (such as thyme) Grape molasses Dairy products Labneh, cheese)",
+            "_7": "Some homes (30–60%)",
+            "_8": "Layer chicken Free chicken (meat).",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed is a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_20_92c9f37c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.622299,
+          33.725605
+        ]
+      },
+      "properties": {
+        "featureId": "Food_20_92c9f37c",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "مجدل المعوش",
+            "_3": "البندورة قمح وخضروات ورقية",
+            "_4": null,
+            "_5": "إنتاج كبير  ",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) منتجات الألبان اللبنة، الجبنة) أخرى",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  دجاج  (لحم)  ",
+            "_9": "أكثر من 100",
+            "_10": "علف تجاري جاهز"
+          },
+          "en": {
+            "القرية": "Majdel El Meouch",
+            "_3": "Tomatoes are wheat and leafy vegetables",
+            "_4": null,
+            "_5": "Great production",
+            "_6": "Olive oil, pickled vegetables (such as cucumber, maqdous), dried herbs, thyme, dairy products, labneh, cheese, etc.",
+            "_7": "Most homes (60–80%)",
+            "_8": "Layer chicken (meat)",
+            "_9": "More than 100",
+            "_10": "Ready commercial feed"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_21_8082157d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.670304,
+          33.704818
+        ]
+      },
+      "properties": {
+        "featureId": "Food_21_8082157d",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "الباروك",
+            "_3": "البندورة و الخضار التفاح الدراق بعض الزرعات الصيفيّة جبلية خيار تفاح خضار وفواكه ملفوف",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج كبير  إنتاج متوسط",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات العسل دبس العنب منتجات الألبان اللبنة، الجبنة) أخرى",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين قمح"
+          },
+          "en": {
+            "القرية": "Al-Barouk",
+            "_3": "Tomatoes and vegetables, apples, peaches, some mountain summer crops, cucumbers, apples, vegetables and fruits, cabbage",
+            "_4": "June July August",
+            "_5": "Small production, large production, medium production",
+            "_6": "Pickled vegetables (such as cucumber, maqdous) Dried herbs Thyme Jams or preserves Honey Grape molasses Dairy products Labneh, cheese Other",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two, wheat"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_22_51b46c62",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4787639,
+          33.7917396
+        ]
+      },
+      "properties": {
+        "featureId": "Food_22_51b46c62",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "الدامور",
+            "_3": "افوكادو الثاني اشطا الموز والافوكا فريز بندوره ليمون و موز وافوكا",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج كبير  إنتاج متوسط",
+            "_6": "أخرى الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات زيت الزيتون",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Damour",
+            "_3": "The second avocado is banana, avocado, strawberry, tomato, lemon, banana and avocado",
+            "_4": "June July August",
+            "_5": "Small production, large production, medium production",
+            "_6": "Other dried herbs (such as thyme), jams or preserves, olive oil",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_23_c3d725b8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.589124,
+          33.653703
+        ]
+      },
+      "properties": {
+        "featureId": "Food_23_c3d725b8",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "الكحلونيه",
+            "_3": "الخضار الموسمية الزيتون والتين البندورة خيار خضروات زيتون وتين وعني وفول ورمان وحديثا صبير مفتي وزعتر وزيتون",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج متوسط",
+            "_6": "الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات أخرى زيت الزيتون الخضروات المخللة الخيار، المقدوس) دبس العنب",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Al-Kahlouniyeh",
+            "_3": "Seasonal vegetables, olives and figs, tomatoes, cucumbers, vegetables, olives, figs, grapes, beans, pomegranates, and more recently, mufti sabir, thyme, and olives.",
+            "_4": "June July August",
+            "_5": "Small production medium production",
+            "_6": "Dried herbs (such as thyme) Other jams or preserves Olive oil Pickled vegetables Cucumbers, maqdous) Grape molasses",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_24_1ecfb5dc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.680277,
+          33.737053
+        ]
+      },
+      "properties": {
+        "featureId": "Food_24_1ecfb5dc",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "الورهانيه",
+            "_3": "زيتون سماق التفاح والدراق الفواكه و الحمضيات والزيتون والجوز البندورة جبليه وكرز تفاح وخضار وخوخ دراق",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج كبير  إنتاج متوسط",
+            "_6": "أخرى الخضروات المخللة (مثل الخيار، المقدوس) زيت الزيتون الأعشاب المجففة الزعتر) المربيات أو المحفوظات دبس العنب",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Al-Warhaniyeh",
+            "_3": "Olives Sumac Apples and peaches Fruits, citrus fruits, olives and walnuts Mountain tomatoes and cherries Apples, vegetables and peaches Peaches",
+            "_4": "June July August",
+            "_5": "Small production, large production, medium production",
+            "_6": "Other pickled vegetables (e.g. cucumber, maqdous) olive oil dried herbs thyme jams or preserves grape molasses",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Domestic or agricultural waste is a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_25_8c7c0afa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.614259,
+          33.603991
+        ]
+      },
+      "properties": {
+        "featureId": "Food_25_8c7c0afa",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "باتر",
+            "_3": "زيتون و الرمان فاصوليا عريضة القرعة فصولي عاريض ونصب",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "العسل زيت الزيتون الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات منتجات الألبان اللبنة، الجبنة)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Bater",
+            "_3": "Olives and pomegranates, broad-leaved beans, broad and erect seasons",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Honey, olive oil, dried herbs (such as thyme), jams or preserves, dairy products (labneh, cheese)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_26_f002a083",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.655584,
+          33.702883
+        ]
+      },
+      "properties": {
+        "featureId": "Food_26_f002a083",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "بتلون",
+            "_3": "فاصوليا أشجار تفاح البندورة لوبية للبيت التفاح بقول وفواكه صيفية جوز وكرز دراق زيتون حر ولوبية خضار بشكل عام شجر مثمرة",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج كبير  إنتاج متوسط",
+            "_6": "الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات الخضروات المخللة الخيار، المقدوس) دبس العنب منتجات الألبان اللبنة، الجبنة) أخرى زيت الزيتون",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Btalloun",
+            "_3": "Beans Apple trees Tomatoes Beans for the home Apples Legumes and summer fruits Nuts, cherries, peaches, olives, and beans Vegetables in general, fruit trees",
+            "_4": "June July August",
+            "_5": "Small production, large production, medium production",
+            "_6": "Dried herbs (such as thyme) Jams or preserves Pickled vegetables Cucumbers, maqdous (grape molasses) Dairy products (labneh, cheese) Others Olive oil",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_27_fbde714d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.424124,
+          33.650045
+        ]
+      },
+      "properties": {
+        "featureId": "Food_27_fbde714d",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "برجا",
+            "_3": "الفول والزعتر البندورة خيار وخيار وفليفلة",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج متوسط",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) زيت الزيتون الأعشاب المجففة الزعتر)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Barja",
+            "_3": "Beans, thyme, tomatoes, cucumber, and pepper",
+            "_4": "June July August",
+            "_5": "Small production medium production",
+            "_6": "Pickled vegetables (e.g. cucumber, maqdous, olive oil, dried herbs, thyme)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed is a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_28_2359c790",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.653917,
+          33.716657
+        ]
+      },
+      "properties": {
+        "featureId": "Food_28_2359c790",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "بريح",
+            "_3": "الخضار والأشجار متل التفاح والزيتون كرز تقاح افوكادو",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج كبير",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) العسل",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "أقل من 20",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية"
+          },
+          "en": {
+            "القرية": "Breih",
+            "_3": "Vegetables and trees, such as apples, olives, cherries, pollen, and avocados",
+            "_4": "June July August",
+            "_5": "Small production big production",
+            "_6": "Olive oil, pickled vegetables (such as cucumber, maqdoos), honey",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "Ready-made commercial feed, household or agricultural waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_29_361e92e7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.557639,
+          33.717805
+        ]
+      },
+      "properties": {
+        "featureId": "Food_29_361e92e7",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "بشتفين",
+            "_3": "البصل و الفاصوليا البيضاء زيتون خضروات",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج متوسط",
+            "_6": "زيت الزيتون الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات الخضروات المخللة الخيار، المقدوس) دبس العنب",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "أقل من 20",
+            "_10": "مخلفات منزلية أو زراعية"
+          },
+          "en": {
+            "القرية": "Bshtfine",
+            "_3": "Onions, white beans, olives, vegetables",
+            "_4": "June July August",
+            "_5": "Small production medium production",
+            "_6": "Olive oil Dried herbs (e.g. thyme) Jams or preserves Pickled vegetables Cucumbers, maqdous) Grape molasses",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "Domestic or agricultural waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_30_6b6b0bb0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.56628,
+          33.68101
+        ]
+      },
+      "properties": {
+        "featureId": "Food_30_6b6b0bb0",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "بعقلين",
+            "_3": "حضارة و قمح شعير خيار البندورة فول بازيلا كوسا",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  إنتاج كبير  إنتاج متوسط",
+            "_6": "زيت الزيتون الأعشاب المجففة (مثل الزعتر) أخرى المربيات أو المحفوظات العسل منتجات الألبان اللبنة، الجبنة)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Baaqline",
+            "_3": "Civilization, wheat, barley, cucumber, tomato, bean, pea, zucchini",
+            "_4": "June July August",
+            "_5": "Small production, large production, medium production",
+            "_6": "Olive oil Dried herbs (such as thyme) Other jams or preserves Honey Dairy products Labneh, cheese)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_31_75e3f9e1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.642387,
+          33.646438
+        ]
+      },
+      "properties": {
+        "featureId": "Food_31_75e3f9e1",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "خريبه الشوف",
+            "_3": "اشجار متمرة وخضراوات نصب زيتون وفواكهة",
+            "_4": "نيسان لايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات دبس العنب",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "أقل من 20",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Khraybeh El Chouf",
+            "_3": "Mature trees and vegetables, olives and fruits",
+            "_4": "April to September",
+            "_5": "Average production",
+            "_6": "Olive oil, pickled vegetables (e.g. cucumber, maqdous), dried herbs, thyme, jams or preserves, grape molasses",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_32_229f478e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.505803,
+          33.698185
+        ]
+      },
+      "properties": {
+        "featureId": "Food_32_229f478e",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "دميت الشوف",
+            "_3": "الزيتون الخضار والفاكهه فاصوليا عريضه وبندوره",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات منتجات الألبان اللبنة، الجبنة)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية"
+          },
+          "en": {
+            "القرية": "Dmit El Chouf",
+            "_3": "Olives, vegetables and fruits, broad beans and tomatoes",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Olive oil Pickled vegetables (e.g. cucumber, maqdous) Dried herbs Thyme Jams or preserves Dairy products Labneh, cheese)",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_33_c096d28e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.556728,
+          33.702054
+        ]
+      },
+      "properties": {
+        "featureId": "Food_33_c096d28e",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "دير القمر",
+            "_3": "الزيتون الفواكه الخضار فاصولياء و البندورة",
+            "_4": null,
+            "_5": "إنتاج صغير",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات زيت الزيتون منتجات الألبان اللبنة، الجبنة)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز"
+          },
+          "en": {
+            "القرية": "Deir El Qamar",
+            "_3": "Olives, fruits, vegetables, beans and tomatoes",
+            "_4": null,
+            "_5": "Small production",
+            "_6": "Pickled vegetables (e.g. cucumber, maqdous) Dried herbs Thyme Jams or preserves Olive oil Dairy products Labneh, cheese)",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready commercial feed"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_34_79ad8334",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.525734,
+          33.703575
+        ]
+      },
+      "properties": {
+        "featureId": "Food_34_79ad8334",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "ديربابا",
+            "_3": "خضار صيفية فاصوليا و قرع فصوليا وقرع",
+            "_4": "حزيران اب",
+            "_5": "إنتاج صغير ",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) العسل",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "أقل من 20",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Deir Baba",
+            "_3": "Summer vegetables: beans and squash, beans and squash",
+            "_4": "June August",
+            "_5": "Small production",
+            "_6": "Olive oil, pickled vegetables (such as cucumber, maqdoos), honey",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_35_aa0df800",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.488343,
+          33.627649
+        ]
+      },
+      "properties": {
+        "featureId": "Food_35_aa0df800",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "شحيم",
+            "_3": "الزيتون الخضار والفاكهة البندورة وخيار خضار شتل فواكه ما عم بزرع تجي المي عملولنا حلي للل",
+            "_4": "كل السنة",
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات منتجات الألبان اللبنة، الجبنة) الخضروات المخللة الخيار، المقدوس)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 51 و100",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Chahim",
+            "_3": "Olives, vegetables and fruits, tomatoes and cucumbers, vegetables, fruit seedlings, I do not plant them, and my pain comes. They made us ornaments for the family.",
+            "_4": "All year",
+            "_5": "Small production",
+            "_6": "Olive oil Dried herbs (such as thyme) Jams or preserves Dairy products (labneh, cheese) Pickled vegetables (cucumber, maqdous)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 51 and 100",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_36_595f01de",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.607415,
+          33.648711
+        ]
+      },
+      "properties": {
+        "featureId": "Food_36_595f01de",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "عماطور",
+            "_3": "افوكادو عنب زيتون البندورة البامية الخضروات والبقوليات",
+            "_4": "كل السنة",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) المربيات أو المحفوظات العسل منتجات الألبان اللبنة، الجبنة) أخرى",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Ammatour",
+            "_3": "Avocado, grapes, olives, tomatoes, okra, vegetables and legumes",
+            "_4": "All year",
+            "_5": "Average production",
+            "_6": "Olive oil Pickled vegetables (such as cucumber, maqdous) Jams or preserves Honey Dairy products Labneh, cheese) Other",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_37_573f2c45",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.6172,
+          33.679876
+        ]
+      },
+      "properties": {
+        "featureId": "Food_37_573f2c45",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "عين وزين",
+            "_3": "بندوره وعلف للمواشي متل باقيه وشعير زيتون بقدونس ملفوف",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) زيت الزيتون الأعشاب المجففة الزعتر) المربيات أو المحفوظات العسل منتجات الألبان اللبنة، الجبنة)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Ain W Zain",
+            "_3": "Tomatoes, fodder for livestock, such as barley, olives, and cabbage parsley",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Pickled vegetables (such as cucumber, maqdous) Olive oil Dried herbs Thyme Jams or preserves Honey Dairy products Labneh, cheese",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "A mix between the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_38_76e740f7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.562358,
+          33.644017
+        ]
+      },
+      "properties": {
+        "featureId": "Food_38_76e740f7",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "غريفه",
+            "_3": "بقوليات وخضار شجر زيتون فقط",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير ",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) زيت الزيتون",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "أقل من 20",
+            "_10": "مخلفات منزلية أو زراعية"
+          },
+          "en": {
+            "القرية": "Gharifeh",
+            "_3": "Legumes and olive tree vegetables only",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Pickled vegetables (such as cucumber, maqdoos) Olive oil",
+            "_7": "Some homes (30–60%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "Domestic or agricultural waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_39_7d19c60c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50962,
+          33.697363
+        ]
+      },
+      "properties": {
+        "featureId": "Food_39_7d19c60c",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "كفرحيم",
+            "_3": "البندورة وخيار وبتنجان وكوسه ولوبي",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير  ",
+            "_6": "أخرى منتجات الألبان (مثل اللبنة، الجبنة)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "أقل من 20",
+            "_10": "مزيج بين الاثنين فضلت اكل طعام منزل أو اشتري لهم قمح وفضلات"
+          },
+          "en": {
+            "القرية": "Kfarhaym",
+            "_3": "Tomatoes, cucumbers, eggplant, zucchini and beans",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Other dairy products (such as labneh, cheese)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Less than 20",
+            "_10": "A combination of the two. I preferred to eat homemade food or buy them wheat and waste"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_40_10c6dc78",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.662419,
+          33.638588
+        ]
+      },
+      "properties": {
+        "featureId": "Food_40_10c6dc78",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "مرستي",
+            "_3": "التفاح والكرز الخضار على انواعها والبندورة والخضراوات والايجاص الكرز ملفوف بطاطا زراعة اللوبية شجر مثمر طماطم خيار وتفاح وخضار صيفية البصل",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": " إنتاج كبير ",
+            "_6": "أخرى الأعشاب المجففة (مثل الزعتر) العسل دبس العنب المربيات أو المحفوظات منتجات الألبان اللبنة، الجبنة) الخضروات المخللة الخيار، المقدوس) زيت الزيتون",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية قمح وذرة ونخالة مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Mrosti",
+            "_3": "Apples and cherries, all kinds of vegetables, tomatoes, vegetables, pears, cherries, cabbage, potatoes, planting cowpeas, fruit trees, tomatoes, cucumbers, apples, and summer vegetables, onions.",
+            "_4": "June July August",
+            "_5": "Great production",
+            "_6": "Others Dried herbs (such as thyme) Honey Grape molasses Jams or preserves Dairy products (labneh, cheese) Pickled vegetables (cucumber, maqdous) Olive oil",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, wheat, corn, and bran, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_41_515659fb",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.592496,
+          33.637961
+        ]
+      },
+      "properties": {
+        "featureId": "Food_41_515659fb",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "مزرعه الشوف",
+            "_3": "البندورة جبلية وخضار مشكلة و فول فاصولية لوبية خيار مقتي تين زيتون ومساكب",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "  إنتاج كبير ",
+            "_6": "أخرى الخضروات المخللة (مثل الخيار، المقدوس) زيت الزيتون الأعشاب المجففة الزعتر) منتجات الألبان اللبنة، الجبنة) المربيات أو المحفوظات العسل",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Mazraat El Chouf",
+            "_3": "Mountain tomatoes, mixed vegetables, beans, kidney beans, cucumbers, figs, olives, and berries",
+            "_4": "June July August",
+            "_5": "Great production",
+            "_6": "Other Pickled vegetables (such as cucumber, maqdous) Olive oil Dried herbs Thyme Dairy products Labneh, cheese Jams or preserves Honey",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_42_fd9c8c3c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.667699,
+          33.691618
+        ]
+      },
+      "properties": {
+        "featureId": "Food_42_fd9c8c3c",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "معاصر الشوف",
+            "_3": "اشجار تفاح زراعة مستدامة البندورة حمص زيتون صنوبر",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "الأعشاب المجففة (مثل الزعتر) المربيات أو المحفوظات دبس العنب زيت الزيتون الخضروات المخللة الخيار، المقدوس)",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج بيّاض  ",
+            "_9": "بين 20 و50",
+            "_10": "مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Maaser El Chouf",
+            "_3": "Apple trees, sustainable agriculture, tomatoes, chickpeas, olives, pine",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Dried herbs (such as thyme), jams or preserves, grape molasses, olive oil, pickled vegetables, cucumbers, maqdous)",
+            "_7": "Most homes (60–80%)",
+            "_8": "Laying hens",
+            "_9": "Between 20 and 50",
+            "_10": "Domestic or agricultural waste is a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_43_101de293",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.542311,
+          33.692085
+        ]
+      },
+      "properties": {
+        "featureId": "Food_43_101de293",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "دير دوريت",
+            "_3": "الفاكهة والحمضيات والفاصوليا زيتون اشجار خضرة وافوكادو",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر) المربيات أو المحفوظات",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": "دجاج حم (لحم)  ",
+            "_9": "أقل من 20",
+            "_10": "علف تجاري جاهز مخلفات منزلية أو زراعية مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Deir Dourit",
+            "_3": "Fruits, citrus fruits, beans, olives, green trees and avocados",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Olive oil, pickled vegetables (e.g. cucumber, maqdous), dried herbs, thyme, jams or preserves",
+            "_7": "Most homes (60–80%)",
+            "_8": "chicken meat (meat)",
+            "_9": "Less than 20",
+            "_10": "Ready-made commercial feed, household or agricultural waste, a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_44_44cfb75b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.589248,
+          33.685768
+        ]
+      },
+      "properties": {
+        "featureId": "Food_44_44cfb75b",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "السمقانيه",
+            "_3": "البندورة جبلية+فصولياء وخيار وكوسا",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) المربيات أو المحفوظات العسل",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Al-Simqaniyeh",
+            "_3": "Mountain tomatoes + beans, cucumbers and zucchini",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Olive oil, pickled vegetables (eg cucumber, maqdous), jams or preserves, honey",
+            "_7": "Most homes (60–80%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_45_ba99e26d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.540722,
+          33.614412
+        ]
+      },
+      "properties": {
+        "featureId": "Food_45_ba99e26d",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "المطله",
+            "_3": "البندورة وخيار وزيتون",
+            "_4": "من ايار إلى ايلول",
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس)",
+            "_7": "جميع المنازل تقريباً",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Al-Mtalleh",
+            "_3": "Tomatoes, cucumbers and olives",
+            "_4": "From May to September",
+            "_5": "Small production",
+            "_6": "Olive oil pickled vegetables (such as cucumber, maqdous)",
+            "_7": "Almost all homes",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_46_020fee3f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.462913,
+          33.610274
+        ]
+      },
+      "properties": {
+        "featureId": "Food_46_020fee3f",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "المغيزيه",
+            "_3": "افوكادو وشتول",
+            "_4": "كانون الأول إلى آذار",
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر)",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": "علف تجاري جاهز مزيج بين الاثنين"
+          },
+          "en": {
+            "القرية": "Al-Mughayziyeh",
+            "_3": "Avocado and seedlings",
+            "_4": "December to March",
+            "_5": "Small production",
+            "_6": "Olive oil, pickled vegetables (e.g. cucumber, maqdous), dried herbs, thyme)",
+            "_7": "Few houses (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": "Ready-made commercial feed is a mixture of the two"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_47_3410eaf6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.671584,
+          33.70841
+        ]
+      },
+      "properties": {
+        "featureId": "Food_47_3410eaf6",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "باروك",
+            "_3": "ملفوف البندورة",
+            "_4": " ايار لمانون الاول",
+            "_5": "إنتاج متوسط",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس) المربيات أو المحفوظات أخرى",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Barouk",
+            "_3": "Tomato cabbage",
+            "_4": "May of Manon I",
+            "_5": "Average production",
+            "_6": "Pickled vegetables (eg cucumber, maqdous) Other jams or preserves",
+            "_7": "Most homes (60–80%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_48_e094f5bc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.619518,
+          33.639561
+        ]
+      },
+      "properties": {
+        "featureId": "Food_48_e094f5bc",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "بعذران",
+            "_3": "اشجار متمرة",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير",
+            "_6": "زيت الزيتون المربيات أو المحفوظات",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Baatharan",
+            "_3": "Mature trees",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Olive oil jams or preserves",
+            "_7": "Some homes (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_49_e45f7f52",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.493755,
+          33.592376
+        ]
+      },
+      "properties": {
+        "featureId": "Food_49_e45f7f52",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "بكيفا",
+            "_3": "ورد على انواعه مع زراعة الخضار",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Bkifa",
+            "_3": "Varieties of plants with vegetable cultivation",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Pickled vegetables (such as cucumber, maqdoos)",
+            "_7": "Some homes (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_50_3747854c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.510269,
+          33.585476
+        ]
+      },
+      "properties": {
+        "featureId": "Food_50_3747854c",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "خربه بسري",
+            "_3": "زيتون و زعتر",
+            "_4": "كانون الاول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الأعشاب المجففة (مثل الزعتر) العسل",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Khirbet Bosri",
+            "_3": "Olives and thyme",
+            "_4": "December",
+            "_5": "Average production",
+            "_6": "Olive oil, dried herbs (such as thyme), honey",
+            "_7": "Some homes (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_51_49a552e8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.703264,
+          33.806677
+        ]
+      },
+      "properties": {
+        "featureId": "Food_51_49a552e8",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "شارون",
+            "_3": "تفاح الخضار",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير",
+            "_6": "الخضروات المخللة (مثل الخيار، المقدوس)",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Charoun",
+            "_3": "Vegetable apple",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Pickled vegetables (such as cucumber, maqdoos)",
+            "_7": "Few houses (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_52_c0aec70e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.562627,
+          33.702577
+        ]
+      },
+      "properties": {
+        "featureId": "Food_52_c0aec70e",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "شواليق دير القمر",
+            "_3": "فاصوليا زيتون",
+            "_4": "تموز - تشرين",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) المربيات أو المحفوظات أخرى",
+            "_7": "معظم المنازل (60–80%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Chawalik Deir El Qamar",
+            "_3": "Olive beans",
+            "_4": "July - October",
+            "_5": "Average production",
+            "_6": "Olive oil, pickled vegetables (eg cucumber, maqdous), jams or other preserves",
+            "_7": "Most homes (60–80%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_53_6fa0e633",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.568355,
+          33.671272
+        ]
+      },
+      "properties": {
+        "featureId": "Food_53_6fa0e633",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "عترين",
+            "_3": "البندورة والملفوف",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون العسل",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Atrine",
+            "_3": "Tomatoes and cabbage",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Olive oil honey",
+            "_7": "Few houses (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_54_836aeec0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50846,
+          33.598838
+        ]
+      },
+      "properties": {
+        "featureId": "Food_54_836aeec0",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "مزموره",
+            "_3": "الافوكادو والزعتر",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج صغير",
+            "_6": "الأعشاب المجففة (مثل الزعتر) أخرى",
+            "_7": "عدد قليل من المنازل (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Mazmoura",
+            "_3": "Avocado and thyme",
+            "_4": "June July August",
+            "_5": "Small production",
+            "_6": "Dried herbs (eg thyme) others",
+            "_7": "Few houses (< 30%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Food_55_2d15c62f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.646694,
+          33.73086
+        ]
+      },
+      "properties": {
+        "featureId": "Food_55_2d15c62f",
+        "theme": "Food",
+        "values": {
+          "ar": {
+            "القرية": "البيره",
+            "_3": "البندورة خيار بقدونس فصوليا لوبية",
+            "_4": "حزيران تموز اب ايلول",
+            "_5": "إنتاج متوسط",
+            "_6": "زيت الزيتون الخضروات المخللة (مثل الخيار، المقدوس) الأعشاب المجففة الزعتر)",
+            "_7": "بعض المنازل (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          },
+          "en": {
+            "القرية": "Al-Bireh",
+            "_3": "Tomatoes, cucumber, parsley, green beans",
+            "_4": "June July August",
+            "_5": "Average production",
+            "_6": "Olive oil, pickled vegetables (e.g. cucumber, maqdous), dried herbs, thyme)",
+            "_7": "Some homes (30–60%)",
+            "_8": null,
+            "_9": null,
+            "_10": null
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "theme": "Food",
+    "generatedAt": "2025-12-17T16:47:28.131739Z",
+    "featureCount": 56,
+    "sources": {
+      "arabic": "data/layers/Arabic/Food_1.0.csv",
+      "english": "data/layers/English/Food_1.0.en.csv"
+    }
+  }
+}

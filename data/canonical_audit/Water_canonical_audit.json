@@ -1,0 +1,45 @@
+{
+  "theme": "Water",
+  "timestamp": "2025-12-17T16:47:28.100858Z",
+  "sources": {
+    "arabic": {
+      "path": "data/layers/Arabic/Water_1.0.csv",
+      "rows": 55,
+      "columns": [
+        "القرية",
+        "Y",
+        "X",
+        "المحصول",
+        "اشهر الزراعة",
+        "ريّ المحصول",
+        "مصدر مياه الريّ الرئيسي",
+        "توفر المياه",
+        " أشهر شح المياه"
+      ]
+    },
+    "english": {
+      "path": "data/layers/English/Water_1.0.en.csv",
+      "rows": 55,
+      "columns": [
+        "القرية",
+        "Y",
+        "X",
+        "المحصول",
+        "اشهر الزراعة",
+        "ريّ المحصول",
+        "مصدر مياه الريّ الرئيسي",
+        "توفر المياه",
+        "أشهر شح المياه"
+      ]
+    }
+  },
+  "output": {
+    "featureCount": 55,
+    "stableIdFormat": "{theme}_{row}_{coordinateHash8}",
+    "sampleIds": [
+      "Water_0_ad3baeef",
+      "Water_1_41f30779",
+      "Water_2_fa0802b2"
+    ]
+  }
+}

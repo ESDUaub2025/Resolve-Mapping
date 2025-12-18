@@ -1,0 +1,58 @@
+﻿القرية:,Y,X,مصدر الطاقة:,كمية الطاقة المستخدمة خلال موسم الذروة :,يدويا%:,ديزل%:,شبكة%:,بنزين%:,شمسية%:,Diesel L/Week (Avg):,Benzine L/Week (Avg):,kW/Week (Avg):
+Ain W Zain,33.67571,35.623642,network,1 kilowatt-hour of electricity per week,0,0,100,0,0,0,0,1
+Al-Barouk,33.700328,35.670304,Diesel generator,One liter of diesel per week,44.44,33.33,11.11,0,11.11,43.67,0,0
+Al-Bireh,33.72637,35.646694,Manually,Manually,100,0,0,0,0,0,0,0
+Al-Jahiliyeh,33.669172,35.510909,Manually,Manually,100,0,0,0,0,0,0,0
+Damour,33.7068341,35.4428424,Electricity line from neighbors,Solar watches (if available),14.29,42.86,28.57,0,57.14,1,0,8
+Al-Debbiyeh,33.670542,35.482801,Electricity from the network manually,One kilowatt-hour of electricity per week,100,0,100,0,0,0,0,0
+Al-Debbiyeh,33.670542,35.482801,Diesel generator electricity from the grid manually,One kilowatt-hour of electricity per week,100,100,100,0,0,0,0,0
+Al-Saadiyat,33.691676,35.425372,Solar energy,Solar watches (if available),0,0,0,0,100,0,0,0
+Al-Simqaniyeh,33.681278,35.589248,Diesel generator electricity from the grid,,0,100,100,0,0,0,0,0
+Al-Kahlouniyeh,33.646894,35.587988,Manually,One liter of diesel per week,75,0,25,0,0,1,10,0
+Al-Mokhtara,33.658863,35.612749,Manually,Solar watches (if available),100,0,0,0,0,0,0,0
+Al-Moshref,33.704418,35.463768,Manual diesel generator,One liter of diesel per week,100,50,0,0,0,1,0,0
+Al-Mtalleh,33.609922,35.540722,Solar energy,Solar watches (if available),0,0,0,0,100,0,0,0
+Al-Mughayziyeh,33.605784,35.462913,Electricity from the grid,One kilowatt-hour of electricity per week,0,0,100,0,0,0,0,0
+Al-Warhaniyeh,33.717271,35.669055,Manually,,71.43,0,28.57,0,0,1,0,20
+Bater,33.599393,35.614008,Manual diesel generator,5 liters of gasoline,66.67,33.33,0,0,0,5,0,0
+Btalloun,33.62999,35.652848,I don't need electricity,0,30.77,15.38,23.08,0,0,34.5,0,0
+Barja,33.64174,35.423496,Solar energy,Solar watches (if available),0,25,0,0,75,1,0,0
+Breih,33.712167,35.653917,Manually,Manually on gravity,100,0,0,0,0,0,0,0
+Bshtfine,33.711314,35.554213,Manually,Manual,100,0,0,0,0,0,0,0
+Btameh,33.659884,35.623642,Manually,One liter of diesel per week,66.67,33.33,33.33,0,0,1,0,0
+Btameh,33.659884,35.623642,Solar energy,Solar watches (if available),0,0,0,0,100,0,0,0
+Baatharan,33.635071,35.619518,Manually,,100,0,0,0,0,0,0,0
+Baaqline,33.674355,35.550524,Manually,,25,25,0,0,0,20,0,0
+Bkifa,33.587886,35.493755,Diesel generator,One liter of diesel per week,0,100,0,0,0,1,0,0
+Jadideh El Chouf,33.660837,35.604515,Electricity from the grid,One kilowatt-hour of electricity per week,0,0,100,0,0,0,0,0
+Haret Jandal El Chouf,33.613917,35.609278,Manually,drag,100,0,0,0,0,0,0,0
+Khirbet Bosri,33.580986,35.510269,Manually,Solar watches (if available),100,0,0,0,0,0,0,0
+Khraybeh El Chouf,33.63275,35.654194,Manual diesel generator,One liter of diesel per week,100,50,0,0,0,1,0,0
+Daraya El Chouf,33.643525,35.511788,Diesel generator electricity from the grid manually,One liter of diesel per week,25,25,100,0,0,1,0,0
+Dmit El Chouf,33.693695,35.505803,Manual diesel generator,One liter of diesel per week,66.67,33.33,33.33,0,0,1,0,0
+Deir El Qamar,33.695419,35.555945,Manually,One liter of diesel per week,33.33,33.33,33.33,0,33.33,1,0,0
+Deir Dourit,33.683941,35.531821,Manually,Manually via the channel,50,25,25,0,0,1,0,0
+Deir Baba,33.69578,35.524916,Manually,One liter of diesel per week,50,50,0,0,0,1,0,0
+Charoun,33.802187,35.703264,Diesel generator,40 liters of diesel per week,0,100,0,0,0,40,0,0
+Chahim,33.620505,35.481918,,,50,25,0,0,0,1,0,0
+Chawalik Deir El Qamar,33.698087,35.562627,Diesel generator electricity from the grid,One kilowatt-hour of electricity per week,0,100,100,0,0,0,0,0
+Aanout,33.621863,35.505019,Electricity from the network manually,I don't know,66.67,33.33,66.67,0,0,0,0,0
+Atrine,33.666782,35.568355,Diesel generator,10 liters of diesel per week,0,100,0,0,0,10,0,0
+Aalman,33.581088,35.410028,Diesel generator,One liter of diesel per week,0,54.17,37.5,0,12.5,32.55,0,10
+Ammatour,33.639279,35.603833,Manually,Irrigation using agricultural ponds,100,0,0,0,0,1,0,0
+Ain Zahlta,33.745791,35.693978,Traction water,,50,0,0,0,0,1,0,0
+Ain Qani,33.64873,35.61163,Manually,Transport only,100,0,0,0,0,0,0,0
+Ain W Zain,33.675386,35.6172,Electricity from the grid,One kilowatt-hour of electricity per week,75,0,25,0,0,1,0,0
+Gharifeh,33.639527,35.562358,Doesn't require electricity,,50,0,0,0,0,0,0,0
+Ktermaya El Chouf,33.621551,35.454315,Solar diesel generator,One liter of diesel per week,0,100,0,0,100,1,0,0
+Kfarhaym,33.685758,35.52594,I don't have any energy,nothing,33.33,0,0,0,33.33,0,0,0
+Kfarfakoud,33.698864,35.537408,Manually,nothing,33.33,0,66.67,0,0,0,0,0
+Kfarnabrakh,33.695033,35.638367,Manually,Watering with draft water,50,16.67,0,0,16.67,1,0,0
+Majdel El Meouch,33.721115,35.622299,Manually,attractiveness,100,0,0,0,0,1,0,0
+Mrosti,33.634098,35.662419,Manually,One liter of diesel per week,100,0,0,0,0,1,0,0
+Mrosti,33.615696,35.647482,Manually,Boric water,55,25,20,10,5,1.22,10,0
+Mazboud,33.607921,35.485018,Electricity from the grid,One kilowatt-hour of electricity per week,33.33,66.67,66.67,0,33.33,1,0,0
+Mazraat El Chouf,33.62904,35.586971,Manually,One kilowatt-hour of electricity per week,75,12.5,0,0,12.5,10.5,0,0
+Mazmoura,33.594348,35.50846,Diesel generator electricity from the grid manually,One liter of diesel per week,100,100,100,0,0,1,0,0
+Maaser El Chouf,33.659007,35.649514,Manually,10 Liter by week,66.67,33.33,0,0,0,0,0,0
+Niha El Chouf,33.484021,35.51801,Manually,Manual work,100,0,0,0,0,0,0,0

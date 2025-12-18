@@ -188,6 +188,11 @@
 			return new URL(p, ROOT_BASE).toString();
 		} catch (e) { return path; }
 	}
+	// Global AlphaEarth bounds (west, south, east, north) matching GEE export ROI exactly
+	
+
+	// Simple approach: rely on bounds parameter and improved paint properties
+	// No additional masking needed - let MapLibre handle it naturally with bounds restriction
 
 	
 	// --- Filtering state ---
@@ -385,15 +390,9 @@
 	}
 
 
-	function addGeoJsonLayer(id, dataOrUrl, color, shouldCluster = true) {
+	function addGeoJsonLayer(id, url, color) {
+		sourceUrlById[id] = url;
 		if (map.getSource(id)) return;
-		
-		// Support both URL strings (legacy) and GeoJSON objects (new)
-		const isUrl = typeof dataOrUrl === 'string';
-		if (isUrl) {
-			sourceUrlById[id] = dataOrUrl;
-		}
-		
 		const pixelOffsets = {
 			'water-points': [0, 0],
 			'energy-points': [12, 12],
@@ -403,25 +402,9 @@
 			'fire-points-raw': [0, 14],
 			'farmers-points': [14, 0]
 		};
-		
-		// Add source (use generateId for legacy URLs, promoteId for canonical data)
-		const sourceConfig = { 
-			type: 'geojson', 
-			data: dataOrUrl, 
-			cluster: shouldCluster, 
-			clusterRadius: 40, 
-			clusterMaxZoom: 14 
-		};
-		
-		if (!isUrl) {
-			// Canonical data with stable IDs
-			sourceConfig.promoteId = 'featureId';
-		} else {
-			// Legacy URL-based data
-			sourceConfig.generateId = true;
-		}
-		
-		map.addSource(id, sourceConfig);
+		// Enable clustering by default (except we will add a separate clustered source for fire raw)
+		const shouldCluster = id !== 'fire-points-raw';
+		map.addSource(id, { type: 'geojson', data: url, generateId: true, cluster: shouldCluster, clusterRadius: 40, clusterMaxZoom: 14 });
 		map.addLayer({
 			id: id,
 			type: 'circle',
@@ -570,27 +553,6 @@
 				paint: {}
 			});
 		}
-	}
-
-	// Add canonical bilingual layer (new architecture)
-	function addCanonicalLayer(layerId, themeData) {
-		if (!themeData || !themeData.data) {
-			console.error(`Cannot add canonical layer ${layerId}: missing theme data`);
-			return;
-		}
-		
-		const { id, color, data } = themeData;
-		
-		// Add source using GeoJSON object directly (not URL)
-		addGeoJsonLayer(layerId, data, color, true);
-		
-		// Store reference for filtering
-		originalDataBySource[layerId] = data;
-		
-		// Update layer count badge
-		updateLayerCount(layerId, data.features.length);
-		
-		console.log(`✓ Added canonical layer: ${layerId} (${data.features.length} features)`);
 	}
 
 	async function preloadGeoJson(id) {
@@ -1317,55 +1279,20 @@
 	}
 
 	function uniqueValues(id, propCandidates, transform) {
-		// Try canonical data first (from StateStore)
-		const themes = StateStore.getAllThemes();
-		const currentLang = StateStore.getLanguage();
-		
-		// Find theme data for this layer ID
-		let data = null;
-		for (const [key, theme] of Object.entries(themes)) {
-			if (theme.id === id) {
-				data = theme.data;
-				break;
-			}
-		}
-		
-		// Fallback to originalDataBySource for non-canonical layers (fire, farmers, preservations)
-		if (!data) {
-			data = originalDataBySource[id];
-		}
-		
-		if (!data) return [];
-		
+		const fc = originalDataBySource[id];
+		if (!fc) return [];
 		const set = new Set();
-		for (const f of data.features || []) {
+		for (const f of fc.features || []) {
 			const props = f.properties || {};
+			const key = findFirstProp(props, propCandidates);
+			if (!key) continue;
+			const raw = cleanTextValue(props[key]);
+			if (!raw) continue;
 			
-			// Check if this is canonical format (has values.lang structure)
-			if (props.values && props.values[currentLang]) {
-				// Canonical bilingual format
-				const langValues = props.values[currentLang];
-				const key = findFirstProp(langValues, propCandidates);
-				if (!key) continue;
-				const raw = cleanTextValue(langValues[key]);
-				if (!raw) continue;
-				
-				// Apply grouping before transform
-				const grouped = groupValue(id, key, raw);
-				const val = transform ? transform(grouped) : grouped;
-				if (val) set.add(val);
-			} else {
-				// Legacy format (flat properties)
-				const key = findFirstProp(props, propCandidates);
-				if (!key) continue;
-				const raw = cleanTextValue(props[key]);
-				if (!raw) continue;
-				
-				// Apply grouping before transform
-				const grouped = groupValue(id, key, raw);
-				const val = transform ? transform(grouped) : grouped;
-				if (val) set.add(val);
-			}
+			// Apply grouping before transform
+			const grouped = groupValue(id, key, raw);
+			const val = transform ? transform(grouped) : grouped;
+			if (val) set.add(val);
 		}
 		return Array.from(set).slice(0, 200);
 	}
@@ -1493,50 +1420,22 @@
 	}
 
 	function applyFiltersForLayer(id) {
-		// Try canonical data first
-		const themes = StateStore.getAllThemes();
-		const currentLang = StateStore.getLanguage();
-		let themeData = null;
-		
-		// Find theme data for this layer ID
-		for (const [key, theme] of Object.entries(themes)) {
-			if (theme.id === id) {
-				themeData = theme;
-				break;
-			}
-		}
-		
-		// Fallback to originalDataBySource for non-canonical layers
-		const fc = themeData ? themeData.data : originalDataBySource[id];
+		const fc = originalDataBySource[id];
 		const src = map.getSource(id);
 		if (!fc || !src) return;
-		
 		if (!filterEnabledById[id]) {
-			// Reset to original
-			try { 
-				src.setData(fc); 
-				updateLayerCount(id, fc.features.length);
-			} catch {}
+			// Reset to original (already staggered in preload for farmers-points)
+			try { src.setData(fc); } catch {}
 			return;
 		}
-		
 		const filters = activeFiltersById[id] || {};
 		let filtered = fc.features.filter((f) => {
 			const props = f.properties || {};
-			
-			// Helper to get property value (works with both canonical and legacy formats)
+			// helpers to get candidate properties
 			const getProp = (cands) => {
-				// Check if canonical format
-				if (props.values && props.values[currentLang]) {
-					const langValues = props.values[currentLang];
-					const key = findFirstProp(langValues, cands);
-					return key ? cleanTextValue(langValues[key]) : '';
-				}
-				// Legacy format
 				const key = findFirstProp(props, cands);
 				return key ? cleanTextValue(props[key]) : '';
 			};
-			
 			// Common selectors
 			if (filters.villageNames && filters.villageNames.size) {
 				const v = getProp(['القرية', 'القرية:', '4.القرية:', 'Village']);
@@ -1554,22 +1453,21 @@
 				if (!isNaN(filters.lonMin) && !(x >= filters.lonMin)) return false;
 				if (!isNaN(filters.lonMax) && !(x <= filters.lonMax)) return false;
 			}
-			
-			// Per-layer specifics (using canonical property keys)
+			// Per-layer specifics
 			if (id === 'water-points') {
 				if (filters.irrigSource && filters.irrigSource.size) {
-					const v = getProp(['_6', 'مصدر مياه الريّ الرئيسي']);
+					const v = getProp(['مصدر مياه الريّ الرئيسي']);
 					let ok = false;
-					for (const val of filters.irrigSource) { if (matchesGroupedValue(id, '_6', v, val)) { ok = true; break; } }
+					for (const val of filters.irrigSource) { if (matchesGroupedValue(id, 'مصدر مياه الريّ الرئيسي', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.waterSuff && filters.waterSuff.size) {
-					const v = getProp(['_7', 'توفر المياه']);
-					let ok = false; for (const val of filters.waterSuff) { if (matchesGroupedValue(id, '_7', v, val)) { ok = true; break; } }
+					const v = getProp(['توفر المياه']);
+					let ok = false; for (const val of filters.waterSuff) { if (matchesGroupedValue(id, 'توفر المياه', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.scarcityMonthMin || filters.scarcityMonthMax) {
-					const t = getProp(['_8', ' أشهر شح المياه']);
+					const t = getProp([' أشهر شح المياه']);
 					const nums = (t.match(/[0-9]{1,2}/g) || []).map(n=>parseInt(n,10)).filter(n=>n>=1&&n<=12);
 					if (nums.length) {
 						const mn = isNaN(filters.scarcityMonthMin)?1:filters.scarcityMonthMin;
@@ -1585,10 +1483,14 @@
 					if (!ok) return false;
 				}
 				if (filters.irrigFreq && filters.irrigFreq.size) {
-					const v = getProp(['_5', 'ريّ المحصول']);
+					const v1 = getProp(['ريّ المحصول']);
+					const v2 = getProp(['ريّ المحصول 1']);
+					const v3 = getProp(['ريّ المحصول 2']);
 					let ok = false;
 					for (const val of filters.irrigFreq) {
-						if (matchesGroupedValue(id, '_5', v, val)) {
+						if (matchesGroupedValue(id, 'ريّ المحصول', v1, val) || 
+							matchesGroupedValue(id, 'ريّ المحصول', v2, val) || 
+							matchesGroupedValue(id, 'ريّ المحصول', v3, val)) {
 							ok = true; break;
 						}
 					}
@@ -1619,20 +1521,20 @@
 			}
 			if (id === 'energy-points') {
 				if (filters.energySource && filters.energySource.size) {
-					const v = getProp(['_3', 'مصدر الطاقة الرئيسي']);
-					let ok = false; for (const val of filters.energySource) { if (matchesGroupedValue(id, '_3', v, val)) { ok = true; break; } }
+					const v = getProp(['مصدر الطاقة الرئيسي']);
+					let ok = false; for (const val of filters.energySource) { if (matchesGroupedValue(id, 'مصدر الطاقة الرئيسي', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.hasSolar === true) {
-					const v = getProp(['_3', 'مصدر الطاقة الرئيسي']);
+					const v = getProp(['مصدر الطاقة الرئيسي']);
 					if (!(/شمس|الشمس|solar|طاقة شمسية/i).test(v)) return false;
 				}
 				if (filters.hasDiesel === true) {
-					const v = getProp(['_3', 'مصدر الطاقة الرئيسي']);
+					const v = getProp(['مصدر الطاقة الرئيسي']);
 					if (!(/ديزل|مولد|مازوت|generator/i).test(v)) return false;
 				}
 				if (filters.peakMin != null || filters.peakMax != null) {
-					const v = getProp(['_4', 'كمية الطاقة المستخدمة خلال موسم الذروة ']);
+					const v = getProp(['كمية الطاقة المستخدمة خلال موسم الذروة ']);
 					const n = parseNumberFromText(v);
 					if (n != null) {
 						if (!isNaN(filters.peakMin) && !(n >= filters.peakMin)) return false;
@@ -1642,48 +1544,48 @@
 			}
 			if (id === 'food-points') {
 				if (filters.production && filters.production.size) {
-					const v = getProp(['_5', 'مستوى الانتاج']);
-					let ok = false; for (const val of filters.production) { if (matchesGroupedValue(id, '_5', v, val)) { ok = true; break; } }
+					const v = getProp(['مستوى الانتاج']);
+					let ok = false; for (const val of filters.production) { if (matchesGroupedValue(id, 'مستوى الانتاج', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.tradProducts && filters.tradProducts.size) {
-					const v = getProp(['_6', 'المنتجات التقليدية الرئيسية','المتنجات التقليدية الرئيسية']);
+					const v = getProp(['المنتجات التقليدية الرئيسية','المتنجات التقليدية الرئيسية']);
 					let ok = false;
-					for (const val of filters.tradProducts) { if (matchesGroupedValue(id, '_6', v, val)) { ok = true; break; } }
+					for (const val of filters.tradProducts) { if (matchesGroupedValue(id, 'المنتجات التقليدية الرئيسية', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.hasAnimals === true) {
-					const v = getProp(['_8', 'انواع الحيوانات:','انواع الحيوانات']);
+					const v = getProp(['انواع الحيوانات:','انواع الحيوانات']);
 					const has = v && !/^\s*لا\s*$/i.test(v);
 					if (!has) return false;
 				}
 				if (filters.birdsMin != null || filters.birdsMax != null) {
-					const n = parseNumberFromText(getProp(['_9', 'عدد الطيور']));
+					const n = parseNumberFromText(getProp(['عدد الطيور']));
 					if (n != null) {
 						if (!isNaN(filters.birdsMin) && !(n >= filters.birdsMin)) return false;
 						if (!isNaN(filters.birdsMax) && !(n <= filters.birdsMax)) return false;
 					}
 				}
 				if (filters.mainCrops && filters.mainCrops.size) {
-					const v = getProp(['_3', 'المحصولين الرئيسيين',' المحصول الاول والمحصول الثاني']);
+					const v = getProp(['المحصولين الرئيسيين',' المحصول الاول والمحصول الثاني']);
 					let ok = false;
-					for (const val of filters.mainCrops) { if (matchesGroupedValue(id, '_3', v, val)) { ok = true; break; } }
+					for (const val of filters.mainCrops) { if (matchesGroupedValue(id, 'المحصولين الرئيسيين', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 			}
 			if (id === 'general-points') {
 				if (filters.farmSize && filters.farmSize.size) {
-					const v = getProp(['_3', 'حجم الزراعة']);
-					let ok = false; for (const val of filters.farmSize) { if (matchesGroupedValue(id, '_3', v, val)) { ok = true; break; } }
+					const v = getProp(['حجم الزراعة']);
+					let ok = false; for (const val of filters.farmSize) { if (matchesGroupedValue(id, 'حجم الزراعة', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.soilType && filters.soilType.size) {
-					const v = getProp(['_4', 'نوع التربة']);
-					let ok = false; for (const val of filters.soilType) { if (matchesGroupedValue(id, '_4', v, val)) { ok = true; break; } }
+					const v = getProp(['نوع التربة']);
+					let ok = false; for (const val of filters.soilType) { if (matchesGroupedValue(id, 'نوع التربة', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.climateObserved) {
-					const v = getProp(['_5', 'ملاحظة تغيرات مناخية','ملاحظة تغيرات مناخية على الزراعة']);
+					const v = getProp(['ملاحظة تغيرات مناخية','ملاحظة تغيرات مناخية على الزراعة']);
 					const yes = /نعم|yes/i.test(v);
 					if (filters.climateObserved === 'yes' && !yes) return false;
 					if (filters.climateObserved === 'no' && yes) return false;
@@ -1691,18 +1593,18 @@
 			}
 			if (id === 'regen-points') {
 				if (filters.fertilRel && filters.fertilRel.size) {
-					const v = getProp(['_5', 'الاعتماد على الاسمدة الكيميائية']);
-					let ok = false; for (const val of filters.fertilRel) { if (matchesGroupedValue(id, '_5', v, val)) { ok = true; break; } }
+					const v = getProp(['الاعتماد على الاسمدة الكيميائية']);
+					let ok = false; for (const val of filters.fertilRel) { if (matchesGroupedValue(id, 'الاعتماد على الاسمدة الكيميائية', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.pestMgmt && filters.pestMgmt.size) {
-					const v = getProp(['_6', 'مكافحة الآفات']);
-					let ok = false; for (const val of filters.pestMgmt) { if (matchesGroupedValue(id, '_6', v, val)) { ok = true; break; } }
+					const v = getProp(['مكافحة الآفات']);
+					let ok = false; for (const val of filters.pestMgmt) { if (matchesGroupedValue(id, 'مكافحة الآفات', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
-				if (filters.regenTech && filters.regenTech.size) {
-					const v = getProp(['_3', 'تقنيات الزراعة التجديدية']);
-					let ok = false; for (const val of filters.regenTech) { if (matchesGroupedValue(id, '_3', v, val)) { ok = true; break; } }
+				if (filters.pesticRel && filters.pesticRel.size) {
+					const v = getProp(['الاعتماد على المبيدات الكيميائية']);
+					let ok = false; for (const val of filters.pesticRel) { if (matchesGroupedValue(id, 'الاعتماد على المبيدات الكيميائية', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 			}
@@ -1778,44 +1680,38 @@
 		if (id === 'farmers-points') {
 			filtered = staggerDuplicateCoordinates(filtered);
 		}
-	try { 
-		src.setData({ type: 'FeatureCollection', features: filtered }); 
-		updateLayerCount(id, filtered.length);
-	} catch {}
-}
+		try { src.setData({ type: 'FeatureCollection', features: filtered }); } catch {}
+	}
 
-function buildSelect(name, values, multiple) {
-	const sel = document.createElement('select');
-	sel.name = name;
-	if (multiple) sel.multiple = true;
-	const empty = document.createElement('option'); empty.value = ''; empty.textContent = multiple ? '(none)' : '(any)'; sel.appendChild(empty);
-	values.slice(0, 100).forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o); });
-	return sel;
-}
+	function buildSelect(name, values, multiple) {
+		const sel = document.createElement('select');
+		sel.name = name;
+		if (multiple) sel.multiple = true;
+		const empty = document.createElement('option'); empty.value = ''; empty.textContent = multiple ? '(none)' : '(any)'; sel.appendChild(empty);
+		values.slice(0, 100).forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o); });
+		return sel;
+	}
 
-function createControlGroup(id) {
-	const container = document.createElement('div');
-	container.className = 'filter-group';
-	const row = document.createElement('div'); row.className = 'filter-enable-row';
-	const enable = document.createElement('input'); enable.type = 'checkbox'; enable.className = 'filter-enable'; enable.dataset.layer = id;
-	const label = document.createElement('label'); 
-	label.textContent = i18n.strings[i18n.lang].enableFilters; 
-	label.style.marginLeft = '6px';
-	label.className = 'i18n-enable-filters';
-	row.appendChild(enable); row.appendChild(label);
-	const controls = document.createElement('div'); controls.className = 'filter-controls'; controls.style.display = 'none';
-	container.appendChild(row); container.appendChild(controls);
+	function createControlGroup(id) {
+		const container = document.createElement('div');
+		container.className = 'filter-group';
+		const row = document.createElement('div'); row.className = 'filter-enable-row';
+		const enable = document.createElement('input'); enable.type = 'checkbox'; enable.className = 'filter-enable'; enable.dataset.layer = id;
+		const label = document.createElement('label'); label.textContent = 'Enable filters'; label.style.marginLeft = '6px';
+		row.appendChild(enable); row.appendChild(label);
+		const controls = document.createElement('div'); controls.className = 'filter-controls'; controls.style.display = 'none';
+		container.appendChild(row); container.appendChild(controls);
 
-	enable.addEventListener('change', () => {
-		filterEnabledById[id] = !!enable.checked;
-		controls.style.display = enable.checked ? '' : 'none';
-		applyFiltersForLayer(id);
-	});
+		enable.addEventListener('change', () => {
+			filterEnabledById[id] = !!enable.checked;
+			controls.style.display = enable.checked ? '' : 'none';
+			applyFiltersForLayer(id);
+		});
 
-	return { container, controls, enable };
-}
+		return { container, controls, enable };
+	}
 
-function addTextControl(parent, labelText, onChange) {
+	function addTextControl(parent, labelText, onChange) {
 		const wrap = document.createElement('div');
 		const lab = document.createElement('div'); lab.textContent = labelText; lab.className = 'filter-label';
 		const inp = document.createElement('input'); inp.type = 'text'; inp.className = 'filter-input-text';
@@ -1887,15 +1783,15 @@ function addTextControl(parent, labelText, onChange) {
 				const state = getOrInit(activeFiltersById, 'water-points', () => ({}));
 				addMultiSelect(controls, 'Village', uniqueValues('water-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('water-points'); });
 				addMultiSelect(controls, 'Crop type', uniqueValues('water-points', ['المحصول']), (set)=>{ state.cropTypes = set; applyFiltersForLayer('water-points'); });
-				addMultiSelect(controls, 'Irrigation source', uniqueValues('water-points', ['_6']), (set)=>{ state.irrigSource = set; applyFiltersForLayer('water-points'); });
-				addMultiSelect(controls, 'Water sufficiency', uniqueValues('water-points', ['_7']), (set)=>{ state.waterSuff = set; applyFiltersForLayer('water-points'); });
+				addMultiSelect(controls, 'Irrigation source', uniqueValues('water-points', ['مصدر مياه الريّ الرئيسي']), (set)=>{ state.irrigSource = set; applyFiltersForLayer('water-points'); });
+				addMultiSelect(controls, 'Water sufficiency', uniqueValues('water-points', ['توفر المياه']), (set)=>{ state.waterSuff = set; applyFiltersForLayer('water-points'); });
 				addMonthRange(controls, 'Scarcity month range (1-12)', (v)=>{ state.scarcityMonthMin = v; applyFiltersForLayer('water-points'); }, (v)=>{ state.scarcityMonthMax = v; applyFiltersForLayer('water-points'); });
-				addMultiSelect(controls, 'Irrigation frequency', uniqueValues('water-points', ['_5']), (set)=>{ state.irrigFreq = set; applyFiltersForLayer('water-points'); });
+				addMultiSelect(controls, 'Irrigation frequency', uniqueValues('water-points', ['ريّ المحصول']), (set)=>{ state.irrigFreq = set; applyFiltersForLayer('water-points'); });
 			},
 			'energy-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'energy-points', () => ({}));
 				addMultiSelect(controls, 'Village', uniqueValues('energy-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('energy-points'); });
-				addMultiSelect(controls, 'Energy source', uniqueValues('energy-points', ['_3']), (set)=>{ state.energySource = set; applyFiltersForLayer('energy-points'); });
+				addMultiSelect(controls, 'Energy source', uniqueValues('energy-points', ['مصدر الطاقة الرئيسي']), (set)=>{ state.energySource = set; applyFiltersForLayer('energy-points'); });
 				addCheckbox(controls, 'Has solar', (v)=>{ state.hasSolar = v; applyFiltersForLayer('energy-points'); });
 				addCheckbox(controls, 'Has diesel/generator', (v)=>{ state.hasDiesel = v; applyFiltersForLayer('energy-points'); });
 				addNumberRange(controls, 'Peak energy amount (min/max)', (v)=>{ state.peakMin = v; applyFiltersForLayer('energy-points'); }, (v)=>{ state.peakMax = v; applyFiltersForLayer('energy-points'); });
@@ -1903,17 +1799,17 @@ function addTextControl(parent, labelText, onChange) {
 			'food-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'food-points', () => ({}));
 				addMultiSelect(controls, 'Village', uniqueValues('food-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('food-points'); });
-				addMultiSelect(controls, 'Production level', uniqueValues('food-points', ['_5']), (set)=>{ state.production = set; applyFiltersForLayer('food-points'); });
-				addMultiSelect(controls, 'Traditional products', uniqueValues('food-points', ['_6']), (set)=>{ state.tradProducts = set; applyFiltersForLayer('food-points'); });
+				addMultiSelect(controls, 'Production level', uniqueValues('food-points', ['مستوى الانتاج']), (set)=>{ state.production = set; applyFiltersForLayer('food-points'); });
+				addMultiSelect(controls, 'Traditional products', uniqueValues('food-points', ['المنتجات التقليدية الرئيسية']), (set)=>{ state.tradProducts = set; applyFiltersForLayer('food-points'); });
 				addCheckbox(controls, 'Has animals', (v)=>{ state.hasAnimals = v; applyFiltersForLayer('food-points'); });
 				addNumberRange(controls, 'Bird count (min/max)', (v)=>{ state.birdsMin = v; applyFiltersForLayer('food-points'); }, (v)=>{ state.birdsMax = v; applyFiltersForLayer('food-points'); });
-				addMultiSelect(controls, 'Main crops', uniqueValues('food-points', ['_3']), (set)=>{ state.mainCrops = set; applyFiltersForLayer('food-points'); });
+				addMultiSelect(controls, 'Main crops', uniqueValues('food-points', ['المحصولين الرئيسيين']), (set)=>{ state.mainCrops = set; applyFiltersForLayer('food-points'); });
 			},
 			'general-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'general-points', () => ({}));
 				addMultiSelect(controls, 'Village', uniqueValues('general-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('general-points'); });
-				addMultiSelect(controls, 'Farm size', uniqueValues('general-points', ['_3']), (set)=>{ state.farmSize = set; applyFiltersForLayer('general-points'); });
-				addMultiSelect(controls, 'Soil type', uniqueValues('general-points', ['_4']), (set)=>{ state.soilType = set; applyFiltersForLayer('general-points'); });
+				addMultiSelect(controls, 'Farm size', uniqueValues('general-points', ['حجم الزراعة']), (set)=>{ state.farmSize = set; applyFiltersForLayer('general-points'); });
+				addMultiSelect(controls, 'Soil type', uniqueValues('general-points', ['نوع التربة']), (set)=>{ state.soilType = set; applyFiltersForLayer('general-points'); });
 				// yes/no
 				(function(controls){
 					const wrap = document.createElement('div');
@@ -1927,9 +1823,9 @@ function addTextControl(parent, labelText, onChange) {
 			'regen-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'regen-points', () => ({}));
 				addMultiSelect(controls, 'Village', uniqueValues('regen-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('regen-points'); });
-				addMultiSelect(controls, 'Fertilizer reliance', uniqueValues('regen-points', ['_5']), (set)=>{ state.fertilRel = set; applyFiltersForLayer('regen-points'); });
-				addMultiSelect(controls, 'Pest management', uniqueValues('regen-points', ['_6']), (set)=>{ state.pestMgmt = set; applyFiltersForLayer('regen-points'); });
-				addMultiSelect(controls, 'Regenerative techniques', uniqueValues('regen-points', ['_3']), (set)=>{ state.regenTech = set; applyFiltersForLayer('regen-points'); });
+				addMultiSelect(controls, 'Fertilizer reliance', uniqueValues('regen-points', ['الاعتماد على الاسمدة الكيميائية']), (set)=>{ state.fertilRel = set; applyFiltersForLayer('regen-points'); });
+				addMultiSelect(controls, 'Pest management', uniqueValues('regen-points', ['مكافحة الآفات']), (set)=>{ state.pestMgmt = set; applyFiltersForLayer('regen-points'); });
+				addMultiSelect(controls, 'Pesticide reliance', uniqueValues('regen-points', ['الاعتماد على المبيدات الكيميائية']), (set)=>{ state.pesticRel = set; applyFiltersForLayer('regen-points'); });
 			},
 			'fire-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'fire-points', () => ({}));
@@ -1990,52 +1886,6 @@ function addTextControl(parent, labelText, onChange) {
 		});
 	}
 
-	function rebuildFilterUIs() {
-		// Update 'Enable filters' text for all filter groups
-		document.querySelectorAll('.i18n-enable-filters').forEach(label => {
-			label.textContent = i18n.strings[i18n.lang].enableFilters;
-		});
-		
-		// Clear existing filter UIs
-		Object.entries(filterUIById).forEach(([id, ui]) => {
-			if (ui.container && ui.container.parentNode) {
-				ui.container.parentNode.removeChild(ui.container);
-			}
-		});
-		
-		// Reset filterUIById
-		Object.keys(filterUIById).forEach(key => delete filterUIById[key]);
-		
-		// Rebuild all filters with new language
-		setupFilterUIs();
-	}
-
-	function updateLayerCount(layerId, count) {
-		// Find the corresponding checkbox and update count badge
-		const checkbox = document.querySelector(`.layer-toggle[data-layer="${layerId}"]`);
-		if (!checkbox) return;
-		
-		const label = checkbox.parentElement;
-		if (!label) return;
-		
-		// Remove existing count badge if present
-		const existingBadge = label.querySelector('.layer-count-badge');
-		if (existingBadge) existingBadge.remove();
-		
-		// Add new count badge on separate line
-		if (count >= 0) {
-			const badge = document.createElement('span');
-			badge.className = 'section-badge layer-count-badge';
-			badge.textContent = count;
-			badge.style.display = 'block';
-			badge.style.marginLeft = '24px';
-			badge.style.marginTop = '4px';
-			badge.style.marginBottom = '4px';
-			badge.style.width = 'fit-content';
-			label.appendChild(badge);
-		}
-	}
-
 	function updateFilterGroupVisibility(targetId, parentInputEl) {
 		const ui = filterUIById[targetId];
 		if (!ui) return;
@@ -2050,49 +1900,6 @@ function addTextControl(parent, labelText, onChange) {
 			applyFiltersForLayer(targetId);
 			ui.controls.style.display = 'none';
 		}
-	}
-
-	// Refresh details panel with new language (using PropertySchemas)
-	function refreshDetailsPanel(featureId, lang) {
-		if (!featureId) return;
-		
-		// Find feature in themes
-		const themes = StateStore.getAllThemes();
-		let feature = null;
-		let themeKey = null;
-		
-		for (const [key, theme] of Object.entries(themes)) {
-			if (!theme.data || !theme.data.features) continue;
-			feature = theme.data.features.find(f => f.properties.featureId === featureId);
-			if (feature) {
-				themeKey = key;
-				break;
-			}
-		}
-		
-		if (!feature || !themeKey) {
-			console.warn(`Feature ${featureId} not found in themes`);
-			return;
-		}
-		
-		// Build details using PropertySchemas
-		const details = PropertySchemas.buildDetailsPanel(feature, themeKey, lang);
-		const content = document.getElementById('details-content');
-		if (!content) return;
-		
-		let html = '<div class="details-rows">';
-		details.forEach(({ label, value, isCommon }) => {
-			const rowClass = isCommon ? 'detail-row common-field' : 'detail-row';
-			html += `
-				<div class="${rowClass}">
-					<span class="detail-label">${label}</span>
-					<span class="detail-value">${value}</span>
-				</div>
-			`;
-		});
-		html += '</div>';
-		
-		content.innerHTML = html;
 	}
 
 	function bindPopup(id, sourceIdOverride) {
@@ -2115,27 +1922,9 @@ function addTextControl(parent, labelText, onChange) {
 			if (prev != null) map.setFeatureState({ source: sourceId, id: prev }, { hover: false });
 		});
 
-		// Click opens details sidebar (NEW: uses PropertySchemas for bilingual display)
+		// Click opens details sidebar
 		map.on('click', symbolId, (e) => {
-			const f = e.features && e.features[0];
-			if (f && f.properties) {
-				const featureId = f.properties.featureId;
-				if (featureId) {
-					// Store selected feature in state
-					StateStore.setState({ selectedFeatureId: featureId });
-					
-					// Refresh details panel with current language
-					const currentLang = StateStore.getLanguage();
-					refreshDetailsPanel(featureId, currentLang);
-					
-					// Open details panel
-					const panel = document.getElementById('details');
-					if (panel) panel.classList.remove('collapsed');
-				} else {
-					// Fallback for features without featureId (e.g., static layers)
-					openDetailsFromEvent(e.lngLat, e.point);
-				}
-			}
+			openDetailsFromEvent(e.lngLat, e.point);
 		});
 		map.on('mouseenter', symbolId, () => map.getCanvas().style.cursor = 'pointer');
 		map.on('mouseleave', symbolId, () => map.getCanvas().style.cursor = '');
@@ -2344,43 +2133,17 @@ function addTextControl(parent, labelText, onChange) {
 	}
 
 	map.on('load', () => {
-		// Sync language on startup
-		const savedLang = localStorage.getItem('uiLang') || 'en';
-		i18n.lang = savedLang;
-		StateStore.setLanguage(savedLang);
-		i18n.apply(); // Apply language to UI immediately
-		
 		setupSidebarCollapse();
 		installSidebarIcons();
 		setupBaseMapRadios();
 		setupToggles();
 		loadAllData();
 		
-		// language toggle (NEW: No data reloading, presentation only)
+		// language toggle
 		(function setupLangToggle(){
 			const btn = document.getElementById('lang-toggle');
 			if (!btn) return;
-			btn.addEventListener('click', () => {
-				const currentLang = i18n.lang;
-				const newLang = currentLang === 'ar' ? 'en' : 'ar';
-				
-				// Update i18n for UI labels (also updates localStorage)
-				i18n.setLang(newLang);
-				
-				// Update state
-				StateStore.setLanguage(newLang);
-				
-				// Refresh details panel if open (using new schema)
-				const selectedId = StateStore.getState().selectedFeatureId;
-				if (selectedId) {
-					refreshDetailsPanel(selectedId, newLang);
-				}
-				
-				// Rebuild filter UIs with new language options
-				rebuildFilterUIs();
-				
-				console.log(`✓ Language switched to ${newLang} (no data reload)`);
-			});
+			btn.addEventListener('click', () => { i18n.setLang(i18n.lang === 'ar' ? 'en' : 'ar'); });
 			i18n.apply();
 		})();
 
@@ -2466,19 +2229,81 @@ function addTextControl(parent, labelText, onChange) {
 			ensureRaster('carto-dark', ['https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'], '© CARTO');
 			ensureRaster('opentopo', ['https://tile.opentopomap.org/{z}/{x}/{y}.png'], '© OpenTopoMap');
 
+			// AlphaEarth — ensure raster variants
+			ensureAlphaEarthLayers();
+			updateAeTilesHint(getSelectedAeVariant());
 			keepBasemapsAtBottom();
 		});
 
 	}
 
+    // --- AlphaEarth UI bindings ---
+    (function bindAlphaEarthUI(){
+        const cfg = document.getElementById('alphaearth-config');
+        if (!cfg) return;
+        const enable = document.getElementById('ae-emb-enable');
+        const op = document.getElementById('ae-emb-opacity');
+        const mUrban = document.getElementById('ae-mask-urban');
+        const mForest = document.getElementById('ae-mask-forest');
+        const mDef = document.getElementById('ae-mask-defor');
+
+        const setVis = (id, on) => { if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none'); };
+        const setPaint = (id, prop, val) => { if (map.getLayer(id)) map.setPaintProperty(id, prop, val); };
+        const ensureOverlay = (id, url) => {
+            if (!map.getSource(id)) map.addSource(id, { type: 'raster', tiles: [url], tileSize: 256, minzoom: 6, maxzoom: 17, attribution: 'AlphaEarth overlay' });
+            if (!map.getLayer(id)) map.addLayer({ id, type: 'raster', source: id, layout: { visibility: 'none' }, paint: { 'raster-opacity': 1 } });
+        };
+
+        function applyEmbPaint(){
+            const opacity = Math.max(0, Math.min(1, (parseInt(op?.value||'100',10) || 0) / 100));
+            const year = getSelectedAeYear();
+            const embId = `alphaearth-${year}-emb`;
+            setPaint(embId, 'raster-opacity', opacity);
+        }
+
+        enable?.addEventListener('change', ()=>{
+            const year = getSelectedAeYear();
+            const id = `alphaearth-${year}-emb`;
+            // ensure source exists (already created in ensureAlphaEarthLayers)
+            setVis(id, !!enable.checked);
+            applyEmbPaint();
+        });
+        op?.addEventListener('input', applyEmbPaint);
+        mUrban?.addEventListener('change', ()=> { if (mUrban.checked) ensureOverlay('alphaearth-urban', fromRoot('tiles/aef_2018-mask-urban/{z}/{x}/{y}.png')); setVis('alphaearth-urban', !!mUrban.checked); });
+        mForest?.addEventListener('change', ()=> { if (mForest.checked) ensureOverlay('alphaearth-forest', fromRoot('tiles/aef_2018-mask-forest/{z}/{x}/{y}.png')); setVis('alphaearth-forest', !!mForest.checked); });
+        mDef?.addEventListener('change', ()=> { if (mDef.checked) ensureOverlay('alphaearth-defor', fromRoot('tiles/aef_2018-mask-deforestation/{z}/{x}/{y}.png')); setVis('alphaearth-defor', !!mDef.checked); });
+
+        // Initialize when AlphaEarth overlay toggle is on
+        const aeToggle = document.querySelector('input.layer-toggle[data-layer="alphaearth"]');
+        if (aeToggle) {
+            const syncPanel = () => {
+                const panel = document.getElementById('alphaearth-config');
+                if (panel) panel.style.display = aeToggle.checked ? '' : 'none';
+            };
+            syncPanel();
+            aeToggle.addEventListener('change', () => {
+                syncPanel();
+                if (aeToggle.checked) {
+                    const year = getSelectedAeYear();
+                    const embId = `alphaearth-${year}-emb`;
+                    if (enable?.checked) { setVis(embId, true); applyEmbPaint(); }
+                    applyEmbPaint();
+                    keepBasemapsAtBottom();
+                }
+            });
+        }
+    })();
+
 	function keepBasemapsAtBottom() {
 		const baseIds = ['osm','esri','carto-light','carto-dark','opentopo'];
+		const alphaEarthIds = ['alphaearth-2018', 'alphaearth-2024', 'alphaearth-pca3', 'alphaearth-kmeans5'];
 		const layers = (map.getStyle() && map.getStyle().layers) ? map.getStyle().layers.slice() : [];
 		
 		if (!layers.length) return;
 		
-		// Create set for easier lookup
+		// Create sets for easier lookup
 		const basemapSet = new Set(baseIds.filter(id => map.getLayer(id)));
+		const alphaEarthSet = new Set(alphaEarthIds.filter(id => map.getLayer(id)));
 		
 		// Find the topmost basemap layer to use as reference
 		let topBasemap = null;
@@ -2488,7 +2313,16 @@ function addTextControl(parent, labelText, onChange) {
 		
 		if (!topBasemap) return;
 		
-		// Ensure all data layers are above basemaps
+		// Step 1: Move AlphaEarth layers above basemaps but maintain their relative order
+		let lastAlphaEarthLayer = topBasemap;
+		for (const alphaId of alphaEarthIds) {
+			if (map.getLayer(alphaId)) {
+				map.moveLayer(alphaId, lastAlphaEarthLayer);
+				lastAlphaEarthLayer = alphaId;
+			}
+		}
+		
+		// Step 2: Ensure all data layers are above AlphaEarth
 		const dataLayerPatterns = [
 			// Point layer patterns (bubbles should be below symbols)
 			'-bubble',
@@ -2505,8 +2339,8 @@ function addTextControl(parent, labelText, onChange) {
 		// Get all data layers that should be on top
 		const dataLayers = layers.filter(layer => {
 			const layerId = layer.id;
-			// Skip basemaps
-			if (basemapSet.has(layerId)) return false;
+			// Skip basemaps and AlphaEarth
+			if (basemapSet.has(layerId) || alphaEarthSet.has(layerId)) return false;
 			// Include layers matching our data patterns or other non-basemap layers
 			return dataLayerPatterns.some(pattern => layerId.includes(pattern)) || 
 				   (!layerId.includes('osm') && !layerId.includes('esri') && !layerId.includes('carto') && !layerId.includes('opentopo'));
@@ -2540,7 +2374,7 @@ function addTextControl(parent, labelText, onChange) {
 			return 0;
 		});
 		
-		// Move data layers above basemaps, maintaining their internal order
+		// Move data layers above AlphaEarth, maintaining their internal order
 		for (const layer of dataLayers) {
 			try {
 				map.moveLayer(layer.id);  // Move to top
@@ -2587,7 +2421,7 @@ function addTextControl(parent, labelText, onChange) {
 	}
 
 	function addAiHeatmapLayer(id, type) {
-		// Use fill-extrusion (3D) or fill for grid cell visualization
+		// Use the new Grid Predictions for a continuous heatmap
 		const sourceId = 'ai-grid';
 		const url = fromRoot('data/geojson/AI_Grid_Predictions.geojson');
 		
@@ -2596,83 +2430,96 @@ function addTextControl(parent, labelText, onChange) {
 		}
 		
 		let weightProp;
-		let colorStops;
+		let colorRamp;
 		
 		if (type === 'regen') {
+			// Weight by Probability (0.0 to 1.0)
 			weightProp = 'Prob_Regen';
-			colorStops = [
-				0, '#d4edda',
-				0.2, '#a8ddb5',
-				0.4, '#7bccc4',
-				0.6, '#43a2ca',
-				0.8, '#0868ac',
-				1, '#084081'
+			// Green ramp - smooth gradient
+			colorRamp = [
+				'interpolate', ['linear'], ['heatmap-density'],
+				0, 'rgba(255, 255, 255, 0)',
+				0.3, 'rgba(255, 255, 255, 0)', // Transparent until significant density
+				0.5, 'rgba(144, 238, 144, 0.6)',
+				0.8, 'rgba(46, 204, 113, 0.8)',
+				1, 'rgba(39, 174, 96, 0.95)'
 			];
 		} else if (type === 'water') {
+			// Weight by Probability (0.0 to 1.0)
 			weightProp = 'Prob_Water';
-			colorStops = [
-				0, '#fee5d9',
-				0.2, '#fcbba1',
-				0.4, '#fc9272',
-				0.6, '#fb6a4a',
-				0.8, '#de2d26',
-				1, '#a50f15'
+			// Red ramp - smooth gradient
+			colorRamp = [
+				'interpolate', ['linear'], ['heatmap-density'],
+				0, 'rgba(255, 255, 255, 0)',
+				0.3, 'rgba(255, 255, 255, 0)', // Transparent until significant density
+				0.5, 'rgba(255, 160, 122, 0.6)',
+				0.8, 'rgba(231, 76, 60, 0.8)',
+				1, 'rgba(192, 57, 43, 0.95)'
 			];
 		} else if (type === 'econ') {
+			// Weight by Probability (0.0 to 1.0)
 			weightProp = 'Prob_Econ';
-			colorStops = [
-				0, '#ffffcc',
-				0.2, '#d9f0a3',
-				0.4, '#addd8e',
-				0.6, '#78c679',
-				0.8, '#31a354',
-				1, '#006837'
+			// Yellow -> Green ramp
+			colorRamp = [
+				'interpolate', ['linear'], ['heatmap-density'],
+				0, 'rgba(255, 255, 255, 0)',
+				0.3, 'rgba(255, 255, 255, 0)', // Transparent until significant density
+				0.5, 'rgba(241, 196, 15, 0.6)',
+				0.8, 'rgba(39, 174, 96, 0.9)'
 			];
 		} else if (type === 'labor') {
+			// Weight by Probability (0.0 to 1.0)
 			weightProp = 'Prob_Labor';
-			colorStops = [
-				0, '#efedf5',
-				0.2, '#dadaeb',
-				0.4, '#bcbddc',
-				0.6, '#9e9ac8',
-				0.8, '#756bb1',
-				1, '#54278f'
+			// Purple ramp
+			colorRamp = [
+				'interpolate', ['linear'], ['heatmap-density'],
+				0, 'rgba(255, 255, 255, 0)',
+				0.3, 'rgba(255, 255, 255, 0)',
+				0.5, 'rgba(155, 89, 182, 0.6)',
+				0.8, 'rgba(142, 68, 173, 0.9)'
 			];
 		} else if (type === 'climate') {
+			// Weight by Probability (0.0 to 1.0)
 			weightProp = 'Prob_Climate';
-			colorStops = [
-				0, '#deebf7',
-				0.2, '#c6dbef',
-				0.4, '#9ecae1',
-				0.6, '#6baed6',
-				0.8, '#3182bd',
-				1, '#08519c'
+			// Blue ramp
+			colorRamp = [
+				'interpolate', ['linear'], ['heatmap-density'],
+				0, 'rgba(255, 255, 255, 0)',
+				0.3, 'rgba(255, 255, 255, 0)',
+				0.5, 'rgba(52, 152, 219, 0.6)',
+				0.8, 'rgba(41, 128, 185, 0.9)'
 			];
 		}
 
-		// Add circle layer with large radius and high blur for smooth coverage
 		if (!map.getLayer(id)) {
 			map.addLayer({
 				id: id,
-				type: 'circle',
+				type: 'heatmap',
 				source: sourceId,
+				maxzoom: 16,
 				layout: { visibility: 'none' },
 				paint: {
-					'circle-radius': [
-						'interpolate', ['linear'], ['zoom'],
-						8, 30,
-						10, 40,
-						12, 50,
-						14, 60,
-						16, 70,
-						18, 80
-					],
-					'circle-color': [
+					// Weight is now directly the probability (0-1)
+					'heatmap-weight': [
 						'interpolate', ['linear'], ['get', weightProp],
-						...colorStops
+						0, 0,
+						1, 1
 					],
-					'circle-blur': 1.5,  // Maximum blur for smooth gradient
-					'circle-opacity': 0.65
+					// Adjusted for high density grid (21k points)
+					// Lower intensity to prevent saturation
+					'heatmap-intensity': [
+						'interpolate', ['linear'], ['zoom'],
+						8, 0.3,
+						14, 1.0
+					],
+					// Radius needs to be small enough to show detail but large enough to blend
+					'heatmap-radius': [
+						'interpolate', ['linear'], ['zoom'],
+						8, 5,
+						14, 20
+					],
+					'heatmap-color': colorRamp,
+					'heatmap-opacity': 0.8
 				}
 			});
 		}
@@ -2770,50 +2617,20 @@ function addTextControl(parent, labelText, onChange) {
 		legend.innerHTML = html || '<div style="color:#666">Select an AI layer</div>';
 	}
 
-	// Load all thematic layers using new canonical architecture
+	// Load all thematic layers, then derive a de-overlapped composite view
 	async function loadAllData() {
-		// Initialize state management
-		StateStore.restoreState();
-		
-		// Initialize IndexedDB data loader
-		await DataLoader.init();
-		
-		// Load canonical bilingual theme data with progress
-		console.log('Loading canonical bilingual data...');
-		const themes = await DataLoader.loadAllThemes((loaded, total, key) => {
-			console.log(`✓ Loaded ${loaded}/${total}: ${key}`);
-		});
-		
-		// Store themes in state
-		StateStore.setState({ themes, themesLoaded: true });
-		
-		// Add canonical layers to map
-		addCanonicalLayer('water-points', themes.water);
-		addCanonicalLayer('energy-points', themes.energy);
-		addCanonicalLayer('food-points', themes.food);
-		addCanonicalLayer('general-points', themes.general);
-		addCanonicalLayer('regen-points', themes.regen);
-		
-		// Load static layers (fire, preservations, predictions)
-		const staticLayers = await DataLoader.loadStaticLayers();
-		StateStore.setState({ staticLayers });
-		
+		addGeoJsonLayer('water-points', fromRoot('data/geojson/Water.geojson'), '#1abc9c');
+		addGeoJsonLayer('energy-points', fromRoot('data/geojson/Energy.geojson'), '#f39c12');
+		addGeoJsonLayer('food-points', fromRoot('data/geojson/Food.geojson'), '#9b59b6');
+		addGeoJsonLayer('general-points', fromRoot('data/geojson/General_Info.geojson'), '#2980b9');
+		addGeoJsonLayer('regen-points', fromRoot('data/geojson/Regenerative_Agriculture.geojson'), '#27ae60');
 		// Fire: add raw (for heatmap) and clustered copy for symbols
-		if (staticLayers.fire) {
-			addGeoJsonLayer('fire-points-raw', staticLayers.fire, '#e74c3c', false);
-			addGeoJsonLayer('fire-points', staticLayers.fire, '#e74c3c', true);
-			updateLayerCount('fire-points', staticLayers.fire.features.length);
-		}
+		addGeoJsonLayer('fire-points-raw', fromRoot('data/geojson/fire.geojson'), '#e74c3c');
+		addGeoJsonLayer('fire-points', fromRoot('data/geojson/fire.geojson'), '#e74c3c');
 		// Farmers comprehensive survey (using Model_Predictions to include AI data)
-		if (staticLayers.predictions) {
-			addGeoJsonLayer('farmers-points', staticLayers.predictions, '#16a085', true);
-			updateLayerCount('farmers-points', staticLayers.predictions.features.length);
-		}
+		addGeoJsonLayer('farmers-points', fromRoot('data/geojson/Model_Predictions.geojson'), '#16a085');
 		// Preservations polygons
-		if (staticLayers.preservations) {
-			addPolygonLayer('preservations-poly', staticLayers.preservations, '#2ecc71');
-			updateLayerCount('preservations-poly', staticLayers.preservations.features.length);
-		}
+		addPolygonLayer('preservations-poly', fromRoot('data/geojson/Preservations.geojson'), '#2ecc71');
 		
 		// Boundary Layer
 		addBoundaryLayer();
@@ -2822,8 +2639,7 @@ function addTextControl(parent, labelText, onChange) {
 		addAiHeatmapLayer('ai-regen', 'regen');
 		addAiHeatmapLayer('ai-water', 'water');
 		addAiHeatmapLayer('ai-econ', 'econ');
-		// Skip labor layer - insufficient training data (only 4 positive samples)
-		// addAiHeatmapLayer('ai-labor', 'labor');
+		addAiHeatmapLayer('ai-labor', 'labor');
 		addAiHeatmapLayer('ai-climate', 'climate');
 
 		// Preload originals for filtering and unique value extraction
@@ -2985,7 +2801,7 @@ function addTextControl(parent, labelText, onChange) {
 	});
 
 	// Layer counter badge
-	function updateTotalLayerCount() {
+	function updateLayerCount() {
 		const checkedLayers = document.querySelectorAll('.layer-toggle:checked').length;
 		const heatmapChecked = document.getElementById('toggle-heatmap')?.checked ? 1 : 0;
 		const total = checkedLayers + heatmapChecked;
@@ -3000,7 +2816,7 @@ function addTextControl(parent, labelText, onChange) {
 	// Update counter when layers toggle
 	document.addEventListener('change', (e) => {
 		if (e.target.classList.contains('layer-toggle') || e.target.id === 'toggle-heatmap') {
-			updateTotalLayerCount();
+			updateLayerCount();
 		}
 	});
 
@@ -3060,7 +2876,7 @@ function addTextControl(parent, labelText, onChange) {
 	});
 
 	// Initialize layer counter
-	updateTotalLayerCount();
+	updateLayerCount();
 
 	// Add smooth transitions for map interactions
 	map.on('movestart', () => {

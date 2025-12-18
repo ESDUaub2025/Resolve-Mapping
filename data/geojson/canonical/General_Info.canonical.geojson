@@ -1,0 +1,1750 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "General_Info_0_6a49e804",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.665814,
+          33.700328
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_0_6a49e804",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "الباروك",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة رملية طينية  طمية ( ورملية) كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة الصقيع موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية  زيادة الآفات والأمراض صعوبات التلقيح والإثمار لا يوجد تأثير كبير"
+          },
+          "en": {
+            "القرية": "Al-Barouk",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Sandy, loamy (and sandy) calcareous soil",
+            "_5": "High temperatures, decreased precipitation, increased frost, heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting, no significant impact"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_1_d46a47b9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.642204,
+          33.72637
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_1_d46a47b9",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "البيره",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Al-Bireh",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_2_beb4d6c1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.506372,
+          33.669234
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_2_beb4d6c1",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "الجاهليه",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Al-Jahiliyeh",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_3_77e7e48f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4742739,
+          33.7872496
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_3_77e7e48f",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "الدامور",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض  صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Damour",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Sandy loam soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_4_af6133cd",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.478311,
+          33.670542
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_4_af6133cd",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "الدبيه",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Al-Debbiyeh",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_5_15251d29",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.420882,
+          33.691676
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_5_15251d29",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "السعديات",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج  زيادة الآفات والأمراض صعوبات في التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Al-Saadiyat",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_6_0662c32d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.584758,
+          33.681278
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_6_0662c32d",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "السمقانيه",
+            "_3": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Al-Simqaniyeh",
+            "_3": "Less than 1 hectare (< 10,000 m2)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_7_82d71674",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.584634,
+          33.649213
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_7_82d71674",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "الكحلونيه",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Al-Kahlouniyeh",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_8_576e9fbf",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.44606,
+          33.71777
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_8_576e9fbf",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "المشرف",
+            "_3": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية  زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Al-Moshref",
+            "_3": "Less than 1 hectare (< 10,000 m2)",
+            "_4": "Sandy loam soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_9_f4eaeb16",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.536232,
+          33.609922
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_9_f4eaeb16",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "المطله",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية"
+          },
+          "en": {
+            "القرية": "Al-Mtalleh",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Low production delay in agricultural seasons"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_10_7075e2a0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.458423,
+          33.605784
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_10_7075e2a0",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "المغيزيه",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "نقص هطول الأمطار زيادة الصقيع",
+            "_6": "انخفاض الإنتاج صعوبات في التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Al-Mughayziyeh",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "Decreased precipitation increased frost",
+            "_6": "Low production, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_11_dabd8cfb",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.675787,
+          33.732563
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_11_dabd8cfb",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "الورهانيه",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض  صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Al-Warhaniyeh",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_12_3685c090",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.609769,
+          33.599501
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_12_3685c090",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "باتر",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة رملية طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض  صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Bater",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Sandy loam soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_13_3212cf2a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.667094,
+          33.70392
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_13_3212cf2a",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "باروك",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة رملية طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Barouk",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Sandy clay soil",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_14_b947f765",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.651094,
+          33.698393
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_14_b947f765",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "بتلون",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع تغيرات في الطقس وتقلبات",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Btalloun",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Sandy loam soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, increased heat waves, frost, weather changes and fluctuations",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_15_29b24960",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.419634,
+          33.645555
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_15_29b24960",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "برجا",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية  زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Barja",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_16_3a88427f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.649427,
+          33.712167
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_16_3a88427f",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "بريح",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض  صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Breih",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_17_dc1e9152",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.553149,
+          33.713315
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_17_dc1e9152",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "بشتفين",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج  زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Bshtfine",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decreased production Increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_18_d7b3b94c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.619152,
+          33.659884
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_18_d7b3b94c",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "بطمه",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية  زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Btameh",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_19_fd1750d0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.615028,
+          33.635071
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_19_fd1750d0",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "بعذران",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": null,
+            "_6": "لا يوجد تأثير كبير"
+          },
+          "en": {
+            "القرية": "Baatharan",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Clay soil",
+            "_5": null,
+            "_6": "No big effect"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_20_000555a9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.56179,
+          33.67652
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_20_000555a9",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "بعقلين",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة حمضية (رملية مع وجود أشجار الصنوبر الحجري)  طمية ( طينية ورملية) كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار تغيير توقيت الزراعة ممل يؤثر على موسم الانتاج زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Baaqline",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Acidic soil (sandy with the presence of stone pine trees), loam (clay and sandy), and calcareous",
+            "_5": "High temperatures, lack of rainfall, changing the timing of planting, affecting the production season, increasing heat waves, frost",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_21_e81d6f97",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.489265,
+          33.587886
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_21_e81d6f97",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "بكيفا",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة",
+            "_6": "زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Bkifa",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Clay soil",
+            "_5": "High temperatures",
+            "_6": "Increase in pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_22_352e38a3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.600025,
+          33.660837
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_22_352e38a3",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "جديده الشوف",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "صعوبات في التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Jadideh El Chouf",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_23_98c72dba",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.604788,
+          33.613917
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_23_98c72dba",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "حاره جندل الشوف",
+            "_3": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Haret Jandal El Chouf",
+            "_3": "Less than 1 hectare (< 10,000 m2)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Decreased production Increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_24_a0e7d35e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.505779,
+          33.580986
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_24_a0e7d35e",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "خربه بسري",
+            "_3": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "_4": "تربة كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج"
+          },
+          "en": {
+            "القرية": "Khirbet Bosri",
+            "_3": "Less than 1 hectare (< 10,000 m2)",
+            "_4": "Calcareous soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Low production"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_25_6fe21d19",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.637897,
+          33.641948
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_25_6fe21d19",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "خريبه الشوف",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار "
+          },
+          "en": {
+            "القرية": "Khraybeh El Chouf",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_26_bbe5a36b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.497831,
+          33.647623
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_26_bbe5a36b",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "داريا الشوف",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Daraya El Chouf",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_27_1ba9a41a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.501313,
+          33.693695
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_27_1ba9a41a",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "دميت الشوف",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Dmit El Chouf",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_28_ae391cf7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.552238,
+          33.697564
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_28_ae391cf7",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "دير القمر",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Deir El Qamar",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Sandy loam soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_29_43f61cce",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.537821,
+          33.687595
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_29_43f61cce",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "دير دوريت",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية  زيادة الآفات والأمراض صعوبات التلقيح والإثمار لا يوجد تأثير كبير"
+          },
+          "en": {
+            "القرية": "Deir Dourit",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting, no significant impact"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_30_78916db8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.521244,
+          33.699085
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_30_78916db8",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "ديربابا",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار "
+          },
+          "en": {
+            "القرية": "Deir Baba",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_31_3998c0d3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.698774,
+          33.802187
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_31_3998c0d3",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "شارون",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Charoun",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_32_987d3347",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.483853,
+          33.623159
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_32_987d3347",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "شحيم",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر المياه",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Chahim",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "Higher temperatures, decreased precipitation, increased heat waves, and water",
+            "_6": "Low production, delay in agricultural seasons, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_33_21059675",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.558137,
+          33.698087
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_33_21059675",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "شواليق دير القمر",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Chawalik Deir El Qamar",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_34_9ca61fba",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.508108,
+          33.627229
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_34_9ca61fba",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "عانوت",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج زيادة الآفات والأمراض  صعوبات في التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Aanout",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_35_2c22766d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.563865,
+          33.666782
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_35_2c22766d",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "عترين",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Atrine",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Decreased production Increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_36_42d8bf7e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.402552,
+          33.594209
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_36_42d8bf7e",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "علمان",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية) كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Aalman",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Sandy loam (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_37_58e524c7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.602925,
+          33.644221
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_37_58e524c7",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "عماطور",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة طينية  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج  صعوبات في التلقيح والإثمار زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Ammatour",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Calcareous clay soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, difficulties in pollination and fruiting, increase in pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_38_b9dac3f2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.689488,
+          33.745791
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_38_b9dac3f2",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "عين زحلتا",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة رملية طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض  صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Ain Zahlta",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Sandy loam soil (clay and sandy)",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_39_acda828c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.60714,
+          33.64873
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_39_acda828c",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "عين قاني",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية"
+          },
+          "en": {
+            "القرية": "Ain Qani",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Low production delay in agricultural seasons"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_40_71b51fb8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.61271,
+          33.675386
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_40_71b51fb8",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "عين وزين",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة الصقيع موجات الحر",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Ain W Zain",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy (clay and sandy) calcareous soil",
+            "_5": "High temperatures, decreased precipitation, increased frost, heat waves",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_41_233bbcf9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.557868,
+          33.639527
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_41_233bbcf9",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "غريفه",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية) ",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر كثرة الحشرات بسبب الصقيع",
+            "_6": "زيادة الآفات والأمراض  صعوبات في التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Gharifeh",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of rainfall, increased heat waves, and an abundance of insects due to frost",
+            "_6": "Increased pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_42_082b5fc1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.449825,
+          33.621551
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_42_082b5fc1",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "كترمايا الشوف",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Ktermaya El Chouf",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Decreased production Increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_43_4dbd16e6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50513,
+          33.692873
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_43_4dbd16e6",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "كفرحيم",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار في غير وقتها ونقص زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج  لا يوجد تأثير كبير"
+          },
+          "en": {
+            "القرية": "Kfarhaym",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Sandy loam soil (clay and sandy)",
+            "_5": "High temperatures, decreased untimely rainfall, and decreased heat waves",
+            "_6": "Low production no significant impact"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_44_02d63c29",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.532918,
+          33.698864
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_44_02d63c29",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "كفرفاقود",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج زيادة الآفات والأمراض  صعوبات في التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Kfarfakoud",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_45_613ecc10",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.62737,
+          33.696393
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_45_613ecc10",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "كفرنبرخ",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة رملية طمية ( طينية ورملية)  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر",
+            "_6": "انخفاض الإنتاج  زيادة الآفات والأمراض تأخير في المواسم الزراعية"
+          },
+          "en": {
+            "القرية": "Kfarnabrakh",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Sandy loam (clay and sandy) calcareous soil",
+            "_5": "High temperatures, decreased rainfall, and increased heat waves",
+            "_6": "Decrease in production, increase in pests and diseases, delay in agricultural seasons"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_46_b43ba294",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.617809,
+          33.721115
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_46_b43ba294",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "مجدل المعوش",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)  كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض "
+          },
+          "en": {
+            "القرية": "Majdel El Meouch",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decreased production, delay in agricultural seasons, increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_47_cfca7123",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.608259,
+          33.658863
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_47_cfca7123",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "مختاره",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Mokhtara",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Increase in pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_48_44b205d1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.657929,
+          33.634098
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_48_44b205d1",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "مرستي",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية) كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Mrosti",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Sandy loam (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_49_c37c89fb",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.480528,
+          33.607921
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_49_c37c89fb",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "مزبود",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية) كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع الماء في فصل الشتاء",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض  صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Mazboud",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Sandy loam (clay and sandy) calcareous soil",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, water frosts in the winter",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_50_aecda907",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.588006,
+          33.633471
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_50_aecda907",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "مزرعه الشوف",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة رملية  طمية ( طينية ورملية) كلسية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة الصقيع موجات الحر",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Mazraat El Chouf",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Sandy loam (clay and sandy) calcareous soil",
+            "_5": "High temperatures, decreased precipitation, increased frost, heat waves",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_51_57f4954a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.582526,
+          33.633939
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_51_57f4954a",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "مزرعهالشوف",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Mazraat El Chouf",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Decreased production Increased pests and diseases"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_52_5d9d12c9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50397,
+          33.594348
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_52_5d9d12c9",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "مزموره",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Mazmoura",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, decreased precipitation, increased frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_53_8fb98834",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.663209,
+          33.687128
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_53_8fb98834",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "معاصر الشوف",
+            "_3": "أقل من 5 دونم (< 5000 متر مربع)",
+            "_4": "تربة طمية ( طينية ورملية)",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج تأخير في المواسم الزراعية  زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Maaser El Chouf",
+            "_3": "Less than 5 dunums (< 5000 square metres)",
+            "_4": "Loamy soil (clay and sandy)",
+            "_5": "High temperatures, lack of precipitation, increased heat waves, frost",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_54_273574be",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.616725,
+          33.606021
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_54_273574be",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "نيحا الشوف",
+            "_3": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "_4": "تربة طينية  كلسية",
+            "_5": "نقص هطول الأمطار زيادة موجات الحر الصقيع",
+            "_6": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض صعوبات التلقيح والإثمار"
+          },
+          "en": {
+            "القرية": "Niha El Chouf",
+            "_3": "More than 2 hectares (>20,000 m2)",
+            "_4": "Calcareous clay soil",
+            "_5": "Lack of precipitation increases heatwaves, frosts",
+            "_6": "Decrease in production, delay in agricultural seasons, increase in pests and diseases, difficulties in pollination and fruiting"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "General_Info_55_849bb2ae",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.668631,
+          33.73627
+        ]
+      },
+      "properties": {
+        "featureId": "General_Info_55_849bb2ae",
+        "theme": "General_Info",
+        "values": {
+          "ar": {
+            "القرية": "ورهانيه",
+            "_3": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "_4": "تربة طينية",
+            "_5": "ارتفاع درجات الحرارة نقص هطول الأمطار",
+            "_6": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "القرية": "Warhaniyeh",
+            "_3": "More than 1 hectare (>10,000 m2)",
+            "_4": "Clay soil",
+            "_5": "High temperatures, lack of precipitation",
+            "_6": "Decreased production Increased pests and diseases"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "theme": "General_Info",
+    "generatedAt": "2025-12-17T16:47:28.150783Z",
+    "featureCount": 56,
+    "sources": {
+      "arabic": "data/layers/Arabic/Generalinfo_1.0.csv",
+      "english": "data/layers/English/Generalinfo_1.0.en.csv"
+    }
+  }
+}

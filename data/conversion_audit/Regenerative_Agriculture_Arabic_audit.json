@@ -1,0 +1,35 @@
+{
+  "source_file": "Regenerative_1.0.csv",
+  "language": "Arabic",
+  "timestamp": "2025-12-17T16:57:56.301170",
+  "source_hash": "adfcac10d579fbfef7403aff308cc95404143c456867f494915462e66e176788",
+  "output_hash": "63f953b6594519f18a5bca8b369329a8d6ad9817a03ae8c5f419bfe1463a2955",
+  "schema": {
+    "row_count": 63,
+    "column_count": 8,
+    "columns": [
+      "القرية:",
+      "Y",
+      "X",
+      "   تقنيات الزراعة التجديدية:",
+      "  أنواع محسنات التربة:",
+      " الاسمدة الكيميائية:",
+      "مكافحة الآفات:",
+      " المبيدات الكيميائية:"
+    ]
+  },
+  "features": {
+    "total_created": 63,
+    "with_valid_geometry": 63,
+    "with_null_geometry": 0
+  },
+  "warnings": [],
+  "validation": {
+    "passed": true,
+    "row_feature_match": true
+  },
+  "coordinate_system": {
+    "crs": "WGS84",
+    "epsg": "EPSG:4326"
+  }
+}

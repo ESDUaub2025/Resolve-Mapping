@@ -1,0 +1,1939 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "Water_0_ad3baeef",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.670304,
+          33.709308
+        ]
+      },
+      "properties": {
+        "featureId": "Water_0_ad3baeef",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "الباروك",
+            "المحصول": "التفاح , البندورة من شهر والبندورة بندورة خيار خضار و فاكهة دراق ملفوف",
+            "_4": "آب  ايلول تموز حزيران",
+            "_5": "كل يومين  مرة أسبوعياً ١٥ يوم مرتين",
+            "_6": "بئر جوفي قنوات ري  نقل المياه بالصهاريج نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول   تموز"
+          },
+          "en": {
+            "القرية": "Al-Barouk",
+            "المحصول": "Apples, tomatoes from the month, tomatoes, tomatoes, cucumbers, vegetables and fruits, peaches, cabbage",
+            "_4": "August September July June",
+            "_5": "Every two days, once a week, 15 days, twice",
+            "_6": "Underground well, irrigation channels, water transport by tanks, river, stream",
+            "_7": "Sometimes enough",
+            "_8": "August September July"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_1_41f30779",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.646694,
+          33.73535
+        ]
+      },
+      "properties": {
+        "featureId": "Water_1_41f30779",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "البيره",
+            "المحصول": null,
+            "_4": null,
+            "_5": "كل يومين",
+            "_6": "قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": null
+          },
+          "en": {
+            "القرية": "Al-Bireh",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Every two days",
+            "_6": "Irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_2_fa0802b2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.510862,
+          33.678214
+        ]
+      },
+      "properties": {
+        "featureId": "Water_2_fa0802b2",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "الجاهليه",
+            "المحصول": null,
+            "_4": "أيار تموز",
+            "_5": "مرة أسبوعياً  مرتين",
+            "_6": "قنوات ري",
+            "_7": "نادراً ما تكون",
+            "_8": "تموز حزيران و آب"
+          },
+          "en": {
+            "القرية": "Al-Jahiliyeh",
+            "المحصول": null,
+            "_4": "May July",
+            "_5": "Once a week, twice",
+            "_6": "Irrigation channels",
+            "_7": "It rarely is",
+            "_8": "July, June and August"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_3_10620191",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4787639,
+          33.7962296
+        ]
+      },
+      "properties": {
+        "featureId": "Water_3_10620191",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "الدامور",
+            "المحصول": null,
+            "_4": "تشرين الثاني شباط  حزيران من الاول لغاية اذار نيسان",
+            "_5": "كل يومين  مرة أسبوعياً ١٥ يوم مرتين",
+            "_6": "بئر جوفي  قنوات ري نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "آب و ايلول تموز وآب حزيران"
+          },
+          "en": {
+            "القرية": "Damour",
+            "المحصول": null,
+            "_4": "November February June from 1st to April",
+            "_5": "Every two days, once a week, 15 days, twice",
+            "_6": "Underground well, irrigation channels, river, watercourse",
+            "_7": "Sometimes enough",
+            "_8": "August, September, July and August June"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_4_2c365fe6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.482801,
+          33.679522
+        ]
+      },
+      "properties": {
+        "featureId": "Water_4_2c365fe6",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "الدبيه",
+            "المحصول": null,
+            "_4": null,
+            "_5": "غير مروي  مرتين أسبوعياً",
+            "_6": "نقل المياه بالصهاريج",
+            "_7": "نادراً ما تكون",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Al-Debbiyeh",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Not irrigated twice a week",
+            "_6": "Water transportation by tankers",
+            "_7": "It rarely is",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_5_e9cb60c2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.425372,
+          33.700656
+        ]
+      },
+      "properties": {
+        "featureId": "Water_5_e9cb60c2",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "السعديات",
+            "المحصول": null,
+            "_4": null,
+            "_5": "مرتين أسبوعياً",
+            "_6": "بئر جوفي",
+            "_7": "أحياناً كافية",
+            "_8": "آبتداء من شهر ايلول لغاية تشرين الثاني"
+          },
+          "en": {
+            "القرية": "Al-Saadiyat",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Twice a week",
+            "_6": "Underground well",
+            "_7": "Sometimes enough",
+            "_8": "Starting from September until November"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_6_9d1142a3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.589248,
+          33.690258
+        ]
+      },
+      "properties": {
+        "featureId": "Water_6_9d1142a3",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "السمقانيه",
+            "المحصول": null,
+            "_4": "نيسان أيار",
+            "_5": "مرة أسبوعياً",
+            "_6": "قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": "ايلول"
+          },
+          "en": {
+            "القرية": "Al-Simqaniyeh",
+            "المحصول": null,
+            "_4": "April May",
+            "_5": "Once a week",
+            "_6": "Irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": "September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_7_6d8768d8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.668402,
+          33.732361
+        ]
+      },
+      "properties": {
+        "featureId": "Water_7_6d8768d8",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "الكحلونيه",
+            "المحصول": "الخضار  الزيتون رمان زيتون تين مقتي نصوب",
+            "_4": "تشرين الثاني  نيسان",
+            "_5": "كل يومين  مرة أسبوعياً شهر ١٥ يوم مرتين",
+            "_6": "فقط مياه الأمطار   تجميع نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Al-Kahlouniyeh",
+            "المحصول": "Vegetables, olives, pomegranate, olives, figs, makti, saffron",
+            "_4": "November April",
+            "_5": "Every two days, once a week, twice a month, 15 days",
+            "_6": "Only rainwater is collected and transported by tankers",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_8_4fcd5d7b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.45055,
+          33.72675
+        ]
+      },
+      "properties": {
+        "featureId": "Water_8_4fcd5d7b",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "المشرف",
+            "المحصول": "الموز والأفوكادو  موز أفوكادو",
+            "_4": "تشرين الأول نيسان  حزيران",
+            "_5": "مرة كل ١٥ يوم",
+            "_6": "نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": " شهري تموز وآب"
+          },
+          "en": {
+            "القرية": "Al-Moshref",
+            "المحصول": "Banana and avocado Banana avocado",
+            "_4": "October April June",
+            "_5": "Once every 15 days",
+            "_6": "River, water stream",
+            "_7": "Sometimes enough",
+            "_8": "The months of July and August"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_9_1499af50",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.540722,
+          33.618902
+        ]
+      },
+      "properties": {
+        "featureId": "Water_9_1499af50",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "المطله",
+            "المحصول": null,
+            "_4": "ايلول",
+            "_5": "مرتين أسبوعياً",
+            "_6": "فقط مياه الأمطار",
+            "_7": "أحياناً كافية",
+            "_8": "ايلول"
+          },
+          "en": {
+            "القرية": "Al-Mtalleh",
+            "المحصول": null,
+            "_4": "September",
+            "_5": "Twice a week",
+            "_6": "Only rain water",
+            "_7": "Sometimes enough",
+            "_8": "September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_10_6fb9c1ee",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.462913,
+          33.614764
+        ]
+      },
+      "properties": {
+        "featureId": "Water_10_6fb9c1ee",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "المغيزيه",
+            "المحصول": null,
+            "_4": "كانون الأول آذار",
+            "_5": "مرة أسبوعياً",
+            "_6": "اشتراك بمياه الدوله",
+            "_7": "أحياناً كافية",
+            "_8": "شهري آب ايلول"
+          },
+          "en": {
+            "القرية": "Al-Mughayziyeh",
+            "المحصول": null,
+            "_4": "December March",
+            "_5": "Once a week",
+            "_6": "Subscription to state water",
+            "_7": "Sometimes enough",
+            "_8": "August-September months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_11_bf1bf358",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.680277,
+          33.741543
+        ]
+      },
+      "properties": {
+        "featureId": "Water_11_bf1bf358",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "الورهانيه",
+            "المحصول": "التفاح والدراق",
+            "_4": "ايلول",
+            "_5": "غير مروي  مرة كل ١٥ يوم",
+            "_6": "بئر جوفي  فقط مياه الأمطار نقل المياه بالصهاريج قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول تموز"
+          },
+          "en": {
+            "القرية": "Al-Warhaniyeh",
+            "المحصول": "Apples and peaches",
+            "_4": "September",
+            "_5": "Not irrigated once every 15 days",
+            "_6": "Underground well, rainwater only, water transportation by tanks, irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": "August September July"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_12_35235e9f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.614259,
+          33.608481
+        ]
+      },
+      "properties": {
+        "featureId": "Water_12_35235e9f",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "باتر",
+            "المحصول": "الرمان زيتون  فاصوليا عريضة القرعة",
+            "_4": "ايلول كانون الثاني  حزيران نيسان",
+            "_5": "غير مروي  مرة أسبوعياً",
+            "_6": "نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول تموز"
+          },
+          "en": {
+            "القرية": "Bater",
+            "المحصول": "Pomegranate, olive, broad bean, pumpkin",
+            "_4": "September January June",
+            "_5": "Not irrigated once a week",
+            "_6": "River, water stream",
+            "_7": "Sometimes enough",
+            "_8": "August September July"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_13_dc44c1a0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.655584,
+          33.707373
+        ]
+      },
+      "properties": {
+        "featureId": "Water_13_dc44c1a0",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "بتلون",
+            "المحصول": "التفاح الكرز  بندورة تفاح حشايش جوز زيتون دراق تين",
+            "_4": "ايلول تموز آب حزيران",
+            "_5": "مرة أسبوعياً  مرتين",
+            "_6": "قنوات ري  نقل المياه بالصهاريج نهرمجرى مائي أخرى  من نبع الباروق بئر جوفي",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Btalloun",
+            "المحصول": "Apples, cherries, tomatoes, apples, hashish, walnuts, olives, peaches, figs",
+            "_4": "September July August June",
+            "_5": "Once a week, twice",
+            "_6": "Irrigation channels, transporting water with tanks, a river, another watercourse, from the Barouk spring, an underground well",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_14_999e81a8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.424124,
+          33.654535
+        ]
+      },
+      "properties": {
+        "featureId": "Water_14_999e81a8",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "برجا",
+            "المحصول": null,
+            "_4": "شباط تموز ايلول",
+            "_5": "غير مروي  مرة أسبوعياً مرتين",
+            "_6": "بئر جوفي  نقل المياه بالصهاريج",
+            "_7": "دائماً",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Barja",
+            "المحصول": null,
+            "_4": "February July",
+            "_5": "Not irrigated once a week, twice a week",
+            "_6": "Underground well, water transport by tankers",
+            "_7": "always",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_15_f8b24bb0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.653917,
+          33.721147
+        ]
+      },
+      "properties": {
+        "featureId": "Water_15_f8b24bb0",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "بريح",
+            "المحصول": "بندورة أشجار التفاح",
+            "_4": "أيار حزيران ايلول شباط",
+            "_5": "مرة كل ١٥ يوم  مرتين أسبوعياً",
+            "_6": "قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول"
+          },
+          "en": {
+            "القرية": "Breih",
+            "المحصول": "Apple tree tomatoes",
+            "_4": "May June September February",
+            "_5": "Once every 15 days, twice a week",
+            "_6": "Irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": "August September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_16_7c863eee",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.557639,
+          33.722295
+        ]
+      },
+      "properties": {
+        "featureId": "Water_16_7c863eee",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "بشتفين",
+            "المحصول": null,
+            "_4": null,
+            "_5": "غير مروي  مرة أسبوعياً",
+            "_6": "بئر جوفي نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "تموز"
+          },
+          "en": {
+            "القرية": "Bshtfine",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Not irrigated once a week",
+            "_6": "Underground well, water transport by tankers",
+            "_7": "Sometimes enough",
+            "_8": "July"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_17_34aafee2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.623642,
+          33.668864
+        ]
+      },
+      "properties": {
+        "featureId": "Water_17_34aafee2",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "بطمه",
+            "المحصول": "الزيتون  خيار بندورة",
+            "_4": "نيسان تشرين الثاني",
+            "_5": "غير مروي  كل يومين مرتين أسبوعياً  مرتين أسبوعياً",
+            "_6": "قنوات ري  نقل المياه بالصهاريج  نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Btameh",
+            "المحصول": "Olives cucumber tomatoes",
+            "_4": "April November",
+            "_5": "Not irrigated every two days, twice a week, twice a week",
+            "_6": "Irrigation canals, water transportation by tankers, water transportation by tankers",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_18_e06a6a46",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.619518,
+          33.644051
+        ]
+      },
+      "properties": {
+        "featureId": "Water_18_e06a6a46",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "بعذران",
+            "المحصول": "اشجار متمرة",
+            "_4": null,
+            "_5": "غير مروي",
+            "_6": "فقط مياه الأمطار",
+            "_7": "غير كافية تماماً",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Baatharan",
+            "المحصول": "Mature trees",
+            "_4": null,
+            "_5": "untold",
+            "_6": "Only rain water",
+            "_7": "Completely insufficient",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_19_d151af89",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.56628,
+          33.6855
+        ]
+      },
+      "properties": {
+        "featureId": "Water_19_d151af89",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "بعقلين",
+            "المحصول": "خيار بندورة  زيتون خضار كوسا",
+            "_4": null,
+            "_5": "غير مروي  كل يومين مرة شهر مرتين أسبوعياً",
+            "_6": "بئر جوفي  مياه الشرب مخزنة دولة من البلدية",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Baaqline",
+            "المحصول": "Cucumber, tomato, olive, vegetable, zucchini",
+            "_4": null,
+            "_5": "Not irrigated every two days, once a month, twice a week",
+            "_6": "Underground well, drinking water is stored in the state of the municipality",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_20_683bad09",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.493755,
+          33.596866
+        ]
+      },
+      "properties": {
+        "featureId": "Water_20_683bad09",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "بكيفا",
+            "المحصول": null,
+            "_4": null,
+            "_5": "مرة كل ١٥ يوم",
+            "_6": "بئر جوفي",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Bkifa",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Once every 15 days",
+            "_6": "Underground well",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_21_893c0b19",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.604515,
+          33.669817
+        ]
+      },
+      "properties": {
+        "featureId": "Water_21_893c0b19",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "جديده الشوف",
+            "المحصول": null,
+            "_4": null,
+            "_5": "كل يومين",
+            "_6": "قنوات ري",
+            "_7": "نادراً ما تكون",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Jadideh El Chouf",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Every two days",
+            "_6": "Irrigation channels",
+            "_7": "It rarely is",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_22_bcbd61a0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.609278,
+          33.622897
+        ]
+      },
+      "properties": {
+        "featureId": "Water_22_bcbd61a0",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "حاره جندل الشوف",
+            "المحصول": null,
+            "_4": null,
+            "_5": "مرة كل ١٥ يوم",
+            "_6": "نهرمجرى مائي",
+            "_7": "دائماً",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Haret Jandal El Chouf",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Once every 15 days",
+            "_6": "River, water stream",
+            "_7": "always",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_23_d89f5a87",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.510269,
+          33.589966
+        ]
+      },
+      "properties": {
+        "featureId": "Water_23_d89f5a87",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "خربه بسري",
+            "المحصول": null,
+            "_4": null,
+            "_5": "غير مروي",
+            "_6": "فقط مياه الأمطار بئر جوفي",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول"
+          },
+          "en": {
+            "القرية": "Khirbet Bosri",
+            "المحصول": null,
+            "_4": null,
+            "_5": "untold",
+            "_6": "Only rainwater from an underground well",
+            "_7": "Sometimes enough",
+            "_8": "August September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_24_cd4c4306",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.642387,
+          33.650928
+        ]
+      },
+      "properties": {
+        "featureId": "Water_24_cd4c4306",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "خريبه الشوف",
+            "المحصول": "خضروات",
+            "_4": null,
+            "_5": "غير مروي  مرة أسبوعياً",
+            "_6": "بئر جوفي  يوجد نبع خاص  نهرمجرى مائي أخرى مياةالبرك (بلدية)",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Khraybeh El Chouf",
+            "المحصول": "vegetables",
+            "_4": null,
+            "_5": "Not irrigated once a week",
+            "_6": "An underground well, a private spring, a river, a stream, other, pond water (municipal)",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_25_d1543e92",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.502321,
+          33.656603
+        ]
+      },
+      "properties": {
+        "featureId": "Water_25_d1543e92",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "داريا الشوف",
+            "المحصول": "زيتون بتدورة الخيار",
+            "_4": null,
+            "_5": "غير مروي  كل يومين مرتين أسبوعياً",
+            "_6": "مياه الأمطار ومياه اشترك الدولة  الدوله نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "ايار حزيران تموز آب ايلول"
+          },
+          "en": {
+            "القرية": "Daraya El Chouf",
+            "المحصول": "Olives with cucumber round",
+            "_4": null,
+            "_5": "Not irrigated every two days, twice a week",
+            "_6": "Rainwater and water shared by the state, transporting water in tanks",
+            "_7": "Sometimes enough",
+            "_8": "May June July August September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_26_ac4476a9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.505803,
+          33.702675
+        ]
+      },
+      "properties": {
+        "featureId": "Water_26_ac4476a9",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "دميت الشوف",
+            "المحصول": "فاصوليا بندوره",
+            "_4": null,
+            "_5": "مرة أسبوعياً  مرتين",
+            "_6": "قنوات ري  نبع خاص  مياه من الارض نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "تموز آب ايلول"
+          },
+          "en": {
+            "القرية": "Dmit El Chouf",
+            "المحصول": "Tomato beans",
+            "_4": null,
+            "_5": "Once a week, twice",
+            "_6": "Irrigation channels, a private spring, water from the ground, water transportation in tanks",
+            "_7": "Sometimes enough",
+            "_8": "July August September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_27_ff339682",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.556728,
+          33.706544
+        ]
+      },
+      "properties": {
+        "featureId": "Water_27_ff339682",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "دير القمر",
+            "المحصول": "فاصوليا بندوره",
+            "_4": "أيار آب  حزيران تشرين الثاني",
+            "_5": "مرة كل ١٥ يوم  مرتين أسبوعياً يومياً",
+            "_6": "مياه الشرب  نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "آب و أيلول تموز وآب"
+          },
+          "en": {
+            "القرية": "Deir El Qamar",
+            "المحصول": "Tomato beans",
+            "_4": "May August June November",
+            "_5": "Once every 15 days, twice a week, daily",
+            "_6": "Drinking water Water transportation by tankers",
+            "_7": "Sometimes enough",
+            "_8": "August, September, and August"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_28_1fe221bf",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.542311,
+          33.696575
+        ]
+      },
+      "properties": {
+        "featureId": "Water_28_1fe221bf",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "دير دوريت",
+            "المحصول": "الزيتون الافوكادو",
+            "_4": "حزيران",
+            "_5": "غير مروي  كل يومين مرة شهر ١٥ يوم",
+            "_6": "قنوات ري  نهرمجرى مائي  نقل مياه بالصهاريج",
+            "_7": "نادراً ما تكون",
+            "_8": "آب ايلول ايلول و تموز تموز شهر "
+          },
+          "en": {
+            "القرية": "Deir Dourit",
+            "المحصول": "Olive avocado",
+            "_4": "June",
+            "_5": "Not irrigated every two days, once a month, 15 days",
+            "_6": "Irrigation canals, river, stream, water transport by tanks",
+            "_7": "It rarely is",
+            "_8": "August is September and July is July"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_29_004fea36",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.525734,
+          33.708065
+        ]
+      },
+      "properties": {
+        "featureId": "Water_29_004fea36",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "ديربآبا",
+            "المحصول": null,
+            "_4": "حزيران",
+            "_5": "مرة أسبوعياً  مرتين",
+            "_6": "بئر جوفي  قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول وتشرين اول"
+          },
+          "en": {
+            "القرية": "Deir Baba",
+            "المحصول": null,
+            "_4": "June",
+            "_5": "Once a week, twice",
+            "_6": "Underground well, irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": "August and October"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_30_09601bd0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.703264,
+          33.811167
+        ]
+      },
+      "properties": {
+        "featureId": "Water_30_09601bd0",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "شارون",
+            "المحصول": "الخضار",
+            "_4": null,
+            "_5": "كل يومين",
+            "_6": "بئر جوفي",
+            "_7": "دائماً",
+            "_8": null
+          },
+          "en": {
+            "القرية": "Charoun",
+            "المحصول": "Vegetables",
+            "_4": null,
+            "_5": "Every two days",
+            "_6": "Underground well",
+            "_7": "always",
+            "_8": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_31_c8405315",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.488343,
+          33.632139
+        ]
+      },
+      "properties": {
+        "featureId": "Water_31_c8405315",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "شحيم",
+            "المحصول": null,
+            "_4": null,
+            "_5": "غير مروي  مرة أسبوعياً مرتين",
+            "_6": "فقط مياه الأمطار  نهرمجرى مائي نقل المياه بالصهاريج",
+            "_7": "نادراً ما تكون",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Chahim",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Not irrigated once a week, twice a week",
+            "_6": "Only rainwater, river, stream, water transport by tankers",
+            "_7": "It rarely is",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_32_76521ff4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.562627,
+          33.707067
+        ]
+      },
+      "properties": {
+        "featureId": "Water_32_76521ff4",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "شواليق دير القمر",
+            "المحصول": null,
+            "_4": "تموز",
+            "_5": "مرة أسبوعياً",
+            "_6": "قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": "تموز آب ايلول"
+          },
+          "en": {
+            "القرية": "Chawalik Deir El Qamar",
+            "المحصول": null,
+            "_4": "July",
+            "_5": "Once a week",
+            "_6": "Irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": "July August September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_33_dd36713b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.512598,
+          33.636209
+        ]
+      },
+      "properties": {
+        "featureId": "Water_33_dd36713b",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "عانوت",
+            "المحصول": "فول حمص بندورة خيار كوسا لقطين",
+            "_4": "نيسان",
+            "_5": "غير مروي  كل يومين مرة أسبوعياً",
+            "_6": "فقط مياه الأمطار نقل المياه بالصهاريج",
+            "_7": "نادراً ما تكون",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Aanout",
+            "المحصول": "Beans, chickpeas, tomatoes, cucumber, zucchini, and pumpkin",
+            "_4": "April",
+            "_5": "Not irrigated every two days, once a week",
+            "_6": "Only rain water is transported by tankers",
+            "_7": "It rarely is",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_34_31324254",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.568355,
+          33.675762
+        ]
+      },
+      "properties": {
+        "featureId": "Water_34_31324254",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "عترين",
+            "المحصول": null,
+            "_4": null,
+            "_5": "مرة أسبوعياً",
+            "_6": "نقل المياه بالصهاريج",
+            "_7": "نادراً ما تكون",
+            "_8": "تموز آب"
+          },
+          "en": {
+            "القرية": "Atrine",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Once a week",
+            "_6": "Water transportation by tankers",
+            "_7": "It rarely is",
+            "_8": "July August"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_35_63d99c8c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.407042,
+          33.603189
+        ]
+      },
+      "properties": {
+        "featureId": "Water_35_63d99c8c",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "علمان",
+            "المحصول": "قشطة افوكا ليمون",
+            "_4": "آذار  تشرين الأول الثاني نيسان شباط كانون",
+            "_5": "مرة أسبوعياً  كل ١٥ يوم مرتين",
+            "_6": "بئر جوفي  نقل المياه بالصهاريج ماء خاص للضيعة مدفوع على الساعة قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Aalman",
+            "المحصول": "Avoca lemon cream",
+            "_4": "March October November April February December",
+            "_5": "Once a week, every 15 days, twice",
+            "_6": "Underground well, water transportation by tankers, private water for the estate, paid on an hourly basis, irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_36_decc2e49",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.607415,
+          33.653201
+        ]
+      },
+      "properties": {
+        "featureId": "Water_36_decc2e49",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "عماطور",
+            "المحصول": "افوكادو",
+            "_4": "أيار ايلول  تموز",
+            "_5": "كل يومين  مرة أسبوعياً مرتين",
+            "_6": "قنوات ري  نقل المياه بالصهاريج نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول تموز "
+          },
+          "en": {
+            "القرية": "Ammatour",
+            "المحصول": "avocado",
+            "_4": "May September July",
+            "_5": "Every two days, once a week, twice a week",
+            "_6": "Irrigation channels, water transport by tanks, river, stream",
+            "_7": "Sometimes enough",
+            "_8": "August September July"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_37_bb1ffd16",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.693978,
+          33.754771
+        ]
+      },
+      "properties": {
+        "featureId": "Water_37_bb1ffd16",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "عين زحلتا",
+            "المحصول": "تفاح بقوليات",
+            "_4": "ايلول",
+            "_5": "كل يومين  مرة ١٥ يوم",
+            "_6": "نبعة مياه  نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "ايلول تشرين تموز آب"
+          },
+          "en": {
+            "القرية": "Ain Zahlta",
+            "المحصول": "Apples, legumes",
+            "_4": "September",
+            "_5": "Every two days, once 15 days",
+            "_6": "Water spring, river, stream",
+            "_7": "Sometimes enough",
+            "_8": "September October July August"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_38_56209625",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.61163,
+          33.65771
+        ]
+      },
+      "properties": {
+        "featureId": "Water_38_56209625",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "عين قاني",
+            "المحصول": null,
+            "_4": null,
+            "_5": "كل يومين",
+            "_6": "نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "آب"
+          },
+          "en": {
+            "القرية": "Ain Qani",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Every two days",
+            "_6": "River, water stream",
+            "_7": "Sometimes enough",
+            "_8": "dad"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_39_fc849a43",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.6172,
+          33.684366
+        ]
+      },
+      "properties": {
+        "featureId": "Water_39_fc849a43",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "عين وزين",
+            "المحصول": "بندوره بقدونس زيتون",
+            "_4": "ايلول حزيران  شباط",
+            "_5": "غير مروي  كل يومين مرة أسبوعياً",
+            "_6": "فقط مياه الأمطار قنوات ري  نقل المياه بالصهاريج نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Ain W Zain",
+            "المحصول": "Tomatoes, parsley, olives",
+            "_4": "September June February",
+            "_5": "Not irrigated every two days, once a week",
+            "_6": "Only rain water, irrigation channels, water transport by tanks, river, stream",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_40_182b2838",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.562358,
+          33.648507
+        ]
+      },
+      "properties": {
+        "featureId": "Water_40_182b2838",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "غريفه",
+            "المحصول": "زيتون",
+            "_4": null,
+            "_5": "غير مروي",
+            "_6": "فقط مياه الأمطار  نقل المياه بالصهاريج أخرى",
+            "_7": "دائماً",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Gharifeh",
+            "المحصول": "olive",
+            "_4": null,
+            "_5": "untold",
+            "_6": "Only rain water is transported by other tankers",
+            "_7": "always",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_41_bbbd0989",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.454315,
+          33.630531
+        ]
+      },
+      "properties": {
+        "featureId": "Water_41_bbbd0989",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "كترمايا الشوف",
+            "المحصول": null,
+            "_4": null,
+            "_5": "مرتين أسبوعياً",
+            "_6": "نقل المياه بالصهاريج",
+            "_7": "غير كافية تماماً",
+            "_8": "اغلب الأشهر"
+          },
+          "en": {
+            "القرية": "Ktermaya El Chouf",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Twice a week",
+            "_6": "Water transportation by tankers",
+            "_7": "Completely insufficient",
+            "_8": "Most of the months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_42_d72d95f7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.588746,
+          33.657499
+        ]
+      },
+      "properties": {
+        "featureId": "Water_42_d72d95f7",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "كحلونيه الشوف",
+            "المحصول": "الزيتون الخضروات  بندورة خيار",
+            "_4": "كانون الأول",
+            "_5": "كل يومين  مرة كل ١٥ يوم",
+            "_6": "نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "تموز آب شهر "
+          },
+          "en": {
+            "القرية": "Kahlouniyeh El Chouf",
+            "المحصول": "Olives vegetables tomato cucumber",
+            "_4": "December",
+            "_5": "Every two days, once every 15 days",
+            "_6": "Water transportation by tankers",
+            "_7": "Sometimes enough",
+            "_8": "July August month"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_43_8abaccb6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50962,
+          33.701853
+        ]
+      },
+      "properties": {
+        "featureId": "Water_43_8abaccb6",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "كفرحيم",
+            "المحصول": "خيار وكوسي",
+            "_4": null,
+            "_5": "مرتين أسبوعياً  يومياً",
+            "_6": "بئر جوفي  فقط مياه الأمطار نبعة",
+            "_7": "أحياناً كافية",
+            "_8": null
+          },
+          "en": {
+            "القرية": "Kfarhaym",
+            "المحصول": "Cucumber and zucchini",
+            "_4": null,
+            "_5": "Twice a week, daily",
+            "_6": "An underground well, only rainwater from a spring",
+            "_7": "Sometimes enough",
+            "_8": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_44_7faca820",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.537408,
+          33.707844
+        ]
+      },
+      "properties": {
+        "featureId": "Water_44_7faca820",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "كفرفاقود",
+            "المحصول": null,
+            "_4": null,
+            "_5": "مرة أسبوعياً",
+            "_6": "نهرمجرى مائي",
+            "_7": "نادراً ما تكون",
+            "_8": null
+          },
+          "en": {
+            "القرية": "Kfarfakoud",
+            "المحصول": null,
+            "_4": null,
+            "_5": "Once a week",
+            "_6": "River, water stream",
+            "_7": "It rarely is",
+            "_8": null
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_45_e3bd6c45",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.535801,
+          33.713
+        ]
+      },
+      "properties": {
+        "featureId": "Water_45_e3bd6c45",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "كفرفاقود الشوف",
+            "المحصول": "الجنارك والليمون  فاصوليا",
+            "_4": null,
+            "_5": "مرة أسبوعياً  مرتين",
+            "_6": "خزان ماء  من مياه الامطار  قنوات ري",
+            "_7": "أحياناً كافية",
+            "_8": "آب ايلول تموز_آب_ايلول"
+          },
+          "en": {
+            "القرية": "Kfarfakoud El Chouf",
+            "المحصول": "Ganark and lemon beans",
+            "_4": null,
+            "_5": "Once a week, twice",
+            "_6": "Rainwater water tank, irrigation channels",
+            "_7": "Sometimes enough",
+            "_8": "August-September-July-August-September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_46_55df298e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.63186,
+          33.705373
+        ]
+      },
+      "properties": {
+        "featureId": "Water_46_55df298e",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "كفرنبرخ",
+            "المحصول": "التفاح والبندورة  زيتون صنوبر افوكا حمضيات",
+            "_4": "تموز  حزيران نيسان",
+            "_5": "كل يومين  مرة أسبوعياً شهر ١٥ يوم مرتين",
+            "_6": "فقط مياه الأمطار نهرمجرى مائي  قنوات ري نقل المياه بالصهاريج",
+            "_7": "أحياناً كافية",
+            "_8": "تموز ايلول وآب حزيران  تموز آب أيلول شهر تشرين اول وثاني"
+          },
+          "en": {
+            "القرية": "Kfarnabrakh",
+            "المحصول": "Apple, tomato, olive, pine, avoca, citrus",
+            "_4": "July June April",
+            "_5": "Every two days, once a week, twice a month, 15 days",
+            "_6": "Only rainwater, river, stream, irrigation canals, water transport by tankers",
+            "_7": "Sometimes enough",
+            "_8": "July, August, June, July, August, September, October and the second"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_47_47b677c9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.622299,
+          33.730095
+        ]
+      },
+      "properties": {
+        "featureId": "Water_47_47b677c9",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "مجدل المعوش",
+            "المحصول": null,
+            "_4": "حزيران آب تموز",
+            "_5": "كل يومين  مرتين أسبوعياً",
+            "_6": "قنوات ري  نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "ايلول حزيران تموز آب"
+          },
+          "en": {
+            "القرية": "Majdel El Meouch",
+            "المحصول": null,
+            "_4": "June August July",
+            "_5": "Every two days, twice a week",
+            "_6": "Irrigation canals, river, stream",
+            "_7": "Sometimes enough",
+            "_8": "September June July August"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_48_224a6621",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.662419,
+          33.643078
+        ]
+      },
+      "properties": {
+        "featureId": "Water_48_224a6621",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "مرستي",
+            "المحصول": "الاشجار المثمرة والمزروعات البندورة اللوبية  الخيار البصل الزعتر التفاح عسل الكرز تفاح نجاص   الخيار الفليفلة",
+            "_4": "آذار نيسان آب أيار ايلول تموز حزيران تشرين الأول  حزيران",
+            "_5": "كل يومين  مرة أسبوعياً شهر ١٥ يوم مرتين  مرة كل ١٥ يوم",
+            "_6": "بئر جوفي  وبحيرة برك تجميع شتوي تونال او حاصي للمياه فقط مياه الأمطار  خزان لتجميع المياه قنوات ري نقل بالصهاريج أخرى صهريج البلدة  فقط مياه الأمطار",
+            "_7": "أحياناً كافية",
+            "_8": "آب أيلول ايلول و تشرين اول وتشرين الاول تموز شهر"
+          },
+          "en": {
+            "القرية": "Mrosti",
+            "المحصول": "Fruit trees and crops: tomatoes, cowpeas, cucumbers, onions, thyme, apples, honey, cherries, Najas apples, cucumbers, peppers",
+            "_4": "March April August May September July June October June",
+            "_5": "Every two days, once a week, a month, 15 days, twice, once every 15 days",
+            "_6": "Underground well and lake, ponds, winter collection, tonal or water harvester only, rainwater, water collection tank, irrigation channels, tanker transport, others, town cistern only, rainwater",
+            "_7": "Sometimes enough",
+            "_8": "August, September, October, and October are July"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_49_bf5bba68",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.485018,
+          33.616901
+        ]
+      },
+      "properties": {
+        "featureId": "Water_49_bf5bba68",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "مزبود",
+            "المحصول": "الحمضيات والافوكادو والزيتون  والخضروات",
+            "_4": "ايلول",
+            "_5": "كل يومين  مرة ١٥ يوم يومياً",
+            "_6": "فقط مياه الأمطار نقل المياه بالصهاريج  الأمطار بشتري مي باشهر الصيفيه  الباروك عبر الشبكة",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Mazboud",
+            "المحصول": "Citrus fruits, avocados, olives and vegetables",
+            "_4": "September",
+            "_5": "Every two days, once 15 days a day",
+            "_6": "Only rainwater is transported by rainwater tankers in the Barouk summer months via the network",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_50_24a62261",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.592496,
+          33.642451
+        ]
+      },
+      "properties": {
+        "featureId": "Water_50_24a62261",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "مزرعه الشوف",
+            "المحصول": "تين زيتون",
+            "_4": "ايلول",
+            "_5": "غير مروي  غير مروي  كل يومين  غير مروي  كل يومين مرة أسبوعياً مرتين",
+            "_6": "بئر جوفي نقل المياه بالصهاريج  خزان عين مياه الشفا  فقط مياه الأمطار  نقل المياه بالصهاريج  فقط مياه الأمطار بئر جوفي",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Mazraat El Chouf",
+            "المحصول": "Fig olives",
+            "_4": "September",
+            "_5": "Not irrigated, not irrigated every two days, not irrigated, every two days, once a week, twice",
+            "_6": "Underground well, water transportation by tankers, Ain tank, Al-Shifa water only, rainwater, water transportation by tankers only, rainwater, underground well",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_51_ca023588",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.50846,
+          33.603328
+        ]
+      },
+      "properties": {
+        "featureId": "Water_51_ca023588",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "مزموره",
+            "المحصول": null,
+            "_4": null,
+            "_5": "يومياً",
+            "_6": "فقط مياه الأمطار نقل المياه بالصهاريج",
+            "_7": "غير كافية تماماً",
+            "_8": "حزيران تموز آب ايلول"
+          },
+          "en": {
+            "القرية": "Mazmoura",
+            "المحصول": null,
+            "_4": null,
+            "_5": "daily",
+            "_6": "Only rain water is transported by tankers",
+            "_7": "Completely insufficient",
+            "_8": "June July August September"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_52_5fd2f62a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.667699,
+          33.696108
+        ]
+      },
+      "properties": {
+        "featureId": "Water_52_5fd2f62a",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "معاصر الشوف",
+            "المحصول": "الحمص الصنوبر",
+            "_4": "شباط آذار",
+            "_5": "غير مروي  مرة أسبوعياً",
+            "_6": "فقط مياه الأمطار  نقل المياه بالصهاريج نهرمجرى مائي قنوات ري",
+            "_7": "نادراً ما تكون",
+            "_8": "تموز وآب ايلول حزيران آب"
+          },
+          "en": {
+            "القرية": "Maaser El Chouf",
+            "المحصول": "Pine nuts",
+            "_4": "February March",
+            "_5": "Not irrigated once a week",
+            "_6": "Only rain water, water transport by tankers, river, stream, irrigation canals",
+            "_7": "It rarely is",
+            "_8": "July, August, September, August"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_53_52415112",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.621215,
+          33.615001
+        ]
+      },
+      "properties": {
+        "featureId": "Water_53_52415112",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "نيحا الشوف",
+            "المحصول": null,
+            "_4": "ايلول  تموز",
+            "_5": "غير مروي  مرتين أسبوعياً",
+            "_6": "بركه  فقط مياه الأمطار نبع الضيعة",
+            "_7": "أحياناً كافية",
+            "_8": "أشهر الصيف"
+          },
+          "en": {
+            "القرية": "Niha El Chouf",
+            "المحصول": null,
+            "_4": "September",
+            "_5": "Not irrigated twice a week",
+            "_6": "Only rainwater from the village's spring is a blessing",
+            "_7": "Sometimes enough",
+            "_8": "Summer months"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "Water_54_1bc9408f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.673121,
+          33.74525
+        ]
+      },
+      "properties": {
+        "featureId": "Water_54_1bc9408f",
+        "theme": "Water",
+        "values": {
+          "ar": {
+            "القرية": "ورهانيه",
+            "المحصول": "الدراق الىتفاح",
+            "_4": "حزيران ايلول",
+            "_5": "مرة أسبوعياً",
+            "_6": "نهرمجرى مائي",
+            "_7": "أحياناً كافية",
+            "_8": "تموز آب"
+          },
+          "en": {
+            "القرية": "Warhaniyeh",
+            "المحصول": "Peaches to apples",
+            "_4": "June September",
+            "_5": "Once a week",
+            "_6": "River, water stream",
+            "_7": "Sometimes enough",
+            "_8": "July August"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "theme": "Water",
+    "generatedAt": "2025-12-17T16:47:28.099859Z",
+    "featureCount": 55,
+    "sources": {
+      "arabic": "data/layers/Arabic/Water_1.0.csv",
+      "english": "data/layers/English/Water_1.0.en.csv"
+    }
+  }
+}

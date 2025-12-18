@@ -1,0 +1,34 @@
+{
+  "source_file": "Generalinfo_1.0.csv",
+  "language": "Arabic",
+  "timestamp": "2025-12-17T16:57:56.219258",
+  "source_hash": "48cf404220f3ab612248a040fc402dcdc929b1031bf8c58c543a7bbc1887dc34",
+  "output_hash": "b80ddf8471ba1e0403dee2271329df19ed2306b2d82aae56409543c582e88d09",
+  "schema": {
+    "row_count": 56,
+    "column_count": 7,
+    "columns": [
+      "القرية:",
+      "Y",
+      "X",
+      "حجم الزراعة:",
+      "نوع التربة:",
+      "التغيرات المناخية:",
+      "تأثير الغيرات المناخية:"
+    ]
+  },
+  "features": {
+    "total_created": 56,
+    "with_valid_geometry": 56,
+    "with_null_geometry": 0
+  },
+  "warnings": [],
+  "validation": {
+    "passed": true,
+    "row_feature_match": true
+  },
+  "coordinate_system": {
+    "crs": "WGS84",
+    "epsg": "EPSG:4326"
+  }
+}

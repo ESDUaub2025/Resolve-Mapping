@@ -1,0 +1,38 @@
+{
+  "source_file": "Food_1.0.csv",
+  "language": "Arabic",
+  "timestamp": "2025-12-17T16:57:56.177280",
+  "source_hash": "35b04c1b0b81768f2671f1f49317c84e4404cb14e72288c3f1da482059993c5d",
+  "output_hash": "8af28c496d264ac9e2170975fd999c07489adedcdbcd38967a5220923a1c7b63",
+  "schema": {
+    "row_count": 56,
+    "column_count": 11,
+    "columns": [
+      "القرية:",
+      "Y",
+      "X",
+      "المحاصيل الرئيسية:",
+      "توقيت المحاصيل:",
+      "مستوى الانتاج:",
+      "المنتجات التقليدية الرئيسية:",
+      "نسبة المشاركين في تحضير المؤونة:",
+      "انواع الحيوانات:",
+      "عدد الطيور:",
+      "نوع العلف:"
+    ]
+  },
+  "features": {
+    "total_created": 56,
+    "with_valid_geometry": 56,
+    "with_null_geometry": 0
+  },
+  "warnings": [],
+  "validation": {
+    "passed": true,
+    "row_feature_match": true
+  },
+  "coordinate_system": {
+    "crs": "WGS84",
+    "epsg": "EPSG:4326"
+  }
+}
