@@ -1,0 +1,14 @@
+# NEW VILLAGE TRANSLITERATIONS - ADD TO transliterate_village_names.py
+# Add these lines to the VILLAGE_TRANSLITERATIONS dictionary
+
+    'الفاكهة': 'Al-Fakiha',
+    'اللبوة': 'Al-Labweh',
+    'تربل': 'Tarbol',
+    'حارة الفيكاني': 'Haret Al-Faykani',
+    'دلهامية': 'Dalhamieh',
+    'رياق': 'Rayak',
+    'زحلة': 'Zahle',
+    'علي النهري': 'Ali Al-Nahri',
+    'ماسما': 'Masma',
+    'مشغرة': 'Machghara',
+    'نبي شيت': 'Nabi Chit',

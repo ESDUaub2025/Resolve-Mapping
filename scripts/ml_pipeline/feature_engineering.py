@@ -24,38 +24,70 @@ class FeatureEngineer:
         self.features_df = None
         
     def load_canonical_data(self) -> Dict[str, pd.DataFrame]:
-        """Load all canonical GeoJSON files into DataFrames."""
+        """Load all canonical GeoJSON files into DataFrames (including new Beqaa data)."""
         themes = ['Water', 'Energy', 'Food', 'General_Info', 'Regenerative_Agriculture']
         data = {}
         
         for theme in themes:
+            # Load original data
             filepath = self.data_dir / f"{theme}.canonical.geojson"
-            if not filepath.exists():
-                print(f"Warning: {filepath} not found, skipping {theme}")
-                continue
-                
-            with open(filepath, 'r', encoding='utf-8') as f:
-                geojson = json.load(f)
+            # Load new Beqaa Valley data
+            filepath_new = self.data_dir / f"{theme}_new.canonical.geojson"
             
-            records = []
-            for feature in geojson['features']:
-                props = feature['properties']
-                coords = feature['geometry']['coordinates']
-                
-                # Get English values
-                values = props.get('values', {}).get('en', {})
-                
-                record = {
-                    'feature_id': props.get('featureId'),
-                    'theme': props.get('theme'),
-                    'longitude': coords[0],
-                    'latitude': coords[1],
-                    **values  # Unpack all English property values
-                }
-                records.append(record)
+            all_records = []
             
-            data[theme.lower()] = pd.DataFrame(records)
-            print(f"✓ Loaded {len(records)} records from {theme}")
+            # Process original file
+            if filepath.exists():
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    geojson = json.load(f)
+                
+                for feature in geojson['features']:
+                    props = feature['properties']
+                    coords = feature['geometry']['coordinates']
+                    
+                    # Get English values
+                    values = props.get('values', {}).get('en', {})
+                    
+                    record = {
+                        'feature_id': props.get('featureId'),
+                        'theme': props.get('theme'),
+                        'longitude': coords[0],
+                        'latitude': coords[1],
+                        'data_source': 'original',
+                        **values  # Unpack all English property values
+                    }
+                    all_records.append(record)
+                print(f"✓ Loaded {len(all_records)} records from {theme} (original)")
+            else:
+                print(f"Warning: {filepath} not found")
+            
+            # Process new Beqaa data file (if exists)
+            if filepath_new.exists():
+                with open(filepath_new, 'r', encoding='utf-8') as f:
+                    geojson_new = json.load(f)
+                
+                new_count = 0
+                for feature in geojson_new['features']:
+                    props = feature['properties']
+                    coords = feature['geometry']['coordinates']
+                    
+                    # Get English values (currently same as Arabic until translated)
+                    values = props.get('values', {}).get('en', {})
+                    
+                    record = {
+                        'feature_id': props.get('featureId'),
+                        'theme': props.get('theme'),
+                        'longitude': coords[0],
+                        'latitude': coords[1],
+                        'data_source': 'beqaa_2026',
+                        **values  # Unpack all English property values
+                    }
+                    all_records.append(record)
+                    new_count += 1
+                print(f"✓ Loaded {new_count} records from {theme}_new (Beqaa Valley 2026)")
+            
+            data[theme.lower()] = pd.DataFrame(all_records)
+            print(f"  Total {theme}: {len(all_records)} records")
         
         return data
     
@@ -221,91 +253,71 @@ class FeatureEngineer:
         return df
     
     def create_target_variables(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Define target variables for each AI prediction layer."""
+        """Define target variables for each AI prediction layer.
+        
+        Targets calibrated based on actual data distribution:
+        - regenerative_agriculture__3: Organic/compost/rotation practices (93.7% non-null)
+        - regenerative_agriculture__5: Fertilizer use ("Partial credit" 88.7%, "not used" 11.3%)
+        - water__7: Water sufficiency (4 categories)
+        - general_info__3: Farm size (4 categories)
+        - food__5: Production level (7 categories)
+        """
         
         # === Target 1: Regenerative Agriculture Adoption ===
-        # Based on: presence of organic/regenerative practices
-        # Data shows: _3 contains regenerative techniques, _5 shows fertilizer use
+        # Positive: ANY regenerative practice mentioned in _3
+        # Data: 93.7% have practices, looking for organic/compost/rotation/biological
         if 'regenerative_agriculture__3' in df.columns:
-            # Check for regenerative keywords
-            df['has_regen_practice'] = df['regenerative_agriculture__3'].fillna('').str.contains(
+            df['target_regen_adoption'] = df['regenerative_agriculture__3'].fillna('').str.contains(
                 'Organic|compost|rotation|Biological|Cover crops|organic materials',
                 case=False, na=False
-            ).astype(int)
-            
-            # Low chemical fertilizer use (_5: "It is not used" or minimal)
-            df['low_fertilizer'] = df.get('regenerative_agriculture__5', '').str.contains(
-                'not used', case=False, na=False
-            ).astype(int)
-            
-            # Target: Has regen practices OR low fertilizer use
-            df['target_regen_adoption'] = (
-                (df['has_regen_practice'] == 1) |
-                (df['low_fertilizer'] == 1)
             ).astype(int)
         else:
             df['target_regen_adoption'] = 0
         
         # === Target 2: Water Risk ===
-        # Based on: water scarcity mentions and sufficiency
-        # Data shows: _8 contains scarcity months, _7 shows sufficiency level
+        # Positive: Water insufficiency (rarely sufficient OR completely insufficient)
+        # Data: 4 categories - "Sometimes enough", "It rarely is", "always", "Completely insufficient"
         if 'water__7' in df.columns:
-            # Water insufficiency (_7: ONLY "rarely" or "completely insufficient")
-            df['water_insufficient'] = df['water__7'].fillna('').str.contains(
+            df['target_water_risk'] = df['water__7'].fillna('').str.contains(
                 'rarely|Completely insufficient',
                 case=False, na=False
             ).astype(int)
-            
-            # Target: Severe water stress only (not "sometimes enough")
-            df['target_water_risk'] = (df['water_insufficient'] == 1).astype(int)
         else:
             df['target_water_risk'] = 0
         
         # === Target 3: Economic Vulnerability ===
-        # Based on: small farm + small production + chemical dependency
-        # Data shows: general_info__3 has farm size, food__5 has production level
+        # Positive: Small farm (<1 hectare) AND small production
+        # Data: Farm sizes - 4 categories, production - 7 categories dominated by "Small production"
         if 'general_info__3' in df.columns and 'food__5' in df.columns:
-            # Small farm (< 5000 m2 or < 10000 m2)
             df['small_farm'] = df['general_info__3'].fillna('').str.contains(
-                'Less than|< 5000|< 10,000',
+                'Less than',
                 case=False, na=False
             ).astype(int)
             
-            # Small production
             df['small_production'] = df['food__5'].fillna('').str.contains(
                 'Small production',
                 case=False, na=False
             ).astype(int)
             
-            # High chemical dependency (regenerative_agriculture__5: "Total dependence")
-            df['high_chem_depend'] = df.get('regenerative_agriculture__5', '').str.contains(
-                'Total dependence',
-                case=False, na=False
-            ).astype(int)
-            
-            # Target: Small farm + (Small production OR high chemical dependency)
             df['target_economic_vuln'] = (
                 (df['small_farm'] == 1) &
-                ((df['small_production'] == 1) | (df['high_chem_depend'] == 1))
+                (df['small_production'] == 1)
             ).astype(int)
         else:
             df['target_economic_vuln'] = 0
         
         # === Target 4: Labor Shortage ===
-        # Based on: manual labor percentage (energy__5) and farm size
-        # Data shows: energy__5 contains % manual labor
+        # Positive: High manual labor (>=50%) on larger farms
+        # Data: energy__5 has manual % (100%, 50%, 0%, etc.)
         if 'energy__5' in df.columns:
-            # High manual labor (>50%)
             manual_pct = pd.to_numeric(df['energy__5'], errors='coerce').fillna(0)
             df['high_manual_labor'] = (manual_pct >= 50).astype(int)
             
-            # Medium/large farm (>10000 m2)
             df['medium_large_farm'] = df.get('general_info__3', '').str.contains(
-                'More than 1 hectare|More than 2 hectare|>10,000|>20,000',
+                'More than 1 hectare|More than 2 hectare',
                 case=False, na=False
             ).astype(int)
             
-            # Target: High manual labor + medium/large farm (labor intensive)
             df['target_labor_shortage'] = (
                 (df['high_manual_labor'] == 1) &
                 (df['medium_large_farm'] == 1)
@@ -314,22 +326,12 @@ class FeatureEngineer:
             df['target_labor_shortage'] = 0
         
         # === Target 5: Climate Vulnerability ===
-        # Based on: climate change awareness + impacts (no adaptation requirement)
-        # Data shows: general_info__5 has climate observations, __6 has impacts
-        if 'general_info__5' in df.columns:
-            # Climate change observed (_5 has any value)
-            df['climate_observed'] = df['general_info__5'].notna().astype(int)
-            
-            # Significant impacts (_6: mentions production decrease or pests)
-            df['has_climate_impact'] = df.get('general_info__6', '').str.contains(
+        # Positive: Climate impacts observed (production decrease OR pests/diseases)
+        # Data: general_info__6 has 16 unique impact descriptions
+        if 'general_info__6' in df.columns:
+            df['target_climate_vuln'] = df['general_info__6'].fillna('').str.contains(
                 'Decrease in production|decreased production|pests|diseases',
                 case=False, na=False
-            ).astype(int)
-            
-            # Target: Climate observed AND has impacts (removed adaptation filter)
-            df['target_climate_vuln'] = (
-                (df['climate_observed'] == 1) &
-                (df['has_climate_impact'] == 1)
             ).astype(int)
         else:
             df['target_climate_vuln'] = 0

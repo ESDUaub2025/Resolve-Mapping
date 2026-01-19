@@ -10,9 +10,24 @@ ROOT = Path(__file__).resolve().parents[1]
 LAYERS_EN = ROOT / 'data' / 'layers' / 'English'
 LAYERS_AR = ROOT / 'data' / 'layers' / 'Arabic'
 
-# Official transliterations of Lebanese villages in Mount Lebanon & Chouf District
+# Official transliterations of Lebanese villages in Mount Lebanon, Chouf District & Beqaa Valley
 # Based on phonetic pronunciation and official Lebanese naming conventions
+# Updated January 2026 with 11 new Beqaa Valley villages
 VILLAGE_TRANSLITERATIONS = {
+    # Beqaa Valley villages (NEW - January 2026)
+    'الفاكهة': 'Al-Fakiha',
+    'اللبوة': 'Al-Labweh',
+    'تربل': 'Tarbol',
+    'حارة الفيكاني': 'Haret Al-Faykani',
+    'دلهامية': 'Dalhamieh',
+    'رياق': 'Rayak',
+    'زحلة': 'Zahle',
+    'علي النهري': 'Ali Al-Nahri',
+    'ماسما': 'Masma',
+    'مشغرة': 'Machghara',
+    'نبي شيت': 'Nabi Chit',
+    
+    # Mount Lebanon & Chouf District (existing)
     'الباروك': 'Al-Barouk',
     'البيره': 'Al-Bireh',
     'البيرة': 'Al-Bireh',

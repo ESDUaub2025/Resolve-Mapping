@@ -37,13 +37,13 @@ Static, browser-based interactive map for agricultural data in Mount Lebanon & C
 
 **Adding a layer requires 3-4 changes:**
 1. Generate canonical GeoJSON: `python scripts/generate_canonical_geojson.py` (if new theme)
-2. Add to `DataLoader.THEMES` in [loader.js](app/modules/data/loader.js) with file path, color
-3. Add checkbox in [index.html](index.html): `<input type="checkbox" class="layer-toggle" data-layer="new-layer-id">`
-4. Add i18n strings to `i18n.strings.en` and `i18n.strings.ar` in [app.js](app.js) (lines 13-80)
-5. Add property schema to `SCHEMAS` in [property-schemas.js](app/modules/i18n/property-schemas.js)
+2. Add to `DataLoader.THEMES` in [loader.js](../app/modules/data/loader.js) with file path, color
+3. Add checkbox in [index.html](../index.html): `<input type="checkbox" class="layer-toggle" data-layer="new-layer-id">`
+4. Add i18n strings to `i18n.strings.en` and `i18n.strings.ar` in [app.js](../app.js) (lines 13-80)
+5. Add property schema to `SCHEMAS` in [property-schemas.js](../app/modules/i18n/property-schemas.js)
 
 **Legacy layer addition** (old dual-file approach, being phased out):
-- Call `addGeoJsonLayer('new-layer-id', fromRoot('data/geojson/File.geojson'), '#hexcolor')` in [app.js](app.js) initialization (~line 2600-2610)
+- Call `addGeoJsonLayer('new-layer-id', fromRoot('data/geojson/File.geojson'), '#hexcolor')` in [app.js](../app.js) initialization (~line 2770-2850)
 
 ### Key Functions & Patterns
 - **`fromRoot(path)`**: Path resolver — checks `PRODUCTION_DATA_URL` (line 167) for data/output paths, else uses local relative URLs

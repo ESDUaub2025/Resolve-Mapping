@@ -290,6 +290,31 @@ html, body {
 	gap: 4px;
 }
 
+/* Translation Notice */
+.translation-notice {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 14px;
+	background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+	border: 1px solid #ffc107;
+	border-radius: 6px;
+	margin-bottom: 12px;
+	font-size: 13px;
+	color: #856404;
+	box-shadow: 0 2px 4px rgba(255, 193, 7, 0.15);
+}
+
+.notice-icon {
+	font-size: 16px;
+	flex-shrink: 0;
+}
+
+.notice-text {
+	font-weight: 500;
+	line-height: 1.4;
+}
+
 .detail-row {
 	display: grid;
 	grid-template-columns: 140px 1fr;
