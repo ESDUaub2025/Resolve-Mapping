@@ -21,16 +21,10 @@
     "fertilizer_reliance_score",
     "pesticide_reliance_score",
     "resource_intensity",
-    "has_regen_practice",
-    "low_fertilizer",
-    "water_insufficient",
     "small_farm",
     "small_production",
-    "high_chem_depend",
     "high_manual_labor",
-    "medium_large_farm",
-    "climate_observed",
-    "has_climate_impact"
+    "medium_large_farm"
   ],
   "targets": [
     "target_regen_adoption",

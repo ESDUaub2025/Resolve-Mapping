@@ -1,0 +1,991 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "theme": "Food",
+    "dataSource": "MZSurvey_2026_Beqaa",
+    "generatedAt": "2026-01-19T13:49:59.759549",
+    "featureCount": 29,
+    "columnsIncluded": 16,
+    "translationStatus": "complete",
+    "avgPropertiesPerFeature": {
+      "ar": 3.8275862068965516,
+      "en": 2.7586206896551726
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "food_1_1f85649f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0394,
+          33.7528
+        ]
+      },
+      "properties": {
+        "featureId": "food_1_1f85649f",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "ماسما",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No"
+          }
+        },
+        "metadata": {
+          "sourceRow": 1,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.755547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_2_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "food_2_745c98f8",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No"
+          }
+        },
+        "metadata": {
+          "sourceRow": 2,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.755547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_3_187c2130",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0556,
+          33.7142
+        ]
+      },
+      "properties": {
+        "featureId": "food_3_187c2130",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "دلهامية",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "جميع المنازل تقريباً"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Almost all"
+          }
+        },
+        "metadata": {
+          "sourceRow": 3,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.756533"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_4_bbf8a56e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9833,
+          33.6875
+        ]
+      },
+      "properties": {
+        "featureId": "food_4_bbf8a56e",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "الفاكهة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "نعم",
+            "إذا كانت الإجابة نعم: ما هو العدد التقريبي للأعضاء النشطين في التعاونية؟": "صغير (1–20 عضو)",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "جميع المنازل تقريباً"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "Yes (Small)",
+            "24. % Village Participation": "Almost all"
+          }
+        },
+        "metadata": {
+          "sourceRow": 4,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.756533"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_5_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "food_5_caf1bea6",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج كبير (للبيع المنتظم في الأسواق أو عبر التعاونيات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "عدد قليل من المنازل (< 30%)"
+          },
+          "en": {
+            "19. Food Production Level": "Large (Markets)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Few (< 30%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 5,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.756533"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_6_91594719",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.925,
+          33.775
+        ]
+      },
+      "properties": {
+        "featureId": "food_6_91594719",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "علي النهري",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No"
+          }
+        },
+        "metadata": {
+          "sourceRow": 6,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.756533"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_7_f11fbeb3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9344,
+          33.8147
+        ]
+      },
+      "properties": {
+        "featureId": "food_7_f11fbeb3",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "حارة الفيكاني",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No"
+          }
+        },
+        "metadata": {
+          "sourceRow": 7,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.756533"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_8_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "food_8_caf1bea6",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "نعم",
+            "إذا كانت الإجابة نعم: ما هو العدد التقريبي للأعضاء النشطين في التعاونية؟": "صغير (1–20 عضو)"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "Yes (Small)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 8,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.756533"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_9_1a680f67",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0481,
+          33.8847
+        ]
+      },
+      "properties": {
+        "featureId": "food_9_1a680f67",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "نبي شيت",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No"
+          }
+        },
+        "metadata": {
+          "sourceRow": 9,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.756533"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_10_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "food_10_caf1bea6",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No"
+          }
+        },
+        "metadata": {
+          "sourceRow": 10,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_11_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_11_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 11,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_12_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_12_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "عدد قليل من المنازل (< 30%)"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Few (< 30%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 12,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_13_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_13_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 13,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_14_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_14_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "بعض المنازل (30–60%)"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Some (30-60%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 14,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_15_0ab6f6ca",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9542,
+          33.8253
+        ]
+      },
+      "properties": {
+        "featureId": "food_15_0ab6f6ca",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "اللبوة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج كبير (للبيع المنتظم في الأسواق أو عبر التعاونيات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "عدد قليل من المنازل (< 30%)"
+          },
+          "en": {
+            "19. Food Production Level": "Large (Markets)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Few (< 30%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 15,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_16_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_16_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 16,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_17_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_17_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 17,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.757557"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_18_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_18_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج كبير (للبيع المنتظم في الأسواق أو عبر التعاونيات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "بعض المنازل (30–60%)"
+          },
+          "en": {
+            "19. Food Production Level": "Large (Markets)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Some (30-60%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 18,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.758552"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_19_748b5897",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9018,
+          33.8463
+        ]
+      },
+      "properties": {
+        "featureId": "food_19_748b5897",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "زحلة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج كبير (للبيع المنتظم في الأسواق أو عبر التعاونيات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "عدد قليل من المنازل (< 30%)"
+          },
+          "en": {
+            "19. Food Production Level": "Large (Markets)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Few (< 30%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 19,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.758552"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_20_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_20_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 20,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.758552"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_21_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_21_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج كبير (للبيع المنتظم في الأسواق أو عبر التعاونيات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Large (Markets)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 21,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.758552"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_22_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_22_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "جميع المنازل تقريباً"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Almost all"
+          }
+        },
+        "metadata": {
+          "sourceRow": 22,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.758552"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_23_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_23_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "بعض المنازل (30–60%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Some (30-60%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 23,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.758552"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_24_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_24_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "بعض المنازل (30–60%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Some (30-60%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 24,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.759549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_25_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_25_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "بعض المنازل (30–60%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Some (30-60%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 25,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.759549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_26_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_26_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "بعض المنازل (30–60%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Some (30-60%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 26,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.759549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_27_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "food_27_745c98f8",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 27,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.759549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_28_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "food_28_caf1bea6",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج متوسط (للاستهلاك المحلي وبعض المبيعات)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "معظم المنازل (60–80%)"
+          },
+          "en": {
+            "19. Food Production Level": "Medium (Local sale)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Most (60-80%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 28,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.759549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "food_29_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "food_29_a73e3868",
+        "theme": "food",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟": "إنتاج صغير (للاستهلاك المنزلي بشكل رئيسي)",
+            "20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟": "لا",
+            "24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟": "بعض المنازل (30–60%)"
+          },
+          "en": {
+            "19. Food Production Level": "Small (Home use)",
+            "20. Coop Member?": "No",
+            "24. % Village Participation": "Some (30-60%)"
+          }
+        },
+        "metadata": {
+          "sourceRow": 29,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.759549"
+        }
+      }
+    }
+  ]
+}

@@ -20,14 +20,17 @@ const DataLoader = (function() {
         DB_VERSION: 1,
         STORE_NAME: 'geojsonCache',
         CACHE_EXPIRY_DAYS: 7,
-        DATA_VERSION: '1.0.0' // Increment to invalidate all caches
+        DATA_VERSION: '2.1.0' // Incremented for bilingual translation extraction (Jan 2026)
     };
 
-    // Themes to load (canonical bilingual files)
+    // Themes to load (canonical bilingual files - includes original + Beqaa Valley 2026)
     const THEMES = {
         water: {
             id: 'water-points',
-            file: 'data/geojson/canonical/Water.canonical.geojson',
+            files: [
+                'data/geojson/canonical/Water.canonical.geojson',
+                'data/geojson/canonical/Water_new.canonical.geojson'
+            ],
             color: '#1abc9c'
         },
         energy: {
@@ -42,12 +45,18 @@ const DataLoader = (function() {
         },
         general: {
             id: 'general-points',
-            file: 'data/geojson/canonical/General_Info.canonical.geojson',
+            files: [
+                'data/geojson/canonical/General_Info.canonical.geojson',
+                'data/geojson/canonical/General_Info_new.canonical.geojson'
+            ],
             color: '#3498db'
         },
         regen: {
             id: 'regen-points',
-            file: 'data/geojson/canonical/Regenerative_Agriculture.canonical.geojson',
+            files: [
+                'data/geojson/canonical/Regenerative_Agriculture.canonical.geojson',
+                'data/geojson/canonical/Regenerative_Agriculture_new.canonical.geojson'
+            ],
             color: '#27ae60'
         }
     };
@@ -232,7 +241,7 @@ const DataLoader = (function() {
     }
 
     /**
-     * Load all canonical theme data
+     * Load all canonical theme data (supports single file or multiple files per theme)
      */
     async function loadAllThemes(progressCallback) {
         const results = {};
@@ -243,12 +252,27 @@ const DataLoader = (function() {
             const theme = THEMES[themeKey];
             
             try {
-                const geojson = await loadGeoJSON(themeKey, theme.file);
+                // Check if theme has single file or multiple files
+                const files = theme.files || [theme.file];
+                const allFeatures = [];
+                
+                // Load and merge all files for this theme
+                for (const file of files) {
+                    const geojson = await loadGeoJSON(`${themeKey}_${file}`, file);
+                    allFeatures.push(...geojson.features);
+                }
+                
+                // Create merged GeoJSON
+                const mergedGeoJSON = {
+                    type: 'FeatureCollection',
+                    features: allFeatures
+                };
+                
                 results[themeKey] = {
                     id: theme.id,
                     color: theme.color,
-                    data: geojson,
-                    features: geojson.features.length
+                    data: mergedGeoJSON,
+                    features: allFeatures.length
                 };
 
                 loaded++;

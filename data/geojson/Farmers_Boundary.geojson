@@ -8,6 +8,10 @@
         "coordinates": [
           [
             [
+              35.8203,
+              33.5829
+            ],
+            [
               35.510269,
               33.589966
             ],
@@ -24,24 +28,16 @@
               33.7962296
             ],
             [
-              35.703264,
-              33.811167
+              36.0481,
+              33.8847
             ],
             [
-              35.693978,
-              33.754771
+              36.0556,
+              33.7142
             ],
             [
-              35.662419,
-              33.643078
-            ],
-            [
-              35.614259,
-              33.608481
-            ],
-            [
-              35.510269,
-              33.589966
+              35.8203,
+              33.5829
             ]
           ]
         ]
@@ -49,7 +45,7 @@
       "properties": {
         "name": "Farmers Survey Boundary",
         "method": "convex_hull",
-        "n_points": 55,
+        "n_points": 84,
         "description": "Geographic extent of surveyed agricultural area in Mount Lebanon"
       }
     }

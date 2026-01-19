@@ -6,65 +6,65 @@ AGRICULTURAL AI MODEL TRAINING REPORT
 TARGET_REGEN_ADOPTION
 ----------------------------------------
 Model Type: random_forest
-Samples: 55
-Features: 31
-Positive Rate: 32.7%
+Samples: 84
+Features: 25
+Positive Rate: 20.2%
 
 Cross-Validation Metrics:
-  F1-Score (CV): 0.400 ± 0.490
+  F1-Score (CV): 0.000 ± 0.000
 
 Training Set Performance:
-  Accuracy:  1.000
-  Precision: 1.000
+  Accuracy:  0.988
+  Precision: 0.944
   Recall:    1.000
-  F1-Score:  1.000
-  ROC-AUC:   1.000
+  F1-Score:  0.971
+  ROC-AUC:   0.993
 
 Top 5 Most Important Features:
-  1. has_regen_practice: 0.262
-  2. regen_technique_count: 0.249
-  3. climate_aware: 0.096
-  4. climate_observed: 0.092
-  5. manual_labor_pct: 0.043
+  1. regen_technique_count: 0.425
+  2. climate_aware: 0.104
+  3. medium_large_farm: 0.097
+  4. resource_intensity: 0.079
+  5. manual_labor_pct: 0.066
 
 Confusion Matrix:
-  [[TN=37, FP=0],
-   [FN=0, TP=18]]
+  [[TN=66, FP=1],
+   [FN=0, TP=17]]
 
 TARGET_WATER_RISK
 ----------------------------------------
 Model Type: random_forest
-Samples: 55
-Features: 31
-Positive Rate: 21.8%
+Samples: 84
+Features: 25
+Positive Rate: 14.3%
 
 Cross-Validation Metrics:
   F1-Score (CV): 0.000 ± 0.000
 
 Training Set Performance:
-  Accuracy:  1.000
-  Precision: 1.000
-  Recall:    1.000
-  F1-Score:  1.000
-  ROC-AUC:   1.000
+  Accuracy:  0.940
+  Precision: 0.733
+  Recall:    0.917
+  F1-Score:  0.815
+  ROC-AUC:   0.985
 
 Top 5 Most Important Features:
-  1. water_insufficient: 0.412
-  2. manual_labor_pct: 0.088
-  3. energy__5: 0.071
-  4. resource_intensity: 0.060
-  5. crop_diversity: 0.058
+  1. resource_intensity: 0.146
+  2. manual_labor_pct: 0.123
+  3. energy__5: 0.119
+  4. energy__7: 0.116
+  5. crop_diversity: 0.100
 
 Confusion Matrix:
-  [[TN=43, FP=0],
-   [FN=0, TP=12]]
+  [[TN=68, FP=4],
+   [FN=1, TP=11]]
 
 TARGET_ECONOMIC_VULN
 ----------------------------------------
 Model Type: random_forest
-Samples: 55
-Features: 31
-Positive Rate: 9.1%
+Samples: 84
+Features: 25
+Positive Rate: 6.0%
 
 Cross-Validation Metrics:
   F1-Score (CV): 0.000 ± 0.000
@@ -77,42 +77,42 @@ Training Set Performance:
   ROC-AUC:   1.000
 
 Top 5 Most Important Features:
-  1. small_farm: 0.269
-  2. climate_aware: 0.186
-  3. climate_observed: 0.141
-  4. small_production: 0.084
-  5. regen_technique_count: 0.043
+  1. small_farm: 0.307
+  2. climate_aware: 0.213
+  3. regen_technique_count: 0.095
+  4. crop_diversity: 0.084
+  5. small_production: 0.065
 
 Confusion Matrix:
-  [[TN=50, FP=0],
+  [[TN=79, FP=0],
    [FN=0, TP=5]]
 
 TARGET_CLIMATE_VULN
 ----------------------------------------
 Model Type: random_forest
-Samples: 55
-Features: 31
-Positive Rate: 21.8%
+Samples: 84
+Features: 25
+Positive Rate: 14.3%
 
 Cross-Validation Metrics:
-  F1-Score (CV): 0.200 ± 0.400
+  F1-Score (CV): 0.000 ± 0.000
 
 Training Set Performance:
-  Accuracy:  1.000
-  Precision: 1.000
+  Accuracy:  0.976
+  Precision: 0.857
   Recall:    1.000
-  F1-Score:  1.000
-  ROC-AUC:   1.000
+  F1-Score:  0.923
+  ROC-AUC:   0.998
 
 Top 5 Most Important Features:
-  1. climate_aware: 0.235
-  2. has_climate_impact: 0.232
-  3. climate_observed: 0.204
-  4. medium_large_farm: 0.070
-  5. regen_technique_count: 0.059
+  1. climate_aware: 0.343
+  2. medium_large_farm: 0.218
+  3. regen_technique_count: 0.140
+  4. small_farm: 0.062
+  5. manual_labor_pct: 0.042
 
 Confusion Matrix:
-  [[TN=43, FP=0],
+  [[TN=70, FP=2],
    [FN=0, TP=12]]
 
 ================================================================================

@@ -1,0 +1,21 @@
+{
+  "theme": "Regenerative_Agriculture",
+  "timestamp": "2026-01-19T11:21:03.043108+00:00",
+  "source_arabic": "data/layers/Arabic/Regenerative_Agriculture_new.csv",
+  "source_english": "PENDING",
+  "features_generated": 29,
+  "features_skipped": 0,
+  "property_columns": [
+    "القرية",
+    "الزراعة التجديدية",
+    "تقنيات الزراعة التجديدية",
+    "محسنات التربة",
+    "الاعتماد على الاسمدة الكيميائية",
+    "مكافحة الآفات"
+  ],
+  "coordinate_validation": {
+    "valid": 29,
+    "invalid": 0
+  },
+  "translation_status": "Arabic only - English translations pending"
+}

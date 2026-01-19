@@ -1,0 +1,1351 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "theme": "Regenerative_Agriculture",
+    "dataSource": "MZSurvey_2026_Beqaa",
+    "generatedAt": "2026-01-19T13:49:59.793592",
+    "featureCount": 29,
+    "columnsIncluded": 26,
+    "translationStatus": "complete",
+    "avgPropertiesPerFeature": {
+      "ar": 10.0,
+      "en": 9.0
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_1_1f85649f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0394,
+          33.7528
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_1_1f85649f",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "ماسما",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "عدم وجود موردين موثوقين",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "لا يتم استخدامها",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أقل من 20%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات) مكافحة بيولوجية (أعداء طبيعيون، مبيدات حيوية) مبيدات محلية الصنع",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أقل من 20%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "Unreliable suppliers",
+            "38. Soil Enhancers": "Animal Manure",
+            "39. Chem Fertilizer Reliance": "Not used",
+            "40. Fertilizer Cost %": "< 20%",
+            "43. Pest Control Method": "Chem/Bio/Local",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "< 20%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 1,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.787547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_2_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_2_745c98f8",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية   روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 2,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.787547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_3_187c2130",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0556,
+          33.7142
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_3_187c2130",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "دلهامية",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية   روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد كامل",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أكثر من 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Pest Resistance",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Manure",
+            "39. Chem Fertilizer Reliance": "Total",
+            "40. Fertilizer Cost %": "> 50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 3,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.787547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_4_bbf8a56e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9833,
+          33.6875
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_4_bbf8a56e",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "الفاكهة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "كمبوست عضوي مخصبات حيوية",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات) مكافحة فيزيائية (مصائد، أبواب مزدوجة...)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أقل من 20%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Pest Resistance",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Compost/Bio",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chem/Physical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "< 20%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 4,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.788547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_5_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_5_caf1bea6",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد كامل",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Productivity",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Total",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 5,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.788547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_6_91594719",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.925,
+          33.775
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_6_91594719",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "علي النهري",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية   روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 6,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.788547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_7_f11fbeb3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9344,
+          33.8147
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_7_f11fbeb3",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "حارة الفيكاني",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية   روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 7,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.788547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_8_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_8_caf1bea6",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية  عدم وجود موردين موثوقين",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية   روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة بيولوجية (أعداء طبيعيون، مبيدات حيوية)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "Cost/Unreliable",
+            "38. Soil Enhancers": "Chem/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Biological",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 8,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.789549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_9_1a680f67",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0481,
+          33.8847
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_9_1a680f67",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "نبي شيت",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي  روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Comp/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 9,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.789549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_10_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_10_caf1bea6",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية   روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 10,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.789549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_11_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_11_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 11,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.789549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_12_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_12_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "أخرى (يرجى التحديد)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "عدم وجود موردين موثوقين",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات) مكافحة فيزيائية (مصائد، أبواب مزدوجة...)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Prod/Pest",
+            "35. Seed Source": "Nursery",
+            "36. Seed Challenges": "Unreliable suppliers",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chem/Physical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 12,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.789549"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_13_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_13_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من مزارع مجاور (عبر التبادل)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "لا يتم استخدامها",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أقل من 20%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات) مبيدات محلية الصنع",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Pest Resistance",
+            "35. Seed Source": "Neighbor exchange",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Animal Manure",
+            "39. Chem Fertilizer Reliance": "Not used",
+            "40. Fertilizer Cost %": "< 20%",
+            "43. Pest Control Method": "Chem/Local",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 13,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.790547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_14_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_14_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية",
+            "35.كيف تحصل على البذور/الشتول؟": "أخرى (يرجى التحديد)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي  روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod",
+            "35. Seed Source": "Nursery",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Comp/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 14,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.790547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_15_0ab6f6ca",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9542,
+          33.8253
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_15_0ab6f6ca",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "اللبوة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "عدم ملاءمة البذور للمناخ أو التربة المحلية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي مخصبات حيوية  روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أقل من 20%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات) مكافحة بيولوجية (أعداء طبيعيون، مبيدات حيوية)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أقل من 20%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "Non-local seeds",
+            "38. Soil Enhancers": "Chem/Comp/Bio",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "< 20%",
+            "43. Pest Control Method": "Chem/Biological",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "< 20%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 15,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.790547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_16_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_16_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "قلة توفر البذور الجيدة",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Productivity",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "Lack of good seed availability",
+            "38. Soil Enhancers": "Chemical fertilizers",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 16,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.790547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_17_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_17_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "قلة توفر البذور الجيدة",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Productivity",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "Lack of good seed availability",
+            "38. Soil Enhancers": "Chemical fertilizers",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 17,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.790547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_18_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_18_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من جمعيات/بلديات/الجهات المانحة",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "عدم ملاءمة البذور للمناخ أو التربة المحلية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أقل من 20%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Prod/Pest",
+            "35. Seed Source": "associations/municipalities/donors",
+            "36. Seed Challenges": "Non-local seeds",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "< 20%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 18,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.791546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_19_748b5897",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9018,
+          33.8463
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_19_748b5897",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "زحلة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أقل من 20%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "< 20%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 19,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.791546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_20_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_20_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد كامل",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أكثر من 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Total",
+            "40. Fertilizer Cost %": "> 50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 20,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.791546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_21_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_21_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي مخصبات حيوية",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد كامل",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أكثر من 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أكثر من 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chemical fertilizers, organic compost, biofertilizers",
+            "39. Chem Fertilizer Reliance": "Total",
+            "40. Fertilizer Cost %": "> 50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "> 50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 21,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.791546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_22_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_22_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "جميع ما سبق",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "قلة توفر البذور الجيدة",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أقل من 20%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "all above",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "Lack of good seed availability",
+            "38. Soil Enhancers": "Chemical fertilizers",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "< 20%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 22,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.791546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_23_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_23_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر",
+            "35.كيف تحصل على البذور/الشتول؟": "من محصول السنة الماضية (إنتاج ذاتي)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة بيولوجية (أعداء طبيعيون، مبيدات حيوية)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "لا يتم استخدامها",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أقل من 20%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price",
+            "35. Seed Source": "From last year's harvest (self-produced)",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chemical fertilizers",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Biological",
+            "44. Pesticide Reliance": "It is not used",
+            "45. Pesticide Cost %": "< 20%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 23,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.792547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_24_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_24_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أقل من 20%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "< 20%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 24,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.792547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_25_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_25_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "قلة توفر البذور الجيدة عدم ملاءمة البذور للمناخ أو التربة المحلية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "Limited availability of good seeds; seeds unsuitable for local climate or soil.",
+            "38. Soil Enhancers": "Chem/Compost",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 25,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.792547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_26_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_26_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي  روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Comp/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 26,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.792547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_27_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_27_745c98f8",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد كامل",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "أقل من 20%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "أقل من 20%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chemical fertilizers",
+            "39. Chem Fertilizer Reliance": "Total",
+            "40. Fertilizer Cost %": "< 20%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "< 20%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 27,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.792547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_28_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_28_caf1bea6",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "السعر  الإنتاجية",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية  كمبوست عضوي  روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد كلي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Price/Prod",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Comp/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Total",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 28,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.793592"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "regenerative_agriculture_29_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "regenerative_agriculture_29_a73e3868",
+        "theme": "regenerativeagriculture",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟": "الإنتاجية مقاومة الآفات",
+            "35.كيف تحصل على البذور/الشتول؟": "من الصيدليات الزراعية/محلات تجارية (بذور مستوردة)",
+            "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟": "التكلفة العالية",
+            "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟": "أسمدة كيميائية   روث حيواني",
+            "39.ما مدى اعتمادك على الأسمدة الكيميائية؟": "اعتماد جزئي",
+            "40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟": "من 20% إلى 50%",
+            "43.كيف تقوم بمكافحة الآفات؟": "مكافحة كيميائية (مبيدات)",
+            "44.ما مدى اعتمادك على المبيدات الكيميائية؟": "اعتماد جزئي",
+            "45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟": "من 20% إلى 50%"
+          },
+          "en": {
+            "34. Seed Selection Criteria": "Prod/Pest",
+            "35. Seed Source": "Ag Pharmacy",
+            "36. Seed Challenges": "High Cost",
+            "38. Soil Enhancers": "Chem/Manure",
+            "39. Chem Fertilizer Reliance": "Partial",
+            "40. Fertilizer Cost %": "20-50%",
+            "43. Pest Control Method": "Chemical",
+            "44. Pesticide Reliance": "Partial",
+            "45. Pesticide Cost %": "20-50%"
+          }
+        },
+        "metadata": {
+          "sourceRow": 29,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.793592"
+        }
+      }
+    }
+  ]
+}

@@ -2,141 +2,141 @@
   "target_regen_adoption": {
     "target": "target_regen_adoption",
     "model_type": "random_forest",
-    "n_samples": 55,
-    "n_features": 31,
-    "pos_rate": 32.72727272727273,
-    "cv_f1_mean": 0.4,
-    "cv_f1_std": 0.48989794855663565,
-    "accuracy": 1.0,
-    "precision": 1.0,
+    "n_samples": 84,
+    "n_features": 25,
+    "pos_rate": 20.238095238095237,
+    "cv_f1_mean": 0.0,
+    "cv_f1_std": 0.0,
+    "accuracy": 0.9880952380952381,
+    "precision": 0.9444444444444444,
     "recall": 1.0,
-    "f1_score": 1.0,
-    "roc_auc": 1.0,
+    "f1_score": 0.9714285714285714,
+    "roc_auc": 0.9934152765583846,
     "top_features": [
       {
-        "feature": "has_regen_practice",
-        "importance": 0.2615606043914781
-      },
-      {
         "feature": "regen_technique_count",
-        "importance": 0.24929527317162126
+        "importance": 0.4254337496436609
       },
       {
         "feature": "climate_aware",
-        "importance": 0.09601273892882105
-      },
-      {
-        "feature": "climate_observed",
-        "importance": 0.09177711314256042
-      },
-      {
-        "feature": "manual_labor_pct",
-        "importance": 0.04274152172621424
-      },
-      {
-        "feature": "has_climate_impact",
-        "importance": 0.042411524215341195
-      },
-      {
-        "feature": "energy__5",
-        "importance": 0.03777456239483277
-      },
-      {
-        "feature": "resource_intensity",
-        "importance": 0.03687407554329245
+        "importance": 0.1037566168334491
       },
       {
         "feature": "medium_large_farm",
-        "importance": 0.026066978735013024
+        "importance": 0.09703078799183752
+      },
+      {
+        "feature": "resource_intensity",
+        "importance": 0.07867177208730647
+      },
+      {
+        "feature": "manual_labor_pct",
+        "importance": 0.065941939838222
+      },
+      {
+        "feature": "energy__5",
+        "importance": 0.06439342135694306
       },
       {
         "feature": "energy__7",
-        "importance": 0.025975109743480523
+        "importance": 0.06163248390581303
+      },
+      {
+        "feature": "crop_diversity",
+        "importance": 0.023207824741792837
+      },
+      {
+        "feature": "high_manual_labor",
+        "importance": 0.020249079433229098
+      },
+      {
+        "feature": "small_farm",
+        "importance": 0.01660428665308663
       }
     ],
     "confusion_matrix": [
       [
-        37,
-        0
+        66,
+        1
       ],
       [
         0,
-        18
+        17
       ]
     ]
   },
   "target_water_risk": {
     "target": "target_water_risk",
     "model_type": "random_forest",
-    "n_samples": 55,
-    "n_features": 31,
-    "pos_rate": 21.818181818181817,
+    "n_samples": 84,
+    "n_features": 25,
+    "pos_rate": 14.285714285714285,
     "cv_f1_mean": 0.0,
     "cv_f1_std": 0.0,
-    "accuracy": 1.0,
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1_score": 1.0,
-    "roc_auc": 1.0,
+    "accuracy": 0.9404761904761905,
+    "precision": 0.7333333333333333,
+    "recall": 0.9166666666666666,
+    "f1_score": 0.8148148148148148,
+    "roc_auc": 0.9849537037037036,
     "top_features": [
       {
-        "feature": "water_insufficient",
-        "importance": 0.41161068970653625
+        "feature": "resource_intensity",
+        "importance": 0.14555494010168005
       },
       {
         "feature": "manual_labor_pct",
-        "importance": 0.08823316462337995
+        "importance": 0.12266744423242822
       },
       {
         "feature": "energy__5",
-        "importance": 0.07142935313800394
-      },
-      {
-        "feature": "resource_intensity",
-        "importance": 0.059952643657253515
-      },
-      {
-        "feature": "crop_diversity",
-        "importance": 0.058261740554236524
+        "importance": 0.11886131572513088
       },
       {
         "feature": "energy__7",
-        "importance": 0.04939853708840842
+        "importance": 0.11611566495656543
+      },
+      {
+        "feature": "crop_diversity",
+        "importance": 0.09972298136078167
       },
       {
         "feature": "energy__6",
-        "importance": 0.03550694304126867
+        "importance": 0.0787597724810403
       },
       {
-        "feature": "energy__10",
-        "importance": 0.0260483283229118
+        "feature": "small_production",
+        "importance": 0.07474492853924564
       },
       {
         "feature": "has_animals",
-        "importance": 0.02581130744509789
+        "importance": 0.04999130492573116
       },
       {
-        "feature": "has_solar",
-        "importance": 0.024442473492230034
+        "feature": "climate_aware",
+        "importance": 0.04362424030683328
+      },
+      {
+        "feature": "high_manual_labor",
+        "importance": 0.02881597606772211
       }
     ],
     "confusion_matrix": [
       [
-        43,
-        0
+        68,
+        4
       ],
       [
-        0,
-        12
+        1,
+        11
       ]
     ]
   },
   "target_economic_vuln": {
     "target": "target_economic_vuln",
     "model_type": "random_forest",
-    "n_samples": 55,
-    "n_features": 31,
-    "pos_rate": 9.090909090909092,
+    "n_samples": 84,
+    "n_features": 25,
+    "pos_rate": 5.952380952380952,
     "cv_f1_mean": 0.0,
     "cv_f1_std": 0.0,
     "accuracy": 1.0,
@@ -147,48 +147,48 @@
     "top_features": [
       {
         "feature": "small_farm",
-        "importance": 0.26894251476165715
+        "importance": 0.3071163335146217
       },
       {
         "feature": "climate_aware",
-        "importance": 0.18623302187293173
-      },
-      {
-        "feature": "climate_observed",
-        "importance": 0.1406424984784678
-      },
-      {
-        "feature": "small_production",
-        "importance": 0.08374623323364257
+        "importance": 0.2134068683944597
       },
       {
         "feature": "regen_technique_count",
-        "importance": 0.04316983334303586
-      },
-      {
-        "feature": "energy__5",
-        "importance": 0.03504743621631449
-      },
-      {
-        "feature": "medium_large_farm",
-        "importance": 0.03489807395946565
+        "importance": 0.0951892844041752
       },
       {
         "feature": "crop_diversity",
-        "importance": 0.033153414469646265
+        "importance": 0.08364310970684247
       },
       {
-        "feature": "resource_intensity",
-        "importance": 0.029587627108275925
+        "feature": "small_production",
+        "importance": 0.06536318602517005
       },
       {
         "feature": "has_animals",
-        "importance": 0.02184370332689213
+        "importance": 0.042348625255166895
+      },
+      {
+        "feature": "energy__5",
+        "importance": 0.03901039573964991
+      },
+      {
+        "feature": "high_manual_labor",
+        "importance": 0.03876792290798792
+      },
+      {
+        "feature": "manual_labor_pct",
+        "importance": 0.02874234854342158
+      },
+      {
+        "feature": "resource_intensity",
+        "importance": 0.027661824109446242
       }
     ],
     "confusion_matrix": [
       [
-        50,
+        79,
         0
       ],
       [
@@ -200,62 +200,62 @@
   "target_climate_vuln": {
     "target": "target_climate_vuln",
     "model_type": "random_forest",
-    "n_samples": 55,
-    "n_features": 31,
-    "pos_rate": 21.818181818181817,
-    "cv_f1_mean": 0.2,
-    "cv_f1_std": 0.4,
-    "accuracy": 1.0,
-    "precision": 1.0,
+    "n_samples": 84,
+    "n_features": 25,
+    "pos_rate": 14.285714285714285,
+    "cv_f1_mean": 0.0,
+    "cv_f1_std": 0.0,
+    "accuracy": 0.9761904761904762,
+    "precision": 0.8571428571428571,
     "recall": 1.0,
-    "f1_score": 1.0,
-    "roc_auc": 1.0,
+    "f1_score": 0.9230769230769231,
+    "roc_auc": 0.9982638888888888,
     "top_features": [
       {
         "feature": "climate_aware",
-        "importance": 0.23453141324432583
-      },
-      {
-        "feature": "has_climate_impact",
-        "importance": 0.23228041854002082
-      },
-      {
-        "feature": "climate_observed",
-        "importance": 0.2041960538303443
+        "importance": 0.34294954944609984
       },
       {
         "feature": "medium_large_farm",
-        "importance": 0.07008658750647921
+        "importance": 0.21781483215515385
       },
       {
         "feature": "regen_technique_count",
-        "importance": 0.058663593867546215
-      },
-      {
-        "feature": "has_regen_practice",
-        "importance": 0.058288358973835316
-      },
-      {
-        "feature": "resource_intensity",
-        "importance": 0.01733895881976641
-      },
-      {
-        "feature": "crop_diversity",
-        "importance": 0.017141387089143683
-      },
-      {
-        "feature": "energy__5",
-        "importance": 0.015971759160375923
+        "importance": 0.14011659053125305
       },
       {
         "feature": "small_farm",
-        "importance": 0.015429652727761225
+        "importance": 0.06194499825857624
+      },
+      {
+        "feature": "manual_labor_pct",
+        "importance": 0.04211035065560999
+      },
+      {
+        "feature": "resource_intensity",
+        "importance": 0.03820954512802051
+      },
+      {
+        "feature": "crop_diversity",
+        "importance": 0.0381145036374726
+      },
+      {
+        "feature": "energy__5",
+        "importance": 0.02826063943431947
+      },
+      {
+        "feature": "small_production",
+        "importance": 0.023266917543267294
+      },
+      {
+        "feature": "has_animals",
+        "importance": 0.01904284181804659
       }
     ],
     "confusion_matrix": [
       [
-        43,
-        0
+        70,
+        2
       ],
       [
         0,

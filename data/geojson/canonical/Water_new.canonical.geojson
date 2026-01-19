@@ -1,0 +1,1137 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "theme": "Water",
+    "dataSource": "MZSurvey_2026_Beqaa",
+    "generatedAt": "2026-01-19T13:49:59.730626",
+    "featureCount": 29,
+    "columnsIncluded": 19,
+    "translationStatus": "complete",
+    "avgPropertiesPerFeature": {
+      "ar": 6.620689655172414,
+      "en": 5.0
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "water_1_1f85649f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0394,
+          33.7528
+        ]
+      },
+      "properties": {
+        "featureId": "water_1_1f85649f",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "ماسما",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "بندورة فلفل",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "فقط مياه الأمطار",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٧-٨",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Rainwater",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "July-Aug",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 1,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.726537"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_2_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "water_2_745c98f8",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "خس ، بصل",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "فقط مياه الأمطار بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٧-٨",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Rain/Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "July-Aug",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 2,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.726537"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_3_187c2130",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0556,
+          33.7142
+        ]
+      },
+      "properties": {
+        "featureId": "water_3_187c2130",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "دلهامية",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "بندورة، خيار",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٦-٧",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "June-July",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 3,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.726537"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_4_bbf8a56e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9833,
+          33.6875
+        ]
+      },
+      "properties": {
+        "featureId": "water_4_bbf8a56e",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "الفاكهة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "خيار، بطيخ",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "غير كافية تماماً",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "اب - ايلول",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، انخفاض في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Well",
+            "16. Water Availability": "Totally insufficient",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "Aug-Sept",
+            "18. Change in Irrigation Needs": "Yes, decrease"
+          }
+        },
+        "metadata": {
+          "sourceRow": 4,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.726537"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_5_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "water_5_caf1bea6",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "بندورة- خيار",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 5,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.726537"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_6_91594719",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.925,
+          33.775
+        ]
+      },
+      "properties": {
+        "featureId": "water_6_91594719",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "علي النهري",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "بازيلا، خيار",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "فقط مياه الأمطار بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٦-٧",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Rain/Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "June-July",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 6,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.726537"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_7_f11fbeb3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9344,
+          33.8147
+        ]
+      },
+      "properties": {
+        "featureId": "water_7_f11fbeb3",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "حارة الفيكاني",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "لوبيا- كوسا",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "فقط مياه الأمطار بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٧-٨",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Rain/Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "July-Aug",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 7,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.727624"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_8_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "water_8_caf1bea6",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "لوبيا",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "فقط مياه الأمطار بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٧-٨",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Rain/Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "July-Aug",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 8,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.727624"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_9_1a680f67",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0481,
+          33.8847
+        ]
+      },
+      "properties": {
+        "featureId": "water_9_1a680f67",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "نبي شيت",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "كوسا",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "فقط مياه الأمطار بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "اب،",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Rain/Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "August",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 9,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.727624"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_10_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "water_10_caf1bea6",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "بندورة، كوسا",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "فقط مياه الأمطار بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٧-٨",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Rain/Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "July-Aug",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 10,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.727624"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_11_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_11_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "لا يوجد تغيير"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "No change"
+          }
+        },
+        "metadata": {
+          "sourceRow": 11,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.727624"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_12_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_12_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "اشجار مثمرة- قمح",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "نادراً ما تكون كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "٨-٩",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Rarely enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "Aug-Sept",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 12,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.727624"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_13_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_13_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح ، دراق",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "غير كافية تماماً",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "اب",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، انخفاض في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River/Well",
+            "16. Water Availability": "Totally insufficient",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "August",
+            "18. Change in Irrigation Needs": "Yes, decrease"
+          }
+        },
+        "metadata": {
+          "sourceRow": 13,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.727624"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_14_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_14_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "زيتون",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 14,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.728626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_15_0ab6f6ca",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9542,
+          33.8253
+        ]
+      },
+      "properties": {
+        "featureId": "water_15_0ab6f6ca",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "اللبوة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح، مشمش",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، انخفاض في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, decrease"
+          }
+        },
+        "metadata": {
+          "sourceRow": 15,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.728626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_16_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_16_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح   دراق",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 16,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.728626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_17_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_17_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "اجاص، زيتون",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 17,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.728626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_18_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_18_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "ا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "Jan",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 18,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.728626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_19_748b5897",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9018,
+          33.8463
+        ]
+      },
+      "properties": {
+        "featureId": "water_19_748b5897",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "زحلة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "بندورة، خس",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "بئر جوفي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "اب، ايلول",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Well",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "Aug-Sept",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 19,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.728626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_20_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_20_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح، دراق",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "نادراً ما تكون كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "حزيران    تموز، اب",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Rarely enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "June, August",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 20,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.729622"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_21_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_21_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح، دراق",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "نادراً ما تكون كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "حزيران. اب",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River",
+            "16. Water Availability": "Rarely enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "June, August",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 21,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.729622"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_22_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_22_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "حزيران، تموز",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "June, July",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 22,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.729622"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_23_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_23_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح، كرز",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نقل المياه بالصهاريج",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "نادراً ما تكون كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "اشهر الصيف",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "لا يوجد تغيير"
+          },
+          "en": {
+            "13. Water Source": "Water transport by tankers",
+            "16. Water Availability": "Rarely enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "summer months",
+            "18. Change in Irrigation Needs": "No change"
+          }
+        },
+        "metadata": {
+          "sourceRow": 23,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.729622"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_24_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_24_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح، زيتون",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 24,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.729622"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_25_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_25_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تقاح، زيتون",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 25,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.729622"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_26_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_26_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "خضار، تفاح",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "لا",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River/Well/ canals",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "No",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 26,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.729622"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_27_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "water_27_745c98f8",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "خضار",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "اب",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Canals",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "August",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 27,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.730626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_28_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "water_28_caf1bea6",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "بازيلا، كوسا",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "بئر جوفي قنوات ري",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "أحياناً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "ما أشهر  الذي  تعاني فيها من شح المياه؟": "تموز، اب",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "Well/Canals",
+            "16. Water Availability": "Sometimes enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "July, August",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 28,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.730626"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_29_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "water_29_a73e3868",
+        "theme": "water",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟": "تفاح",
+            "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟": "نهر/مجرى مائي",
+            "16.كيف تقيّم توفر المياه خلال موسم الزراعة؟": "دائماً كافية",
+            "17.هل هناك أشهر خلال السنة تعاني فيها من شح المياه؟": "نعم",
+            "18.هل لاحظت أي تغيير في احتياجات الري خلال السنوات العشر الماضية؟": "نعم، زيادة في الاحتياج"
+          },
+          "en": {
+            "13. Water Source": "River",
+            "16. Water Availability": "Always enough",
+            "17. Are there months during the year when you suffer from water scarcity?": "Yes",
+            "17. Water Scarcity Months": "No",
+            "18. Change in Irrigation Needs": "Yes, increase"
+          }
+        },
+        "metadata": {
+          "sourceRow": 29,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.730626"
+        }
+      }
+    }
+  ]
+}

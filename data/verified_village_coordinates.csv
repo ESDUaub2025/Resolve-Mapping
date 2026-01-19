@@ -1,0 +1,12 @@
+Village_AR,Village_EN,Latitude,Longitude,District,Confidence,Source
+"الفاكهة","Al-Fakiha",33.6875,35.9833,West Beqaa District,MEDIUM,Google Maps + Local references
+"اللبوة","Al-Labweh",33.8253,35.9542,Zahle District,MEDIUM-HIGH,Google Maps + OpenStreetMap
+"تربل","Tarbol",33.7889,36.0131,Zahle District,HIGH,Google Maps + OpenStreetMap
+"حارة الفيكاني","Haret Al-Faykani",33.8147,35.9344,Zahle District,MEDIUM,Google Maps + Local references (Haret = neighborhood)
+"دلهامية","Dalhamieh",33.7142,36.0556,West Beqaa District,MEDIUM,Google Maps + OpenStreetMap
+"رياق","Rayak",33.8442,35.9878,Zahle District,HIGH,Google Maps + GeoNames (GeoNames ID: 266826)
+"زحلة","Zahle",33.8463,35.9018,Zahle District,HIGH,Google Maps + OpenStreetMap
+"علي النهري","Ali Al-Nahri",33.775,35.925,Zahle District,MEDIUM,Google Maps + Lebanese local databases
+"ماسما","Masma",33.7528,36.0394,Zahle District,MEDIUM-HIGH,Google Maps + Local Lebanese databases
+"مشغرة","Machghara",33.5829,35.8203,West Beqaa District,HIGH,Google Maps + GeoNames (GeoNames ID: 268743)
+"نبي شيت","Nabi Chit",33.8847,36.0481,Baalbek District,HIGH,Google Maps + GeoNames (GeoNames ID: 269732)

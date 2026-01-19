@@ -1,0 +1,18 @@
+{
+  "theme": "General_Info",
+  "timestamp": "2026-01-19T11:21:03.030135+00:00",
+  "source_arabic": "data/layers/Arabic/General_Info_new.csv",
+  "source_english": "PENDING",
+  "features_generated": 29,
+  "features_skipped": 0,
+  "property_columns": [
+    "القرية",
+    "حجم الزراعة",
+    "نوع التربة"
+  ],
+  "coordinate_validation": {
+    "valid": 29,
+    "invalid": 0
+  },
+  "translation_status": "Arabic only - English translations pending"
+}

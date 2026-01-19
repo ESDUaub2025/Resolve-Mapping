@@ -1,0 +1,32 @@
+{
+  "total_rows": 29,
+  "total_columns": 331,
+  "villages": [
+    "ماسما",
+    "تربل",
+    "دلهامية",
+    "الفاكهة",
+    "رياق",
+    "علي النهري",
+    "حارة الفيكاني",
+    "نبي شيت",
+    "مشغرة",
+    "اللبوة",
+    "زحلة"
+  ],
+  "has_coordinates": true,
+  "coordinate_columns": [
+    "Location & Context",
+    "6. Land Location",
+    "9. Soil Type",
+    "14. Energy Source",
+    "15. Energy Consumption",
+    "16. Water Availability",
+    "17. Are there months during the year when you suffer from water scarcity?",
+    "17. Water Scarcity Months",
+    "63. Raise Poultry?"
+  ],
+  "english_columns": 39,
+  "arabic_columns": 292,
+  "mixed_columns": 0
+}

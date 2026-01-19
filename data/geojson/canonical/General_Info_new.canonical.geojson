@@ -1,0 +1,1380 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "theme": "General_Info",
+    "dataSource": "MZSurvey_2026_Beqaa",
+    "generatedAt": "2026-01-19T13:49:59.775546",
+    "featureCount": 29,
+    "columnsIncluded": 22,
+    "translationStatus": "complete",
+    "avgPropertiesPerFeature": {
+      "ar": 10.0,
+      "en": 10.0
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "general_info_1_1f85649f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0394,
+          33.7528
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_1_1f85649f",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "ماسما",
+            "2.الفئة العمرية": "من 20 إلى 25 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "ماسما",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 5 دونم (< 5000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "لا يوجد تأثير كبير"
+          },
+          "en": {
+            "2. Age Group": "20-25",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Masma",
+            "7. Main Income Source": "Crops / Ag Labor",
+            "8. Land Size": "< 5 Dunums",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "High Temp",
+            "54. Impact on Production": "No major impact"
+          }
+        },
+        "metadata": {
+          "sourceRow": 1,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.770531"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_2_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_2_745c98f8",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "تربل",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "تأخير في المواسم الزراعية"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Terbol",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "> 1 Hectare",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "High Temp",
+            "54. Impact on Production": "Season delay"
+          }
+        },
+        "metadata": {
+          "sourceRow": 2,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.770531"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_3_187c2130",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0556,
+          33.7142
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_3_187c2130",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "دلهامية",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "دلهامية",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Dalhamieh",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "High Temp",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 3,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.771551"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_4_bbf8a56e",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9833,
+          33.6875
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_4_bbf8a56e",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "الفاكهة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "الفاكهة العقارية",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Al-Fakiha",
+            "7. Main Income Source": "Crops / Ag Labor",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "Low Prod/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 4,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.771551"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_5_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_5_caf1bea6",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "رياق- تربل",
+            "7. ما هو مصدر دخلك الرئيسي؟": "العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "زيادة الآفات والأمراض  صعوبات في التلقيح والإثمار"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Rayak-Terbol",
+            "7. Main Income Source": "Ag Labor",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "Pests/Pollination"
+          }
+        },
+        "metadata": {
+          "sourceRow": 5,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.771551"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_6_91594719",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.925,
+          33.775
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_6_91594719",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "علي النهري",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "علي النهري",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Ali Al-Nahri",
+            "7. Main Income Source": "Crops / Ag Labor",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 6,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.771551"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_7_f11fbeb3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9344,
+          33.8147
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_7_f11fbeb3",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "حارة الفيكاني",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "حارة الفيكاني",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Haat Al-Fikani",
+            "7. Main Income Source": "Crops / Ag Labor",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 7,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.771551"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_8_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_8_caf1bea6",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "رياق",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل الأعمال التجارية",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Rayak",
+            "7. Main Income Source": "Crops / Business",
+            "8. Land Size": "> 1 Hectare",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "Low Prod/Delay/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 8,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.771551"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_9_1a680f67",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0481,
+          33.8847
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_9_1a680f67",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "نبي شيت",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "نبي شيت",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Nabi Chit",
+            "7. Main Income Source": "Crops / Ag Labor",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "Low Prod/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 9,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.772548"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_10_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_10_caf1bea6",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "رياق",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Rayak",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 10,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.772548"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_11_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_11_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "مشغرة السهل",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 5 دونم (< 5000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "< 5 Dunums",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heatwaves",
+            "54. Impact on Production": "Low Prod/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 11,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.772548"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_12_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_12_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops / Ag Labor",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Rain/Snow",
+            "54. Impact on Production": "Low Prod/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 12,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.772548"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_13_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_13_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة كلسية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Plain",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Calcareous",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Rain/Heatwaves",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 13,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.772548"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_14_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_14_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "من 36 إلى 45 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "مشغرة، العوجة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل غير الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 5 دونم (< 5000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "36-45",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara awja",
+            "7. Main Income Source": "Crops / Non-Ag",
+            "8. Land Size": "< 5 Dunums",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 14,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.773547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_15_0ab6f6ca",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9542,
+          33.8253
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_15_0ab6f6ca",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "اللبوة",
+            "2.الفئة العمرية": "من 36 إلى 45 سنة",
+            "3.الجنس": "أنثى",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "اللبوة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 2 هكتار (> 20,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "36-45",
+            "3. Gender": "Female",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Labweh",
+            "7. Main Income Source": "Ag Labor",
+            "8. Land Size": "> 2 Hectares",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Rain/Frost",
+            "54. Impact on Production": "Low Prod/Delay/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 15,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.773547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_16_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_16_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "من 36 إلى 45 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "مشغرة - عين سرور",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "تأخير في المواسم الزراعية"
+          },
+          "en": {
+            "2. Age Group": "36-45",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara ain srour",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Lack of rainfall",
+            "54. Impact on Production": "Season delay"
+          }
+        },
+        "metadata": {
+          "sourceRow": 16,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.773547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_17_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_17_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "مشغرة ، عين سرور",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "تأخير في المواسم الزراعية"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara ain srour",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Lack of rainfall",
+            "54. Impact on Production": "Season delay"
+          }
+        },
+        "metadata": {
+          "sourceRow": 17,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.773547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_18_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_18_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل الأعمال التجارية",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops / Business",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Prod/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 18,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.773547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_19_748b5897",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9018,
+          33.8463
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_19_748b5897",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "زحلة",
+            "2.الفئة العمرية": "من 36 إلى 45 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "زحلة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "العمل الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طينية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "36-45",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Zahle",
+            "7. Main Income Source": "Ag Labor",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Clay",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Heat/Heatwaves",
+            "54. Impact on Production": "pests and diseases"
+          }
+        },
+        "metadata": {
+          "sourceRow": 19,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.773547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_20_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_20_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة ، منطقة السهلان",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج  تأخير في المواسم الزراعية"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "> 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Reduced production, delays in agricultural seasons"
+          }
+        },
+        "metadata": {
+          "sourceRow": 20,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.774547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_21_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_21_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة ، منطقة الوديان",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Prod/Delay/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 21,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.774547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_22_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_22_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "من 36 إلى 45 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 5 دونم (< 5000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة رملية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "36-45",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "< 5 Dunums",
+            "9. Soil Type": "تربة رملية",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "High temperatures and lack of rainfall",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 22,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.774547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_23_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_23_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "مشغرة- سهل",
+            "7. ما هو مصدر دخلك الرئيسي؟": "العمل الزراعي العمل غير الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 5 دونم (< 5000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة رملية",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Ag Labor/Non-Ag",
+            "8. Land Size": "< 5 Dunums",
+            "9. Soil Type": "تربة رملية",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "pests and diseases"
+          }
+        },
+        "metadata": {
+          "sourceRow": 23,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.774547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_24_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_24_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل غير الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops / Non-Ag",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "High temperatures and lack of rainfall",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 24,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.774547"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_25_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_25_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "العمل الزراعي العمل غير الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Ag Labor/Non-Ag",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Prod/Delay/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 25,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.775546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_26_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_26_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "من 46 إلى 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل غير الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "46-55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Crops / Non-Ag",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Prod/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 26,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.775546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_27_745c98f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0131,
+          33.7889
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_27_745c98f8",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "تربل",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "رياق",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل العمل غير الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 5 دونم (< 5000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Rayak",
+            "7. Main Income Source": "Crops / Non-Ag",
+            "8. Land Size": "< 5 Dunums",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Production"
+          }
+        },
+        "metadata": {
+          "sourceRow": 27,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.775546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_28_caf1bea6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9878,
+          33.8442
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_28_caf1bea6",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "رياق",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "رياق",
+            "7. ما هو مصدر دخلك الرئيسي؟": "زراعة المحاصيل",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أكثر من 1 هكتار (> 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Rayak",
+            "7. Main Income Source": "Crops",
+            "8. Land Size": "> 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Prod/Delay/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 28,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.775546"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "general_info_29_a73e3868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.8203,
+          33.5829
+        ]
+      },
+      "properties": {
+        "featureId": "general_info_29_a73e3868",
+        "theme": "generalinfo",
+        "values": {
+          "ar": {
+            "4.القرية": "مشغرة",
+            "2.الفئة العمرية": "أكثر من 55 سنة",
+            "3.الجنس": "ذكر",
+            "5.هل تمتلك أرضاً زراعية؟": "نعم",
+            "6.موقع أرضك": "سهل مشغرة",
+            "7. ما هو مصدر دخلك الرئيسي؟": "العمل الزراعي العمل غير الزراعي",
+            "8.ما هو حجم الحيازة الزراعية الخاصة بك؟": "أقل من 1 هكتار (< 10,000 متر مربع)",
+            "9.ما هو نوع التربة في أرضك؟": "تربة طمية ( طينية ورملية)",
+            "52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟": "نعم",
+            "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟": "انخفاض الإنتاج  تأخير في المواسم الزراعية زيادة الآفات والأمراض"
+          },
+          "en": {
+            "2. Age Group": "> 55",
+            "3. Gender": "Male",
+            "5. Own Farmland?": "Yes",
+            "6. Land Location": "Machghara valley",
+            "7. Main Income Source": "Ag Labor/Non-Ag",
+            "8. Land Size": "< 1 Hectare",
+            "9. Soil Type": "Loamy",
+            "52. Climate Change Noticed?": "Yes",
+            "53. Climate Changes": "Temp/Rain/Heat",
+            "54. Impact on Production": "Low Prod/Delay/Pests"
+          }
+        },
+        "metadata": {
+          "sourceRow": 29,
+          "dataSource": "MZSurvey_2026_Beqaa",
+          "translationStatus": "complete",
+          "generatedAt": "2026-01-19T13:49:59.775546"
+        }
+      }
+    }
+  ]
+}

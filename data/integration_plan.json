@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-01-19T13:12:50.633285",
+  "phase": "Phase 2 - Integration Planning",
+  "approach": "SAFE_EXPANSION",
+  "strategy": {
+    "description": "Create separate \"_new\" files for review before merging",
+    "steps": [
+      "1. Created theme-specific CSV files with new survey data",
+      "2. Mapped column names to match existing schema",
+      "3. Ready for manual review and validation",
+      "4. After validation, can append to existing files OR keep separate",
+      "5. Generate canonical bilingual GeoJSON for new data"
+    ]
+  },
+  "created_files": [
+    {
+      "theme": "Water",
+      "file": "data\\layers\\Arabic\\Water_new.csv",
+      "rows": 29,
+      "columns": 3,
+      "column_names": [
+        "المحصول",
+        "مصدر مياه الريّ الرئيسي",
+        "توفر المياه"
+      ]
+    },
+    {
+      "theme": "Energy",
+      "file": "data\\layers\\Arabic\\Energy_new.csv",
+      "rows": 29,
+      "columns": 0,
+      "column_names": []
+    },
+    {
+      "theme": "Food",
+      "file": "data\\layers\\Arabic\\Food_new.csv",
+      "rows": 29,
+      "columns": 0,
+      "column_names": []
+    },
+    {
+      "theme": "General_Info",
+      "file": "data\\layers\\Arabic\\General_Info_new.csv",
+      "rows": 29,
+      "columns": 5,
+      "column_names": [
+        "X",
+        "Y",
+        "القرية",
+        "حجم الزراعة",
+        "نوع التربة"
+      ]
+    },
+    {
+      "theme": "Regenerative_Agriculture",
+      "file": "data\\layers\\Arabic\\Regenerative_Agriculture_new.csv",
+      "rows": 29,
+      "columns": 5,
+      "column_names": [
+        "الزراعة التجديدية",
+        "تقنيات الزراعة التجديدية",
+        "محسنات التربة",
+        "الاعتماد على الاسمدة الكيميائية",
+        "مكافحة الآفات"
+      ]
+    }
+  ],
+  "next_actions": {
+    "immediate": [
+      "Review created CSV files for data quality",
+      "Verify column mappings are correct",
+      "Check coordinate validity"
+    ],
+    "after_validation": [
+      "Option A: Append to existing theme CSV files",
+      "Option B: Keep as separate \"_new\" files",
+      "Option C: Generate separate canonical GeoJSON for new data only",
+      "Run generate_canonical_geojson.py on combined or separate data"
+    ]
+  },
+  "risk_mitigation": {
+    "backups_created": true,
+    "separate_files": true,
+    "reversible": true,
+    "production_safety": "HIGH - No existing files modified"
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "timestamp": "2026-01-19T13:03:31.423607",
+  "input_file": "data\\MZSurvey farmers ENGLISH.csv",
+  "output_file": "data\\MZSurvey farmers ENGLISH_with_coords.csv",
+  "backup_file": "data\\MZSurvey farmers ENGLISH_BACKUP_20260119.csv",
+  "coordinate_source": "data\\verified_village_coordinates.json",
+  "statistics": {
+    "total_rows": 29,
+    "mapped_rows": 29,
+    "unmapped_rows": 0,
+    "unique_villages": 11,
+    "coordinate_precision": "6 decimal places (±0.1m)"
+  },
+  "mapping_details": [
+    {
+      "row": 1,
+      "village_ar": "ماسما",
+      "village_en": "Masma",
+      "lat": 33.7528,
+      "lon": 36.0394,
+      "confidence": "MEDIUM-HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 2,
+      "village_ar": "تربل",
+      "village_en": "Tarbol",
+      "lat": 33.7889,
+      "lon": 36.0131,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 3,
+      "village_ar": "دلهامية",
+      "village_en": "Dalhamieh",
+      "lat": 33.7142,
+      "lon": 36.0556,
+      "confidence": "MEDIUM",
+      "status": "MAPPED"
+    },
+    {
+      "row": 4,
+      "village_ar": "الفاكهة",
+      "village_en": "Al-Fakiha",
+      "lat": 33.6875,
+      "lon": 35.9833,
+      "confidence": "MEDIUM",
+      "status": "MAPPED"
+    },
+    {
+      "row": 5,
+      "village_ar": "رياق",
+      "village_en": "Rayak",
+      "lat": 33.8442,
+      "lon": 35.9878,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 6,
+      "village_ar": "علي النهري",
+      "village_en": "Ali Al-Nahri",
+      "lat": 33.775,
+      "lon": 35.925,
+      "confidence": "MEDIUM",
+      "status": "MAPPED"
+    },
+    {
+      "row": 7,
+      "village_ar": "حارة الفيكاني",
+      "village_en": "Haret Al-Faykani",
+      "lat": 33.8147,
+      "lon": 35.9344,
+      "confidence": "MEDIUM",
+      "status": "MAPPED"
+    },
+    {
+      "row": 8,
+      "village_ar": "رياق",
+      "village_en": "Rayak",
+      "lat": 33.8442,
+      "lon": 35.9878,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 9,
+      "village_ar": "نبي شيت",
+      "village_en": "Nabi Chit",
+      "lat": 33.8847,
+      "lon": 36.0481,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 10,
+      "village_ar": "رياق",
+      "village_en": "Rayak",
+      "lat": 33.8442,
+      "lon": 35.9878,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 11,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 12,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 13,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 14,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 15,
+      "village_ar": "اللبوة",
+      "village_en": "Al-Labweh",
+      "lat": 33.8253,
+      "lon": 35.9542,
+      "confidence": "MEDIUM-HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 16,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 17,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 18,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 19,
+      "village_ar": "زحلة",
+      "village_en": "Zahle",
+      "lat": 33.8463,
+      "lon": 35.9018,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 20,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 21,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 22,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 23,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 24,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 25,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 26,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 27,
+      "village_ar": "تربل",
+      "village_en": "Tarbol",
+      "lat": 33.7889,
+      "lon": 36.0131,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 28,
+      "village_ar": "رياق",
+      "village_en": "Rayak",
+      "lat": 33.8442,
+      "lon": 35.9878,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    },
+    {
+      "row": 29,
+      "village_ar": "مشغرة",
+      "village_en": "Machghara",
+      "lat": 33.5829,
+      "lon": 35.8203,
+      "confidence": "HIGH",
+      "status": "MAPPED"
+    }
+  ]
+}

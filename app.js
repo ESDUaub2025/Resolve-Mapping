@@ -303,7 +303,11 @@
 	function addPolygonLayer(id, url, fillColor) {
 		sourceUrlById[id] = url;
 		if (!map.getSource(id)) {
-			map.addSource(id, { type: 'geojson', data: url, generateId: true });
+			map.addSource(id, { 
+				type: 'geojson', 
+				data: url,
+				promoteId: 'id'  // Use stable feature IDs instead of generateId
+			});
 		}
 		const fillId = `${id}-fill`;
 		const outlineId = `${id}-outline`;
@@ -581,16 +585,23 @@
 		
 		const { id, color, data } = themeData;
 		
-		// Add source using GeoJSON object directly (not URL)
-		addGeoJsonLayer(layerId, data, color, true);
+		// Apply coordinate staggering to prevent overlapping points in same village
+		const staggeredData = {
+			type: 'FeatureCollection',
+			features: staggerDuplicateCoordinates(data.features),
+			metadata: data.metadata
+		};
 		
-		// Store reference for filtering
-		originalDataBySource[layerId] = data;
+		// Add source using GeoJSON object directly (not URL)
+		addGeoJsonLayer(layerId, staggeredData, color, true);
+		
+		// Store reference for filtering (with staggered coordinates)
+		originalDataBySource[layerId] = staggeredData;
 		
 		// Update layer count badge
-		updateLayerCount(layerId, data.features.length);
+		updateLayerCount(layerId, staggeredData.features.length);
 		
-		console.log(`✓ Added canonical layer: ${layerId} (${data.features.length} features)`);
+		console.log(`✓ Added canonical layer: ${layerId} (${staggeredData.features.length} features, staggered)`);
 	}
 
 	async function preloadGeoJson(id) {
@@ -1539,7 +1550,7 @@
 			
 			// Common selectors
 			if (filters.villageNames && filters.villageNames.size) {
-				const v = getProp(['القرية', 'القرية:', '4.القرية:', 'Village']);
+				const v = getProp(['القرية', 'القرية:', '4.القرية', '4.القرية:', 'Village', '4. Village']);
 				let ok = false;
 				for (const val of filters.villageNames) { if (matchesGroupedValue(id, 'القرية', v, val)) { ok = true; break; } }
 				if (!ok) return false;
@@ -1558,13 +1569,13 @@
 			// Per-layer specifics (using canonical property keys)
 			if (id === 'water-points') {
 				if (filters.irrigSource && filters.irrigSource.size) {
-					const v = getProp(['_6', 'مصدر مياه الريّ الرئيسي']);
+					const v = getProp(['_6', 'مصدر مياه الريّ الرئيسي', '13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟', '13. Water Source']);
 					let ok = false;
 					for (const val of filters.irrigSource) { if (matchesGroupedValue(id, '_6', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.waterSuff && filters.waterSuff.size) {
-					const v = getProp(['_7', 'توفر المياه']);
+					const v = getProp(['_7', 'توفر المياه', '16.كيف تقيّم توفر المياه خلال موسم الزراعة؟', '16. Water Availability']);
 					let ok = false; for (const val of filters.waterSuff) { if (matchesGroupedValue(id, '_7', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
@@ -1579,7 +1590,7 @@
 					}
 				}
 				if (filters.cropTypes && filters.cropTypes.size) {
-					const v = getProp(['المحصول']);
+					const v = getProp(['المحصول', '10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟', '10. Main Crops']);
 					let ok = false;
 					for (const val of filters.cropTypes) { if (matchesGroupedValue(id, 'المحصول', v, val)) { ok = true; break; } }
 					if (!ok) return false;
@@ -1619,16 +1630,16 @@
 			}
 			if (id === 'energy-points') {
 				if (filters.energySource && filters.energySource.size) {
-					const v = getProp(['_3', 'مصدر الطاقة الرئيسي']);
+					const v = getProp(['_3', 'مصدر الطاقة الرئيسي', '14.ما هو مصدر الطاقة الرئيسي الذي تستخدمه للري والعمليات الزراعية؟', '14. Energy Source']);
 					let ok = false; for (const val of filters.energySource) { if (matchesGroupedValue(id, '_3', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.hasSolar === true) {
-					const v = getProp(['_3', 'مصدر الطاقة الرئيسي']);
+					const v = getProp(['_3', 'مصدر الطاقة الرئيسي', '14.ما هو مصدر الطاقة الرئيسي الذي تستخدمه للري والعمليات الزراعية؟', '14. Energy Source']);
 					if (!(/شمس|الشمس|solar|طاقة شمسية/i).test(v)) return false;
 				}
 				if (filters.hasDiesel === true) {
-					const v = getProp(['_3', 'مصدر الطاقة الرئيسي']);
+					const v = getProp(['_3', 'مصدر الطاقة الرئيسي', '14.ما هو مصدر الطاقة الرئيسي الذي تستخدمه للري والعمليات الزراعية؟', '14. Energy Source']);
 					if (!(/ديزل|مولد|مازوت|generator/i).test(v)) return false;
 				}
 				if (filters.peakMin != null || filters.peakMax != null) {
@@ -1673,12 +1684,12 @@
 			}
 			if (id === 'general-points') {
 				if (filters.farmSize && filters.farmSize.size) {
-					const v = getProp(['_3', 'حجم الزراعة']);
+					const v = getProp(['_3', 'حجم الزراعة', '8.ما هو حجم الحيازة الزراعية الخاصة بك؟', '8. Farm Size']);
 					let ok = false; for (const val of filters.farmSize) { if (matchesGroupedValue(id, '_3', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
 				if (filters.soilType && filters.soilType.size) {
-					const v = getProp(['_4', 'نوع التربة']);
+					const v = getProp(['_4', 'نوع التربة', '9.ما هو نوع التربة في أرضك؟', '9. Soil Type']);
 					let ok = false; for (const val of filters.soilType) { if (matchesGroupedValue(id, '_4', v, val)) { ok = true; break; } }
 					if (!ok) return false;
 				}
@@ -1885,24 +1896,24 @@ function addTextControl(parent, labelText, onChange) {
 		const mapping = {
 			'water-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'water-points', () => ({}));
-				addMultiSelect(controls, 'Village', uniqueValues('water-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('water-points'); });
-				addMultiSelect(controls, 'Crop type', uniqueValues('water-points', ['المحصول']), (set)=>{ state.cropTypes = set; applyFiltersForLayer('water-points'); });
-				addMultiSelect(controls, 'Irrigation source', uniqueValues('water-points', ['_6']), (set)=>{ state.irrigSource = set; applyFiltersForLayer('water-points'); });
-				addMultiSelect(controls, 'Water sufficiency', uniqueValues('water-points', ['_7']), (set)=>{ state.waterSuff = set; applyFiltersForLayer('water-points'); });
+				addMultiSelect(controls, 'Village', uniqueValues('water-points', ['القرية', '4.القرية', '4.القرية:', 'Village', '4. Village']), (set)=>{ state.villageNames = set; applyFiltersForLayer('water-points'); });
+				addMultiSelect(controls, 'Crop type', uniqueValues('water-points', ['المحصول', '10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟', '10. Main Crops']), (set)=>{ state.cropTypes = set; applyFiltersForLayer('water-points'); });
+				addMultiSelect(controls, 'Irrigation source', uniqueValues('water-points', ['_6', 'مصدر مياه الريّ الرئيسي', '13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟', '13. Water Source']), (set)=>{ state.irrigSource = set; applyFiltersForLayer('water-points'); });
+				addMultiSelect(controls, 'Water sufficiency', uniqueValues('water-points', ['_7', 'توفر المياه', '16.كيف تقيّم توفر المياه خلال موسم الزراعة؟', '16. Water Availability']), (set)=>{ state.waterSuff = set; applyFiltersForLayer('water-points'); });
 				addMonthRange(controls, 'Scarcity month range (1-12)', (v)=>{ state.scarcityMonthMin = v; applyFiltersForLayer('water-points'); }, (v)=>{ state.scarcityMonthMax = v; applyFiltersForLayer('water-points'); });
 				addMultiSelect(controls, 'Irrigation frequency', uniqueValues('water-points', ['_5']), (set)=>{ state.irrigFreq = set; applyFiltersForLayer('water-points'); });
 			},
 			'energy-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'energy-points', () => ({}));
-				addMultiSelect(controls, 'Village', uniqueValues('energy-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('energy-points'); });
-				addMultiSelect(controls, 'Energy source', uniqueValues('energy-points', ['_3']), (set)=>{ state.energySource = set; applyFiltersForLayer('energy-points'); });
+				addMultiSelect(controls, 'Village', uniqueValues('energy-points', ['القرية', '4.القرية', '4.القرية:', 'Village', '4. Village']), (set)=>{ state.villageNames = set; applyFiltersForLayer('energy-points'); });
+				addMultiSelect(controls, 'Energy source', uniqueValues('energy-points', ['_3', 'مصدر الطاقة الرئيسي', '14.ما هو مصدر الطاقة الرئيسي الذي تستخدمه للري والعمليات الزراعية؟', '14. Energy Source']), (set)=>{ state.energySource = set; applyFiltersForLayer('energy-points'); });
 				addCheckbox(controls, 'Has solar', (v)=>{ state.hasSolar = v; applyFiltersForLayer('energy-points'); });
 				addCheckbox(controls, 'Has diesel/generator', (v)=>{ state.hasDiesel = v; applyFiltersForLayer('energy-points'); });
 				addNumberRange(controls, 'Peak energy amount (min/max)', (v)=>{ state.peakMin = v; applyFiltersForLayer('energy-points'); }, (v)=>{ state.peakMax = v; applyFiltersForLayer('energy-points'); });
 			},
 			'food-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'food-points', () => ({}));
-				addMultiSelect(controls, 'Village', uniqueValues('food-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('food-points'); });
+				addMultiSelect(controls, 'Village', uniqueValues('food-points', ['القرية', '4.القرية', '4.القرية:', 'Village', '4. Village']), (set)=>{ state.villageNames = set; applyFiltersForLayer('food-points'); });
 				addMultiSelect(controls, 'Production level', uniqueValues('food-points', ['_5']), (set)=>{ state.production = set; applyFiltersForLayer('food-points'); });
 				addMultiSelect(controls, 'Traditional products', uniqueValues('food-points', ['_6']), (set)=>{ state.tradProducts = set; applyFiltersForLayer('food-points'); });
 				addCheckbox(controls, 'Has animals', (v)=>{ state.hasAnimals = v; applyFiltersForLayer('food-points'); });
@@ -1911,9 +1922,9 @@ function addTextControl(parent, labelText, onChange) {
 			},
 			'general-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'general-points', () => ({}));
-				addMultiSelect(controls, 'Village', uniqueValues('general-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('general-points'); });
-				addMultiSelect(controls, 'Farm size', uniqueValues('general-points', ['_3']), (set)=>{ state.farmSize = set; applyFiltersForLayer('general-points'); });
-				addMultiSelect(controls, 'Soil type', uniqueValues('general-points', ['_4']), (set)=>{ state.soilType = set; applyFiltersForLayer('general-points'); });
+				addMultiSelect(controls, 'Village', uniqueValues('general-points', ['القرية', '4.القرية', '4.القرية:', 'Village', '4. Village']), (set)=>{ state.villageNames = set; applyFiltersForLayer('general-points'); });
+				addMultiSelect(controls, 'Farm size', uniqueValues('general-points', ['_3', 'حجم الزراعة', '8.ما هو حجم الحيازة الزراعية الخاصة بك؟', '8. Farm Size']), (set)=>{ state.farmSize = set; applyFiltersForLayer('general-points'); });
+				addMultiSelect(controls, 'Soil type', uniqueValues('general-points', ['_4', 'نوع التربة', '9.ما هو نوع التربة في أرضك؟', '9. Soil Type']), (set)=>{ state.soilType = set; applyFiltersForLayer('general-points'); });
 				// yes/no
 				(function(controls){
 					const wrap = document.createElement('div');
@@ -1926,7 +1937,7 @@ function addTextControl(parent, labelText, onChange) {
 			},
 			'regen-points': (controls) => {
 				const state = getOrInit(activeFiltersById, 'regen-points', () => ({}));
-				addMultiSelect(controls, 'Village', uniqueValues('regen-points', ['القرية']), (set)=>{ state.villageNames = set; applyFiltersForLayer('regen-points'); });
+				addMultiSelect(controls, 'Village', uniqueValues('regen-points', ['القرية', '4.القرية', '4.القرية:', 'Village', '4. Village']), (set)=>{ state.villageNames = set; applyFiltersForLayer('regen-points'); });
 				addMultiSelect(controls, 'Fertilizer reliance', uniqueValues('regen-points', ['_5']), (set)=>{ state.fertilRel = set; applyFiltersForLayer('regen-points'); });
 				addMultiSelect(controls, 'Pest management', uniqueValues('regen-points', ['_6']), (set)=>{ state.pestMgmt = set; applyFiltersForLayer('regen-points'); });
 				addMultiSelect(controls, 'Regenerative techniques', uniqueValues('regen-points', ['_3']), (set)=>{ state.regenTech = set; applyFiltersForLayer('regen-points'); });
@@ -2076,21 +2087,39 @@ function addTextControl(parent, labelText, onChange) {
 		}
 		
 		// Build details using PropertySchemas
-		const details = PropertySchemas.buildDetailsPanel(feature, themeKey, lang);
+		const panelData = PropertySchemas.buildDetailsPanel(feature, themeKey, lang);
 		const content = document.getElementById('details-content');
 		if (!content) return;
 		
-		let html = '<div class="details-rows">';
-		details.forEach(({ label, value, isCommon }) => {
-			const rowClass = isCommon ? 'detail-row common-field' : 'detail-row';
-			html += `
-				<div class="${rowClass}">
-					<span class="detail-label">${label}</span>
-					<span class="detail-value">${value}</span>
-				</div>
-			`;
+		// Get theme heading (matching old format)
+		const headingFor = (theme) => ({
+			water: lang === 'ar' ? 'المياه' : 'Water',
+			energy: lang === 'ar' ? 'الطاقة' : 'Energy',
+			food: lang === 'ar' ? 'الغذاء' : 'Food',
+			general: lang === 'ar' ? 'معلومات عامة' : 'General',
+			generalinfo: lang === 'ar' ? 'معلومات عامة' : 'General',
+			regen: lang === 'ar' ? 'الزراعة التجديدية' : 'Regenerative Agriculture',
+			regenerativeagriculture: lang === 'ar' ? 'الزراعة التجديدية' : 'Regenerative Agriculture'
+		})[theme] || theme;
+		
+		// Render in TABLE format (matching old data points exactly)
+		let html = `<h4 style="margin:10px 0 6px;">${headingFor(themeKey)}</h4>`;
+		
+		// Build table rows with all properties
+		const rows = [];
+		
+		// Add village first if present
+		if (panelData.villageName) {
+			const villageLabel = lang === 'ar' ? 'القرية' : 'Village';
+			rows.push(`<tr><th>${villageLabel}</th><td>${panelData.villageName}</td></tr>`);
+		}
+		
+		// Add all other properties
+		panelData.details.forEach(({ label, value }) => {
+			rows.push(`<tr><th>${label}</th><td>${value}</td></tr>`);
 		});
-		html += '</div>';
+		
+		html += `<table>${rows.join('')}</table>`;
 		
 		content.innerHTML = html;
 	}
@@ -2145,7 +2174,7 @@ function addTextControl(parent, labelText, onChange) {
 		const panel = document.getElementById('details');
 		const content = document.getElementById('details-content');
 		if (!panel || !content) return;
-		const pointIds = ['water-points','energy-points','food-points','general-points','regen-points','fire-points','farmers-points', 'ai-regen', 'ai-water', 'ai-econ', 'ai-labor', 'ai-climate'];
+		const pointIds = ['water-points','energy-points','food-points','general-points','regen-points','fire-points','farmers-points', 'ai-regen', 'ai-water', 'ai-econ', 'ai-climate'];
 		const visibleSymbolLayers = pointIds.map(id => {
 			if (id.startsWith('ai-')) return id; // AI layers are circle layers, not symbol layers
 			return `${id}-symbols`;
@@ -2586,71 +2615,79 @@ function addTextControl(parent, labelText, onChange) {
 		}, id); // Place fill below line
 	}
 
+	/**
+	 * Add AI Prediction Layer (Updated for discrete classifications)
+	 * Uses categorical coloring instead of probability gradients
+	 * Data: Model_Predictions.geojson with 204 scenarios
+	 * Predictions: "0", "1", "2" (discrete, not continuous)
+	 */
 	function addAiHeatmapLayer(id, type) {
-		// Use fill-extrusion (3D) or fill for grid cell visualization
-		const sourceId = 'ai-grid';
-		const url = fromRoot('data/geojson/AI_Grid_Predictions.geojson');
+		const sourceId = 'ai-predictions';
+		const url = fromRoot('data/geojson/Model_Predictions.geojson');
 		
+		// Shared source for all AI layers (loaded once)
 		if (!map.getSource(sourceId)) {
-			map.addSource(sourceId, { type: 'geojson', data: url });
+			map.addSource(sourceId, { 
+				type: 'geojson', 
+				data: url,
+				promoteId: 'source_row'  // Use source_row as stable ID for feature-state
+			});
 		}
 		
-		let weightProp;
-		let colorStops;
+		let predProp;    // Prediction property name
+		let colorMap;    // Categorical color mapping
+		let description; // Layer description for legend
 		
 		if (type === 'regen') {
-			weightProp = 'Prob_Regen';
-			colorStops = [
-				0, '#d4edda',
-				0.2, '#a8ddb5',
-				0.4, '#7bccc4',
-				0.6, '#43a2ca',
-				0.8, '#0868ac',
-				1, '#084081'
+			predProp = 'Pred_Regen_Adoption';
+			description = 'Regenerative Agriculture Adoption';
+			// Binary: 0 = No adoption (red), 1 = Adoption (green)
+			colorMap = [
+				'match',
+				['get', predProp],
+				'0', '#e74c3c',  // Red - No adoption
+				'1', '#27ae60',  // Green - Adoption
+				'#95a5a6'        // Gray - Unknown/missing
 			];
 		} else if (type === 'water') {
-			weightProp = 'Prob_Water';
-			colorStops = [
-				0, '#fee5d9',
-				0.2, '#fcbba1',
-				0.4, '#fc9272',
-				0.6, '#fb6a4a',
-				0.8, '#de2d26',
-				1, '#a50f15'
+			predProp = 'Pred_Water_Risk';
+			description = 'Water Scarcity Risk';
+			// Binary: 0 = Low risk (green), 1 = High risk (red) - inverted logic
+			colorMap = [
+				'match',
+				['get', predProp],
+				'0', '#27ae60',  // Green - Low risk
+				'1', '#e74c3c',  // Red - High risk
+				'#95a5a6'        // Gray - Unknown
 			];
 		} else if (type === 'econ') {
-			weightProp = 'Prob_Econ';
-			colorStops = [
-				0, '#ffffcc',
-				0.2, '#d9f0a3',
-				0.4, '#addd8e',
-				0.6, '#78c679',
-				0.8, '#31a354',
-				1, '#006837'
-			];
-		} else if (type === 'labor') {
-			weightProp = 'Prob_Labor';
-			colorStops = [
-				0, '#efedf5',
-				0.2, '#dadaeb',
-				0.4, '#bcbddc',
-				0.6, '#9e9ac8',
-				0.8, '#756bb1',
-				1, '#54278f'
+			predProp = 'Pred_Production_Level';
+			description = 'Production Capacity';
+			// Ternary: 0 = Low (red), 1 = Medium (yellow), 2 = High (green)
+			colorMap = [
+				'match',
+				['get', predProp],
+				'0', '#e74c3c',  // Red - Low production
+				'1', '#f39c12',  // Yellow - Medium production
+				'2', '#27ae60',  // Green - High production
+				'#95a5a6'        // Gray - Unknown
 			];
 		} else if (type === 'climate') {
-			weightProp = 'Prob_Climate';
-			colorStops = [
-				0, '#deebf7',
-				0.2, '#c6dbef',
-				0.4, '#9ecae1',
-				0.6, '#6baed6',
-				0.8, '#3182bd',
-				1, '#08519c'
+			// Placeholder for future climate vulnerability predictions
+			// Currently using production level as proxy
+			predProp = 'Pred_Production_Level';
+			description = 'Climate Resilience Proxy';
+			colorMap = [
+				'match',
+				['get', predProp],
+				'0', '#3498db',  // Blue - Low resilience
+				'1', '#9b59b6',  // Purple - Medium resilience
+				'2', '#1abc9c',  // Teal - High resilience
+				'#95a5a6'        // Gray - Unknown
 			];
 		}
 
-		// Add circle layer with large radius and high blur for smooth coverage
+		// Add circle layer with categorical coloring and improved transparency
 		if (!map.getLayer(id)) {
 			map.addLayer({
 				id: id,
@@ -2658,28 +2695,44 @@ function addTextControl(parent, labelText, onChange) {
 				source: sourceId,
 				layout: { visibility: 'none' },
 				paint: {
+					// Larger circles for better visibility of discrete categories
 					'circle-radius': [
 						'interpolate', ['linear'], ['zoom'],
-						8, 30,
-						10, 40,
-						12, 50,
-						14, 60,
-						16, 70,
-						18, 80
+						8, 6,   // Small at low zoom
+						10, 8,
+						12, 10,
+						14, 12,
+						16, 14
 					],
-					'circle-color': [
-						'interpolate', ['linear'], ['get', weightProp],
-						...colorStops
+					// Categorical color based on prediction value
+					'circle-color': colorMap,
+					// Improved transparency for map clarity (user requirement)
+					'circle-opacity': [
+						'case',
+						['boolean', ['feature-state', 'hover'], false],
+						0.95,  // Full opacity on hover
+						0.7    // 70% opacity normally for "more transparent" map
 					],
-					'circle-blur': 1.5,  // Maximum blur for smooth gradient
-					'circle-opacity': 0.65
+					// White stroke for definition
+					'circle-stroke-width': [
+						'case',
+						['boolean', ['feature-state', 'hover'], false],
+						2,     // Thicker on hover
+						1      // Normal stroke
+					],
+					'circle-stroke-color': '#ffffff',
+					'circle-stroke-opacity': 0.9
 				}
 			});
+			
+			// Store description for legend
+			map.setLayerMetadata = map.setLayerMetadata || {};
+			map.setLayerMetadata[id] = { description, predProp, type };
 		}
 	}
 
 	function updateAiBoundaryVisibility() {
-		const aiLayers = ['ai-regen', 'ai-water', 'ai-econ', 'ai-labor', 'ai-climate'];
+		const aiLayers = ['ai-regen', 'ai-water', 'ai-econ', 'ai-climate'];
 		const anyActive = aiLayers.some(id => map.getLayer(id) && map.getLayoutProperty(id, 'visibility') === 'visible');
 		const boundaryId = 'farmers-boundary';
 		const vis = anyActive ? 'visible' : 'none';
@@ -2709,15 +2762,36 @@ function addTextControl(parent, labelText, onChange) {
 				style.textContent = `
 					.map-legend {
 						position: absolute; bottom: 30px; right: 10px;
-						background: rgba(255,255,255,0.9); padding: 10px;
-						border-radius: 4px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+						background: rgba(255,255,255,0.95); padding: 12px;
+						border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
 						font-family: sans-serif; font-size: 12px;
-						z-index: 10; max-width: 200px;
+						z-index: 10; max-width: 220px;
 					}
-					.legend-item { margin-bottom: 8px; }
-					.legend-title { font-weight: bold; margin-bottom: 4px; display:block; }
-					.legend-bar { height: 10px; width: 100%; border-radius: 2px; margin-bottom: 2px; }
-					.legend-labels { display: flex; justify-content: space-between; color: #666; font-size: 10px; }
+					.legend-item { margin-bottom: 12px; }
+					.legend-title { 
+						font-weight: bold; 
+						margin-bottom: 6px; 
+						display: block; 
+						font-size: 13px;
+						color: #333;
+					}
+					.legend-category {
+						display: flex;
+						align-items: center;
+						margin: 4px 0;
+					}
+					.legend-dot {
+						width: 14px;
+						height: 14px;
+						border-radius: 50%;
+						border: 2px solid #fff;
+						margin-right: 8px;
+						box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+					}
+					.legend-label {
+						color: #555;
+						font-size: 11px;
+					}
 				`;
 				document.head.appendChild(style);
 			}
@@ -2726,48 +2800,79 @@ function addTextControl(parent, labelText, onChange) {
 		legend.style.display = 'block';
 		let html = '';
 		
+		// Regenerative Adoption - Binary classification
 		if (map.getLayoutProperty('ai-regen', 'visibility') === 'visible') {
 			html += `
 				<div class="legend-item">
-					<span class="legend-title">Regenerative Adoption Probability</span>
-					<div class="legend-bar" style="background: linear-gradient(to right, rgba(200, 255, 200, 0.5), rgba(39, 174, 96, 0.95));"></div>
-					<div class="legend-labels"><span>Low (0%)</span><span>High (100%)</span></div>
-				</div>`;
-		}
-		if (map.getLayoutProperty('ai-water', 'visibility') === 'visible') {
-			html += `
-				<div class="legend-item">
-					<span class="legend-title">Water Risk Probability</span>
-					<div class="legend-bar" style="background: linear-gradient(to right, rgba(255, 200, 200, 0.5), rgba(192, 57, 43, 0.95));"></div>
-					<div class="legend-labels"><span>Low Risk</span><span>High Risk</span></div>
-				</div>`;
-		}
-		if (map.getLayoutProperty('ai-econ', 'visibility') === 'visible') {
-			html += `
-				<div class="legend-item">
-					<span class="legend-title">Economic Resilience Score</span>
-					<div class="legend-bar" style="background: linear-gradient(to right, rgba(255, 240, 200, 0.5), rgba(39, 174, 96, 0.95));"></div>
-					<div class="legend-labels"><span>Low</span><span>High</span></div>
-				</div>`;
-		}
-		if (map.getLayoutProperty('ai-labor', 'visibility') === 'visible') {
-			html += `
-				<div class="legend-item">
-					<span class="legend-title">Labor Availability</span>
-					<div class="legend-bar" style="background: linear-gradient(to right, rgba(230, 200, 255, 0.5), rgba(142, 68, 173, 0.95));"></div>
-					<div class="legend-labels"><span>Low</span><span>High</span></div>
-				</div>`;
-		}
-		if (map.getLayoutProperty('ai-climate', 'visibility') === 'visible') {
-			html += `
-				<div class="legend-item">
-					<span class="legend-title">Climate Vulnerability</span>
-					<div class="legend-bar" style="background: linear-gradient(to right, rgba(200, 230, 255, 0.5), rgba(41, 128, 185, 0.95));"></div>
-					<div class="legend-labels"><span>Low</span><span>High</span></div>
+					<span class="legend-title">Regenerative Adoption</span>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#e74c3c"></span>
+						<span class="legend-label">Unlikely to Adopt</span>
+					</div>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#27ae60"></span>
+						<span class="legend-label">Likely to Adopt</span>
+					</div>
 				</div>`;
 		}
 		
-		legend.innerHTML = html || '<div style="color:#666">Select an AI layer</div>';
+		// Water Risk - Binary classification (inverted logic)
+		if (map.getLayoutProperty('ai-water', 'visibility') === 'visible') {
+			html += `
+				<div class="legend-item">
+					<span class="legend-title">Water Risk</span>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#27ae60"></span>
+						<span class="legend-label">Low Risk</span>
+					</div>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#e74c3c"></span>
+						<span class="legend-label">High Risk</span>
+					</div>
+				</div>`;
+		}
+		
+		// Production Level - Ternary classification
+		if (map.getLayoutProperty('ai-econ', 'visibility') === 'visible') {
+			html += `
+				<div class="legend-item">
+					<span class="legend-title">Production Capacity</span>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#e74c3c"></span>
+						<span class="legend-label">Low Production</span>
+					</div>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#f39c12"></span>
+						<span class="legend-label">Medium Production</span>
+					</div>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#27ae60"></span>
+						<span class="legend-label">High Production</span>
+					</div>
+				</div>`;
+		}
+		
+		// Climate layer (using production as proxy)
+		if (map.getLayoutProperty('ai-climate', 'visibility') === 'visible') {
+			html += `
+				<div class="legend-item">
+					<span class="legend-title">Climate Resilience</span>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#3498db"></span>
+						<span class="legend-label">Low Resilience</span>
+					</div>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#9b59b6"></span>
+						<span class="legend-label">Medium Resilience</span>
+					</div>
+					<div class="legend-category">
+						<span class="legend-dot" style="background:#1abc9c"></span>
+						<span class="legend-label">High Resilience</span>
+					</div>
+				</div>`;
+		}
+		
+		legend.innerHTML = html || '<div style="color:#666; padding:8px;">Select an AI layer to see legend</div>';
 	}
 
 	// Load all thematic layers using new canonical architecture

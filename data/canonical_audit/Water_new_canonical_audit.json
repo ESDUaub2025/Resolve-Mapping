@@ -1,0 +1,19 @@
+{
+  "theme": "Water",
+  "timestamp": "2026-01-19T11:21:02.867201+00:00",
+  "source_arabic": "data/layers/Arabic/Water_new.csv",
+  "source_english": "PENDING",
+  "features_generated": 29,
+  "features_skipped": 0,
+  "property_columns": [
+    "القرية",
+    "المحصول",
+    "مصدر مياه الريّ الرئيسي",
+    "توفر المياه"
+  ],
+  "coordinate_validation": {
+    "valid": 29,
+    "invalid": 0
+  },
+  "translation_status": "Arabic only - English translations pending"
+}
