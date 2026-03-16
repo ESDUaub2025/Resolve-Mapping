@@ -14,59 +14,32 @@
 const DataLoader = (function() {
     'use strict';
 
-    // Configuration
+    // ── Read from manifest (single source of truth) ─────────────
+    const M = window.MANIFEST;
+
     const CONFIG = {
-        DB_NAME: 'ResolveMapDB',
-        DB_VERSION: 1,
-        STORE_NAME: 'geojsonCache',
-        CACHE_EXPIRY_DAYS: 7,
-        DATA_VERSION: '2.1.0' // Incremented for bilingual translation extraction (Jan 2026)
+        DB_NAME:          M.DB_NAME,
+        DB_VERSION:       M.DB_VERSION,
+        STORE_NAME:       M.DB_STORE,
+        CACHE_EXPIRY_DAYS: M.CACHE_EXPIRY_DAYS,
+        DATA_VERSION:     M.DATA_VERSION
     };
 
-    // Themes to load (canonical bilingual files - includes original + Beqaa Valley 2026)
-    const THEMES = {
-        water: {
-            id: 'water-points',
-            files: [
-                'data/geojson/canonical/Water.canonical.geojson',
-                'data/geojson/canonical/Water_new.canonical.geojson'
-            ],
-            color: '#1abc9c'
-        },
-        energy: {
-            id: 'energy-points',
-            file: 'data/geojson/canonical/Energy.canonical.geojson',
-            color: '#f39c12'
-        },
-        food: {
-            id: 'food-points',
-            file: 'data/geojson/canonical/Food.canonical.geojson',
-            color: '#e74c3c'
-        },
-        general: {
-            id: 'general-points',
-            files: [
-                'data/geojson/canonical/General_Info.canonical.geojson',
-                'data/geojson/canonical/General_Info_new.canonical.geojson'
-            ],
-            color: '#3498db'
-        },
-        regen: {
-            id: 'regen-points',
-            files: [
-                'data/geojson/canonical/Regenerative_Agriculture.canonical.geojson',
-                'data/geojson/canonical/Regenerative_Agriculture_new.canonical.geojson'
-            ],
-            color: '#27ae60'
-        }
-    };
+    // Build THEMES from manifest
+    const THEMES = {};
+    for (const [key, cfg] of Object.entries(M.THEMES)) {
+        THEMES[key] = {
+            id:    cfg.layerId,
+            files: cfg.canonicalFiles,
+            color: cfg.color
+        };
+    }
 
-    // Static layers (unchanged)
-    const STATIC_LAYERS = {
-        fire: 'data/geojson/fire.geojson',
-        preservations: 'data/geojson/Preservations.geojson',
-        predictions: 'data/geojson/Model_Predictions.geojson'
-    };
+    // Build STATIC_LAYERS from manifest
+    const STATIC_LAYERS = {};
+    for (const [key, cfg] of Object.entries(M.STATIC_LAYERS)) {
+        STATIC_LAYERS[key] = cfg.file;
+    }
 
     let db = null;
 

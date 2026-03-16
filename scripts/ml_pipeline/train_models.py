@@ -31,6 +31,13 @@ except ImportError:
     HAS_XGBOOST = False
     print("Warning: XGBoost not installed, using RandomForest only")
 
+try:
+    from feature_engineering import FeatureEngineer
+except ImportError:
+    import sys
+    sys.path.insert(0, str(Path(__file__).parent))
+    from feature_engineering import FeatureEngineer
+
 
 class ModelTrainer:
     """Train and validate ML models for agricultural predictions."""
@@ -42,6 +49,7 @@ class ModelTrainer:
         self.targets = None
         self.models = {}
         self.metrics = {}
+        self._model_features = {}  # per-model feature lists
         
     def load_data(self):
         """Load prepared dataset."""
@@ -91,9 +99,18 @@ class ModelTrainer:
         
         print(f"\n--- Training {model_type} for {target} ---")
         
+        # Exclude circular features for this target
+        circular = set(FeatureEngineer.CIRCULAR_FEATURES.get(target, []))
+        target_features = [f for f in self.features if f not in circular]
+        if circular & set(self.features):
+            print(f"  ↳ Excluded circular features: {circular & set(self.features)}")
+        
         # Prepare data
-        X = self.df[self.features]
+        X = self.df[target_features]
         y = self.df[target]
+        
+        # Store per-model feature list for later prediction
+        self._model_features[target] = target_features
         
         # Create spatial groups based on coordinates (grid cells for CV)
         # Use 0.02 degree grid (~2km) to ensure multiple groups
@@ -160,7 +177,7 @@ class ModelTrainer:
             'target': target,
             'model_type': model_type,
             'n_samples': len(y),
-            'n_features': len(self.features),
+            'n_features': len(target_features),
             'pos_rate': pos_rate,
             'cv_f1_mean': cv_f1_mean,
             'cv_f1_std': cv_f1_std,
@@ -176,7 +193,7 @@ class ModelTrainer:
         # Feature importance
         if hasattr(model, 'feature_importances_'):
             importance = pd.DataFrame({
-                'feature': self.features,
+                'feature': target_features,
                 'importance': model.feature_importances_
             }).sort_values('importance', ascending=False).head(10)
             metrics['top_features'] = importance.to_dict('records')
@@ -231,21 +248,47 @@ class ModelTrainer:
             json.dump(self.metrics, f, indent=2)
         print(f"✓ Saved {metrics_file.name}")
         
-        # Save feature list
+        # Save feature list (global + per-model)
         features_file = output_path / "feature_list.json"
         with open(features_file, 'w') as f:
-            json.dump({'features': self.features, 'targets': self.targets}, f, indent=2)
+            json.dump({
+                'features': self.features,
+                'targets': self.targets,
+                'model_features': self._model_features,
+            }, f, indent=2)
         print(f"✓ Saved {features_file.name}")
         
         print(f"\n✓ All models saved to {output_path}/")
     
     def generate_report(self, output_file: str = "data/models/training_report.txt"):
-        """Generate human-readable training report."""
+        """Generate human-readable training report with model card."""
         
         report_lines = []
         report_lines.append("=" * 80)
         report_lines.append("AGRICULTURAL AI MODEL TRAINING REPORT")
+        report_lines.append("Mount Lebanon & Chouf District + Beqaa Valley")
         report_lines.append("=" * 80)
+        
+        # Model card header
+        report_lines.append("")
+        report_lines.append("MODEL CARD")
+        report_lines.append("-" * 40)
+        report_lines.append("Task:       Exploratory binary classification")
+        report_lines.append("Dataset:    84 farmer surveys (5 themes merged)")
+        report_lines.append("            55 original (Mount Lebanon) + 29 new (Beqaa 2026)")
+        report_lines.append("Approach:   RandomForest with spatial cross-validation")
+        report_lines.append("Purpose:    Identify geographic patterns in survey data")
+        report_lines.append("            NOT prescriptive — results are suggestive,")
+        report_lines.append("            intended for exploratory visualization only.")
+        report_lines.append("Confidence: Results should be interpreted with caution")
+        report_lines.append("            due to small sample size (n=84).")
+        report_lines.append("")
+        report_lines.append("INTERPRETATION GUIDE")
+        report_lines.append("-" * 40)
+        report_lines.append("  CV F1 > 0.4:  Signal present, spatially generalizable")
+        report_lines.append("  CV F1 0.2-0.4: Weak signal, interpret with caution")
+        report_lines.append("  CV F1 < 0.2:  No reliable spatial pattern detected")
+        report_lines.append("  Train F1 >> CV F1: Overfitting — model memorizes, doesn't generalize")
         report_lines.append("")
         
         for target, metrics in self.metrics.items():
@@ -255,6 +298,20 @@ class ModelTrainer:
             report_lines.append(f"Samples: {metrics['n_samples']}")
             report_lines.append(f"Features: {metrics['n_features']}")
             report_lines.append(f"Positive Rate: {metrics['pos_rate']:.1f}%")
+            
+            # Confidence assessment
+            cv_f1 = metrics['cv_f1_mean']
+            train_f1 = metrics['f1_score']
+            if cv_f1 >= 0.4:
+                confidence = "MODERATE — spatial pattern detected"
+            elif cv_f1 >= 0.2:
+                confidence = "LOW — weak signal, interpret with caution"
+            else:
+                confidence = "VERY LOW — no reliable spatial generalization"
+            if train_f1 > 0 and cv_f1 > 0 and train_f1 / max(cv_f1, 0.01) > 3:
+                confidence += " (OVERFIT WARNING)"
+            report_lines.append(f"Confidence: {confidence}")
+            
             report_lines.append("")
             report_lines.append("Cross-Validation Metrics:")
             report_lines.append(f"  F1-Score (CV): {metrics['cv_f1_mean']:.3f} ± {metrics['cv_f1_std']:.3f}")
@@ -281,6 +338,12 @@ class ModelTrainer:
                 report_lines.append(f"   [FN={cm[1][0]}, TP={cm[1][1]}]]")
         
         report_lines.append("\n" + "=" * 80)
+        report_lines.append("NOTE: These models are exploratory tools for geographic")
+        report_lines.append("visualization. They should NOT be used for individual")
+        report_lines.append("farmer-level decision making. The composite indices and")
+        report_lines.append("clustering analysis (see analysis_report.json) provide")
+        report_lines.append("more defensible insights for this dataset size.")
+        report_lines.append("=" * 80)
         
         report_text = "\n".join(report_lines)
         

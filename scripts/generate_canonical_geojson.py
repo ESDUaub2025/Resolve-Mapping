@@ -20,32 +20,17 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Tuple
 
-# Theme definitions with file mappings
-THEMES = {
-    'Water': {
-        'ar_csv': 'data/layers/Arabic/Water_1.0.csv',
-        'en_csv': 'data/layers/English/Water_1.0.en.csv'
-    },
-    'Energy': {
-        'ar_csv': 'data/layers/Arabic/Energy_1.0.csv',
-        'en_csv': 'data/layers/English/Energy_1.0.en.csv'
-    },
-    'Food': {
-        'ar_csv': 'data/layers/Arabic/Food_1.0.csv',
-        'en_csv': 'data/layers/English/Food_1.0.en.csv'
-    },
-    'General_Info': {
-        'ar_csv': 'data/layers/Arabic/Generalinfo_1.0.csv',
-        'en_csv': 'data/layers/English/Generalinfo_1.0.en.csv'
-    },
-    'Regenerative_Agriculture': {
-        'ar_csv': 'data/layers/Arabic/Regenerative_1.0.csv',
-        'en_csv': 'data/layers/English/Regenerative_1.0.en.csv'
-    }
-}
+# Import shared config (source of truth for Python scripts)
+from config import THEMES as _THEMES_CFG, EXCLUDE_COLUMNS, resolve
 
-# Columns to exclude from properties (coordinate/metadata columns)
-EXCLUDE_COLUMNS = ['X', 'Y', 'OBJECTID', 'FID']
+# Build theme definitions from shared config
+THEMES = {
+    cfg['name']: {
+        'ar_csv': cfg['csvSources']['ar'],
+        'en_csv': cfg['csvSources']['en'],
+    }
+    for cfg in _THEMES_CFG.values()
+}
 
 
 def normalize_column_name(col: str) -> str:

@@ -67,7 +67,9 @@ const PropertySchemas = (function() {
             '_9': { en: 'Solar %', ar: 'شمسية%' },
             '_10': { en: 'Diesel L/Week (Avg)', ar: 'ديزل لتر/أسبوع (متوسط)' },
             '_11': { en: 'Gasoline L/Week (Avg)', ar: 'بنزين لتر/أسبوع (متوسط)' },
-            '_12': { en: 'kW/Week (Avg)', ar: 'كيلوواط/أسبوع (متوسط)' }
+            '_12': { en: 'kW/Week (Avg)', ar: 'كيلوواط/أسبوع (متوسط)' },
+            '15. Energy Consumption': { en: 'Energy Consumption', ar: 'كمية الطاقة المستخدمة' },
+            '15.كمية الطاقة المستخدمة خلال موسم الذروة الزراعي (تقدير بالساعة أو بالوقود)': { en: 'Peak Season Energy Use', ar: 'كمية الطاقة المستخدمة خلال موسم الذروة' }
         },
 
         // Food theme - 11 properties
@@ -85,7 +87,14 @@ const PropertySchemas = (function() {
             '_7': { en: 'Food Preservation Participation', ar: 'نسبة المشاركين في تحضير المؤونة' },
             '_8': { en: 'Animal Types', ar: 'انواع الحيوانات' },
             '_9': { en: 'Number of Birds', ar: 'عدد الطيور' },
-            '_10': { en: 'Feed Type', ar: 'نوع العلف' }
+            '_10': { en: 'Feed Type', ar: 'نوع العلف' },
+            '19. Food Production Level': { en: 'Food Production Level', ar: 'مستوى إنتاج الغذاء' },
+            '19.كيف تصف مستوى إنتاج الغذاء والمنتجات التقليدية في منزلك/قريتك/تعاونيتك؟': { en: 'Food Production Level', ar: 'مستوى إنتاج الغذاء' },
+            '20. Coop Member?': { en: 'Cooperative Member', ar: 'عضو في تعاونية' },
+            '20. هل أنت عضو في تعاونية تقوم بإنتاج و/أو بيع الأطعمة التقليدية؟': { en: 'Cooperative Member', ar: 'عضو في تعاونية' },
+            '24. % Village Participation': { en: 'Village Participation %', ar: 'نسبة المشاركة في القرية' },
+            '24. ما هي نسبة المنازل في قريتك التي تشارك في إنتاج المؤونة أو الطعام التقليدي؟': { en: 'Village Participation %', ar: 'نسبة المشاركة في القرية' },
+            'إذا كانت الإجابة نعم: ما هو العدد التقريبي للأعضاء النشطين في التعاونية؟': { en: 'Active Coop Members', ar: 'عدد الأعضاء النشطين' }
         },
 
         // General Info theme - 7 properties
@@ -107,7 +116,21 @@ const PropertySchemas = (function() {
             '9.ما هو نوع التربة في أرضك؟': { en: 'Soil Type', ar: 'نوع التربة' },
             '9. Soil Type': { en: 'Soil Type', ar: 'نوع التربة' },
             '_5': { en: 'Climate Changes', ar: 'التغيرات المناخية' },
-            '_6': { en: 'Climate Change Impact', ar: 'تأثير الغيرات المناخية' }
+            '_6': { en: 'Climate Change Impact', ar: 'تأثير الغيرات المناخية' },
+            '2.الفئة العمرية': { en: 'Age Group', ar: 'الفئة العمرية' },
+            '3.الجنس': { en: 'Gender', ar: 'الجنس' },
+            '5. Own Farmland?': { en: 'Farmland Ownership', ar: 'ملكية أرض زراعية' },
+            '5.هل تمتلك أرضاً زراعية؟': { en: 'Farmland Ownership', ar: 'ملكية أرض زراعية' },
+            '6. Land Location': { en: 'Land Location', ar: 'موقع الأرض' },
+            '6.موقع أرضك:': { en: 'Land Location', ar: 'موقع الأرض' },
+            '52. Climate Change Noticed?': { en: 'Climate Change Observed', ar: 'ملاحظة التغير المناخي' },
+            '52. هل لاحظت تغيرات مناخية أثرت على الزراعة في السنوات الأخيرة؟': { en: 'Climate Change Observed', ar: 'ملاحظة التغير المناخي' },
+            '53. Climate Changes': { en: 'Types of Climate Changes', ar: 'أنواع التغيرات المناخية' },
+            '53. إذا كانت الإجابة "نعم"، يرجى تحديد أهمها': { en: 'Types of Climate Changes', ar: 'أنواع التغيرات المناخية' },
+            '54. Impact on Production': { en: 'Production Impact', ar: 'تأثير على الإنتاج' },
+            '54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟': { en: 'Production Impact', ar: 'تأثير على الإنتاج' },
+            '55. هل تواجه صعوبة في العثور على عمال للمزارع؟': { en: 'Labor Shortage', ar: 'نقص العمالة' },
+            '56. إذا كانت الإجابة "نعم"، ما هي أسباب صعوبة توفر العمالة؟': { en: 'Labor Shortage Reasons', ar: 'أسباب نقص العمالة' }
         },
 
         // Regenerative Agriculture theme - 7 properties (note: CSV only has 7 columns, not 8)
@@ -121,7 +144,27 @@ const PropertySchemas = (function() {
             '_3': { en: 'Regenerative Techniques', ar: 'تقنيات الزراعة التجديدية' },
             '_4': { en: 'Soil Amendment Types', ar: 'أنواع محسنات التربة' },
             '_5': { en: 'Chemical Fertilizers', ar: 'الاسمدة الكيميائية' },
-            '_6': { en: 'Pest Control', ar: 'مكافحة الآفات' }
+            '_6': { en: 'Pest Control', ar: 'مكافحة الآفات' },
+            '34. Seed Selection Criteria': { en: 'Seed Selection Criteria', ar: 'معايير اختيار البذور' },
+            '34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟': { en: 'Seed Selection Criteria', ar: 'معايير اختيار البذور' },
+            '35. Seed Source': { en: 'Seed Source', ar: 'مصدر البذور' },
+            '35.كيف تحصل على البذور/الشتول؟': { en: 'Seed Source', ar: 'مصدر البذور' },
+            '36. Seed Challenges': { en: 'Seed Acquisition Challenges', ar: 'تحديات الحصول على البذور' },
+            '36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟': { en: 'Seed Acquisition Challenges', ar: 'تحديات الحصول على البذور' },
+            '38. Soil Enhancers': { en: 'Soil Enhancer Types', ar: 'أنواع محسنات التربة' },
+            '38.ما هي أنواع المحسنات التي تستخدمها في التربة؟': { en: 'Soil Enhancer Types', ar: 'أنواع محسنات التربة' },
+            '39. Chem Fertilizer Reliance': { en: 'Chemical Fertilizer Dependence', ar: 'الاعتماد على الأسمدة الكيميائية' },
+            '39.ما مدى اعتمادك على الأسمدة الكيميائية؟': { en: 'Chemical Fertilizer Dependence', ar: 'الاعتماد على الأسمدة الكيميائية' },
+            '40. Fertilizer Cost %': { en: 'Fertilizer Cost Percentage', ar: 'نسبة تكلفة الأسمدة' },
+            '40.ما هي نسبة تكلفة الأسمدة الكيميائية من إجمالي التكاليف؟': { en: 'Fertilizer Cost Percentage', ar: 'نسبة تكلفة الأسمدة' },
+            '43. Pest Control Method': { en: 'Pest Control Method', ar: 'طريقة مكافحة الآفات' },
+            '43.كيف تقوم بمكافحة الآفات؟': { en: 'Pest Control Method', ar: 'طريقة مكافحة الآفات' },
+            '44. Pesticide Reliance': { en: 'Pesticide Dependence', ar: 'الاعتماد على المبيدات' },
+            '44.ما مدى اعتمادك على المبيدات الكيميائية؟': { en: 'Pesticide Dependence', ar: 'الاعتماد على المبيدات' },
+            '45. Pesticide Cost %': { en: 'Pesticide Cost Percentage', ar: 'نسبة تكلفة المبيدات' },
+            '45.ما هي نسبة تكلفة المبيدات من إجمالي تكاليفك؟': { en: 'Pesticide Cost Percentage', ar: 'نسبة تكلفة المبيدات' },
+            '63. Raise Poultry?': { en: 'Poultry Raising', ar: 'تربية الدواجن' },
+            '63.هل تربي الدواجن في مزرعتك أو منزلك؟': { en: 'Poultry Raising', ar: 'تربية الدواجن' }
         },
 
         // Model Predictions theme - 7 properties

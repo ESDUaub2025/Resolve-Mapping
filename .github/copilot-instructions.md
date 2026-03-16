@@ -5,8 +5,10 @@ Static, browser-based interactive map for agricultural data in Mount Lebanon & C
 
 **Architecture:** No backend, no build step — serve static files with `python -m http.server 8000` from repo root. Data pipeline: CSV sources → Python preprocessing → Canonical GeoJSON → IndexedDB caching → client-side rendering.
 
+**Critical Context:** Hybrid architecture with **both legacy (dual-file) and new (canonical) systems** coexisting. Use canonical approach for all new features. Legacy code being phased out but still active in parts of `app.js`.
+
 ### Core Components & File Structure
-- **`app.js`** (2997 lines): Main client logic, layer initialization, legacy dual-file code (being phased out)
+- **`app.js`** (3216 lines): Main client logic, layer initialization, legacy dual-file code (being phased out)
 - **`app/modules/`**: Modular architecture for canonical bilingual system:
   - **`data/loader.js`**: Loads canonical GeoJSON with IndexedDB caching, handles cache invalidation
   - **`state/store.js`**: Immutable state management, observer pattern for reactivity
@@ -35,12 +37,13 @@ Static, browser-based interactive map for agricultural data in Mount Lebanon & C
   - Source: `ai-grid` from `AI_Grid_Predictions.geojson` (21k grid points with probability properties)
 - Boundary layer: `farmers-boundary` (outline layer, missing source file `Farmers_Boundary.geojson`)
 
-**Adding a layer requires 3-4 changes:**
+**Adding a layer requires 5 changes:**
 1. Generate canonical GeoJSON: `python scripts/generate_canonical_geojson.py` (if new theme)
 2. Add to `DataLoader.THEMES` in [loader.js](../app/modules/data/loader.js) with file path, color
-3. Add checkbox in [index.html](../index.html): `<input type="checkbox" class="layer-toggle" data-layer="new-layer-id">`
-4. Add i18n strings to `i18n.strings.en` and `i18n.strings.ar` in [app.js](../app.js) (lines 13-80)
-5. Add property schema to `SCHEMAS` in [property-schemas.js](../app/modules/i18n/property-schemas.js)
+3. Add to `clusterColors` in [app.js](../app.js) (lines 3-11) with matching theme key and color
+4. Add checkbox in [index.html](../index.html): `<input type="checkbox" class="layer-toggle" data-layer="new-layer-id">`
+5. Add i18n strings to `i18n.strings.en` and `i18n.strings.ar` in [app.js](../app.js) (lines 13-80)
+6. Add property schema to `SCHEMAS` in [property-schemas.js](../app/modules/i18n/property-schemas.js)
 
 **Legacy layer addition** (old dual-file approach, being phased out):
 - Call `addGeoJsonLayer('new-layer-id', fromRoot('data/geojson/File.geojson'), '#hexcolor')` in [app.js](../app.js) initialization (~line 2770-2850)
@@ -148,18 +151,59 @@ python scripts/csvs_to_geojson_complete.py --all
 - All CSV columns are preserved in GeoJSON properties
 - Coordinates: X (longitude), Y (latitude) from CSV
 - Metadata added: `theme`, `coords_source`, `source_file`, `source_row`
+- Audit trail: Each generation creates `data/canonical_audit/{Theme}_canonical_audit.json` with source paths, row counts, column lists, and sample IDs
+
+### ML Pipeline (AI Prediction Layers)
+**Purpose:** Generate AI prediction heatmap layers from 287 farmer survey responses.
+
+**Complete pipeline workflow:**
+```bash
+# From project root
+cd scripts/ml_pipeline
+python run_pipeline.py  # Runs all 4 stages (see below)
+```
+
+**Pipeline stages:**
+1. **Feature Engineering** (`feature_engineering.py`): Merges 5 theme GeoJSON files → engineers 60+ features → creates 5 binary target variables → outputs `data/ml_prepared_data.csv`
+2. **Model Training** (`train_models.py`): Trains 5 RandomForest/XGBoost classifiers with spatial cross-validation → outputs `data/models/*.joblib` + performance report
+3. **Spatial Interpolation** (`interpolate_grid.py`): Predicts probabilities at survey points → interpolates to regular grid (default 0.005° ≈ 500m) → outputs `data/geojson/AI_Grid_Predictions.geojson`
+4. **Boundary Generation** (`generate_boundary.py`): Computes convex hull from survey points → outputs `data/geojson/Farmers_Boundary.geojson`
+
+**Standalone execution:**
+```bash
+python feature_engineering.py              # Stage 1 only
+python train_models.py xgboost            # Stage 2 with XGBoost
+python interpolate_grid.py 0.002          # Stage 3 with fine resolution (200m)
+python generate_boundary.py alpha_shape   # Stage 4 with alpha shape
+```
+
+**Output validation:**
+- Check `data/models/training_report.txt` for model performance (F1-scores, ROC-AUC)
+- Verify grid file size: 50-500KB depending on resolution (default ~150KB)
+- Test in browser: AI layer toggles should be functional after pipeline completion
+
+**Target variables (5 binary classifications):**
+- `target_regen_adoption`: Regenerative agriculture adoption likelihood
+- `target_water_risk`: Water scarcity vulnerability
+- `target_production_level`: Economic resilience proxy
+- `target_labor_shortage`: Agricultural labor availability
+- `target_climate_vulnerability`: Climate change impact susceptibility
+
+**Critical dependencies:** pandas, numpy, scikit-learn, xgboost (optional), scipy, shapely, joblib
 
 ### AI/ML Layers (Heatmaps)
-5 AI prediction layers visualize probabilities (0-1) using **MapLibre native heatmap type** (not deck.gl):
-- `ai-regen`: Regenerative agriculture adoption (`Prob_Regen` property, green gradient)
-- `ai-water`: Water risk (`Prob_Water`, red gradient)
-- `ai-econ`: Economic resilience (`Prob_Econ`, yellow→green)
-- `ai-labor`: Labor availability (`Prob_Labor`, purple)
-- `ai-climate`: Climate vulnerability (`Prob_Climate`, blue)
+5 AI prediction layers visualize probabilities using **MapLibre native circle layers** (not deck.gl, despite CDN imports):
+- `ai-regen`: Regenerative agriculture adoption (discrete: 0=unlikely red, 1=likely green)
+- `ai-water`: Water risk (discrete: 0=low green, 1=high red, inverted logic)
+- `ai-econ`: Production capacity (ternary: 0=low red, 1=medium yellow, 2=high green)
+- `ai-labor`: Labor availability (SKIPPED - insufficient training data, only 4 positive samples)
+- `ai-climate`: Climate resilience proxy (ternary: 0=low blue, 1=medium purple, 2=high teal)
 
-**Source:** Single shared GeoJSON source `ai-grid` from `AI_Grid_Predictions.geojson` (21k grid points). Function: `addAiHeatmapLayer(id, type)` ~line 2401 creates layers with distinct color ramps and weight properties.
+**Implementation:** Function `addAiHeatmapLayer(id, type)` at line ~2620 creates circle layers with categorical color mappings (not probability gradients).
 
-**Current status:** AI layers are fully implemented in code but non-functional because `AI_Grid_Predictions.geojson` is missing from the data directory.
+**Data source:** Single shared GeoJSON source `ai-predictions` from `data/geojson/Model_Predictions.geojson` (204 farmer scenarios with discrete classification predictions: "0", "1", "2").
+
+**Status:** AI layers are fully implemented but depend on ML pipeline output. Run `python scripts/ml_pipeline/run_pipeline.py` to generate required files.
 
 ### Filtering & Interactivity
 - Each layer can have custom filters (village name, crop types, energy source, etc.) defined in `filterUIById` object
@@ -266,13 +310,14 @@ const details = PropertySchemas.buildDetailsPanel(feature, 'water', lang);
 ```
 
 ### Files to Inspect for Changes
-- **`app.js`**: Lines 1-100 (i18n), 167-190 (fromRoot/path config), 371-550 (addGeoJsonLayer), 2401-2500 (AI layers), 2600-2650 (layer initialization)
-- **`app/modules/data/loader.js`**: THEMES configuration, IndexedDB caching, loadAllThemes()
-- **`app/modules/state/store.js`**: State management, setState(), getState(), observer pattern
-- **`app/modules/i18n/property-schemas.js`**: SCHEMAS object with 48 bilingual property mappings
-- **`index.html`**: Sidebar controls (checkboxes with `data-layer` attributes)
-- **`scripts/generate_canonical_geojson.py`**: Canonical GeoJSON generation, stable ID creation
-- **`scripts/csvs_to_geojson_complete.py`**: Legacy column mappings, CSV→GeoJSON conversion logic
+- **`app.js`**: Lines 1-100 (i18n strings), 3-11 (clusterColors), 167-190 (fromRoot/path config), 392-580 (addGeoJsonLayer), 580-625 (addCanonicalLayer), 625-665 (staggerDuplicateCoordinates), 2620-2700 (AI layers), 2879-2980 (loadAllData), 2067-2165 (refreshDetailsPanel)
+- **`app/modules/data/loader.js`**: Lines 26-60 (THEMES configuration), 68-106 (IndexedDB init), 108-157 (cache get/set), 246-290 (loadAllThemes with progress callback)
+- **`app/modules/state/store.js`**: Lines 18-51 (INITIAL_STATE structure), 66-83 (setState immutable updates), 185-230 (theme data getters), 265-303 (state persistence)
+- **`app/modules/i18n/property-schemas.js`**: Lines 19-422 (SCHEMAS object with 48 bilingual property mappings), 292-372 (buildDetailsPanel function)
+- **`index.html`**: Lines 40-110 (sidebar controls with data-layer attributes), 129-140 (script loading order)
+- **`scripts/generate_canonical_geojson.py`**: Lines 24-47 (THEMES config), 52-73 (generate_stable_id), 79-108 (merge_ar_en_row), 161-241 (generate_canonical_geojson main function)
+- **`scripts/ml_pipeline/run_pipeline.py`**: Lines 32-97 (pipeline orchestration), 100-140 (stage execution methods)
+- **`scripts/csvs_to_geojson_complete.py`**: Lines 25-43 (legacy THEMES), 167-247 (column normalization and conversion logic)
 
 ### Testing Checklist
 1. Test local: `python -m http.server 8000` → `http://localhost:8000/`
@@ -281,3 +326,97 @@ const details = PropertySchemas.buildDetailsPanel(feature, 'water', lang);
 4. Click features — details panel should populate
 5. Hover polygons — opacity/color changes via feature-state
 6. Test filters — layer data should update dynamically
+
+### Critical Hotspots & Common Pitfalls
+**⚠️ THEMES Configuration Synchronization**
+- THEMES defined in 3+ locations that MUST stay synchronized:
+  - `app/modules/data/loader.js` (lines 26-60) - file paths and colors
+  - `scripts/generate_canonical_geojson.py` (lines 24-45) - CSV source paths
+  - `app.js` clusterColors (lines 3-11) - color mappings per theme
+- Adding a theme requires updating all three + PropertySchemas + i18n strings
+
+**⚠️ Arabic/English CSV Row Alignment**
+- `generate_canonical_geojson.py` merges AR/EN CSVs by row index using `enumerate(zip(df_ar, df_en))`
+- **CRITICAL**: Row order must match exactly between Arabic and English files
+- Mismatch causes mismatched bilingual properties (Arabic village → English village different village)
+- Script validates row counts but NOT row content alignment
+
+**⚠️ Coordinate Staggering Algorithm**
+- `staggerDuplicateCoordinates()` applies circular offset to prevent overlapping points at same coordinates
+- Magic numbers: `offsetDistance = 0.0002` (~22 meters), radius increases for >8 duplicates
+- Applied to farmers survey data where multiple responses share same village coordinates
+- Changes display coordinates but preserves original in properties
+
+**⚠️ IndexedDB Cache Invalidation**
+- Cache key format: `canonical-{theme}` or `{themeKey}_{filePath}`
+- Version controlled by `DATA_VERSION` in loader.js (currently '2.1.0')
+- **To force reload**: Increment DATA_VERSION or clear browser storage
+- Cache expires after 7 days automatically
+
+**⚠️ Property Key Brittleness**
+- PropertySchemas maps 48+ property keys (mix of Arabic text, numbered keys like `_3`, `_4`)
+- Keys come from CSV column headers after normalization (strips `: ` suffixes)
+- Adding/renaming CSV columns requires updating PropertySchemas.SCHEMAS
+- Missing schema entry causes property to not display in details panel
+
+**⚠️ Feature ID Stability**
+- Canonical features use deterministic IDs: `{theme}_{row}_{coordinateHash8}`
+- ID changes if: row order changes, coordinates change, or theme name changes
+- Used for feature-state, details panel lookup, and caching
+- Changing IDs breaks saved selections and cached references
+
+**⚠️ Legacy vs Canonical Code Paths**
+- Both `addGeoJsonLayer()` (legacy) and `addCanonicalLayer()` (new) coexist
+- Language switching still has dual-file loading remnants (to be removed)
+- When debugging, check which path is active: legacy uses URL loading, canonical uses direct data
+- Prefer canonical architecture for all new development
+
+### Error Handling Patterns
+- **JavaScript**: try/catch with graceful degradation, console.warn for non-critical errors
+- **Python**: ValidationError for data mismatches, FileNotFoundError with helpful messages
+- **Caching**: Silent failures with fallback to network fetch
+- **GeoJSON validation**: Checks FeatureCollection type and features array existence in loader.js
+
+### Development Workflow Tips
+```bash
+# Start development server (REQUIRED - file:// causes CORS issues)
+python -m http.server 8000
+
+# Regenerate canonical GeoJSON after CSV changes
+python scripts/generate_canonical_geojson.py
+
+# Check data integrity
+cat data/canonical_audit/Water_canonical_audit.json  # View audit trail
+
+# Run ML pipeline for AI layers
+cd scripts/ml_pipeline && python run_pipeline.py
+
+# Clear browser cache if seeing stale data
+# 1. Open DevTools → Application → IndexedDB → ResolveMapDB → Delete
+# 2. Or increment DATA_VERSION in app/modules/data/loader.js
+```
+
+### Architecture Decision Records
+**Why canonical bilingual architecture?**
+- Eliminates duplicate data loading (was 2 files per theme)
+- Language switch is instant (no network request)
+- Single source of truth for feature data
+- Simplifies state management
+
+**Why IndexedDB caching?**
+- GitHub Pages has no server-side caching
+- Browser cache unreliable for large GeoJSON files
+- Version-based invalidation prevents stale data
+- 7-day expiry balances freshness vs performance
+
+**Why coordinate staggering?**
+- Multiple farmers in same village share exact coordinates
+- Overlapping points invisible on map (only top one clickable)
+- Circular offset pattern maintains visual clustering
+- Applied at render time (original coordinates preserved)
+
+**Why hybrid architecture exists?**
+- Incremental migration from legacy dual-file system
+- Risk mitigation: new canonical code validated before removing old
+- Fire and farmers layers still use legacy path (static data)
+- Full migration blocked on comprehensive testing

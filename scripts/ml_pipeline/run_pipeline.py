@@ -21,6 +21,7 @@ try:
     from train_models import ModelTrainer
     from interpolate_grid import GridInterpolator
     from generate_boundary import BoundaryGenerator
+    from analysis import FarmAnalysis
 except ImportError:
     # If running from parent directory
     sys.path.insert(0, str(Path(__file__).parent))
@@ -28,6 +29,7 @@ except ImportError:
     from train_models import ModelTrainer
     from interpolate_grid import GridInterpolator
     from generate_boundary import BoundaryGenerator
+    from analysis import FarmAnalysis
 
 
 class PipelineOrchestrator:
@@ -52,6 +54,25 @@ class PipelineOrchestrator:
         self.timings['feature_engineering'] = time.time() - start_time
         
         return df, features, targets
+    
+    def run_unsupervised_analysis(self, df, features):
+        """Step 1b: PCA composite indices + K-Means clustering."""
+        print("\n" + "=" * 80)
+        print("STEP 1b: UNSUPERVISED ANALYSIS (PCA + Clustering)")
+        print("=" * 80)
+        
+        start_time = time.time()
+        
+        analyzer = FarmAnalysis()
+        df = analyzer.run_full_analysis(df, features)
+        
+        # Re-save with analysis columns
+        df.to_csv("data/ml_prepared_data.csv", index=False)
+        print("✓ Updated ml_prepared_data.csv with analysis columns")
+        
+        self.timings['unsupervised_analysis'] = time.time() - start_time
+        
+        return df
     
     def run_model_training(self, model_type: str = 'random_forest'):
         """Step 2: Model training."""
@@ -114,6 +135,7 @@ class PipelineOrchestrator:
         
         output_files = [
             "data/ml_prepared_data.csv",
+            "data/models/analysis_report.json",
             "data/models/target_regen_adoption_model.joblib",
             "data/models/target_water_risk_model.joblib",
             "data/models/target_economic_vuln_model.joblib",
@@ -122,6 +144,7 @@ class PipelineOrchestrator:
             "data/models/training_metrics.json",
             "data/models/training_report.txt",
             "data/geojson/AI_Grid_Predictions.geojson",
+            "data/geojson/Model_Predictions.geojson",
             "data/geojson/Farmers_Boundary.geojson"
         ]
         
@@ -152,7 +175,10 @@ class PipelineOrchestrator:
         
         try:
             # Step 1: Feature Engineering
-            self.run_feature_engineering()
+            df, features, targets = self.run_feature_engineering()
+            
+            # Step 1b: Unsupervised Analysis (PCA + Clustering)
+            df = self.run_unsupervised_analysis(df, features)
             
             # Step 2: Model Training
             self.run_model_training(model_type=model_type)

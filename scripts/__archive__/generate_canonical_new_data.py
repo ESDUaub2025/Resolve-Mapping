@@ -19,15 +19,15 @@ from pathlib import Path
 from datetime import datetime, timezone
 from typing import Dict, List, Tuple
 
-# New theme files (only those with data)
+# Import shared config
+from config import EXCLUDE_COLUMNS
+
+# New theme files (only those with actual _new data)
 THEMES_NEW = {
     'Water': 'data/layers/Arabic/Water_new.csv',
     'General_Info': 'data/layers/Arabic/General_Info_new.csv',
     'Regenerative_Agriculture': 'data/layers/Arabic/Regenerative_Agriculture_new.csv'
 }
-
-# Columns to exclude
-EXCLUDE_COLUMNS = ['X', 'Y', 'OBJECTID', 'FID']
 
 
 def coordinate_hash(lon: float, lat: float, precision: int = 8) -> str:

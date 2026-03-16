@@ -85,7 +85,7 @@
 			<label><input type="checkbox" class="layer-toggle" data-layer="regen-points" disabled> <span class="label-icon" id="icon-regen"></span> <span id="i18n-layer-regen">Regenerative Ag</span></label>
 			<label><input type="checkbox" class="layer-toggle" data-layer="preservations-poly" disabled> <span class="label-icon" id="icon-preservations"></span> <span id="i18n-layer-preservations">Preservations</span></label>
 			<label><input type="checkbox" class="layer-toggle" data-layer="fire-points-raw" disabled> <span class="label-icon" id="icon-fire-pts"></span> <span id="i18n-layer-fire-points">Fire points</span></label>
-			<label><input type="checkbox" id="toggle-heatmap" disabled> <span class="label-icon" id="icon-fire"></span> <span id="i18n-heatmap">Fire density (deck.gl)</span></label>
+			<label><input type="checkbox" id="toggle-heatmap" disabled> <span class="label-icon" id="icon-fire"></span> <span id="i18n-heatmap">Fire Heatmap</span></label>
 			<hr>
 			<div class="section-header ai-section">
 				<strong id="i18n-ai-layers">AI Analysis Layers</strong>
@@ -106,6 +106,23 @@
 
 			<label><input type="checkbox" class="layer-toggle" data-layer="ai-climate"> <span class="label-icon" id="icon-ai-climate"></span> <span id="i18n-ai-climate">Climate Vulnerability</span></label>
 			<div id="desc-ai-climate" class="layer-desc"></div>
+
+			<hr>
+			<div class="section-header ai-section">
+				<strong id="i18n-ai-analysis">AI Composite Analysis</strong>
+				<span class="ai-badge" title="Unsupervised ML Analysis">ML</span>
+			</div>
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-clusters"> <span class="label-icon" id="icon-ai-clusters"></span> <span id="i18n-ai-clusters">Farmer Clusters</span></label>
+			<div id="desc-ai-clusters" class="layer-desc"></div>
+
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-idx-water"> <span class="label-icon" id="icon-ai-idx-water"></span> <span id="i18n-ai-idx-water">Water Vulnerability Index</span></label>
+			<div id="desc-ai-idx-water" class="layer-desc"></div>
+
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-idx-agri"> <span class="label-icon" id="icon-ai-idx-agri"></span> <span id="i18n-ai-idx-agri">Agricultural Capacity</span></label>
+			<div id="desc-ai-idx-agri" class="layer-desc"></div>
+
+			<label><input type="checkbox" class="layer-toggle" data-layer="ai-idx-sustain"> <span class="label-icon" id="icon-ai-idx-sustain"></span> <span id="i18n-ai-idx-sustain">Sustainability Practices</span></label>
+			<div id="desc-ai-idx-sustain" class="layer-desc"></div>
 			<hr>
 			<div class="hint" id="i18n-hint">Data loads automatically. Toggle layers and click pins to view details on the right.</div>
 		</div>
@@ -127,13 +144,13 @@
 	</div>
 
 	<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
-	<script src="https://unpkg.com/deck.gl@9.0.36/dist.min.js"></script>
-	<script src="https://unpkg.com/@deck.gl/mapbox@9.0.36/dist.min.js"></script>
 	
-	<!-- New Architecture Modules -->
+	<!-- Manifest (single source of truth for all config) -->
+	<script src="app/config/manifest.js"></script>
+	
+	<!-- Architecture Modules -->
 	<script src="app/modules/state/store.js"></script>
 	<script src="app/modules/data/loader.js"></script>
-	<script src="app/modules/filters/filter-engine.js"></script>
 	<script src="app/modules/i18n/property-schemas.js"></script>
 	
 	<!-- Main Application -->

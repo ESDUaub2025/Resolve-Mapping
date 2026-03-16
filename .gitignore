@@ -3,7 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 venv/
+.venv/
 .env
+
+# IDE
+.vscode/
 
 # Data
 data/AlphaEarth/

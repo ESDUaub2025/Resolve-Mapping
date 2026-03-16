@@ -1,10 +1,21 @@
+# Core data science
 pandas
 numpy
+scipy
 scikit-learn
-seaborn
-matplotlib
 xgboost
 joblib
-scipy
-geopy
+seaborn
+matplotlib
+
+# Excel I/O (required by integrate_new_survey_27_2_2026.py)
+openpyxl
+
+# Geospatial
+geopandas
 shapely
+pyproj
+geopy
+
+# HTTP / utilities
+requests

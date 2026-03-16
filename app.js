@@ -1,14 +1,8 @@
 (function() {
-	// Map of cluster icon colors per thematic key
-	const clusterColors = {
-		water: '#1abc9c',
-		energy: '#f39c12',
-		food: '#9b59b6',
-		general: '#2980b9',
-		regen: '#27ae60',
-		fire: '#e74c3c',
-		farmers: '#16a085'  // Teal color for farmers layer
-	};
+	const M = window.MANIFEST;
+
+	// Build cluster colors from manifest (single source of truth)
+	const clusterColors = { ...M._colors };
 
 	// --- I18N ---
 	const i18n = {
@@ -17,13 +11,17 @@
 			en: {
 				controls: 'Controls', baseMap: 'Base map', layers: 'Layers', aiLayers: 'AI Analysis Layers', details: 'Details',
 				basemap: { osm: 'Streets (OSM)', esri: 'Satellite (Esri)', 'carto-light': 'Carto Light', 'carto-dark': 'Carto Dark', opentopo: 'OpenTopo' },
-				layerNames: { water: 'Water', energy: 'Energy', food: 'Food', general: 'General', regen: 'Regenerative Ag', preservations: 'Preservations', firePoints: 'Fire points', heatmap: 'Fire density (deck.gl)', farmers: 'Farmers Survey', aiRegen: 'Regenerative Adoption', aiWater: 'Water Risk', aiEcon: 'Economic Resilience', aiLabor: 'Labor Availability', aiClimate: 'Climate Vulnerability' },
+				layerNames: { water: 'Water', energy: 'Energy', food: 'Food', general: 'General', regen: 'Regenerative Ag', preservations: 'Preservations', firePoints: 'Fire points', heatmap: 'Fire Heatmap', farmers: 'Farmers Survey', aiRegen: 'Regenerative Adoption', aiWater: 'Water Risk', aiEcon: 'Economic Resilience', aiLabor: 'Labor Availability', aiClimate: 'Climate Vulnerability', aiClusters: 'Farmer Clusters', aiIdxWater: 'Water Vulnerability Index', aiIdxAgri: 'Agricultural Capacity', aiIdxSustain: 'Sustainability Practices', aiAnalysis: 'AI Composite Analysis' },
 				layerDescriptions: {
 					aiRegen: '<b>Factors:</b> Village, Farm Size, Soil Type, Water Source, Regen Knowledge, Income Source.<br><b>Accuracy:</b> ~61% (based on survey).<br><b>Importance:</b> Identifies farmers likely to adopt sustainable practices.',
 					aiWater: '<b>Factors:</b> Village, Soil Type, Water Source, Irrigation Frequency, Scarcity Months, Energy Source.<br><b>Accuracy:</b> ~98% (High confidence).<br><b>Importance:</b> Highlights areas vulnerable to water shortages.',
 					aiEcon: '<b>Factors:</b> Farm Size, Income Source, Marketing Challenges, Machinery, Coop Member, Energy Source.<br><b>Accuracy:</b> Composite Score.<br><b>Importance:</b> Targets vulnerable farmers for support.',
 					aiLabor: '<b>Factors:</b> Village, Farm Size, Main Workers, Machinery, Main Crops, Income Source.<br><b>Accuracy:</b> ~85% (Estimated).<br><b>Importance:</b> Identifies areas with potential labor shortages.',
-					aiClimate: '<b>Factors:</b> Village, Water Source, Soil Type, Main Crops, Pest Management, Regen Knowledge.<br><b>Accuracy:</b> ~90% (Estimated).<br><b>Importance:</b> Highlights areas most vulnerable to climate change impacts.'
+					aiClimate: '<b>Factors:</b> Village, Water Source, Soil Type, Main Crops, Pest Management, Regen Knowledge.<br><b>Accuracy:</b> ~90% (Estimated).<br><b>Importance:</b> Highlights areas most vulnerable to climate change impacts.',
+					aiClusters: '<b>Method:</b> K-Means clustering on 29 farm features.<br><b>Clusters:</b> 3 farmer archetypes (small subsistence, large commercial, sustainable-leaning).<br><b>Importance:</b> Groups farmers by profile for targeted interventions.',
+					aiIdxWater: '<b>Composite of:</b> Water sufficiency, scarcity months, irrigation frequency.<br><b>Scale:</b> 0 (low risk) → 100 (high risk).<br><b>Importance:</b> Identifies water-stressed areas at a glance.',
+					aiIdxAgri: '<b>Composite of:</b> Farm size, production level, crop diversity, machinery use.<br><b>Scale:</b> 0 (low capacity) → 100 (high capacity).<br><b>Importance:</b> Shows agricultural potential across the region.',
+					aiIdxSustain: '<b>Composite of:</b> Organic enhancers, bio pest control, regen techniques, fertilizer reliance.<br><b>Scale:</b> 0 (conventional) → 100 (sustainable).<br><b>Importance:</b> Highlights adoption of sustainable practices.'
 				},
 				hint: 'Data loads automatically. Toggle layers and click pins to view details on the right.',
 				enableFilters: 'Enable filters',
@@ -41,13 +39,17 @@
 			ar: {
 				controls: 'التحكم', baseMap: 'الخريطة الأساسية', layers: 'الطبقات', aiLayers: 'طبقات الذكاء الاصطناعي', details: 'التفاصيل',
 				basemap: { osm: 'شوارع (OSM)', esri: 'صورة فضائية (Esri)', 'carto-light': 'كارطو فاتح', 'carto-dark': 'كارطو داكن', opentopo: 'OpenTopo' },
-				layerNames: { water: 'المياه', energy: 'الطاقة', food: 'الغذاء', general: 'عام', regen: 'الزراعة التجديدية', preservations: 'المحميات', firePoints: 'نقاط الحرائق', heatmap: 'كثافة الحرائق', farmers: 'استبيان المزارعين', aiRegen: 'تبني الزراعة التجديدية', aiWater: 'مخاطر الأمن المائي', aiEcon: 'المرونة الاقتصادية', aiLabor: 'توفر العمالة', aiClimate: 'الضعف المناخي' },
+				layerNames: { water: 'المياه', energy: 'الطاقة', food: 'الغذاء', general: 'عام', regen: 'الزراعة التجديدية', preservations: 'المحميات', firePoints: 'نقاط الحرائق', heatmap: 'كثافة الحرائق', farmers: 'استبيان المزارعين', aiRegen: 'تبني الزراعة التجديدية', aiWater: 'مخاطر الأمن المائي', aiEcon: 'المرونة الاقتصادية', aiLabor: 'توفر العمالة', aiClimate: 'الضعف المناخي', aiClusters: 'مجموعات المزارعين', aiIdxWater: 'مؤشر هشاشة المياه', aiIdxAgri: 'القدرة الزراعية', aiIdxSustain: 'ممارسات الاستدامة', aiAnalysis: 'التحليل المركب بالذكاء الاصطناعي' },
 				layerDescriptions: {
 					aiRegen: '<b>العوامل:</b> القرية، حجم المزرعة، نوع التربة، مصدر المياه، المعرفة بالتجديدية، مصدر الدخل.<br><b>الدقة:</b> ~61% (بناءً على المسح).<br><b>الأهمية:</b> تحديد المزارعين المحتمل تبنيهم للممارسات المستدامة.',
 					aiWater: '<b>العوامل:</b> القرية، نوع التربة، مصدر المياه، وتيرة الري، أشهر الشح، مصدر الطاقة.<br><b>الدقة:</b> ~98% (ثقة عالية).<br><b>الأهمية:</b> تسليط الضوء على المناطق المعرضة لنقص المياه.',
 					aiEcon: '<b>العوامل:</b> حجم المزرعة، مصدر الدخل، تحديات التسويق، الآلات، عضوية التعاونية، مصدر الطاقة.<br><b>الدقة:</b> مؤشر مركب.<br><b>الأهمية:</b> استهداف المزارعين الأكثر ضعفاً للدعم.',
 					aiLabor: '<b>العوامل:</b> القرية، حجم المزرعة، العمال الرئيسيون، الآلات، المحاصيل الرئيسية، مصدر الدخل.<br><b>الدقة:</b> ~85% (تقديري).<br><b>الأهمية:</b> تحديد المناطق التي تعاني من نقص محتمل في العمالة.',
-					aiClimate: '<b>العوامل:</b> القرية، مصدر المياه، نوع التربة، المحاصيل الرئيسية، مكافحة الآفات، المعرفة بالتجديدية.<br><b>الدقة:</b> ~90% (تقديري).<br><b>الأهمية:</b> تسليط الضوء على المناطق الأكثر عرضة لتأثيرات تغير المناخ.'
+					aiClimate: '<b>العوامل:</b> القرية، مصدر المياه، نوع التربة، المحاصيل الرئيسية، مكافحة الآفات، المعرفة بالتجديدية.<br><b>الدقة:</b> ~90% (تقديري).<br><b>الأهمية:</b> تسليط الضوء على المناطق الأكثر عرضة لتأثيرات تغير المناخ.',
+					aiClusters: '<b>الطريقة:</b> تحليل عنقودي (K-Means) على 29 ميزة زراعية.<br><b>المجموعات:</b> 3 أنماط من المزارعين (زراعة معيشية صغيرة، تجارية كبيرة، مستدامة).<br><b>الأهمية:</b> تصنيف المزارعين حسب ملفهم الشخصي لتوجيه التدخلات.',
+					aiIdxWater: '<b>مركب من:</b> كفاية المياه، أشهر الشح، وتيرة الري.<br><b>المقياس:</b> 0 (مخاطر منخفضة) → 100 (مخاطر عالية).<br><b>الأهمية:</b> تحديد المناطق المتأثرة بشح المياه.',
+					aiIdxAgri: '<b>مركب من:</b> حجم المزرعة، مستوى الإنتاج، تنوع المحاصيل، استخدام الآلات.<br><b>المقياس:</b> 0 (قدرة منخفضة) → 100 (قدرة عالية).<br><b>الأهمية:</b> يُظهر الإمكانات الزراعية في المنطقة.',
+					aiIdxSustain: '<b>مركب من:</b> المحسّنات العضوية، المكافحة الحيوية، تقنيات التجديد، الاعتماد على الأسمدة.<br><b>المقياس:</b> 0 (تقليدي) → 100 (مستدام).<br><b>الأهمية:</b> يُظهر مدى تبني الممارسات المستدامة.'
 				},
 				hint: 'تُحمّل البيانات تلقائيًا. فعّل الطبقات واضغط على العلامات لعرض التفاصيل على اليمين.',
 				enableFilters: 'تفعيل المرشحات',
@@ -91,6 +93,11 @@
 			setText('i18n-ai-econ', S.layerNames.aiEcon);
 			setText('i18n-ai-labor', S.layerNames.aiLabor);
 			setText('i18n-ai-climate', S.layerNames.aiClimate);
+			setText('i18n-ai-analysis', S.layerNames.aiAnalysis);
+			setText('i18n-ai-clusters', S.layerNames.aiClusters);
+			setText('i18n-ai-idx-water', S.layerNames.aiIdxWater);
+			setText('i18n-ai-idx-agri', S.layerNames.aiIdxAgri);
+			setText('i18n-ai-idx-sustain', S.layerNames.aiIdxSustain);
 			
 			// Set descriptions (using innerHTML for formatting)
 			const setHtml = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
@@ -100,6 +107,10 @@
 				setHtml('desc-ai-econ', S.layerDescriptions.aiEcon);
 				setHtml('desc-ai-labor', S.layerDescriptions.aiLabor);
 				setHtml('desc-ai-climate', S.layerDescriptions.aiClimate);
+				setHtml('desc-ai-clusters', S.layerDescriptions.aiClusters);
+				setHtml('desc-ai-idx-water', S.layerDescriptions.aiIdxWater);
+				setHtml('desc-ai-idx-agri', S.layerDescriptions.aiIdxAgri);
+				setHtml('desc-ai-idx-sustain', S.layerDescriptions.aiIdxSustain);
 			}
 
 			setText('i18n-hint', S.hint);
@@ -160,8 +171,7 @@
 		}
 	};
 	// --- Path base resolver ---
-	// CONFIGURATION: Set this to your S3/R2 URL for production (e.g. 'https://pub-xxx.r2.dev/my-project/'), or leave null for local/relative
-	const PRODUCTION_DATA_URL = null; 
+	const PRODUCTION_DATA_URL = M.PRODUCTION_DATA_URL;
 
 	const qsBase = new URLSearchParams(location.search).get('base');
 	const APP_BASE_URL = (qsBase && (qsBase.endsWith('/') ? qsBase : (qsBase + '/'))) || (window.APP_BASE_URL || '');
@@ -398,15 +408,13 @@
 			sourceUrlById[id] = dataOrUrl;
 		}
 		
-		const pixelOffsets = {
-			'water-points': [0, 0],
-			'energy-points': [12, 12],
-			'food-points': [-12, -12],
-			'general-points': [12, -12],
-			'regen-points': [-12, 12],
-			'fire-points-raw': [0, 14],
-			'farmers-points': [14, 0]
-		};
+		// Build pixelOffsets from manifest
+		const pixelOffsets = {};
+		for (const cfg of Object.values(M.THEMES))  pixelOffsets[cfg.layerId] = cfg.pixelOffset;
+		for (const cfg of Object.values(M.STATIC_LAYERS)) {
+			if (cfg.pixelOffset) pixelOffsets[cfg.layerId] = cfg.pixelOffset;
+			if (cfg.rawLayerId && cfg.pixelOffset) pixelOffsets[cfg.rawLayerId] = cfg.pixelOffset;
+		}
 		
 		// Add source (use generateId for legacy URLs, promoteId for canonical data)
 		const sourceConfig = { 
@@ -2587,7 +2595,7 @@ function addTextControl(parent, labelText, onChange) {
 
 	function addBoundaryLayer() {
 		const id = 'farmers-boundary';
-		const url = fromRoot('data/geojson/Farmers_Boundary.geojson');
+		const url = fromRoot(M.BOUNDARY.file);
 		if (map.getSource(id)) return;
 		map.addSource(id, { type: 'geojson', data: url });
 		map.addLayer({
@@ -2622,117 +2630,85 @@ function addTextControl(parent, labelText, onChange) {
 	 * Predictions: "0", "1", "2" (discrete, not continuous)
 	 */
 	function addAiHeatmapLayer(id, type) {
-		const sourceId = 'ai-predictions';
-		const url = fromRoot('data/geojson/Model_Predictions.geojson');
+		const aiSrc = M.AI_SOURCE;
+		const url = fromRoot(aiSrc.file);
 		
 		// Shared source for all AI layers (loaded once)
-		if (!map.getSource(sourceId)) {
-			map.addSource(sourceId, { 
+		if (!map.getSource(aiSrc.id)) {
+			map.addSource(aiSrc.id, { 
 				type: 'geojson', 
 				data: url,
-				promoteId: 'source_row'  // Use source_row as stable ID for feature-state
+				promoteId: aiSrc.promoteId
 			});
 		}
 		
-		let predProp;    // Prediction property name
-		let colorMap;    // Categorical color mapping
-		let description; // Layer description for legend
+		// Read config from manifest
+		const aiCfg = M.AI_LAYERS[type];
+		if (!aiCfg) { console.warn('Unknown AI layer type:', type); return; }
 		
-		if (type === 'regen') {
-			predProp = 'Pred_Regen_Adoption';
-			description = 'Regenerative Agriculture Adoption';
-			// Binary: 0 = No adoption (red), 1 = Adoption (green)
-			colorMap = [
-				'match',
-				['get', predProp],
-				'0', '#e74c3c',  // Red - No adoption
-				'1', '#27ae60',  // Green - Adoption
-				'#95a5a6'        // Gray - Unknown/missing
-			];
-		} else if (type === 'water') {
-			predProp = 'Pred_Water_Risk';
-			description = 'Water Scarcity Risk';
-			// Binary: 0 = Low risk (green), 1 = High risk (red) - inverted logic
-			colorMap = [
-				'match',
-				['get', predProp],
-				'0', '#27ae60',  // Green - Low risk
-				'1', '#e74c3c',  // Red - High risk
-				'#95a5a6'        // Gray - Unknown
-			];
-		} else if (type === 'econ') {
-			predProp = 'Pred_Production_Level';
-			description = 'Production Capacity';
-			// Ternary: 0 = Low (red), 1 = Medium (yellow), 2 = High (green)
-			colorMap = [
-				'match',
-				['get', predProp],
-				'0', '#e74c3c',  // Red - Low production
-				'1', '#f39c12',  // Yellow - Medium production
-				'2', '#27ae60',  // Green - High production
-				'#95a5a6'        // Gray - Unknown
-			];
-		} else if (type === 'climate') {
-			// Placeholder for future climate vulnerability predictions
-			// Currently using production level as proxy
-			predProp = 'Pred_Production_Level';
-			description = 'Climate Resilience Proxy';
-			colorMap = [
-				'match',
-				['get', predProp],
-				'0', '#3498db',  // Blue - Low resilience
-				'1', '#9b59b6',  // Purple - Medium resilience
-				'2', '#1abc9c',  // Teal - High resilience
-				'#95a5a6'        // Gray - Unknown
-			];
+		const predProp = aiCfg.predictionProp;
+
+		// Build color expression based on layer type
+		let colorExpr;
+		if (aiCfg.type === 'gradient' && aiCfg.colorStops) {
+			// Continuous gradient for numeric indices (0-100)
+			const stops = ['interpolate', ['linear'], ['get', predProp]];
+			for (const [val, hex] of aiCfg.colorStops) {
+				stops.push(val, hex);
+			}
+			colorExpr = stops;
+		} else {
+			// Categorical match for discrete values ("0", "1", "2")
+			const colorMap = ['match', ['get', predProp]];
+			for (const [val, hex] of Object.entries(aiCfg.colorMap)) {
+				colorMap.push(val, hex);
+			}
+			colorMap.push('#95a5a6'); // fallback
+			colorExpr = colorMap;
 		}
 
-		// Add circle layer with categorical coloring and improved transparency
+		// Add circle layer
 		if (!map.getLayer(id)) {
 			map.addLayer({
 				id: id,
 				type: 'circle',
-				source: sourceId,
+				source: aiSrc.id,
 				layout: { visibility: 'none' },
 				paint: {
-					// Larger circles for better visibility of discrete categories
 					'circle-radius': [
 						'interpolate', ['linear'], ['zoom'],
-						8, 6,   // Small at low zoom
+						8, 6,
 						10, 8,
 						12, 10,
 						14, 12,
 						16, 14
 					],
-					// Categorical color based on prediction value
-					'circle-color': colorMap,
-					// Improved transparency for map clarity (user requirement)
+					'circle-color': colorExpr,
 					'circle-opacity': [
 						'case',
 						['boolean', ['feature-state', 'hover'], false],
-						0.95,  // Full opacity on hover
-						0.7    // 70% opacity normally for "more transparent" map
+						0.95,
+						0.7
 					],
-					// White stroke for definition
 					'circle-stroke-width': [
 						'case',
 						['boolean', ['feature-state', 'hover'], false],
-						2,     // Thicker on hover
-						1      // Normal stroke
+						2,
+						1
 					],
 					'circle-stroke-color': '#ffffff',
 					'circle-stroke-opacity': 0.9
 				}
 			});
 			
-			// Store description for legend
+			// Store metadata for legend
 			map.setLayerMetadata = map.setLayerMetadata || {};
-			map.setLayerMetadata[id] = { description, predProp, type };
+			map.setLayerMetadata[id] = { description: aiCfg.i18n.en, predProp, type };
 		}
 	}
 
 	function updateAiBoundaryVisibility() {
-		const aiLayers = ['ai-regen', 'ai-water', 'ai-econ', 'ai-climate'];
+		const aiLayers = Object.values(M.AI_LAYERS).map(c => c.layerId);
 		const anyActive = aiLayers.some(id => map.getLayer(id) && map.getLayoutProperty(id, 'visibility') === 'visible');
 		const boundaryId = 'farmers-boundary';
 		const vis = anyActive ? 'visible' : 'none';
@@ -2905,31 +2881,29 @@ function addTextControl(parent, labelText, onChange) {
 		
 		// Fire: add raw (for heatmap) and clustered copy for symbols
 		if (staticLayers.fire) {
-			addGeoJsonLayer('fire-points-raw', staticLayers.fire, '#e74c3c', false);
-			addGeoJsonLayer('fire-points', staticLayers.fire, '#e74c3c', true);
+			const fireColor = M.STATIC_LAYERS.fire.color;
+			addGeoJsonLayer('fire-points-raw', staticLayers.fire, fireColor, false);
+			addGeoJsonLayer('fire-points', staticLayers.fire, fireColor, true);
 			updateLayerCount('fire-points', staticLayers.fire.features.length);
 		}
 		// Farmers comprehensive survey (using Model_Predictions to include AI data)
 		if (staticLayers.predictions) {
-			addGeoJsonLayer('farmers-points', staticLayers.predictions, '#16a085', true);
+			addGeoJsonLayer('farmers-points', staticLayers.predictions, M.STATIC_LAYERS.farmers.color, true);
 			updateLayerCount('farmers-points', staticLayers.predictions.features.length);
 		}
 		// Preservations polygons
 		if (staticLayers.preservations) {
-			addPolygonLayer('preservations-poly', staticLayers.preservations, '#2ecc71');
+			addPolygonLayer('preservations-poly', staticLayers.preservations, M.STATIC_LAYERS.preservations.color);
 			updateLayerCount('preservations-poly', staticLayers.preservations.features.length);
 		}
 		
 		// Boundary Layer
 		addBoundaryLayer();
 
-		// AI Layers (Heatmaps)
-		addAiHeatmapLayer('ai-regen', 'regen');
-		addAiHeatmapLayer('ai-water', 'water');
-		addAiHeatmapLayer('ai-econ', 'econ');
-		// Skip labor layer - insufficient training data (only 4 positive samples)
-		// addAiHeatmapLayer('ai-labor', 'labor');
-		addAiHeatmapLayer('ai-climate', 'climate');
+		// AI Layers (Heatmaps) – iterate from manifest
+		for (const [type, cfg] of Object.entries(M.AI_LAYERS)) {
+			addAiHeatmapLayer(cfg.layerId, type);
+		}
 
 		// Preload originals for filtering and unique value extraction
 		await Promise.all([

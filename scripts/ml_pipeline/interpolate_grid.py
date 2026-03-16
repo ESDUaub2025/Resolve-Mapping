@@ -33,6 +33,7 @@ class GridInterpolator:
         self.df = None
         self.models = {}
         self.features = []
+        self._model_features = {}  # per-model feature lists
         
     def load_data_and_models(self):
         """Load prepared data and trained models."""
@@ -50,6 +51,7 @@ class GridInterpolator:
             with open(features_file, 'r') as f:
                 feature_data = json.load(f)
                 self.features = feature_data['features']
+                self._model_features = feature_data.get('model_features', {})
         else:
             raise FileNotFoundError(f"Feature list not found: {features_file}")
         
@@ -76,7 +78,6 @@ class GridInterpolator:
     def predict_survey_points(self) -> pd.DataFrame:
         """Generate predictions for all survey points."""
         
-        X = self.df[self.features]
         coords = self.df[['longitude', 'latitude']].values
         
         predictions = pd.DataFrame({
@@ -84,7 +85,23 @@ class GridInterpolator:
             'latitude': coords[:, 1]
         })
         
+        # Map short model names to target names for feature lookup
+        short_to_target = {
+            'Regen': 'target_regen_adoption',
+            'Water': 'target_water_risk',
+            'Econ': 'target_economic_vuln',
+            'Labor': 'target_labor_shortage',
+            'Climate': 'target_climate_vuln',
+        }
+        
         for name, model in self.models.items():
+            # Use per-model features if available, else global
+            target = short_to_target.get(name, '')
+            model_feats = self._model_features.get(target, self.features)
+            # Filter to features present in data
+            available_feats = [f for f in model_feats if f in self.df.columns]
+            X = self.df[available_feats]
+            
             proba = model.predict_proba(X)[:, 1]
             predictions[f'Prob_{name}'] = proba
             print(f"✓ Predicted {name}: mean={proba.mean():.3f}, std={proba.std():.3f}")
@@ -93,11 +110,26 @@ class GridInterpolator:
     
     def generate_grid(
         self,
-        lon_range: Tuple[float, float] = (35.40, 35.70),
-        lat_range: Tuple[float, float] = (33.58, 33.80),
+        lon_range: Tuple[float, float] = None,
+        lat_range: Tuple[float, float] = None,
         resolution: float = 0.005  # ~500m at this latitude
     ) -> np.ndarray:
-        """Generate regular grid covering study area."""
+        """Generate regular grid covering study area.
+        
+        If lon/lat ranges not specified, computes from data with padding.
+        """
+        if lon_range is None or lat_range is None:
+            # Dynamically compute bounds from survey data
+            pad = 0.02  # ~2km padding
+            lon_range = (
+                self.df['longitude'].min() - pad,
+                self.df['longitude'].max() + pad
+            )
+            lat_range = (
+                self.df['latitude'].min() - pad,
+                self.df['latitude'].max() + pad
+            )
+            print(f"  Dynamic bounds: lon [{lon_range[0]:.4f}, {lon_range[1]:.4f}], lat [{lat_range[0]:.4f}, {lat_range[1]:.4f}]")
         
         lon_grid = np.arange(lon_range[0], lon_range[1], resolution)
         lat_grid = np.arange(lat_range[0], lat_range[1], resolution)
@@ -227,6 +259,132 @@ class GridInterpolator:
         print(f"\n✓ Exported {len(features)} grid points to {output_path}")
         print(f"  File size: {output_path.stat().st_size / 1024:.1f} KB")
     
+    def export_model_predictions(
+        self,
+        survey_predictions: pd.DataFrame,
+        output_file: str = "data/geojson/Model_Predictions.geojson"
+    ):
+        """Export discrete predictions at survey points for app.js AI layers.
+        
+        Generates Model_Predictions.geojson with property names matching
+        what addAiHeatmapLayer() expects: Pred_Regen_Adoption, Pred_Water_Risk,
+        Pred_Production_Level (discrete string values "0", "1", "2").
+        
+        Also includes composite indices (idx_*), PCA scores (pca_*),
+        and cluster assignment (farmer_cluster) if available in source data.
+        """
+        
+        # Map probability column names to app.js property names
+        prob_to_pred = {
+            'Prob_Regen': 'Pred_Regen_Adoption',
+            'Prob_Water': 'Pred_Water_Risk',
+            'Prob_Econ': 'Pred_Production_Level',
+            'Prob_Climate': 'Pred_Climate_Vuln',
+        }
+        
+        # Columns from unsupervised analysis to include
+        index_cols = [c for c in self.df.columns if c.startswith('idx_')]
+        pca_cols = [c for c in self.df.columns if c.startswith('pca_')]
+        cluster_col = 'farmer_cluster' if 'farmer_cluster' in self.df.columns else None
+        
+        # Get village names from source data if available
+        village_col = None
+        for c in self.df.columns:
+            if c == 'water_القرية' or c == 'water_4. Village':
+                village_col = c
+                break
+        if village_col is None:
+            for c in self.df.columns:
+                if 'village' in c.lower() or c.endswith('_القرية'):
+                    village_col = c
+                    break
+        
+        features = []
+        for idx, row in survey_predictions.iterrows():
+            props = {
+                'source_row': str(idx + 1),
+            }
+            
+            # Add village name if available
+            if village_col and idx < len(self.df):
+                v = self.df.iloc[idx].get(village_col)
+                if pd.notna(v):
+                    props['Village_Name'] = str(v)
+            
+            # Add data source
+            if 'data_source' in self.df.columns and idx < len(self.df):
+                props['data_source'] = str(self.df.iloc[idx].get('data_source', ''))
+            
+            # Convert probabilities to discrete predictions
+            for prob_col, pred_name in prob_to_pred.items():
+                if prob_col in survey_predictions.columns:
+                    prob = row[prob_col]
+                    # Binary: threshold at 0.5
+                    if pred_name in ('Pred_Regen_Adoption', 'Pred_Water_Risk'):
+                        props[pred_name] = str(int(prob >= 0.5))
+                    else:
+                        # Ternary: <0.33 → "0", 0.33-0.66 → "1", >0.66 → "2"
+                        if prob < 0.33:
+                            props[pred_name] = "0"
+                        elif prob < 0.66:
+                            props[pred_name] = "1"
+                        else:
+                            props[pred_name] = "2"
+            
+            # Add composite indices (0-100 scale)
+            if idx < len(self.df):
+                for col in index_cols:
+                    v = self.df.iloc[idx].get(col)
+                    if pd.notna(v):
+                        props[col] = round(float(v), 1)
+                
+                for col in pca_cols:
+                    v = self.df.iloc[idx].get(col)
+                    if pd.notna(v):
+                        props[col] = round(float(v), 1)
+                
+                if cluster_col:
+                    v = self.df.iloc[idx].get(cluster_col)
+                    if pd.notna(v):
+                        props['farmer_cluster'] = str(int(v))
+            
+            feature = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [float(row['longitude']), float(row['latitude'])]
+                },
+                "properties": props
+            }
+            features.append(feature)
+        
+        geojson = {"type": "FeatureCollection", "features": features}
+        
+        output_path = Path(output_file)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        with open(output_path, 'w') as f:
+            json.dump(geojson, f, ensure_ascii=False)
+        
+        print(f"\n✓ Exported {len(features)} predictions to {output_path}")
+        print(f"  File size: {output_path.stat().st_size / 1024:.1f} KB")
+        
+        # Summary
+        for pred_name in prob_to_pred.values():
+            vals = [f['properties'].get(pred_name) for f in features if pred_name in f['properties']]
+            if vals:
+                from collections import Counter
+                dist = Counter(vals)
+                print(f"  {pred_name}: {dict(dist)}")
+        
+        if index_cols:
+            print(f"  Composite indices: {', '.join(index_cols)}")
+        if cluster_col:
+            cluster_vals = [f['properties'].get('farmer_cluster') for f in features 
+                           if 'farmer_cluster' in f['properties']]
+            from collections import Counter
+            print(f"  Clusters: {dict(Counter(cluster_vals))}")
+    
     def run_pipeline(
         self,
         resolution: float = 0.005,
@@ -257,8 +415,11 @@ class GridInterpolator:
         if apply_smoothing:
             grid_df = self.smooth_probabilities(grid_df)
         
-        # Step 6: Export GeoJSON
+        # Step 6: Export GeoJSON (grid)
         self.export_geojson(grid_df)
+        
+        # Step 7: Generate Model_Predictions.geojson (discrete predictions at survey points)
+        self.export_model_predictions(survey_predictions)
         
         print("\n=== Grid Interpolation Complete ===")
         
