@@ -21,12 +21,15 @@ Short records of decisions taken in the 2026-09-29 refactor (full reasoning in t
 
 ## Open items
 
-- **Fire detections**: re-acquire from NASA FIRMS with sensor, confidence and FRP, then filter
-  low-confidence detections; current file has no provenance.
+- **Fire detections**: evidence points to NASA FIRMS VIIRS NOAA-20 (an earlier export is named
+  `fire_archive_J1V-C2_647822.csv`). Re-download from FIRMS with confidence and FRP and filter
+  low-confidence detections.
 - **Protected areas**: confirm WDPA version and whether serving the polygons as GeoJSON is
   acceptable under the WDPA terms (non-commercial, attribution, no downloadable redistribution
   without permission); otherwise request permission or switch to a tile service.
 - **Basemap terms**: confirm Esri basemap usage terms for this site, or move to OpenFreeMap vector tiles.
 - **Unresolved places**: Masma (ماسما) and Haret El-Fikani (حارة الفيكاني) need confirmation from the survey team.
 - **Chouf interview dates**: not recorded in the source; ask the survey team.
+- **Older local copies**: `D:\Programing\ResolveMaping_final` contains respondent names and
+  coordinates (`data/CLEANED_Farmers*.csv`); decide whether to delete it or move it into the private store.
 - **Legal**: data owner to check notification duties for the earlier public exposure (e.g. Lebanese Law No. 81/2018).
