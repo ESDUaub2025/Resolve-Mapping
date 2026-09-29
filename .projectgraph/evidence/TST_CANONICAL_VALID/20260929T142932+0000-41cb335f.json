@@ -1,0 +1,47 @@
+{
+  "node": "TST_CANONICAL_VALID",
+  "evidence_id": "41cb335fd6e54dd4a9b50a212ca50b31",
+  "result": "PASS",
+  "started_at": "2026-09-29T14:29:04+00:00",
+  "finished_at": "2026-09-29T14:29:32+00:00",
+  "git": {
+    "available": true,
+    "commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
+    "short_commit": "f12cd6cf91c8",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:cef50b28b49bc3c9875d4a2a1bc2bd5d00c0072187c8d13ab7ba41979bcdb831",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "resolve/validate.py",
+      "hash": "9ceb5a6a2c9ddd96b86d830b69aa17920514d742eab8b05382bb9276c4721fc4"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "resolve/validate.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "build-with-validation",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m resolve build --tier research",
+      "exit_code": 0,
+      "duration_s": 28.734,
+      "stdout_digest": "sha256:299f3ef9d2a28f0a831f1eea62f7e211cd08e9556c24e3039f589a4ba4dc169f",
+      "output_tail": "{\n \"raw_files_verified\": 75,\n \"records\": 208,\n \"new_ids\": 0,\n \"review_issues\": 37,\n \"typology\": {\n  \"published\": true,\n  \"k\": 4,\n  \"stability_ari\": 0.701\n },\n \"drivers\": {\n  \"water_stress\": {\n   \"findings\": 3,\n   \"auc\": 0.669,\n   \"auc_ci\": [\n    0.595,\n    0.745\n   ],\n   \"baseline_auc\": 0.49,\n   \"predictive\": true,\n   \"validation\": \"5-fold cross-validation grouped by village; baseline = region only\"\n  },\n  \"chemical_dependence\": {\n   \"findings\": 3,\n   \"auc\": 0.605,\n   \"auc_ci\": [\n    0.518,\n    0.688\n   ],\n   \"baseline_auc\": 0.457,\n   \"predictive\": true,\n   \"validation\": \"5-fold cross-validation grouped by village; baseline = region only\"\n  }\n },\n \"research\": {\n  \"dir\": \"D:\\\\Programing\\\\RESOLVE-data-private\\\\build\\\\research\\\\data\",\n  \"respondent_points\": 206,\n  \"holding_points\": 3\n }\n}\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

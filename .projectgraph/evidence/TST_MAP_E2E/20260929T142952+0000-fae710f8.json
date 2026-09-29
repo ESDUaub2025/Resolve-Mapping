@@ -1,0 +1,47 @@
+{
+  "node": "TST_MAP_E2E",
+  "evidence_id": "fae710f83088469f83948cd098f9999b",
+  "result": "PASS",
+  "started_at": "2026-09-29T14:29:35+00:00",
+  "finished_at": "2026-09-29T14:29:52+00:00",
+  "git": {
+    "available": true,
+    "commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
+    "short_commit": "f12cd6cf91c8",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:2119fdb1d3ed9a09bfbf6bd3a693a4d0603947b93b29e27a6717a61f7619a0f1",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "tests/e2e/smoke.mjs",
+      "hash": "667a5a886c8293b0cd720dfcbb10fe39978d79253569bfbed5984d75eff62cff"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "tests/e2e/smoke.mjs",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "browser-smoke",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "node tests/e2e/smoke.mjs",
+      "exit_code": 0,
+      "duration_s": 17.078,
+      "stdout_digest": "sha256:35f416d3fcb38ee98ad63cc37a6a5d9b42c7ed0a5c3b40bde6282154c9a39893",
+      "output_tail": "E2E OK: 5 layers, summary, pin, pin filter (Showing 203 of 203 -> Showing 56 of 203), insights, RTL, no console errors\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

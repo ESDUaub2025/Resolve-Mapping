@@ -1,0 +1,68 @@
+{
+  "node": "TST_RESEARCH_TIER",
+  "evidence_id": "7bd7284d39a746d392205f4ad7cd5856",
+  "result": "PASS",
+  "started_at": "2026-09-29T14:30:39+00:00",
+  "finished_at": "2026-09-29T14:31:09+00:00",
+  "git": {
+    "available": true,
+    "commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
+    "short_commit": "f12cd6cf91c8",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:4e9761c441184a28dfc44422edf72f5cde2f813b3b96b91921ef80450de7f55d",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "resolve/analysis.py",
+      "hash": "d73804c910ff97a02d94b2a22b578c65f8e2b2d58492fff123d789bfd04591a2"
+    },
+    {
+      "path": "resolve/serve.py",
+      "hash": "5a63ba03756eb6cc6e04a0276a1b5fd4f1d2a42527738bdbd08ec2c52b5ba9b3"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "resolve/serve.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "resolve/analysis.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "analysis-tests",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m pytest -q tests/test_analysis.py",
+      "exit_code": 0,
+      "duration_s": 1.89,
+      "stdout_digest": "sha256:39b075a82204be3926b0b7583a68619906f30c676edc9ac233e40f46ceaf441d",
+      "output_tail": "....                                                                     [100%]\n4 passed in 1.40s\n"
+    },
+    {
+      "kind": "command",
+      "name": "research-build",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m resolve build --tier research",
+      "exit_code": 0,
+      "duration_s": 28.125,
+      "stdout_digest": "sha256:299f3ef9d2a28f0a831f1eea62f7e211cd08e9556c24e3039f589a4ba4dc169f",
+      "output_tail": "{\n \"raw_files_verified\": 75,\n \"records\": 208,\n \"new_ids\": 0,\n \"review_issues\": 37,\n \"typology\": {\n  \"published\": true,\n  \"k\": 4,\n  \"stability_ari\": 0.701\n },\n \"drivers\": {\n  \"water_stress\": {\n   \"findings\": 3,\n   \"auc\": 0.669,\n   \"auc_ci\": [\n    0.595,\n    0.745\n   ],\n   \"baseline_auc\": 0.49,\n   \"predictive\": true,\n   \"validation\": \"5-fold cross-validation grouped by village; baseline = region only\"\n  },\n  \"chemical_dependence\": {\n   \"findings\": 3,\n   \"auc\": 0.605,\n   \"auc_ci\": [\n    0.518,\n    0.688\n   ],\n   \"baseline_auc\": 0.457,\n   \"predictive\": true,\n   \"validation\": \"5-fold cross-validation grouped by village; baseline = region only\"\n  }\n },\n \"research\": {\n  \"dir\": \"D:\\\\Programing\\\\RESOLVE-data-private\\\\build\\\\research\\\\data\",\n  \"respondent_points\": 206,\n  \"holding_points\": 3\n }\n}\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

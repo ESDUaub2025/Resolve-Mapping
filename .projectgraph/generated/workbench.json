@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T10:21:23+00:00",
+  "generated_at": "2026-09-29T14:31:10+00:00",
   "rule": "workbench.project.v1",
   "default_scale": "portfolio",
   "scales": [
@@ -2279,148 +2279,12 @@
     "rule": "workbench.project.v1"
   },
   "temporal": {
-    "baseline": "2026-09-29T10:11:03+00:00",
+    "baseline": "2026-09-29T10:21:23+00:00",
     "comparable": true,
     "added": [],
     "removed": [],
-    "status_changes": [
-      {
-        "id": "M0_CONTAINMENT",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M1_SCAFFOLDING",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M2_DICTIONARY",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M3_ADAPTERS",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M4_CANONICAL",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M5_PUBLISH_SDC",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M6_FRONTEND_REGISTRY",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M7_GIS_UX",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "M8_RESEARCH_TIER",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_CONSISTENT_MAP_UX",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_DATASET_PROVENANCE_LICENCE",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_DETERMINISTIC_PUBLIC_BUILD",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_LOCATION_PROVENANCE",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_MISSING_VALUE_SEMANTICS",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_NO_RESTRICTED_DATA_PUBLIC",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "REQ_PREDICTABLE_NEW_DATASET",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "RESOLVEMAPING_FINAL2",
-        "from": "STALE",
-        "to": "ACTIVE"
-      },
-      {
-        "id": "TST_CANONICAL_VALID",
-        "from": "READY",
-        "to": "VERIFIED"
-      },
-      {
-        "id": "TST_DICTIONARY",
-        "from": "READY",
-        "to": "IMPLEMENTED"
-      },
-      {
-        "id": "TST_FRONTEND",
-        "from": "READY",
-        "to": "VERIFIED"
-      },
-      {
-        "id": "TST_MAP_E2E",
-        "from": "READY",
-        "to": "IMPLEMENTED"
-      },
-      {
-        "id": "TST_NO_RESTRICTED_DATA_TRACKED",
-        "from": "STALE",
-        "to": "IMPLEMENTED"
-      },
-      {
-        "id": "TST_PIPELINE_REPRODUCIBLE",
-        "from": "READY",
-        "to": "VERIFIED"
-      },
-      {
-        "id": "TST_PUBLIC_RELEASE",
-        "from": "READY",
-        "to": "VERIFIED"
-      },
-      {
-        "id": "TST_RESEARCH_TIER",
-        "from": "READY",
-        "to": "IMPLEMENTED"
-      },
-      {
-        "id": "TST_TEST_SUITE",
-        "from": "READY",
-        "to": "IMPLEMENTED"
-      }
-    ],
-    "quiet": false,
+    "status_changes": [],
+    "quiet": true,
     "rule": "workbench.project.v1"
   },
   "health": {

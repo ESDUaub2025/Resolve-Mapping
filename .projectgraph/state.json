@@ -501,12 +501,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "24f26fe06ac04585981c152723cc478e",
-      "evidence_path": ".projectgraph/evidence/TST_CANONICAL_VALID/20260929T102051+0000-24f26fe0.json",
-      "verified_at": "2026-09-29T10:20:51+00:00",
-      "self_fingerprint": "sha256:1779c7be19a841227c6714353d24aacead619e2d420076be1ee211fc4fe05117",
+      "evidence_id": "41cb335fd6e54dd4a9b50a212ca50b31",
+      "evidence_path": ".projectgraph/evidence/TST_CANONICAL_VALID/20260929T142932+0000-41cb335f.json",
+      "verified_at": "2026-09-29T14:29:32+00:00",
+      "self_fingerprint": "sha256:cef50b28b49bc3c9875d4a2a1bc2bd5d00c0072187c8d13ab7ba41979bcdb831",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -533,6 +533,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "24f26fe06ac04585981c152723cc478e"
+        },
+        {
+          "at": "2026-09-29T14:29:32+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "41cb335fd6e54dd4a9b50a212ca50b31"
         }
       ]
     },
@@ -540,12 +547,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "003b8be973224905b24d144179b3b20b",
-      "evidence_path": ".projectgraph/evidence/TST_DICTIONARY/20260929T102447+0000-003b8be9.json",
-      "verified_at": "2026-09-29T10:24:47+00:00",
-      "self_fingerprint": "sha256:fd7c5d5fd37d6b3ef3a20501bb8c79e0168d23872c1ca6a47980bc4ce6dff110",
+      "evidence_id": "b71c11a4e2f145919b31986341032f01",
+      "evidence_path": ".projectgraph/evidence/TST_DICTIONARY/20260929T142834+0000-b71c11a4.json",
+      "verified_at": "2026-09-29T14:28:34+00:00",
+      "self_fingerprint": "sha256:3f92470310dd2bb4a36f055304d1590f5be58bbcfe8c95c5839173911cb2135a",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "70f8bed50b31507369b7ff9616762dd7c2be53ef",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -579,6 +586,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "003b8be973224905b24d144179b3b20b"
+        },
+        {
+          "at": "2026-09-29T14:28:34+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "b71c11a4e2f145919b31986341032f01"
         }
       ]
     },
@@ -586,12 +600,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "789de5121ee44b99b24ff60c5470e055",
-      "evidence_path": ".projectgraph/evidence/TST_FRONTEND/20260929T102054+0000-789de512.json",
-      "verified_at": "2026-09-29T10:20:54+00:00",
-      "self_fingerprint": "sha256:a56e17f4d0fc8ed60ac7886f61a2727da767c44b3391d312d39dcf3fb44a5192",
+      "evidence_id": "d69631b35a254bc18acf93ffc1286d1b",
+      "evidence_path": ".projectgraph/evidence/TST_FRONTEND/20260929T142935+0000-d69631b3.json",
+      "verified_at": "2026-09-29T14:29:35+00:00",
+      "self_fingerprint": "sha256:1a71e4e18f174c556f83c2537bdc0a484405c25b1a6c2f652fb46173819c3a12",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -618,6 +632,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "789de5121ee44b99b24ff60c5470e055"
+        },
+        {
+          "at": "2026-09-29T14:29:35+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "d69631b35a254bc18acf93ffc1286d1b"
         }
       ]
     },
@@ -625,12 +646,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "7beda2af7fae439cacc2bee0ff82b5dc",
-      "evidence_path": ".projectgraph/evidence/TST_MAP_E2E/20260929T102110+0000-7beda2af.json",
-      "verified_at": "2026-09-29T10:21:10+00:00",
-      "self_fingerprint": "sha256:c5eae67a05323edcfefdf486fef9bbe6b6b87bc693119548244905f6a796bb13",
+      "evidence_id": "fae710f83088469f83948cd098f9999b",
+      "evidence_path": ".projectgraph/evidence/TST_MAP_E2E/20260929T142952+0000-fae710f8.json",
+      "verified_at": "2026-09-29T14:29:52+00:00",
+      "self_fingerprint": "sha256:2119fdb1d3ed9a09bfbf6bd3a693a4d0603947b93b29e27a6717a61f7619a0f1",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -657,6 +678,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "7beda2af7fae439cacc2bee0ff82b5dc"
+        },
+        {
+          "at": "2026-09-29T14:29:52+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "fae710f83088469f83948cd098f9999b"
         }
       ]
     },
@@ -664,12 +692,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "a30f458182784202abcf71f5102b6f4d",
-      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T102044+0000-a30f4581.json",
-      "verified_at": "2026-09-29T10:20:44+00:00",
-      "self_fingerprint": "sha256:67a607c4bf4f033c0bef283db542c64b7b7ef310b841e6d27ad821a7599d0b03",
+      "evidence_id": "23f21fb6ff0f4b69b8b7039f17626baf",
+      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T143026+0000-23f21fb6.json",
+      "verified_at": "2026-09-29T14:30:26+00:00",
+      "self_fingerprint": "sha256:f433190da0f58c31e912933f9ef7e5daca5aeb6fff3dee3111b6f5c503746a2c",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [
         {
           "item": 1,
@@ -751,6 +779,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "a30f458182784202abcf71f5102b6f4d"
+        },
+        {
+          "at": "2026-09-29T14:30:26+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "23f21fb6ff0f4b69b8b7039f17626baf"
         }
       ]
     },
@@ -758,12 +793,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "d41a991ad7fe43cb863e566f28196a1b",
-      "evidence_path": ".projectgraph/evidence/TST_PIPELINE_REPRODUCIBLE/20260929T102446+0000-d41a991a.json",
-      "verified_at": "2026-09-29T10:24:46+00:00",
-      "self_fingerprint": "sha256:5a62fcadf1319a6adbcab8ca914f55de39b8c1bdce0d367237fac5540ad41508",
+      "evidence_id": "a000e636bb8344a583ff61c3caf12c25",
+      "evidence_path": ".projectgraph/evidence/TST_PIPELINE_REPRODUCIBLE/20260929T142903+0000-a000e636.json",
+      "verified_at": "2026-09-29T14:29:03+00:00",
+      "self_fingerprint": "sha256:3f755983d43c6141fa5ea7437e598fce257d4fa5aa19aa62f55ba76852595d1b",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "70f8bed50b31507369b7ff9616762dd7c2be53ef",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -797,6 +832,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "d41a991ad7fe43cb863e566f28196a1b"
+        },
+        {
+          "at": "2026-09-29T14:29:03+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "a000e636bb8344a583ff61c3caf12c25"
         }
       ]
     },
@@ -804,12 +846,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "f0c227648bce47dfa833cd276617b537",
-      "evidence_path": ".projectgraph/evidence/TST_PUBLIC_RELEASE/20260929T102443+0000-f0c22764.json",
-      "verified_at": "2026-09-29T10:24:43+00:00",
-      "self_fingerprint": "sha256:485684bacc434ed5606231d02fe49ccb9f6338a89bb1dfb415766869f14f14c0",
+      "evidence_id": "72ad3103bd27436198aaecf93810cc51",
+      "evidence_path": ".projectgraph/evidence/TST_PUBLIC_RELEASE/20260929T142934+0000-72ad3103.json",
+      "verified_at": "2026-09-29T14:29:34+00:00",
+      "self_fingerprint": "sha256:63d48740ae0f6f8413dfae0ec6a52e20bb59a47e02229d7adba84f494a6d4192",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "70f8bed50b31507369b7ff9616762dd7c2be53ef",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -843,6 +885,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "f0c227648bce47dfa833cd276617b537"
+        },
+        {
+          "at": "2026-09-29T14:29:34+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "72ad3103bd27436198aaecf93810cc51"
         }
       ]
     },
@@ -850,12 +899,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "6a38b27999724cc880f978ad3c555351",
-      "evidence_path": ".projectgraph/evidence/TST_RESEARCH_TIER/20260929T102113+0000-6a38b279.json",
-      "verified_at": "2026-09-29T10:21:13+00:00",
-      "self_fingerprint": "sha256:2d319a7b67bbf895c088fb275ed994138ef3a914e4e7c9190ca410cdbe685d58",
+      "evidence_id": "7bd7284d39a746d392205f4ad7cd5856",
+      "evidence_path": ".projectgraph/evidence/TST_RESEARCH_TIER/20260929T143109+0000-7bd7284d.json",
+      "verified_at": "2026-09-29T14:31:09+00:00",
+      "self_fingerprint": "sha256:4e9761c441184a28dfc44422edf72f5cde2f813b3b96b91921ef80450de7f55d",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -882,6 +931,20 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "6a38b27999724cc880f978ad3c555351"
+        },
+        {
+          "at": "2026-09-29T14:30:25+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "1e9f3a4f940e4cdfb66a70c6673f8de7"
+        },
+        {
+          "at": "2026-09-29T14:31:09+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "7bd7284d39a746d392205f4ad7cd5856"
         }
       ]
     },
@@ -889,12 +952,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "525a548a017d45bfaec39fd3e47da3bc",
-      "evidence_path": ".projectgraph/evidence/TST_TEST_SUITE/20260929T102045+0000-525a548a.json",
-      "verified_at": "2026-09-29T10:20:45+00:00",
-      "self_fingerprint": "sha256:175a2069c37b5f414a273d75d431c68c36afbc7c754a910534fa147394c1bba7",
+      "evidence_id": "1b158a4ed1af419f95767870331aff1f",
+      "evidence_path": ".projectgraph/evidence/TST_TEST_SUITE/20260929T142833+0000-1b158a4e.json",
+      "verified_at": "2026-09-29T14:28:33+00:00",
+      "self_fingerprint": "sha256:ceb9701d168cff8587ab0c1286e46f253ccfda66fd4bc881e9efa22b036a1820",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
       "attestations": [],
       "history": [
         {
@@ -921,6 +984,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "525a548a017d45bfaec39fd3e47da3bc"
+        },
+        {
+          "at": "2026-09-29T14:28:33+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "1b158a4ed1af419f95767870331aff1f"
         }
       ]
     }

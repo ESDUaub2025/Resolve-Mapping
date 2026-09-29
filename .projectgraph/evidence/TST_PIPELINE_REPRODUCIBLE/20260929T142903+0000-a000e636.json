@@ -1,0 +1,57 @@
+{
+  "node": "TST_PIPELINE_REPRODUCIBLE",
+  "evidence_id": "a000e636bb8344a583ff61c3caf12c25",
+  "result": "PASS",
+  "started_at": "2026-09-29T14:28:35+00:00",
+  "finished_at": "2026-09-29T14:29:03+00:00",
+  "git": {
+    "available": true,
+    "commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
+    "short_commit": "f12cd6cf91c8",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:3f755983d43c6141fa5ea7437e598fce257d4fa5aa19aa62f55ba76852595d1b",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "resolve/publish.py",
+      "hash": "1ae133a37351781faeb70e0d0943bca5e0ad5d3f6005de18ca7151a2646632e8"
+    },
+    {
+      "path": "resolve/survey.py",
+      "hash": "cc0ddbabb473ea2e6c4c3df7b400a4890107f0bf5e3de598f3912dfa23e2a46c"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "resolve/survey.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "resolve/publish.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "rebuild-public-identical",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m resolve build --tier public && git diff --exit-code -- public/data",
+      "exit_code": 0,
+      "duration_s": 27.812,
+      "stdout_digest": "sha256:2aab12c32d7d859c6710807100fe5b47a1fa1a9f253e7adf1b8ebc7033a6fc1f",
+      "output_tail": "{\n \"raw_files_verified\": 75,\n \"records\": 208,\n \"new_ids\": 0,\n \"review_issues\": 37,\n \"typology\": {\n  \"published\": true,\n  \"k\": 4,\n  \"stability_ari\": 0.701\n },\n \"drivers\": {\n  \"water_stress\": {\n   \"findings\": 3,\n   \"auc\": 0.669,\n   \"auc_ci\": [\n    0.595,\n    0.745\n   ],\n   \"baseline_auc\": 0.49,\n   \"predictive\": true,\n   \"validation\": \"5-fold cross-validation grouped by village; baseline = region only\"\n  },\n  \"chemical_dependence\": {\n   \"findings\": 3,\n   \"auc\": 0.605,\n   \"auc_ci\": [\n    0.518,\n    0.688\n   ],\n   \"baseline_auc\": 0.457,\n   \"predictive\": true,\n   \"validation\": \"5-fold cross-validation grouped by village; baseline = region only\"\n  }\n },\n \"public\": {\n  \"id\": \"e35b67dfd1dd\",\n  \"villages_published\": 12,\n  \"districts_published\": 3,\n  \"respondent_pins\": 203,\n  \"respondent_pins_at_district_level\": 86,\n  \"respondents_in_summaries\": 203,\n  \"respondents_excluded_no_location\": 1\n }\n}\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}
