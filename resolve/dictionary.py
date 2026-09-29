@@ -43,6 +43,7 @@ class Vocabulary:
     kind: str
     codes: list
     note: str = ""
+    generated: bool = False  # codes filled in at build time (e.g. farmer_type)
 
     @property
     def code_names(self):
@@ -83,6 +84,8 @@ class Field:
     vocab: str = None
     applies_if: dict = None
     note: str = ""
+    derived: bool = False  # computed by resolve.analysis, not read from a survey column
+    short_label: dict = None
 
     @property
     def is_public(self):
@@ -135,7 +138,7 @@ def load() -> Dictionary:
             )
             for c in spec["codes"]
         ]
-        vocabularies[name] = Vocabulary(name, spec["kind"], codes, spec.get("note", ""))
+        vocabularies[name] = Vocabulary(name, spec["kind"], codes, spec.get("note", ""), spec.get("generated", False))
 
     field_doc = _load_yaml("fields.yaml")
     fields = [Field(**{k: v for k, v in f.items()}) for f in field_doc["fields"]]
@@ -187,7 +190,7 @@ def check(d: Dictionary):
         if len(names) != len(set(names)):
             errors.append(f"vocabulary {v.name}: duplicate codes")
         for c in v.codes:
-            if not c.patterns:
+            if not c.patterns and not v.generated:
                 errors.append(f"vocabulary {v.name}: code {c.code} has no match patterns")
             for target in c.expands_to:
                 if target not in names:

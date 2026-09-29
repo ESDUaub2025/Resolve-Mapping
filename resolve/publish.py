@@ -1,24 +1,29 @@
 """Build releases.
 
 public    -> public/data/ (committed, deployed to GitHub Pages): disclosure-controlled survey
-             summaries plus public reference layers. Allow-list driven by the field dictionary.
+             summaries, approximate respondent pins identified only by ID, analysis insights
+             and public reference layers. Allow-list driven by the field dictionary.
 research  -> <private store>/build/research/data/ (local only): standardized respondent
              records with ID, name and phone, all villages, research fields.
 Both are described by a catalog.json that the web map reads to register layers, popups,
-legends and filters; the frontend has no dataset-specific code.
+legends, filters and the insights panel; the frontend has no dataset-specific code.
 """
 import hashlib
 import json
 import shutil
 
-from . import SCHEMA_VERSION, rawstore, reference, sdc, survey
-from .dictionary import STATUSES, load
+from . import SCHEMA_VERSION, analysis, rawstore, reference, sdc, survey
+from .dictionary import CODED_TYPES, STATUSES, load
 from .gazetteer import localities
 from .paths import PUBLIC_DATA, private_root
 from .validate import ValidationError, check_public_catalog, check_records
 
 DEFAULT_K = 5
-DEFAULT_INDICATOR = "water_availability"
+DEFAULT_INDICATOR = "farmer_type"
+PIN_FILTER_FIELDS = ["farmer_type", "water_availability", "water_sources", "energy_sources", "crop_groups",
+                     "chem_fertilizer_reliance", "pesticide_reliance", "low_input_practices", "land_size_band",
+                     "production_level", "coop_member"]
+PIN_SPREAD_M = {"cadastral_unit": 150, "locality": 150, "unverified_locality": 150, "district": 500}
 
 
 def _dump(obj):
@@ -36,6 +41,32 @@ def _fc(features):
     return {"type": "FeatureCollection", "features": features}
 
 
+def _json_write(path, obj):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+
+
+def _fresh_dir(path):
+    if path.exists():
+        shutil.rmtree(path)
+    path.mkdir(parents=True)
+    return path
+
+
+def _replace_dir(src, dst):
+    """Make dst contain exactly src's files (file-level; avoids Windows directory-rename locks)."""
+    dst.mkdir(parents=True, exist_ok=True)
+    new = {p.name for p in src.iterdir()}
+    for old in dst.iterdir():
+        if old.name not in new:
+            old.unlink()
+    for p in src.iterdir():
+        shutil.copyfile(p, dst / p.name)
+    shutil.rmtree(src, ignore_errors=True)
+
+
+# ── catalog pieces ─────────────────────────────────────────────────────────
+
 def _field_catalog(d, codes):
     fields, vocabs = {}, {}
     for f in d.fields:
@@ -52,11 +83,80 @@ def _field_catalog(d, codes):
     return fields, vocabs
 
 
+PROPERTY_LABELS = {
+    "acq_date": {"en": "Detection date", "ar": "تاريخ الرصد"},
+    "acq_time_utc": {"en": "Time (UTC)", "ar": "الوقت (UTC)"},
+    "day_night": {"en": "Day / night pass", "ar": "نهار / ليل"},
+    "name": {"en": "Name", "ar": "الاسم"},
+    "name_original": {"en": "Original name", "ar": "الاسم الأصلي"},
+    "designation": {"en": "Designation", "ar": "التصنيف"},
+    "designation_type": {"en": "Designation level", "ar": "مستوى التصنيف"},
+    "governance": {"en": "Governance", "ar": "الإدارة"},
+    "reported_area_km2": {"en": "Reported area (km²)", "ar": "المساحة المعلنة (كم²)"},
+    "gis_area_km2": {"en": "GIS area (km²)", "ar": "المساحة المحسوبة (كم²)"},
+    "verification": {"en": "Verification", "ar": "التحقق"},
+    "respondent_id": {"en": "ID", "ar": "المعرّف"},
+    "instrument": {"en": "Survey", "ar": "الاستبيان"},
+    "area_name_en": {"en": "Area", "ar": "المنطقة"},
+    "spatial_precision": {"en": "Location precision", "ar": "دقة الموقع"},
+    "uncertainty_m": {"en": "Location uncertainty (m)", "ar": "هامش خطأ الموقع (م)"},
+    "fire_detections_5km": {"en": "Satellite fire detections within 5 km (Jun 2024 – Feb 2025)",
+                            "ar": "حرائق مرصودة ضمن 5 كم (حزيران 2024 – شباط 2025)"},
+    "protected_area_km": {"en": "Distance to nearest protected area (km)", "ar": "المسافة إلى أقرب محمية (كم)"},
+}
+
+PRECISION_LABELS = {
+    "exact": {"en": "Exact (GPS reported by respondent)", "ar": "دقيق (إحداثيات من المستجيب)"},
+    "cadastral_unit": {"en": "Cadastral area (not a farm location)", "ar": "منطقة عقارية (ليست موقع المزرعة)"},
+    "locality": {"en": "Locality point (approximate)", "ar": "نقطة المنطقة (تقريبية)"},
+    "unverified_locality": {"en": "Unverified locality point", "ar": "نقطة منطقة غير مؤكدة"},
+    "district": {"en": "District (caza)", "ar": "القضاء"},
+    "satellite_pixel": {"en": "Satellite pixel centre (≈375 m–1 km)", "ar": "مركز بكسل القمر الصناعي"},
+    "source_polygon": {"en": "Source polygon", "ar": "مضلع المصدر"},
+    "unknown": {"en": "Unknown", "ar": "غير معروف"},
+}
+
+
+def _base_catalog(d, tier, k, field_codes, insights):
+    fields, vocabs = _field_catalog(d, field_codes)
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "tier": tier,
+        "k_min_respondents": k,
+        "statuses": STATUSES,
+        "precisions": PRECISION_LABELS,
+        "groups": d.groups,
+        "fields": fields,
+        "vocabularies": vocabs,
+        "property_labels": PROPERTY_LABELS,
+        "datasets": {n: d.datasets[n] for n in ("farmer_survey", "fire_detections", "protected_areas", "admin_districts")},
+        "instruments": {n: {"title": i["title"], "collected": i["collected"]} for n, i in d.instruments.items()},
+        "insights": insights,
+        "layers": [],
+    }
+
+
+def _public_insights(report):
+    """Aggregate-only view of the analysis (every figure rests on >= 5 respondents per cell)."""
+    t = report["typology"]
+    return {
+        "typology": {k: t[k] for k in ("published", "method", "n", "k", "stability_ari", "candidates")} | {
+            "types": [{k: p[k] for k in ("code", "letter", "name", "size", "regions", "traits")} for p in t["profiles"]]
+                     if t["published"] else []},
+        "drivers": {name: {k: v for k, v in r.items() if k != "tests_run"} | {"tests_run": r["tests_run"],
+                    "findings": [{k: f[k] for k in ("field", "code", "label", "n_with", "n_without", "rate_with",
+                                                     "rate_without", "or", "ci", "q")} for f in r["findings"]]}
+                    for name, r in report["drivers"].items()},
+    }
+
+
+# ── features ───────────────────────────────────────────────────────────────
+
 def _modes(indicators, prefix="mode__"):
     return {prefix + code: s["mode"] for code, s in indicators.items() if s.get("mode")}
 
 
-def _survey_features(villages, districts):
+def _survey_features(villages, districts, context):
     locs = {r["adm3_pcode"]: r for r in localities().values() if r["kind"] == "cadastral"}
     adm2_names = {r["adm2_pcode"]: (r["adm2_name_en"], r["adm2_name_ar"]) for r in localities().values() if r["adm2_pcode"]}
     adm3_geo = reference.admin_units(3, {v["adm3_pcode"] for v in villages}, simplify=0.0003)
@@ -74,6 +174,7 @@ def _survey_features(villages, districts):
                 "adm3_pcode": v["adm3_pcode"], "adm2_pcode": v["adm2_pcode"],
                 "n_respondents": v["n_respondents"], "instruments": v["instruments"],
                 "geom_origin": "cadastral_unit_polygon", "spatial_precision": "cadastral_unit",
+                "context": context.get(v["adm3_pcode"], {}),
                 **_modes(v["indicators"]),
                 "indicators": v["indicators"],
             },
@@ -98,227 +199,220 @@ def _survey_features(villages, districts):
     return village_features, district_features
 
 
-REFERENCE_PROPERTY_LABELS = {
-    "acq_date": {"en": "Detection date", "ar": "تاريخ الرصد"},
-    "acq_time_utc": {"en": "Time (UTC)", "ar": "الوقت (UTC)"},
-    "day_night": {"en": "Day / night pass", "ar": "نهار / ليل"},
-    "name": {"en": "Name", "ar": "الاسم"},
-    "name_original": {"en": "Original name", "ar": "الاسم الأصلي"},
-    "designation": {"en": "Designation", "ar": "التصنيف"},
-    "designation_type": {"en": "Designation level", "ar": "مستوى التصنيف"},
-    "governance": {"en": "Governance", "ar": "الإدارة"},
-    "reported_area_km2": {"en": "Reported area (km²)", "ar": "المساحة المعلنة (كم²)"},
-    "gis_area_km2": {"en": "GIS area (km²)", "ar": "المساحة المحسوبة (كم²)"},
-    "verification": {"en": "Verification", "ar": "التحقق"},
-    "respondent_id": {"en": "ID", "ar": "المعرّف"},
-    "instrument": {"en": "Survey", "ar": "الاستبيان"},
-    "locality_name_en": {"en": "Locality", "ar": "المنطقة"},
-    "spatial_precision": {"en": "Location precision", "ar": "دقة الموقع"},
-    "uncertainty_m": {"en": "Location uncertainty (m)", "ar": "هامش خطأ الموقع (م)"},
-}
-
-PRECISION_LABELS = {
-    "exact": {"en": "Exact (GPS reported by respondent)", "ar": "دقيق (إحداثيات من المستجيب)"},
-    "cadastral_unit": {"en": "Cadastral area (not a farm location)", "ar": "منطقة عقارية (ليست موقع المزرعة)"},
-    "locality": {"en": "Locality point (approximate)", "ar": "نقطة المنطقة (تقريبية)"},
-    "unverified_locality": {"en": "Unverified locality point", "ar": "نقطة منطقة غير مؤكدة"},
-    "district": {"en": "District (caza)", "ar": "القضاء"},
-    "satellite_pixel": {"en": "Satellite pixel centre (≈375 m–1 km)", "ar": "مركز بكسل القمر الصناعي"},
-    "source_polygon": {"en": "Source polygon", "ar": "مضلع المصدر"},
-    "unknown": {"en": "Unknown", "ar": "غير معروف"},
-}
+def _primary(value):
+    return value[0] if isinstance(value, list) else value
 
 
-def _base_catalog(d, tier, k, field_codes, datasets):
-    fields, vocabs = _field_catalog(d, field_codes)
-    return {
-        "schema_version": SCHEMA_VERSION,
-        "tier": tier,
-        "k_min_respondents": k,
-        "statuses": STATUSES,
-        "precisions": PRECISION_LABELS,
-        "groups": d.groups,
-        "fields": fields,
-        "vocabularies": vocabs,
-        "property_labels": REFERENCE_PROPERTY_LABELS,
-        "datasets": {name: d.datasets[name] for name in datasets},
-        "instruments": {n: {"title": i["title"], "collected": i["collected"]} for n, i in d.instruments.items()},
-        "layers": [],
-    }
+def _pins(records, codes, anchor, extra=None):
+    """One point per respondent at an honest anchor (cadastral or district centre).
+
+    `anchor(record)` returns (lon, lat, geom_origin, spatial_precision, area names) or None.
+    The map spreads pins that share an anchor at display time; coordinates here are never displaced.
+    """
+    d = load()
+    coded = {f.code for f in d.fields if f.type in CODED_TYPES}
+    features = []
+    for r in records:
+        a = anchor(r)
+        if a is None:
+            continue
+        lon, lat, origin, precision, area = a
+        props = {
+            "entity_type": "survey_respondent_public" if extra is None else "survey_respondent",
+            "respondent_id": r["respondent_id"], "instrument": r["instrument"],
+            **area, "geom_origin": origin, "spatial_precision": precision,
+            "spread_m": PIN_SPREAD_M[precision],
+            **{f"c__{c}": _primary(r["values"][c]) for c in codes if c in coded and r["status"][c] == "reported"},
+            "values": {c: r["values"][c] for c in codes},
+            "status": {c: r["status"][c] for c in codes},
+        }
+        if extra:
+            props.update(extra(r))
+        features.append({"type": "Feature", "id": r["response_id"],
+                         "geometry": {"type": "Point", "coordinates": [round(lon, 5), round(lat, 5)]}, "properties": props})
+    features.sort(key=lambda f: f["id"])
+    return features
 
 
-def _reference_layers(out_dir, files):
-    fire = reference.fire_detections()
-    areas = reference.protected_areas()
-    fire_file, fire_body = _write_hashed(out_dir, "fire_detections", _fc(fire))
-    pa_file, pa_body = _write_hashed(out_dir, "protected_areas", _fc(areas))
-    files.update({fire_file: fire_body, pa_file: pa_body})
-    layers = [
-        {"id": "protected-areas", "dataset": "protected_areas", "file": f"data/{pa_file}", "renderer": "polygons",
-         "title": {"en": "Protected areas", "ar": "المحميات"}, "color": "#1b4332", "dash": True, "visible": True,
-         "label_property": "name", "popup_properties": ["name", "name_original", "designation", "designation_type",
-                                                         "governance", "reported_area_km2", "gis_area_km2", "verification"]},
-        {"id": "fire", "dataset": "fire_detections", "file": f"data/{fire_file}", "renderer": "points",
-         "title": {"en": "Fire detections", "ar": "رصد الحرائق"}, "color": "#d7301f", "cluster": True, "visible": False,
-         "heatmap": True, "popup_properties": ["acq_date", "acq_time_utc", "day_night"],
-         "filters": [{"property": "acq_date", "type": "date_range"}, {"property": "day_night", "type": "choice"}]},
-    ]
-    return layers, {"fire_detections": fire, "protected_areas": areas}
+def _layers_for_pins(file_name, codes, research):
+    title = ({"en": "Respondents (research, identifiable)", "ar": "المستجيبون (بحثي، يتضمن الهوية)"} if research
+             else {"en": "Survey respondents (approximate pins)", "ar": "المستجيبون (مواقع تقريبية)"})
+    layer = {"id": "survey-respondents", "dataset": "farmer_survey", "file": f"data/{file_name}", "renderer": "pins",
+             "title": title, "color": "#4a4a4a", "cluster": True, "visible": True,
+             "indicators": [c for c in codes if load().field(c).type in CODED_TYPES],
+             "filter_fields": [c for c in PIN_FILTER_FIELDS if c in codes], "id_search": True,
+             "default_indicator": DEFAULT_INDICATOR}
+    if research:
+        layer["identity_properties"] = ["respondent_id", "name_latin", "name_arabic", "phone"]
+    return layer
 
 
-def build_public(records, k=DEFAULT_K):
+def _reference(out_dir, files, fire, areas):
+    fire_file, body = _write_hashed(out_dir, "fire_detections", _fc(fire)); files[fire_file] = body
+    pa_file, body = _write_hashed(out_dir, "protected_areas", _fc(areas)); files[pa_file] = body
+    protected = {"id": "protected-areas", "dataset": "protected_areas", "file": f"data/{pa_file}", "renderer": "polygons",
+                 "title": {"en": "Protected areas", "ar": "المحميات"}, "color": "#0b6e4f", "outline": "strong",
+                 "visible": True, "label_property": "name",
+                 "popup_properties": ["name", "name_original", "designation", "designation_type", "governance",
+                                      "reported_area_km2", "gis_area_km2", "verification"]}
+    fire_layer = {"id": "fire", "dataset": "fire_detections", "file": f"data/{fire_file}", "renderer": "points",
+                  "title": {"en": "Fire detections", "ar": "رصد الحرائق"}, "color": "#d7301f", "cluster": True,
+                  "visible": False, "heatmap": True, "popup_properties": ["acq_date", "acq_time_utc", "day_night"],
+                  "filters": [{"property": "acq_date", "type": "date_range"}, {"property": "day_night", "type": "choice"}]}
+    return protected, fire_layer
+
+
+# ── releases ───────────────────────────────────────────────────────────────
+
+def build_public(records, report, fire, areas, context, k=DEFAULT_K):
     d = load()
     villages, districts, log = sdc.summarize(records, k)
-    village_feats, district_feats = _survey_features(villages, districts)
+    village_feats, district_feats = _survey_features(villages, districts, context)
 
-    tmp = PUBLIC_DATA.parent / "data.tmp"
-    if tmp.exists():
-        shutil.rmtree(tmp)
-    tmp.mkdir(parents=True)
+    # Pins: village anchor only where the village summary is published (>= k respondents);
+    # otherwise the district centre if the district is published; otherwise no pin.
+    locs = localities()
+    published_villages = {v["adm3_pcode"] for v in villages}
+    district_units = reference.admin_units(2, {x["adm2_pcode"] for x in districts}, simplify=None)
+
+    def anchor(r):
+        loc = r["location"]
+        if loc["adm3_pcode"] in published_villages:
+            l = locs[f"adm3:{loc['adm3_pcode']}"]
+            return (float(l["lon"]), float(l["lat"]), "cadastral_unit_centre", "cadastral_unit",
+                    {"area_name_en": l["adm3_name_en"], "area_name_ar": l["adm3_name_ar"]})
+        if loc["adm2_pcode"] in district_units:
+            p = district_units[loc["adm2_pcode"]]["properties"]
+            return (p["center_lon"], p["center_lat"], "district_centre", "district",
+                    {"area_name_en": p["adm2_name"], "area_name_ar": p["adm2_name1"]})
+        return None
+
+    pin_codes = [f.code for f in d.fields if f.privacy == "public_village"]
+    pins = _pins(records, pin_codes, anchor)
+
+    tmp = _fresh_dir(PUBLIC_DATA.parent / "data.tmp")
     files = {}
-    v_file, body = _write_hashed(tmp, "survey_villages", _fc(village_feats)); files[v_file] = body
-    d_file, body = _write_hashed(tmp, "survey_districts", _fc(district_feats)); files[d_file] = body
-    ref_layers, ref_fcs = _reference_layers(tmp, files)
+    names = {}
+    for stem, feats in (("survey_villages", village_feats), ("survey_districts", district_feats), ("survey_respondents", pins)):
+        names[stem], files[stem] = _write_hashed(tmp, stem, _fc(feats))
+    protected, fire_layer = _reference(tmp, files, fire, areas)
 
-    village_codes = [f.code for f in d.fields if f.privacy == "public_village"]
     district_codes = [f.code for f in d.fields if f.privacy == "public_district"]
-    catalog = _base_catalog(d, "public", k, set(village_codes + district_codes),
-                            ["farmer_survey", "fire_detections", "protected_areas", "admin_districts"])
-    protected = [l for l in ref_layers if l["id"] == "protected-areas"]
-    others = [l for l in ref_layers if l["id"] != "protected-areas"]
-    # Draw order (bottom -> top): context polygons, district summaries, village summaries, points.
-    catalog["layers"] = protected + [
-        {"id": "survey-districts", "dataset": "farmer_survey", "file": f"data/{d_file}", "renderer": "survey_summary",
-         "title": {"en": "Survey – district summaries", "ar": "الاستبيان – ملخصات الأقضية"}, "visible": True,
-         "indicators": village_codes, "sensitive_indicators": district_codes, "summary_key": "remainder_indicators",
-         "default_indicator": DEFAULT_INDICATOR},
-        {"id": "survey-villages", "dataset": "farmer_survey", "file": f"data/{v_file}", "renderer": "survey_summary",
-         "title": {"en": "Survey – village summaries", "ar": "الاستبيان – ملخصات القرى"}, "visible": True,
-         "indicators": village_codes, "summary_key": "indicators", "default_indicator": DEFAULT_INDICATOR},
-    ] + others
+    catalog = _base_catalog(d, "public", k, set(pin_codes + district_codes), _public_insights(report))
+    catalog["layers"] = [
+        protected,
+        {"id": "survey-districts", "dataset": "farmer_survey", "file": f"data/{names['survey_districts']}",
+         "renderer": "survey_summary", "title": {"en": "Survey – district summaries", "ar": "الاستبيان – ملخصات الأقضية"},
+         "visible": False, "indicators": pin_codes, "sensitive_indicators": district_codes,
+         "summary_key": "remainder_indicators", "default_indicator": DEFAULT_INDICATOR},
+        {"id": "survey-villages", "dataset": "farmer_survey", "file": f"data/{names['survey_villages']}",
+         "renderer": "survey_summary", "title": {"en": "Survey – village summaries", "ar": "الاستبيان – ملخصات القرى"},
+         "visible": True, "indicators": pin_codes, "summary_key": "indicators", "default_indicator": DEFAULT_INDICATOR},
+        fire_layer,
+        _layers_for_pins(names["survey_respondents"], pin_codes, research=False),
+    ]
     catalog["release"] = {
         "id": hashlib.sha256(b"".join(files[n] for n in sorted(files))).hexdigest()[:12],
         "villages_published": len(village_feats), "districts_published": len(district_feats),
+        "respondent_pins": len(pins),
+        "respondent_pins_at_district_level": sum(1 for p in pins if p["properties"]["spatial_precision"] == "district"),
         "respondents_in_summaries": sum(x["n_respondents"] for x in districts),
         "respondents_excluded_no_location": len(log["excluded_no_location"]),
     }
-
-    fcs = {"survey_villages": _fc(village_feats), "survey_districts": _fc(district_feats), **{n: _fc(f) for n, f in ref_fcs.items()}}
+    fcs = {"survey_villages": _fc(village_feats), "survey_districts": _fc(district_feats),
+           "survey_respondents": _fc(pins), "fire_detections": _fc(fire), "protected_areas": _fc(areas)}
     problems = check_public_catalog(catalog, fcs, k)
     if problems:
         shutil.rmtree(tmp)
         raise ValidationError(problems)
-
     (tmp / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     _replace_dir(tmp, PUBLIC_DATA)
     return catalog, log
 
 
-def _replace_dir(src, dst):
-    """Make dst contain exactly src's files (file-level; avoids Windows directory-rename locks)."""
-    dst.mkdir(parents=True, exist_ok=True)
-    new = {p.name for p in src.iterdir()}
-    for old in dst.iterdir():
-        if old.name not in new:
-            old.unlink()
-    for p in src.iterdir():
-        shutil.copyfile(p, dst / p.name)
-    shutil.rmtree(src, ignore_errors=True)
-
-
-def build_research(records, identity):
+def build_research(records, identity, report, fire, areas, context):
     """Local research release with identifiers. Written only inside the private store."""
     d = load()
-    out_dir = private_root() / "build" / "research" / "data"
-    if out_dir.exists():
-        shutil.rmtree(out_dir)
-    out_dir.mkdir(parents=True)
+    out_dir = _fresh_dir(private_root() / "build" / "research" / "data")
     ident = {i["respondent_id"]: i for i in identity}
     locs = localities()
-    features, holdings = [], []
-    for r in records:
-        loc = r["location"]
-        locality = locs.get(loc["locality_id"]) if loc["locality_id"] else None
-        props = {
-            "entity_type": "survey_respondent",
-            "respondent_id": r["respondent_id"],
-            "instrument": r["instrument"],
-            **{k: ident[r["respondent_id"]].get(k) for k in ("name_latin", "name_arabic", "phone")},
-            "locality_name_en": locality["name_en"] if locality else None,
-            "locality_name_ar": locality["name_ar"] if locality else None,
-            "geom_origin": loc["geom_origin"], "spatial_precision": loc["spatial_precision"],
-            "uncertainty_m": loc["uncertainty_m"], "point_source": loc["point_source"],
-            "values": r["values"], "status": r["status"], "source": r["source"],
-        }
-        geometry = {"type": "Point", "coordinates": [loc["lon"], loc["lat"]]} if loc["lon"] is not None else None
-        features.append({"type": "Feature", "id": r["response_id"], "geometry": geometry, "properties": props})
-        if r["holding"]:
-            h = r["holding"]
-            holdings.append({"type": "Feature", "id": f"holding:{r['respondent_id']}",
-                             "geometry": {"type": "Point", "coordinates": [h["lon"], h["lat"]]},
-                             "properties": {"entity_type": "holding", "respondent_id": r["respondent_id"],
-                                            "name_latin": props["name_latin"], "name_arabic": props["name_arabic"],
-                                            "geom_origin": h["geom_origin"], "spatial_precision": h["spatial_precision"],
-                                            "uncertainty_m": h["uncertainty_m"]}})
-    villages, districts, _ = sdc.summarize(records, 1)
-    village_feats, district_feats = _survey_features(villages, districts)
-    files = {}
-    names = {}
-    for stem, fc in (("respondents", _fc([f for f in features if f["geometry"]])), ("holdings", _fc(holdings)),
-                     ("survey_villages", _fc(village_feats)), ("survey_districts", _fc(district_feats))):
-        names[stem], files[stem] = _write_hashed(out_dir, stem, fc)
-    ref_layers, _ = _reference_layers(out_dir, files)
 
-    all_codes = {f.code for f in d.fields}
-    catalog = _base_catalog(d, "research", 1, all_codes, ["farmer_survey", "fire_detections", "protected_areas", "admin_districts"])
+    def anchor(r):
+        loc = r["location"]
+        if loc["lon"] is None:
+            return None
+        l = locs.get(loc["locality_id"], {})
+        return (loc["lon"], loc["lat"], loc["geom_origin"], loc["spatial_precision"],
+                {"area_name_en": l.get("name_en"), "area_name_ar": l.get("name_ar")})
+
+    def extra(r):
+        loc = r["location"]
+        return {**{k: ident[r["respondent_id"]].get(k) for k in ("name_latin", "name_arabic", "phone")},
+                "uncertainty_m": loc["uncertainty_m"], "point_source": loc["point_source"], "source": r["source"]}
+
+    all_codes = [f.code for f in d.fields if f.privacy != "identity"]
+    pins = _pins(records, all_codes, anchor, extra)
+    holdings = [{"type": "Feature", "id": f"holding:{r['respondent_id']}",
+                 "geometry": {"type": "Point", "coordinates": [r["holding"]["lon"], r["holding"]["lat"]]},
+                 "properties": {"entity_type": "holding", "respondent_id": r["respondent_id"],
+                                "geom_origin": r["holding"]["geom_origin"], "spatial_precision": r["holding"]["spatial_precision"],
+                                "uncertainty_m": r["holding"]["uncertainty_m"]}}
+                for r in records if r["holding"]]
+    villages, districts, _ = sdc.summarize(records, 1)
+    village_feats, _ = _survey_features(villages, districts, context)
+    files, names = {}, {}
+    for stem, feats in (("respondents", pins), ("holdings", holdings), ("survey_villages", village_feats)):
+        names[stem], files[stem] = _write_hashed(out_dir, stem, _fc(feats))
+    protected, fire_layer = _reference(out_dir, files, fire, areas)
+
     village_codes = [f.code for f in d.fields if f.privacy == "public_village"]
-    district_codes = [f.code for f in d.fields if f.privacy == "public_district"]
-    catalog["layers"] = [l for l in ref_layers if l["id"] == "protected-areas"] + [
+    catalog = _base_catalog(d, "research", 1, {f.code for f in d.fields}, _public_insights(report))
+    catalog["layers"] = [
+        protected,
         {"id": "survey-villages", "dataset": "farmer_survey", "file": f"data/{names['survey_villages']}",
          "renderer": "survey_summary", "title": {"en": "Survey – all villages", "ar": "الاستبيان – كل القرى"},
          "visible": False, "indicators": village_codes, "summary_key": "indicators", "default_indicator": DEFAULT_INDICATOR},
-        {"id": "respondents", "dataset": "farmer_survey", "file": f"data/{names['respondents']}", "renderer": "respondents",
-         "title": {"en": "Respondents (research, identifiable)", "ar": "المستجيبون (بحثي، يتضمن الهوية)"},
-         "color": "#6a3d9a", "cluster": True, "visible": True,
-         "identity_properties": ["respondent_id", "name_latin", "name_arabic", "phone"]},
+        fire_layer,
         {"id": "holdings", "dataset": "farmer_survey", "file": f"data/{names['holdings']}", "renderer": "points",
          "title": {"en": "Farm locations reported by GPS", "ar": "مواقع مزارع بإحداثيات"}, "color": "#b15928",
          "visible": True, "popup_properties": ["respondent_id", "spatial_precision", "uncertainty_m"]},
-    ] + [l for l in ref_layers if l["id"] != "protected-areas"]
-    catalog["district_sensitive_indicators"] = district_codes
-    (out_dir / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
-    return out_dir, sum(1 for f in features if f["geometry"]), len(holdings)
+        _layers_for_pins(names["respondents"], all_codes, research=True),
+    ]
+    _json_write(out_dir / "catalog.json", catalog)
+    return out_dir, len(pins), len(holdings)
 
 
 def build(tier="all", k=DEFAULT_K):
-    """Adapters -> validation -> canonical -> releases. Returns a summary dict."""
+    """Adapters -> analysis -> validation -> canonical -> releases. Returns a summary dict."""
     root = private_root()
     raw_files = rawstore.verify()
     records, identity, issues, new_ids = survey.build_staging()
-    for sub in ("staging", "canonical"):
-        (root / sub).mkdir(exist_ok=True)
     _json_write(root / "staging" / "survey_responses.json", records)
     _json_write(root / "staging" / "survey_identity.json", identity)
     _json_write(root / "staging" / "review_issues.json", issues)
 
+    report = analysis.derive(records)  # adds farmer_type / low_input_practices to every record
     problems = check_records(records, identity)
     errors = [i for i in issues if i["severity"] == "error"]
     if problems or errors:
         raise ValidationError(problems + [f"{e['rule']} {e['instrument']} row {e['source_row']}: {e['message']}" for e in errors])
     _json_write(root / "canonical" / "survey_responses.json", records)
     _json_write(root / "canonical" / "survey_identity.json", identity)
+    _json_write(root / "build" / "analysis_report.json", report)
 
-    summary = {"raw_files_verified": raw_files, "records": len(records), "new_ids": new_ids, "review_issues": len(issues)}
+    fire, areas = reference.fire_detections(), reference.protected_areas()
+    units = reference.admin_units(3, {r["location"]["adm3_pcode"] for r in records if r["location"]["adm3_pcode"]}, simplify=None)
+    context = analysis.spatial_context(units, fire, areas)
+
+    summary = {"raw_files_verified": raw_files, "records": len(records), "new_ids": new_ids, "review_issues": len(issues),
+               "typology": {"published": report["typology"]["published"], "k": report["typology"]["k"],
+                            "stability_ari": report["typology"]["stability_ari"]},
+               "drivers": {n: {"findings": len(r["findings"]), **r["model"]} for n, r in report["drivers"].items()}}
     if tier in ("public", "all"):
-        catalog, log = build_public(records, k)
+        catalog, log = build_public(records, report, fire, areas, context, k)
         _json_write(root / "build" / "public_sdc_log.json", log)
         summary["public"] = catalog["release"]
     if tier in ("research", "all"):
-        out_dir, n, h = build_research(records, identity)
+        out_dir, n, h = build_research(records, identity, report, fire, areas, context)
         summary["research"] = {"dir": str(out_dir), "respondent_points": n, "holding_points": h}
     return summary
-
-
-def _json_write(path, obj):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")

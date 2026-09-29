@@ -198,7 +198,7 @@ def adapt(instrument, registry, issues):
     root = private_root()
     frame, sheet, joins = _read_instrument(instrument, spec, root)
     columns = list(frame.columns)
-    fields = d.fields
+    fields = [f for f in d.fields if not f.derived]
 
     # Index joined sheets by the respondent key column of this instrument.
     join_index = {}

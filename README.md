@@ -27,11 +27,11 @@ Respondents consented to **research use only**. Therefore:
 |---|---|---|
 | Identity | names, phone numbers | private store only (`staging/survey_identity.json`) |
 | Research | standardized individual records with ID, name and phone, all villages, free text, GPS farm points | private store; viewed locally with `python -m resolve serve --tier research` |
-| Public | summaries of at least **k = 5** respondents per village (cadastral unit) or district; sensitive indicators (income, age, gender, costs) at district level only; fire and protected-area layers | `public/data`, deployed to GitHub Pages |
+| Public | summaries of at least **k = 5** respondents per village (cadastral unit) or district; sensitive indicators (income, age, gender, costs) at district level only; one pin per respondent carrying only the random ID and farming-practice answers, placed around the village centre (or district centre where fewer than k answered); analysis insights; fire and protected-area layers | `public/data`, deployed to GitHub Pages |
 
 Every respondent has a random, stable **ID** (e.g. `CH-0EXAMP`, `BQ-0EXAMP`) that replaces the
-name everywhere outside the identity table. The public site never contains individual records,
-IDs, names or farm locations; `tests/` fail the build if it does.
+name everywhere outside the identity table. Names, phone numbers, farm locations, free text and
+sensitive answers never reach the public site; `tests/` fail the build if they do.
 
 ## Common tasks
 

@@ -5,14 +5,14 @@ import re
 from .dictionary import load
 from .paths import PUBLIC, PUBLIC_DATA, REPO
 
-INDIVIDUAL_ENTITY_TYPES = {"survey_respondent", "holding"}
+RESEARCH_ONLY_ENTITY_TYPES = {"survey_respondent", "holding"}
 
 
 def measure():
     catalog = json.loads((PUBLIC_DATA / "catalog.json").read_text(encoding="utf-8"))
     d = load()
     payload = (PUBLIC_DATA / "catalog.json").stat().st_size
-    features = individual = with_provenance = 0
+    features = research_only = pins = with_provenance = 0
     per_layer = {}
     for layer in catalog["layers"]:
         path = PUBLIC / layer["file"]
@@ -22,7 +22,8 @@ def measure():
         for f in fc["features"]:
             features += 1
             p = f["properties"]
-            individual += p.get("entity_type") in INDIVIDUAL_ENTITY_TYPES
+            research_only += p.get("entity_type") in RESEARCH_ONLY_ENTITY_TYPES
+            pins += p.get("entity_type") == "survey_respondent_public"
             with_provenance += bool(p.get("geom_origin") and p.get("spatial_precision"))
     cards = catalog["datasets"].values()
     js = list((PUBLIC / "js").glob("*.js"))
@@ -36,7 +37,10 @@ def measure():
         "public_payload_bytes": payload,
         "public_features": features,
         "features_per_layer": per_layer,
-        "respondent_level_public_features": individual,
+        "research_only_features_in_public_release": research_only,
+        "public_respondent_pins_id_only": pins,
+        "insights_published": {"farmer_types": len(catalog.get("insights", {}).get("typology", {}).get("types", [])),
+                               "driver_findings": sum(len(d["findings"]) for d in catalog.get("insights", {}).get("drivers", {}).values())},
         "identity_fields_in_public_catalog": sum(1 for f in d.fields if f.privacy == "identity" and f.code in catalog["fields"]),
         "features_with_location_provenance_pct": round(100 * with_provenance / max(1, features), 1),
         "datasets_with_source_and_licence": f"{sum(1 for c in cards if c.get('source') and c.get('licence'))}/{len(catalog['datasets'])}",

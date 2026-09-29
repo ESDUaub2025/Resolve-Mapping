@@ -66,7 +66,10 @@ TST_MAP_E2E:
 TST_RESEARCH_TIER:
   required_files:
   - resolve/serve.py
+  - resolve/analysis.py
   commands:
+  - name: analysis-tests
+    run: '.venv\Scripts\python.exe -m pytest -q tests/test_analysis.py'
   - name: research-build
     run: '.venv\Scripts\python.exe -m resolve build --tier research'
   acceptance:

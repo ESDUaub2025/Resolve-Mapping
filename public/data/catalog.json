@@ -110,6 +110,10 @@
   "knowledge": {
    "en": "Information",
    "ar": "مصادر المعلومات"
+  },
+  "analysis": {
+   "en": "Analysis (derived)",
+   "ar": "تحليل (مشتق)"
   }
  },
  "fields": {
@@ -172,6 +176,17 @@
    "group": "land",
    "privacy": "public_village",
    "vocab": "soil_type"
+  },
+  "crop_groups": {
+   "label": {
+    "en": "Main crop groups",
+    "ar": "مجموعات المحاصيل الرئيسية"
+   },
+   "type": "multi",
+   "group": "land",
+   "privacy": "public_village",
+   "vocab": "crop_group",
+   "note": "Coded from the free-text main-crops answer (AI-assisted vocabulary); the text itself is research-only."
   },
   "water_sources": {
    "label": {
@@ -432,6 +447,28 @@
    "group": "livestock",
    "privacy": "public_village",
    "vocab": "poultry_purpose"
+  },
+  "farmer_type": {
+   "label": {
+    "en": "Farmer type (analysis)",
+    "ar": "نمط المزارع (تحليل)"
+   },
+   "type": "categorical",
+   "group": "analysis",
+   "privacy": "public_village",
+   "vocab": "farmer_type",
+   "note": "Clustering of farming-practice answers; published only if the grouping is stable (see Insights)."
+  },
+  "low_input_practices": {
+   "label": {
+    "en": "Uses low-input practices",
+    "ar": "يستخدم ممارسات منخفضة المدخلات"
+   },
+   "type": "categorical",
+   "group": "analysis",
+   "privacy": "public_village",
+   "vocab": "yes_no",
+   "note": "Yes if the respondent uses compost, manure or biofertilizers, or non-chemical pest control."
   }
  },
  "vocabularies": {
@@ -643,6 +680,109 @@
      "label": {
       "en": "Acidic",
       "ar": "تربة حمضية"
+     }
+    }
+   ]
+  },
+  "crop_group": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "olives",
+     "label": {
+      "en": "Olives",
+      "ar": "زيتون"
+     }
+    },
+    {
+     "code": "apples_pears",
+     "label": {
+      "en": "Apples and pears",
+      "ar": "تفاح وإجاص"
+     }
+    },
+    {
+     "code": "stone_fruits",
+     "label": {
+      "en": "Stone fruits (cherry, peach, plum, apricot)",
+      "ar": "فواكه ذات نواة (كرز، دراق، خوخ، مشمش)"
+     }
+    },
+    {
+     "code": "citrus",
+     "label": {
+      "en": "Citrus",
+      "ar": "حمضيات"
+     }
+    },
+    {
+     "code": "tropical_fruits",
+     "label": {
+      "en": "Tropical fruits (avocado, banana, custard apple)",
+      "ar": "فواكه استوائية (أفوكادو، موز، قشطة)"
+     }
+    },
+    {
+     "code": "grapes",
+     "label": {
+      "en": "Grapes / vineyards",
+      "ar": "عنب / كروم"
+     }
+    },
+    {
+     "code": "other_fruits",
+     "label": {
+      "en": "Figs, pomegranates and other fruit",
+      "ar": "تين ورمان وفواكه أخرى"
+     }
+    },
+    {
+     "code": "nuts_pine",
+     "label": {
+      "en": "Nuts and stone pine",
+      "ar": "مكسرات وصنوبر"
+     }
+    },
+    {
+     "code": "vegetables",
+     "label": {
+      "en": "Vegetables",
+      "ar": "خضار"
+     }
+    },
+    {
+     "code": "legumes",
+     "label": {
+      "en": "Legumes (beans, peas, chickpeas)",
+      "ar": "بقوليات (فاصوليا، بازيلا، حمص)"
+     }
+    },
+    {
+     "code": "cereals_fodder",
+     "label": {
+      "en": "Cereals and fodder",
+      "ar": "حبوب وأعلاف"
+     }
+    },
+    {
+     "code": "herbs",
+     "label": {
+      "en": "Herbs (thyme, sage, sumac, parsley)",
+      "ar": "أعشاب (زعتر، مريمية، سماق، بقدونس)"
+     }
+    },
+    {
+     "code": "nursery",
+     "label": {
+      "en": "Seedlings / nursery",
+      "ar": "شتول / مشاتل"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
      }
     }
    ]
@@ -1392,6 +1532,39 @@
      }
     }
    ]
+  },
+  "farmer_type": {
+   "kind": "categorical",
+   "codes": [
+    {
+     "code": "type_a",
+     "label": {
+      "en": "Type A – pesticides: total reliance; water: groundwater well",
+      "ar": "النمط A – المبيدات: اعتماد كامل; المياه: بئر جوفي"
+     }
+    },
+    {
+     "code": "type_b",
+     "label": {
+      "en": "Type B – crops: apples and pears; chemical fertilizers: partial reliance",
+      "ar": "النمط B – المحاصيل: تفاح وإجاص; الأسمدة الكيميائية: اعتماد جزئي"
+     }
+    },
+    {
+     "code": "type_c",
+     "label": {
+      "en": "Type C – chemical fertilizers: not used; pesticides: not used",
+      "ar": "النمط C – الأسمدة الكيميائية: لا يتم استخدامها; المبيدات: لا يتم استخدامها"
+     }
+    },
+    {
+     "code": "type_d",
+     "label": {
+      "en": "Type D – water: storage tank / pond / pool; water: water tanker delivery",
+      "ar": "النمط D – المياه: خزان / بركة; المياه: نقل المياه بالصهاريج"
+     }
+    }
+   ]
   }
  },
  "property_labels": {
@@ -1447,8 +1620,8 @@
    "en": "Survey",
    "ar": "الاستبيان"
   },
-  "locality_name_en": {
-   "en": "Locality",
+  "area_name_en": {
+   "en": "Area",
    "ar": "المنطقة"
   },
   "spatial_precision": {
@@ -1458,6 +1631,14 @@
   "uncertainty_m": {
    "en": "Location uncertainty (m)",
    "ar": "هامش خطأ الموقع (م)"
+  },
+  "fire_detections_5km": {
+   "en": "Satellite fire detections within 5 km (Jun 2024 – Feb 2025)",
+   "ar": "حرائق مرصودة ضمن 5 كم (حزيران 2024 – شباط 2025)"
+  },
+  "protected_area_km": {
+   "en": "Distance to nearest protected area (km)",
+   "ar": "المسافة إلى أقرب محمية (كم)"
   }
  },
  "datasets": {
@@ -1469,10 +1650,12 @@
    "owner": "RESOLVE project team (ESDU, American University of Beirut)",
    "source": "Direct farmer surveys - see instruments chouf_2026 and beqaa_2026",
    "licence": "All rights reserved - research use; contact the RESOLVE team",
-   "consent": "Research use only. Public outputs are disclosure-controlled aggregates; no individual record is published.",
+   "consent": "Research use only. Public outputs are disclosure-controlled summaries and approximate pins that carry a random ID and farming-practice answers only; names, phone numbers, farm locations, free text and sensitive answers (income, age, gender, costs) are never published.",
    "method": "Answers standardized to controlled vocabularies, resolved to official cadastral units (OCHA COD-AB), and aggregated. A village is published only if at least k respondents answered; otherwise respondents are pooled at district (caza) level. Sensitive indicators (income, age, gender, cost shares) are published at district level only.",
    "caveats": [
     "Respondents were not randomly sampled; figures describe respondents, not whole villages.",
+    "Pins are placed around the village centre (or the district centre where fewer than k people answered), never at the farm; positions are spread only so each pin can be clicked.",
+    "Farmer types and the water-stress / chemical-dependence findings are statistical associations, not causes; see the Insights panel for methods and validation.",
     "Chouf interviews have no recorded dates; Beqaa interviews were on 2026-01-04.",
     "Locations are cadastral areas, never farm or household locations."
    ]
@@ -1539,6 +1722,478 @@
    "collected": "2026-01-04"
   }
  },
+ "insights": {
+  "typology": {
+   "published": true,
+   "method": "k-means on one-hot farming-practice answers; k chosen by bootstrap stability (100 resamples)",
+   "n": 208,
+   "k": 4,
+   "stability_ari": 0.701,
+   "candidates": [
+    {
+     "k": 3,
+     "stability_ari": 0.613,
+     "stability_sd": 0.168,
+     "min_size": 56
+    },
+    {
+     "k": 4,
+     "stability_ari": 0.701,
+     "stability_sd": 0.121,
+     "min_size": 45
+    },
+    {
+     "k": 5,
+     "stability_ari": 0.489,
+     "stability_sd": 0.106,
+     "min_size": 34
+    },
+    {
+     "k": 6,
+     "stability_ari": 0.464,
+     "stability_sd": 0.087,
+     "min_size": 27
+    }
+   ],
+   "types": [
+    {
+     "code": "type_a",
+     "letter": "A",
+     "name": {
+      "en": "Type A – pesticides: total reliance; water: groundwater well",
+      "ar": "النمط A – المبيدات: اعتماد كامل; المياه: بئر جوفي"
+     },
+     "size": 58,
+     "regions": {
+      "beqaa_2026": 13,
+      "chouf_2026": 45
+     },
+     "traits": [
+      {
+       "field": "pesticide_reliance",
+       "code": "total",
+       "label": {
+        "en": "Reliance on chemical pesticides: Total reliance",
+        "ar": "الاعتماد على المبيدات الكيميائية: اعتماد كامل"
+       },
+       "share_in_type": 0.81,
+       "share_overall": 0.35
+      },
+      {
+       "field": "water_sources",
+       "code": "well",
+       "label": {
+        "en": "Main irrigation water source: Groundwater well",
+        "ar": "المصدر الرئيسي لمياه الري: بئر جوفي"
+       },
+       "share_in_type": 0.64,
+       "share_overall": 0.25
+      },
+      {
+       "field": "soil_enhancers",
+       "code": "chemical",
+       "label": {
+        "en": "Soil enhancers used: Chemical fertilizers",
+        "ar": "المحسنات المستخدمة في التربة: أسمدة كيميائية"
+       },
+       "share_in_type": 0.88,
+       "share_overall": 0.52
+      },
+      {
+       "field": "chem_fertilizer_reliance",
+       "code": "total",
+       "label": {
+        "en": "Reliance on chemical fertilizers: Total reliance",
+        "ar": "الاعتماد على الأسمدة الكيميائية: اعتماد كامل"
+       },
+       "share_in_type": 0.41,
+       "share_overall": 0.12
+      },
+      {
+       "field": "energy_sources",
+       "code": "diesel",
+       "label": {
+        "en": "Main energy source for irrigation/farming: Diesel generator / engine",
+        "ar": "مصدر الطاقة الرئيسي: مولد ديزل"
+       },
+       "share_in_type": 0.52,
+       "share_overall": 0.27
+      }
+     ]
+    },
+    {
+     "code": "type_b",
+     "letter": "B",
+     "name": {
+      "en": "Type B – crops: apples and pears; chemical fertilizers: partial reliance",
+      "ar": "النمط B – المحاصيل: تفاح وإجاص; الأسمدة الكيميائية: اعتماد جزئي"
+     },
+     "size": 55,
+     "regions": {
+      "beqaa_2026": 15,
+      "chouf_2026": 40
+     },
+     "traits": [
+      {
+       "field": "crop_groups",
+       "code": "apples_pears",
+       "label": {
+        "en": "Main crop groups: Apples and pears",
+        "ar": "مجموعات المحاصيل الرئيسية: تفاح وإجاص"
+       },
+       "share_in_type": 0.6,
+       "share_overall": 0.24
+      },
+      {
+       "field": "chem_fertilizer_reliance",
+       "code": "partial",
+       "label": {
+        "en": "Reliance on chemical fertilizers: Partial reliance",
+        "ar": "الاعتماد على الأسمدة الكيميائية: اعتماد جزئي"
+       },
+       "share_in_type": 0.96,
+       "share_overall": 0.62
+      },
+      {
+       "field": "water_sources",
+       "code": "river",
+       "label": {
+        "en": "Main irrigation water source: River / stream",
+        "ar": "المصدر الرئيسي لمياه الري: نهر / مجرى مائي"
+       },
+       "share_in_type": 0.51,
+       "share_overall": 0.19
+      },
+      {
+       "field": "land_size_band",
+       "code": "lt_1_ha",
+       "label": {
+        "en": "Landholding size: < 1 hectare",
+        "ar": "حجم الحيازة الزراعية: أقل من 1 هكتار"
+       },
+       "share_in_type": 0.51,
+       "share_overall": 0.25
+      },
+      {
+       "field": "soil_enhancers",
+       "code": "compost",
+       "label": {
+        "en": "Soil enhancers used: Organic compost",
+        "ar": "المحسنات المستخدمة في التربة: كمبوست عضوي"
+       },
+       "share_in_type": 0.56,
+       "share_overall": 0.38
+      }
+     ]
+    },
+    {
+     "code": "type_c",
+     "letter": "C",
+     "name": {
+      "en": "Type C – chemical fertilizers: not used; pesticides: not used",
+      "ar": "النمط C – الأسمدة الكيميائية: لا يتم استخدامها; المبيدات: لا يتم استخدامها"
+     },
+     "size": 50,
+     "regions": {
+      "beqaa_2026": 1,
+      "chouf_2026": 49
+     },
+     "traits": [
+      {
+       "field": "chem_fertilizer_reliance",
+       "code": "not_used",
+       "label": {
+        "en": "Reliance on chemical fertilizers: Not used",
+        "ar": "الاعتماد على الأسمدة الكيميائية: لا يتم استخدامها"
+       },
+       "share_in_type": 0.84,
+       "share_overall": 0.23
+      },
+      {
+       "field": "pesticide_reliance",
+       "code": "not_used",
+       "label": {
+        "en": "Reliance on chemical pesticides: Not used",
+        "ar": "الاعتماد على المبيدات الكيميائية: لا يتم استخدامها"
+       },
+       "share_in_type": 0.52,
+       "share_overall": 0.14
+      },
+      {
+       "field": "pest_control",
+       "code": "biological",
+       "label": {
+        "en": "Pest control methods: Biological control",
+        "ar": "طرق مكافحة الآفات: مكافحة بيولوجية"
+       },
+       "share_in_type": 0.4,
+       "share_overall": 0.17
+      },
+      {
+       "field": "land_size_band",
+       "code": "lt_5_dunum",
+       "label": {
+        "en": "Landholding size: < 5 dunums (< 0.5 ha)",
+        "ar": "حجم الحيازة الزراعية: أقل من 5 دونم"
+       },
+       "share_in_type": 0.72,
+       "share_overall": 0.54
+      },
+      {
+       "field": "crop_groups",
+       "code": "vegetables",
+       "label": {
+        "en": "Main crop groups: Vegetables",
+        "ar": "مجموعات المحاصيل الرئيسية: خضار"
+       },
+       "share_in_type": 0.68,
+       "share_overall": 0.51
+      }
+     ]
+    },
+    {
+     "code": "type_d",
+     "letter": "D",
+     "name": {
+      "en": "Type D – water: storage tank / pond / pool; water: water tanker delivery",
+      "ar": "النمط D – المياه: خزان / بركة; المياه: نقل المياه بالصهاريج"
+     },
+     "size": 45,
+     "regions": {
+      "chouf_2026": 45
+     },
+     "traits": [
+      {
+       "field": "water_sources",
+       "code": "storage",
+       "label": {
+        "en": "Main irrigation water source: Storage tank / pond / pool",
+        "ar": "المصدر الرئيسي لمياه الري: خزان / بركة"
+       },
+       "share_in_type": 0.8,
+       "share_overall": 0.26
+      },
+      {
+       "field": "water_sources",
+       "code": "tanker",
+       "label": {
+        "en": "Main irrigation water source: Water tanker delivery",
+        "ar": "المصدر الرئيسي لمياه الري: نقل المياه بالصهاريج"
+       },
+       "share_in_type": 0.73,
+       "share_overall": 0.24
+      },
+      {
+       "field": "pesticide_reliance",
+       "code": "partial",
+       "label": {
+        "en": "Reliance on chemical pesticides: Partial reliance",
+        "ar": "الاعتماد على المبيدات الكيميائية: اعتماد جزئي"
+       },
+       "share_in_type": 0.8,
+       "share_overall": 0.47
+      },
+      {
+       "field": "raises_poultry",
+       "code": "yes",
+       "label": {
+        "en": "Raises poultry: Yes",
+        "ar": "يربي الدواجن: نعم"
+       },
+       "share_in_type": 0.76,
+       "share_overall": 0.44
+      },
+      {
+       "field": "production_level",
+       "code": "small",
+       "label": {
+        "en": "Food production level: Small (mainly home use)",
+        "ar": "مستوى إنتاج الغذاء: إنتاج صغير"
+       },
+       "share_in_type": 0.67,
+       "share_overall": 0.36
+      }
+     ]
+    }
+   ]
+  },
+  "drivers": {
+   "water_stress": {
+    "label": {
+     "en": "Water stress",
+     "ar": "الإجهاد المائي"
+    },
+    "definition": {
+     "en": "Water in the growing season is rarely or never enough",
+     "ar": "المياه نادراً ما تكون كافية أو غير كافية تماماً خلال موسم الزراعة"
+    },
+    "caveat": {
+     "en": "Tanker delivery and storage tanks are often a response to scarcity, so they mark where water stress is felt rather than cause it.",
+     "ar": "غالباً ما يكون نقل المياه بالصهاريج والتخزين استجابةً للشح، فهي تدل على أماكن الإجهاد المائي ولا تسببه بالضرورة."
+    },
+    "n": 207,
+    "prevalence": 0.444,
+    "prevalence_by_region": {
+     "beqaa_2026": 0.207,
+     "chouf_2026": 0.483
+    },
+    "findings": [
+     {
+      "field": "water_sources",
+      "code": "tanker",
+      "label": {
+       "en": "Main irrigation water source: Water tanker delivery",
+       "ar": "المصدر الرئيسي لمياه الري: نقل المياه بالصهاريج"
+      },
+      "n_with": 49,
+      "n_without": 158,
+      "rate_with": 0.796,
+      "rate_without": 0.335,
+      "or": 6.79,
+      "ci": [
+       3.12,
+       14.74
+      ],
+      "q": 0.0
+     },
+     {
+      "field": "water_sources",
+      "code": "storage",
+      "label": {
+       "en": "Main irrigation water source: Storage tank / pond / pool",
+       "ar": "المصدر الرئيسي لمياه الري: خزان / بركة"
+      },
+      "n_with": 55,
+      "n_without": 152,
+      "rate_with": 0.745,
+      "rate_without": 0.336,
+      "or": 5.08,
+      "ci": [
+       2.5,
+       10.31
+      ],
+      "q": 0.0001
+     },
+     {
+      "field": "water_sources",
+      "code": "well",
+      "label": {
+       "en": "Main irrigation water source: Groundwater well",
+       "ar": "المصدر الرئيسي لمياه الري: بئر جوفي"
+      },
+      "n_with": 51,
+      "n_without": 156,
+      "rate_with": 0.235,
+      "rate_without": 0.513,
+      "or": 0.32,
+      "ci": [
+       0.16,
+       0.67
+      ],
+      "q": 0.041
+     }
+    ],
+    "model": {
+     "auc": 0.669,
+     "auc_ci": [
+      0.595,
+      0.745
+     ],
+     "baseline_auc": 0.49,
+     "predictive": true,
+     "validation": "5-fold cross-validation grouped by village; baseline = region only"
+    },
+    "tests_run": 41
+   },
+   "chemical_dependence": {
+    "label": {
+     "en": "High chemical dependence",
+     "ar": "اعتماد مرتفع على الكيماويات"
+    },
+    "definition": {
+     "en": "Total reliance on chemical fertilizers or on chemical pesticides",
+     "ar": "اعتماد كامل على الأسمدة الكيميائية أو على المبيدات الكيميائية"
+    },
+    "caveat": {
+     "en": "Wells, diesel pumps and tropical fruit go together with more intensive irrigated farming; the association may reflect the type of farm rather than any single factor.",
+     "ar": "ترتبط الآبار ومضخات الديزل والفواكه الاستوائية بزراعة مروية أكثر كثافة؛ قد يعكس الارتباط نوع المزرعة لا عاملاً واحداً بعينه."
+    },
+    "n": 204,
+    "prevalence": 0.373,
+    "prevalence_by_region": {
+     "beqaa_2026": 0.552,
+     "chouf_2026": 0.343
+    },
+    "findings": [
+     {
+      "field": "water_sources",
+      "code": "well",
+      "label": {
+       "en": "Main irrigation water source: Groundwater well",
+       "ar": "المصدر الرئيسي لمياه الري: بئر جوفي"
+      },
+      "n_with": 51,
+      "n_without": 153,
+      "rate_with": 0.569,
+      "rate_without": 0.307,
+      "or": 2.77,
+      "ci": [
+       1.43,
+       5.35
+      ],
+      "q": 0.0791
+     },
+     {
+      "field": "energy_sources",
+      "code": "diesel",
+      "label": {
+       "en": "Main energy source for irrigation/farming: Diesel generator / engine",
+       "ar": "مصدر الطاقة الرئيسي: مولد ديزل"
+      },
+      "n_with": 55,
+      "n_without": 149,
+      "rate_with": 0.564,
+      "rate_without": 0.302,
+      "or": 2.81,
+      "ci": [
+       1.48,
+       5.35
+      ],
+      "q": 0.0791
+     },
+     {
+      "field": "crop_groups",
+      "code": "tropical_fruits",
+      "label": {
+       "en": "Main crop groups: Tropical fruits (avocado, banana, custard apple)",
+       "ar": "مجموعات المحاصيل الرئيسية: فواكه استوائية (أفوكادو، موز، قشطة)"
+      },
+      "n_with": 27,
+      "n_without": 177,
+      "rate_with": 0.593,
+      "rate_without": 0.339,
+      "or": 3.44,
+      "ci": [
+       1.48,
+       8.0
+      ],
+      "q": 0.0828
+     }
+    ],
+    "model": {
+     "auc": 0.605,
+     "auc_ci": [
+      0.518,
+      0.688
+     ],
+     "baseline_auc": 0.457,
+     "predictive": true,
+     "validation": "5-fold cross-validation grouped by village; baseline = region only"
+    },
+    "tests_run": 41
+   }
+  }
+ },
  "layers": [
   {
    "id": "protected-areas",
@@ -1549,8 +2204,8 @@
     "en": "Protected areas",
     "ar": "المحميات"
    },
-   "color": "#1b4332",
-   "dash": true,
+   "color": "#0b6e4f",
+   "outline": "strong",
    "visible": true,
    "label_property": "name",
    "popup_properties": [
@@ -1567,17 +2222,18 @@
   {
    "id": "survey-districts",
    "dataset": "farmer_survey",
-   "file": "data/survey_districts.22eb97847d.geojson",
+   "file": "data/survey_districts.241fe505f8.geojson",
    "renderer": "survey_summary",
    "title": {
     "en": "Survey – district summaries",
     "ar": "الاستبيان – ملخصات الأقضية"
    },
-   "visible": true,
+   "visible": false,
    "indicators": [
     "owns_land",
     "land_size_band",
     "soil_types",
+    "crop_groups",
     "water_sources",
     "water_availability",
     "water_scarcity",
@@ -1601,7 +2257,9 @@
     "climate_impacts",
     "info_sources",
     "raises_poultry",
-    "poultry_purpose"
+    "poultry_purpose",
+    "farmer_type",
+    "low_input_practices"
    ],
    "sensitive_indicators": [
     "age_group",
@@ -1611,12 +2269,12 @@
     "pesticide_cost_share"
    ],
    "summary_key": "remainder_indicators",
-   "default_indicator": "water_availability"
+   "default_indicator": "farmer_type"
   },
   {
    "id": "survey-villages",
    "dataset": "farmer_survey",
-   "file": "data/survey_villages.b2ddc5663e.geojson",
+   "file": "data/survey_villages.4ab7de0d1e.geojson",
    "renderer": "survey_summary",
    "title": {
     "en": "Survey – village summaries",
@@ -1627,6 +2285,7 @@
     "owns_land",
     "land_size_band",
     "soil_types",
+    "crop_groups",
     "water_sources",
     "water_availability",
     "water_scarcity",
@@ -1650,10 +2309,12 @@
     "climate_impacts",
     "info_sources",
     "raises_poultry",
-    "poultry_purpose"
+    "poultry_purpose",
+    "farmer_type",
+    "low_input_practices"
    ],
    "summary_key": "indicators",
-   "default_indicator": "water_availability"
+   "default_indicator": "farmer_type"
   },
   {
    "id": "fire",
@@ -1683,12 +2344,74 @@
      "type": "choice"
     }
    ]
+  },
+  {
+   "id": "survey-respondents",
+   "dataset": "farmer_survey",
+   "file": "data/survey_respondents.1edb9d3aa0.geojson",
+   "renderer": "pins",
+   "title": {
+    "en": "Survey respondents (approximate pins)",
+    "ar": "المستجيبون (مواقع تقريبية)"
+   },
+   "color": "#4a4a4a",
+   "cluster": true,
+   "visible": true,
+   "indicators": [
+    "owns_land",
+    "land_size_band",
+    "soil_types",
+    "crop_groups",
+    "water_sources",
+    "water_availability",
+    "water_scarcity",
+    "irrigation_need_change",
+    "energy_sources",
+    "production_level",
+    "coop_member",
+    "homes_trad_food",
+    "seed_criteria",
+    "seed_sources",
+    "seed_challenges",
+    "traditional_seed_knowledge",
+    "soil_enhancers",
+    "chem_fertilizer_reliance",
+    "pest_control",
+    "pesticide_reliance",
+    "marketing_challenges",
+    "logistics_challenges",
+    "climate_change_noticed",
+    "climate_changes",
+    "climate_impacts",
+    "info_sources",
+    "raises_poultry",
+    "poultry_purpose",
+    "farmer_type",
+    "low_input_practices"
+   ],
+   "filter_fields": [
+    "farmer_type",
+    "water_availability",
+    "water_sources",
+    "energy_sources",
+    "crop_groups",
+    "chem_fertilizer_reliance",
+    "pesticide_reliance",
+    "low_input_practices",
+    "land_size_band",
+    "production_level",
+    "coop_member"
+   ],
+   "id_search": true,
+   "default_indicator": "farmer_type"
   }
  ],
  "release": {
-  "id": "2866779f2b1a",
+  "id": "e35b67dfd1dd",
   "villages_published": 12,
   "districts_published": 3,
+  "respondent_pins": 203,
+  "respondent_pins_at_district_level": 86,
   "respondents_in_summaries": 203,
   "respondents_excluded_no_location": 1
  }

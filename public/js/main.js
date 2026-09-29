@@ -1,8 +1,8 @@
-import { codeColors, codeLabel, fieldLabel, groupLabel, field, loadCatalog, NO_DATA_COLOR, propertyLabel } from './catalog.js';
+import { codeColors, codeLabel, fieldLabel, groupLabel, field, getCatalog, loadCatalog, NO_DATA_COLOR, propertyLabel, vocabOf } from './catalog.js';
 import { clear, el } from './dom.js';
 import { getLang, label, setLang, t } from './i18n.js';
-import { highlight, renderer, setLayerVisible } from './layers.js';
-import { closePanel, initPanel, showDataset, showFeature, showList, showRespondent, showSummary } from './panel.js';
+import { highlight, renderer, setLayerVisible, spreadPins } from './layers.js';
+import { closePanel, initPanel, showDataset, showFeature, showInsights, showList, showPin, showSummary } from './panel.js';
 
 const LEBANON = [[35.1, 33.05], [36.62, 34.69]];
 const BASEMAPS = {
@@ -66,46 +66,97 @@ async function loadLayerData(layer) {
 		f.properties.fid = f.id;  // MapLibre drops string ids; keep them as a property
 		state.index[layer.id].set(f.id, f);
 	}
+	if (layer.renderer === 'pins') spreadPins(fc.features);
 	state.data[layer.id] = fc;
 	return fc;
 }
 
-// Legend + controls for one layer, generated from the catalog.
-function layerControls(layer) {
-	const ui = state.ui[layer.id];
-	const box = el('div', { class: 'layer-controls' });
-	const firstSurvey = [...state.layers].reverse().find(l => l.renderer === 'survey_summary' && state.ui[l.id].visible);
-	if (layer.renderer === 'survey_summary' && firstSurvey && firstSurvey.id !== layer.id) {
-		box.append(el('p', { class: 'small muted', text: `${t('indicator')}: ${fieldLabel(state.indicator)}` }));
-	} else if (layer.renderer === 'survey_summary') {
-		const select = el('select', { 'aria-label': t('indicator'), onchange: (e) => setIndicator(e.target.value) });
-		const byGroup = new Map();
-		for (const code of layer.indicators) {
-			const g = field(code).group;
-			if (!byGroup.has(g)) byGroup.set(g, el('optgroup', { label: groupLabel(g) }));
-			byGroup.get(g).append(el('option', { value: code, selected: code === state.indicator, text: fieldLabel(code) }));
-		}
-		select.append(...byGroup.values());
-		box.append(el('label', { class: 'field' }, el('span', { class: 'small muted', text: t('indicator') }), select));
-		const legend = el('ul', { class: 'legend', 'aria-label': t('legend') });
-		for (const [code, color] of codeColors(state.indicator)) {
-			legend.append(el('li', {}, el('span', { class: 'swatch', style: { background: color } }), codeLabel(state.indicator, code)));
-		}
-		legend.append(el('li', {}, el('span', { class: 'swatch', style: { background: NO_DATA_COLOR } }), t('noData')));
-		box.append(el('p', { class: 'small muted', text: t('colouredBy') }), legend);
-	} else {
-		box.append(el('ul', { class: 'legend' }, el('li', {},
-			el('span', { class: `swatch ${layer.renderer === 'polygons' ? '' : 'round'}`,
-				style: layer.dash ? { background: 'transparent', border: `2px dashed ${layer.color}` } : { background: layer.color } }),
-			label(layer.title))));
+// ── indicator (shared by every layer that colours by an answer) ──────────
+
+function indicatorControls(layer) {
+	const box = [];
+	const owner = [...state.layers].reverse().find(l => l.indicators && state.ui[l.id].visible);
+	if (owner && owner.id !== layer.id) {
+		return [el('p', { class: 'small muted', text: `${t('indicator')}: ${fieldLabel(state.indicator)}` })];
 	}
-	if (layer.heatmap) {
-		box.append(el('label', { class: 'check small' },
-			el('input', { type: 'checkbox', checked: ui.heatmap, onchange: (e) => { ui.heatmap = e.target.checked; setLayerVisible(map, layer, ui.visible, ui); } }),
-			t('heatmap')));
+	const select = el('select', { 'aria-label': t('indicator'), onchange: (e) => setIndicator(e.target.value) });
+	const byGroup = new Map();
+	for (const code of layer.indicators) {
+		const g = field(code).group;
+		if (!byGroup.has(g)) byGroup.set(g, el('optgroup', { label: groupLabel(g) }));
+		byGroup.get(g).append(el('option', { value: code, selected: code === state.indicator, text: fieldLabel(code) }));
 	}
-	for (const filter of layer.filters || []) box.append(filterControl(layer, filter));
+	select.append(...byGroup.values());
+	box.push(el('label', { class: 'field' }, el('span', { class: 'small muted', text: t('indicator') }), select));
+	const legend = el('ul', { class: 'legend', 'aria-label': t('legend') });
+	for (const [code, color] of codeColors(state.indicator)) {
+		legend.append(el('li', {}, el('span', { class: 'swatch round', style: { background: color } }), codeLabel(state.indicator, code)));
+	}
+	legend.append(el('li', {}, el('span', { class: 'swatch round', style: { background: NO_DATA_COLOR } }), t('noData')));
+	const multi = field(state.indicator)?.type === 'multi';
+	box.push(el('p', { class: 'small muted', text: t('colouredBy') + (multi ? ` ${t('firstAnswer')}` : '') }), legend);
 	return box;
+}
+
+function setIndicator(code) {
+	state.indicator = code;
+	for (const layer of state.layers) {
+		const r = renderer(layer);
+		if (layer.indicators && r.setIndicator) r.setIndicator(map, layer, code);
+	}
+	buildLayerList();
+}
+
+// ── filters ──────────────────────────────────────────────────────────────
+
+const has = (value, code) => Array.isArray(value) ? value.includes(code) : value === code;
+
+function pinFilters(layer) {
+	const ui = state.ui[layer.id];
+	ui.filters = ui.filters || {};
+	ui.choices = ui.choices || {};
+	const parts = [];
+	if (layer.id_search) {
+		const input = el('input', { type: 'search', value: ui.search || '', placeholder: t(getCatalog().tier === 'research' ? 'searchIdName' : 'searchId'),
+			'aria-label': t('searchId') });
+		input.addEventListener('input', () => {
+			ui.search = input.value.trim().toLowerCase();
+			ui.filters.__search = ui.search ? (f) => {
+				const p = f.properties;
+				return [p.respondent_id, p.name_latin, p.name_arabic].some(v => v && String(v).toLowerCase().includes(ui.search));
+			} : null;
+			applyFilters(layer);
+		});
+		parts.push(el('label', { class: 'field small' }, el('span', { class: 'muted', text: t('searchId') }), input));
+	}
+	for (const code of layer.filter_fields || []) {
+		const vocab = vocabOf(code);
+		if (!vocab) continue;
+		const select = el('select', { 'aria-label': fieldLabel(code) },
+			el('option', { value: '', text: t('all') }),
+			vocab.codes.map(c => el('option', { value: c.code, selected: ui.choices[code] === c.code, text: label(c.label) })));
+		select.addEventListener('change', () => setChoice(layer, code, select.value));
+		parts.push(el('label', { class: 'field small' }, el('span', { class: 'muted', text: fieldLabel(code) }), select));
+	}
+	const count = el('p', { class: 'small muted', id: `count-${layer.id}` });
+	const reset = el('button', { class: 'link-btn small', type: 'button', text: t('clearFilters'),
+		onclick: () => { ui.filters = {}; ui.choices = {}; ui.search = ''; applyFilters(layer); buildLayerList(); } });
+	return [el('details', { class: 'filters', open: Object.keys(ui.choices).length > 0 || !!ui.search },
+		el('summary', { text: t('filterPins') }), ...parts, el('p', {}, reset)), count];
+}
+
+function setChoice(layer, code, value) {
+	const ui = state.ui[layer.id];
+	ui.choices = ui.choices || {};
+	ui.filters = ui.filters || {};
+	if (value) {
+		ui.choices[code] = value;
+		ui.filters[code] = (f) => f.properties.status?.[code] === 'reported' && has(f.properties.values[code], value);
+	} else {
+		delete ui.choices[code];
+		delete ui.filters[code];
+	}
+	applyFilters(layer);
 }
 
 function filterControl(layer, filter) {
@@ -116,7 +167,10 @@ function filterControl(layer, filter) {
 		const sorted = [...values].sort();
 		const from = el('input', { type: 'date', min: sorted[0], max: sorted.at(-1), value: sorted[0] });
 		const to = el('input', { type: 'date', min: sorted[0], max: sorted.at(-1), value: sorted.at(-1) });
-		const apply = () => { ui.filters[filter.property] = (v) => v >= from.value && v <= to.value; applyFilters(layer); };
+		const apply = () => {
+			ui.filters[filter.property] = (f) => f.properties[filter.property] >= from.value && f.properties[filter.property] <= to.value;
+			applyFilters(layer);
+		};
 		from.addEventListener('change', apply);
 		to.addEventListener('change', apply);
 		return el('fieldset', { class: 'filter' }, el('legend', { class: 'small', text: propertyLabel(filter.property) }),
@@ -125,24 +179,46 @@ function filterControl(layer, filter) {
 	const select = el('select', { 'aria-label': propertyLabel(filter.property) },
 		el('option', { value: '', text: t('all') }), [...new Set(values)].sort().map(v => el('option', { value: v, text: v })));
 	select.addEventListener('change', () => {
-		ui.filters[filter.property] = select.value ? (v) => v === select.value : null;
+		ui.filters[filter.property] = select.value ? (f) => f.properties[filter.property] === select.value : null;
 		applyFilters(layer);
 	});
 	return el('label', { class: 'field small' }, el('span', { class: 'muted', text: propertyLabel(filter.property) }), select);
 }
 
 function applyFilters(layer) {
-	const preds = Object.entries(state.ui[layer.id].filters || {}).filter(([, fn]) => fn);
-	const fc = state.data[layer.id];
-	const features = preds.length ? fc.features.filter(f => preds.every(([prop, fn]) => fn(f.properties[prop]))) : fc.features;
+	const preds = Object.values(state.ui[layer.id].filters || {}).filter(Boolean);
+	const all = state.data[layer.id].features;
+	const features = preds.length ? all.filter(f => preds.every(fn => fn(f))) : all;
 	map.getSource(layer.id).setData({ type: 'FeatureCollection', features });
-	setStatus(t('features', features.length));
+	state.ui[layer.id].shown = features.length;
+	const count = document.getElementById(`count-${layer.id}`);
+	const text = t('showing', features.length, all.length);
+	if (count) count.textContent = text;
+	setStatus(text);
+	return features.length;
 }
 
-function setIndicator(code) {
-	state.indicator = code;
-	for (const layer of state.layers.filter(l => l.renderer === 'survey_summary')) renderer(layer).setIndicator(map, layer, code);
-	buildLayerList();
+// ── layer list ───────────────────────────────────────────────────────────
+
+function layerControls(layer) {
+	const ui = state.ui[layer.id];
+	const box = el('div', { class: 'layer-controls' });
+	if (layer.indicators) box.append(...indicatorControls(layer));
+	else {
+		const swatch = layer.renderer === 'polygons'
+			? { background: `${layer.color}22`, border: `3px solid ${layer.color}`, outline: '2px solid #fff', outlineOffset: '-5px' }
+			: { background: layer.color };
+		box.append(el('ul', { class: 'legend' }, el('li', {},
+			el('span', { class: `swatch ${layer.renderer === 'polygons' ? '' : 'round'}`, style: swatch }), label(layer.title))));
+	}
+	if (layer.renderer === 'pins') box.append(el('p', { class: 'small muted', text: t('pinsApproximate') }), ...pinFilters(layer));
+	if (layer.heatmap) {
+		box.append(el('label', { class: 'check small' },
+			el('input', { type: 'checkbox', checked: ui.heatmap, onchange: (e) => { ui.heatmap = e.target.checked; setLayerVisible(map, layer, ui.visible, ui); } }),
+			t('heatmap')));
+	}
+	for (const filter of layer.filters || []) box.append(filterControl(layer, filter));
+	return box;
 }
 
 function buildLayerList() {
@@ -159,18 +235,23 @@ function buildLayerList() {
 					el('span', { text: label(layer.title) })),
 				el('button', { class: 'icon-btn small', type: 'button', title: t('about'), 'aria-label': `${t('about')}: ${label(layer.title)}`,
 					onclick: () => showDataset(layer), text: 'ⓘ' }),
-				['survey_summary', 'polygons', 'respondents'].includes(layer.renderer)
+				['survey_summary', 'polygons', 'pins'].includes(layer.renderer)
 					? el('button', { class: 'icon-btn small', type: 'button', title: t('places'), 'aria-label': `${t('places')}: ${label(layer.title)}`,
 						onclick: () => showList(layer, state.data[layer.id].features, selectFeature), text: '☰' })
 					: null),
 			controls));
+		if (layer.renderer === 'pins' && ui.visible) {
+			const n = ui.shown ?? state.data[layer.id].features.length;
+			const count = document.getElementById(`count-${layer.id}`);
+			if (count) count.textContent = t('showing', n, state.data[layer.id].features.length);
+		}
 	}
 }
 
 function selectFeature(layer, feature) {
 	highlight(map, state.layers, layer.id, feature.id);
 	if (layer.renderer === 'survey_summary') showSummary(layer, feature);
-	else if (layer.renderer === 'respondents') showRespondent(layer, feature);
+	else if (layer.renderer === 'pins') showPin(layer, feature);
 	else showFeature(layer, feature);
 	if (feature.geometry && feature.geometry.type === 'Point') {
 		map.easeTo({ center: feature.geometry.coordinates, zoom: Math.max(map.getZoom(), 12) });
@@ -192,13 +273,25 @@ function onMapClick(e) {
 		const hit = hits[0];
 		if (hit.properties.cluster) {
 			map.getSource(layer.id).getClusterExpansionZoom(hit.properties.cluster_id)
-				.then(zoom => map.easeTo({ center: hit.geometry.coordinates, zoom }));
+				.then(zoom => map.easeTo({ center: hit.geometry.coordinates, zoom: zoom + 0.5 }));
 			setStatus(t('clusterHint'));
 			return;
 		}
 		const original = state.index[layer.id].get(hit.properties.fid);
 		if (original) selectFeature(layer, original);
 		return;
+	}
+}
+
+// From the Insights panel: colour everything by an indicator and optionally filter pins to one answer.
+function focusAnswer(code, value) {
+	const pins = state.layers.find(l => l.renderer === 'pins');
+	if (pins && !state.ui[pins.id].visible) { state.ui[pins.id].visible = true; setLayerVisible(map, pins, true, state.ui[pins.id]); }
+	if (state.layers.some(l => l.indicators?.includes(code))) setIndicator(code);
+	if (pins && value !== undefined) {
+		setChoice(pins, code, value);
+		buildLayerList();
+		map.fitBounds(LEBANON, { padding: 20 });
 	}
 }
 
@@ -227,8 +320,14 @@ async function start() {
 			banner.hidden = false;
 			banner.textContent = t('researchBanner');
 		}
+		const insightsBtn = document.getElementById('open-insights');
+		if (catalog.insights) {
+			insightsBtn.hidden = false;
+			insightsBtn.addEventListener('click', () => showInsights(catalog.insights, focusAnswer));
+		}
 		state.layers = catalog.layers;
-		state.indicator = catalog.layers.find(l => l.default_indicator)?.default_indicator;
+		state.indicator = catalog.layers.find(l => l.default_indicator && catalog.fields[l.default_indicator])?.default_indicator
+			|| catalog.layers.find(l => l.indicators)?.indicators[0];
 		await Promise.all(state.layers.map(loadLayerData));
 		for (const layer of state.layers) {
 			state.ui[layer.id] = { visible: !!layer.visible, heatmap: false };
@@ -239,14 +338,23 @@ async function start() {
 				map.on('mouseleave', id, () => { map.getCanvas().style.cursor = ''; });
 			}
 		}
-		// Basemap place names go above the data so they stay readable over filled areas.
+		// Basemap place names above areas but below point layers, so pins stay clickable and visible.
+		const firstPoints = state.layers.find(l => ['points', 'pins'].includes(l.renderer));
+		const before = firstPoints ? renderer(firstPoints).layerIds(firstPoints).find(id => map.getLayer(id)) : undefined;
 		for (const [id, b] of Object.entries(BASEMAPS)) {
 			if (!b.labels) continue;
 			map.addSource(`basemap-${id}-labels`, { type: 'raster', tiles: b.labels, tileSize: 256, maxzoom: b.maxzoom || 19 });
 			map.addLayer({ id: `basemap-${id}-labels`, type: 'raster', source: `basemap-${id}-labels`,
-				layout: { visibility: id === state.basemap ? 'visible' : 'none' } });
+				layout: { visibility: id === state.basemap ? 'visible' : 'none' } }, before);
 		}
 		map.on('click', onMapClick);
+		// Open framed on the survey respondents (the map's main subject), not on all of Lebanon.
+		const pins = state.layers.find(l => l.renderer === 'pins');
+		if (pins && state.data[pins.id].features.length) {
+			const b = new maplibregl.LngLatBounds();
+			for (const f of state.data[pins.id].features) b.extend(f.geometry.coordinates);
+			map.fitBounds(b, { padding: 60, maxZoom: 11, duration: 0 });
+		}
 		buildBasemaps();
 		buildLayerList();
 		setStatus('');

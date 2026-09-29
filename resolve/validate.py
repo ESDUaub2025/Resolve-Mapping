@@ -53,7 +53,7 @@ def check_records(records, identity):
                 chosen = value if fld.type == "multi" else [value]
                 if not isinstance(chosen, list) or not chosen or set(chosen) - allowed:
                     problems.append(f"{rid}.{code}: {value!r} not in vocabulary {fld.vocab}")
-            if r["instrument"] not in fld.sources and status != "not_asked":
+            if not fld.derived and r["instrument"] not in fld.sources and status != "not_asked":
                 problems.append(f"{rid}.{code}: field not in instrument but status is {status}")
         loc = r["location"]
         if loc["geom_origin"] not in GEOM_ORIGINS or loc["spatial_precision"] not in PRECISIONS:
@@ -100,6 +100,30 @@ def check_public_catalog(catalog, feature_collections, k):
                 for summary in list(props.get("indicators", {}).values()) + list(props.get("remainder_indicators", {}).values()):
                     if summary.get("counts") is not None and summary["n_answered"] < k:
                         problems.append(f"{name}/{fid}: distribution published from fewer than k answers")
+    # Public respondent pins: ID only, public village-level answers only, honest anchors, >= k per village.
+    village_fields = {f.code for f in d.fields if f.privacy == "public_village"}
+    identity_keys = {f.code for f in d.fields if f.privacy == "identity"}
+    per_village = {}
+    for name, fc in feature_collections.items():
+        for feat in fc["features"]:
+            p = feat["properties"]
+            if p.get("entity_type") != "survey_respondent_public":
+                continue
+            fid = feat.get("id")
+            if identity_keys & set(p) or identity_keys & set(p.get("values", {})):
+                problems.append(f"{name}/{fid}: identity data on a public pin")
+            extra = (set(p.get("values", {})) | set(p.get("status", {}))) - village_fields
+            if extra:
+                problems.append(f"{name}/{fid}: non-village-level fields on a public pin {sorted(extra)}")
+            if (p.get("geom_origin"), p.get("spatial_precision")) not in {("cadastral_unit_centre", "cadastral_unit"),
+                                                                          ("district_centre", "district")}:
+                problems.append(f"{name}/{fid}: pin anchor must be a cadastral or district centre")
+            if p.get("spatial_precision") == "cadastral_unit":
+                key = tuple(feat["geometry"]["coordinates"])
+                per_village[key] = per_village.get(key, 0) + 1
+    for key, n in per_village.items():
+        if n < k:
+            problems.append(f"village anchor {key} has {n} public pins (< k={k})")
     for layer in catalog["layers"]:
         for code in layer.get("indicators", []):
             if code not in public_fields:

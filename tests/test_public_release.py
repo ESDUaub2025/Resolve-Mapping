@@ -15,7 +15,9 @@ ENTITY_GEOMETRIES = {
     "district_survey_summary": {"Polygon", "MultiPolygon"},
     "fire_detection": {"Point"},
     "protected_area": {"Polygon", "MultiPolygon"},
+    "survey_respondent_public": {"Point"},
 }
+PIN_FILE = "survey_respondents."
 RESPONDENT_ID = re.compile(r"\b(CH|BQ)-[2-9A-HJ-NP-Z]{6}\b")
 
 
@@ -100,6 +102,28 @@ def test_survey_summaries_respect_k(catalog, collections):
                         assert s["n_answered"] >= k
 
 
-def test_no_respondent_ids_published():
+def test_respondent_ids_only_on_pins():
     for path in PUBLIC_DATA.iterdir():
+        if path.name.startswith(PIN_FILE):
+            continue
         assert not RESPONDENT_ID.search(path.read_text(encoding="utf-8")), f"respondent ID in {path.name}"
+
+
+def test_pins_carry_only_public_village_answers(collections):
+    d = load()
+    allowed = {f.code for f in d.fields if f.privacy == "public_village"}
+    identity = {f.code for f in d.fields if f.privacy == "identity"}
+    pins = [f for fc in collections.values() for f in fc["features"] if f["properties"]["entity_type"] == "survey_respondent_public"]
+    assert pins, "public pins layer is empty"
+    for f in pins:
+        p = f["properties"]
+        assert set(p["values"]) <= allowed and set(p["status"]) <= allowed, f["id"]
+        assert not identity & set(p), f["id"]
+        assert p["spatial_precision"] in ("cadastral_unit", "district")
+
+
+def test_every_village_pin_group_has_at_least_k(catalog, collections):
+    from collections import Counter
+    pins = [f for fc in collections.values() for f in fc["features"] if f["properties"]["entity_type"] == "survey_respondent_public"]
+    groups = Counter(tuple(f["geometry"]["coordinates"]) for f in pins if f["properties"]["spatial_precision"] == "cadastral_unit")
+    assert min(groups.values()) >= catalog["k_min_respondents"]

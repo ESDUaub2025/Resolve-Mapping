@@ -1,4 +1,4 @@
-> **WITHDRAWN - not maintained, not published (2026-09-29).**
+> **WITHDRAWN - superseded by `resolve/analysis.py` (validated typology and driver analysis).**
 > These models were trained on 84 rows mixing village aggregates and individual respondents,
 > joined across themes by nearest neighbour; targets leaked into features and the published
 > accuracies were in-sample (cross-validated F1 was 0.0 for water risk and economic

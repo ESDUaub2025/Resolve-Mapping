@@ -88,10 +88,26 @@ def test_no_raw_tabular_formats_tracked():
     assert offending == [], f"raw tabular/model files are tracked: {offending}"
 
 
+def _column_names(path):
+    """Field/column names of a data file: all JSON keys (recursively) or the CSV header row."""
+    text = (REPO / path).read_text(encoding="utf-8", errors="ignore")
+    if path.endswith((".json", ".geojson")):
+        keys, stack = set(), [json.loads(text)]
+        while stack:
+            node = stack.pop()
+            if isinstance(node, dict):
+                keys.update(node)
+                stack.extend(node.values())
+            elif isinstance(node, list):
+                stack.extend(node)
+        return keys
+    return set(text.splitlines()[0].split(",")) if text else set()
+
+
 @pytest.mark.parametrize("path", data_files())
 def test_no_identifier_columns(path):
-    text = (REPO / path).read_text(encoding="utf-8", errors="ignore")
-    found = [m for m in IDENTIFIER_MARKERS if m.lower() in text.lower()]
+    names = " | ".join(_column_names(path)).lower()
+    found = [m for m in IDENTIFIER_MARKERS if m.lower() in names]
     assert found == [], f"{path} contains identifier columns {found}"
 
 
@@ -112,6 +128,8 @@ def test_no_survey_derived_features(path):
         for nested in (props.get("values") or {}).values():
             if isinstance(nested, dict):
                 keys.update(nested)
+    if path.startswith("public/data/survey_respondents."):
+        keys.discard("respondent_id")  # public pins carry the pseudonymous ID only (user decision 2026-09-29)
     overlap = keys & SURVEY_PROPERTY_KEYS
     assert not overlap, f"{path} carries survey-derived properties {sorted(overlap)}"
 
@@ -125,6 +143,9 @@ def test_no_respondent_ids_in_tracked_files():
     offending = []
     for path in tracked_files():
         if Path(path).suffix.lower() in {".png", ".jpg", ".ico", ".zip"} or path.startswith(".projectgraph/"):
+            continue
+        # Public pins are identified by ID only (user decision 2026-09-29); IDs appear nowhere else.
+        if path.startswith("public/data/survey_respondents."):
             continue
         text = (REPO / path).read_text(encoding="utf-8", errors="ignore")
         if RESPONDENT_ID_RE.search(text):

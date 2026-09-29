@@ -28,6 +28,7 @@ groups:
   climate: {en: "Climate change", ar: "التغير المناخي"}
   livestock: {en: "Poultry", ar: "الدواجن"}
   knowledge: {en: "Information", ar: "مصادر المعلومات"}
+  analysis: {en: "Analysis (derived)", ar: "تحليل (مشتق)"}
 
 fields:
   # ── identity (never published) ──────────────────────────────────────────
@@ -125,6 +126,7 @@ fields:
       chouf_2026: {column: "Location of your land"}
       beqaa_2026: {column: " 6.موقع أرضك:"}
   - code: land_size_band
+    short_label: {en: "land", ar: "الأرض"}
     label: {en: "Landholding size", ar: "حجم الحيازة الزراعية"}
     type: ordinal
     vocab: land_size_band
@@ -150,6 +152,17 @@ fields:
     sources:
       chouf_2026: {join: english_fs, column: "Main crops "}
       beqaa_2026: {column: "10. Main Crops"}
+  - code: crop_groups
+    short_label: {en: "crops", ar: "المحاصيل"}
+    label: {en: "Main crop groups", ar: "مجموعات المحاصيل الرئيسية"}
+    type: multi
+    vocab: crop_group
+    privacy: public_village
+    group: land
+    note: Coded from the free-text main-crops answer (AI-assisted vocabulary); the text itself is research-only.
+    sources:
+      chouf_2026: {join: english_fs, column: "Main crops "}
+      beqaa_2026: {column: "10. Main Crops"}
   - code: village_crop_profile_text
     label: {en: "Village crop profile (survey team summary)", ar: "المحاصيل في القرية (ملخص فريق المسح)"}
     type: text
@@ -161,6 +174,7 @@ fields:
 
   # ── water ───────────────────────────────────────────────────────────────
   - code: water_sources
+    short_label: {en: "water", ar: "المياه"}
     label: {en: "Main irrigation water source", ar: "المصدر الرئيسي لمياه الري"}
     type: multi
     vocab: water_source
@@ -207,6 +221,7 @@ fields:
 
   # ── energy ──────────────────────────────────────────────────────────────
   - code: energy_sources
+    short_label: {en: "energy", ar: "الطاقة"}
     label: {en: "Main energy source for irrigation/farming", ar: "مصدر الطاقة الرئيسي"}
     type: multi
     vocab: energy_source
@@ -226,6 +241,7 @@ fields:
 
   # ── food ────────────────────────────────────────────────────────────────
   - code: production_level
+    short_label: {en: "production", ar: "الإنتاج"}
     label: {en: "Food production level", ar: "مستوى إنتاج الغذاء"}
     type: ordinal
     vocab: production_level
@@ -235,6 +251,7 @@ fields:
       chouf_2026: {column: "Food production level"}
       beqaa_2026: {column: "19. Food Production Level"}
   - code: coop_member
+    short_label: {en: "cooperative member", ar: "عضو تعاونية"}
     label: {en: "Member of a food cooperative", ar: "عضو في تعاونية"}
     type: categorical
     vocab: yes_no
@@ -273,6 +290,7 @@ fields:
       chouf_2026: {column: "Criteria for seedling/seed purchase"}
       beqaa_2026: {onehot: "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟", column: "34. Seed Selection Criteria"}
   - code: seed_sources
+    short_label: {en: "seeds", ar: "البذور"}
     label: {en: "Seed sources", ar: "مصادر البذور"}
     type: multi
     vocab: seed_source
@@ -311,6 +329,7 @@ fields:
 
   # ── soil ────────────────────────────────────────────────────────────────
   - code: soil_enhancers
+    short_label: {en: "soil inputs", ar: "محسنات التربة"}
     label: {en: "Soil enhancers used", ar: "المحسنات المستخدمة في التربة"}
     type: multi
     vocab: soil_enhancer
@@ -320,6 +339,7 @@ fields:
       chouf_2026: {column: "Soil enhancers used"}
       beqaa_2026: {onehot: "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟", column: "38. Soil Enhancers"}
   - code: chem_fertilizer_reliance
+    short_label: {en: "chemical fertilizers", ar: "الأسمدة الكيميائية"}
     label: {en: "Reliance on chemical fertilizers", ar: "الاعتماد على الأسمدة الكيميائية"}
     type: ordinal
     vocab: reliance
@@ -341,6 +361,7 @@ fields:
 
   # ── pests ───────────────────────────────────────────────────────────────
   - code: pest_control
+    short_label: {en: "pest control", ar: "مكافحة الآفات"}
     label: {en: "Pest control methods", ar: "طرق مكافحة الآفات"}
     type: multi
     vocab: pest_control
@@ -350,6 +371,7 @@ fields:
       chouf_2026: {column: "How do you control pests?"}
       beqaa_2026: {onehot: "43.كيف تقوم بمكافحة الآفات؟", column: "43. Pest Control Method"}
   - code: pesticide_reliance
+    short_label: {en: "pesticides", ar: "المبيدات"}
     label: {en: "Reliance on chemical pesticides", ar: "الاعتماد على المبيدات الكيميائية"}
     type: ordinal
     vocab: reliance
@@ -432,6 +454,7 @@ fields:
 
   # ── livestock ───────────────────────────────────────────────────────────
   - code: raises_poultry
+    short_label: {en: "poultry", ar: "دواجن"}
     label: {en: "Raises poultry", ar: "يربي الدواجن"}
     type: categorical
     vocab: yes_no
@@ -458,3 +481,23 @@ fields:
     sources:
       chouf_2026: {column: "PRODUCTION POULTRY"}
       beqaa_2026: {column: "• بيض (عدد أو كرتونة): ____________ • لحم (كغ تقريباً): ____________"}
+
+  # ── analysis (derived by resolve/analysis.py; no survey column) ─────────
+  - code: farmer_type
+    label: {en: "Farmer type (analysis)", ar: "نمط المزارع (تحليل)"}
+    type: categorical
+    vocab: farmer_type
+    privacy: public_village
+    group: analysis
+    derived: true
+    note: Clustering of farming-practice answers; published only if the grouping is stable (see Insights).
+    sources: {}
+  - code: low_input_practices
+    label: {en: "Uses low-input practices", ar: "يستخدم ممارسات منخفضة المدخلات"}
+    type: categorical
+    vocab: yes_no
+    privacy: public_village
+    group: analysis
+    derived: true
+    note: Yes if the respondent uses compost, manure or biofertilizers, or non-chemical pest control.
+    sources: {}

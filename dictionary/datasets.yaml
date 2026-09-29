@@ -5,7 +5,10 @@ farmer_survey:
   owner: RESOLVE project team (ESDU, American University of Beirut)
   source: Direct farmer surveys - see instruments chouf_2026 and beqaa_2026
   licence: "All rights reserved - research use; contact the RESOLVE team"
-  consent: Research use only. Public outputs are disclosure-controlled aggregates; no individual record is published.
+  consent: >-
+    Research use only. Public outputs are disclosure-controlled summaries and approximate pins that
+    carry a random ID and farming-practice answers only; names, phone numbers, farm locations,
+    free text and sensitive answers (income, age, gender, costs) are never published.
   method: >-
     Answers standardized to controlled vocabularies, resolved to official cadastral units
     (OCHA COD-AB), and aggregated. A village is published only if at least k respondents
@@ -13,6 +16,8 @@ farmer_survey:
     indicators (income, age, gender, cost shares) are published at district level only.
   caveats:
     - Respondents were not randomly sampled; figures describe respondents, not whole villages.
+    - Pins are placed around the village centre (or the district centre where fewer than k people answered), never at the farm; positions are spread only so each pin can be clicked.
+    - Farmer types and the water-stress / chemical-dependence findings are statistical associations, not causes; see the Insights panel for methods and validation.
     - Chouf interviews have no recorded dates; Beqaa interviews were on 2026-01-04.
     - Locations are cadastral areas, never farm or household locations.
 

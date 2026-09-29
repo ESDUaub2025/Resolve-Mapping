@@ -12,6 +12,7 @@
    │  resolve/validate.py    critical invariants -> build stops; review items -> report
    ▼
 <private store>/canonical/   validated standardized records + identity table
+   │  resolve/analysis.py    typology, driver analysis, spatial context -> derived fields + insights
    │  resolve/sdc.py         disclosure control (k, district pooling, small-cell suppression)
    │  resolve/publish.py     releases + catalog.json
    ├──────────────► public/data/              public release (committed, deployed)
@@ -54,11 +55,26 @@
 |---|---|---|---|
 | Survey – village summaries | `village_survey_summary` | cadastral polygon | ≥ k respondents in the cadastral unit |
 | Survey – district summaries | `district_survey_summary` | district polygon | sensitive indicators for all district respondents (≥ k); other indicators for respondents *outside* published villages (≥ k) |
+| Survey respondents (pins) | `survey_respondent_public` | point at the cadastral centre (≥ k respondents) or district centre | random ID + farming-practice answers only; spread around the anchor at display time |
 | Protected areas | `protected_area` | WDPA polygons, simplified | attribution; licence terms in the dataset card |
 | Fire detections | `fire_detection` | satellite pixel centre | caveats in the dataset card |
 
 Each indicator distribution is published only if at least k respondents answered it; for
 sensitive indicators counts of 1–2 are hidden (plus a complementary cell for single-choice).
+
+## Analysis (resolve/analysis.py)
+
+- **Farmer typology**: k-means on the one-hot matrix of 12 practice fields; k in 3–6 chosen by
+  mean adjusted Rand index over 100 bootstrap resamples; published only if ARI ≥ 0.6 and each type
+  has ≥ 20 respondents. Types are lettered by size and named from their two most distinctive answers.
+- **Drivers** of water stress (water rarely/never enough) and high chemical dependence (total
+  reliance on fertilizers or pesticides): Mantel–Haenszel odds ratio per answer option, stratified by
+  region, Robins–Breslow–Greenland 95% CI, Benjamini–Hochberg q; published if q < 0.10, the CI
+  excludes 1 and every 2×2 cell ≥ 5. A ridge logistic model is scored with 5-fold cross-validation
+  grouped by village against a region-only baseline.
+- **Spatial context** per cadastral unit: FIRMS detections within 5 km and distance to the nearest
+  protected area (EPSG:32636).
+- Results go to `catalog.json → insights` (aggregates only) and `<private>/build/analysis_report.json`.
 
 ## Frontend
 

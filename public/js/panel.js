@@ -80,6 +80,12 @@ export function showSummary(layer, feature) {
 		el('p', { class: 'precision small' }, `${t('precision')}: ${precisionLabel(p.spatial_precision)}`),
 		el('p', { class: 'muted small', text: (p.instruments || []).map(i => label(getCatalog().instruments[i]?.title)).join(' · ') }),
 	];
+	const ctx = Object.entries(p.context || {});
+	if (ctx.length) {
+		head.push(el('details', { class: 'group', open: true }, el('summary', { text: t('context') }),
+			el('dl', { class: 'props' }, ctx.map(([key, value]) => el('div', { class: 'row' },
+				el('dt', { text: propertyLabel(key) }), el('dd', { text: formatNumber(value) }))))));
+	}
 	const sections = [];
 	if (isDistrict) {
 		sections.push(el('h3', { text: t('sensitiveNote') }));
@@ -110,36 +116,108 @@ export function showFeature(layer, feature) {
 	open(label(layer.title), el('dl', { class: 'props' }, rows), datasetLink(layer));
 }
 
-// Research tier only: a single respondent's standardized record, including identity.
-export function showRespondent(layer, feature) {
-	const p = typeof feature.properties.values === 'string'
-		? { ...feature.properties, values: JSON.parse(feature.properties.values), status: JSON.parse(feature.properties.status) }
-		: feature.properties;
-	const identity = el('dl', { class: 'props identity' },
-		...(layer.identity_properties || []).map(key => el('div', { class: 'row' },
-			el('dt', { text: propertyLabel(key) === key ? fieldLabel(key) : propertyLabel(key) }),
-			el('dd', { text: p[key] ?? statusLabel('not_provided') }))));
-	const location = el('dl', { class: 'props' },
-		el('div', { class: 'row' }, el('dt', { text: t('location') }), el('dd', { text: label({ en: p.locality_name_en, ar: p.locality_name_ar }) || '—' })),
-		el('div', { class: 'row' }, el('dt', { text: t('precision') }),
-			el('dd', { text: `${precisionLabel(p.spatial_precision)}${p.uncertainty_m ? ` (±${formatNumber(p.uncertainty_m)} m)` : ''}` })),
-		el('div', { class: 'row' }, el('dt', { text: t('source') }), el('dd', { text: `${p.instrument} · row ${p.source?.row ?? JSON.parse(p.source || '{}').row}` })));
+function answerText(code, def, status, value) {
+	if (status !== 'reported') return statusLabel(status);
+	if (def.vocab) return (Array.isArray(value) ? value : [value]).map(c => codeLabel(code, c)).join(', ');
+	return String(value);
+}
+
+// One respondent's pin. Public tier: ID and farming-practice answers only, shown at an approximate
+// position. Research tier (local): identity and every standardized answer.
+export function showPin(layer, feature) {
+	const p = feature.properties;
+	const blocks = [];
+	if (layer.identity_properties) {
+		blocks.push(el('dl', { class: 'props identity' },
+			...layer.identity_properties.map(key => el('div', { class: 'row' },
+				el('dt', { text: propertyLabel(key) === key ? fieldLabel(key) : propertyLabel(key) }),
+				el('dd', { text: p[key] ?? statusLabel('not_provided') })))));
+	}
+	const area = label({ en: p.area_name_en, ar: p.area_name_ar }) || '—';
+	blocks.push(el('p', { class: 'lead', text: area }),
+		el('p', { class: 'precision small', text: `${t('precision')}: ${precisionLabel(p.spatial_precision)}`
+			+ (p.uncertainty_m ? ` (±${formatNumber(p.uncertainty_m)} m)` : '') }),
+		el('p', { class: 'muted small', text: p.spatial_precision === 'district' ? t('pinDistrictNote') : t('pinSpreadNote') }),
+		el('p', { class: 'muted small', text: label(getCatalog().instruments[p.instrument]?.title) }));
 	const byGroup = new Map();
 	for (const [code, def] of Object.entries(getCatalog().fields)) {
-		if (def.privacy === 'identity') continue;
-		const status = p.status[code];
-		const value = p.values[code];
-		let text;
-		if (status !== 'reported') text = statusLabel(status);
-		else if (def.vocab) text = (Array.isArray(value) ? value : [value]).map(c => codeLabel(code, c)).join(', ');
-		else text = String(value);
+		if (def.privacy === 'identity' || !(code in (p.status || {}))) continue;
 		if (!byGroup.has(def.group)) byGroup.set(def.group, []);
+		const status = p.status[code];
 		byGroup.get(def.group).push(el('div', { class: 'row' }, el('dt', { text: label(def.label) }),
-			el('dd', { class: status === 'reported' ? '' : 'muted', text })));
+			el('dd', { class: status === 'reported' ? '' : 'muted', text: answerText(code, def, status, p.values[code]) })));
 	}
-	const groups = [...byGroup].map(([g, rows]) => el('details', { class: 'group', open: true },
-		el('summary', { text: groupLabel(g) }), el('dl', { class: 'props' }, rows)));
-	open(`${t('identity')}: ${p.respondent_id}`, identity, location, groups);
+	const order = Object.keys(getCatalog().groups);
+	const groups = [...byGroup].sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]))
+		.map(([g, rows]) => el('details', { class: 'group', open: g === 'analysis' || g === 'water' },
+			el('summary', { text: groupLabel(g) }), el('dl', { class: 'props' }, rows)));
+	open(`${t('idLabel')} ${p.respondent_id}`, blocks, groups, datasetLink(layer));
+}
+
+// ── Insights: analysis results (aggregates only) ─────────────────────────
+
+function share(x) { return `${Math.round(x * 100)}%`; }
+
+function colorOf(code, value) {
+	return Object.fromEntries(codeColors(code))[value] || '#888';
+}
+
+function verdict(model) {
+	const lo = model.auc_ci[0];
+	if (!model.predictive) return t('modelNone');
+	return lo >= 0.65 ? t('modelStrong') : lo >= 0.55 ? t('modelModerate') : t('modelWeak');
+}
+
+// Odds ratio and its 95% interval on a log scale from 1/10 to 10 (1 = no difference).
+function orBar(or, ci) {
+	const pos = (v) => Math.min(100, Math.max(0, (Math.log10(v) + 1) * 50));
+	return el('span', { class: 'or-track', 'aria-hidden': 'true' },
+		el('span', { class: 'or-one' }),
+		el('span', { class: 'or-ci', style: { insetInlineStart: `${pos(ci[0])}%`, width: `${pos(ci[1]) - pos(ci[0])}%` } }),
+		el('span', { class: 'or-dot', style: { insetInlineStart: `${pos(or)}%` } }));
+}
+
+export function showInsights(insights, focus) {
+	const catalog = getCatalog();
+	const regionName = (k) => label(catalog.instruments[k]?.title);
+	const parts = [el('p', { class: 'small', text: t('insightsIntro') })];
+	const typo = insights.typology;
+	parts.push(el('h3', { text: t('typologyTitle') }));
+	if (!typo.published) {
+		parts.push(el('p', { class: 'muted small', text: t('typologyNotPublished', typo.stability_ari) }));
+	} else {
+		parts.push(el('p', { class: 'small muted', text: t('typologyMethod', typo.n, typo.k, typo.stability_ari) }),
+			el('p', {}, el('button', { class: 'link-btn', type: 'button', text: t('colourByType'), onclick: () => focus('farmer_type') })));
+		for (const type of typo.types) {
+			const regions = Object.entries(type.regions).map(([k, n]) => `${regionName(k)}: ${formatNumber(n)}`).join(' · ');
+			parts.push(el('div', { class: 'insight-card' },
+				el('h4', {}, el('span', { class: 'swatch round', style: { background: colorOf('farmer_type', type.code) } }), ' ', label(type.name)),
+				el('p', { class: 'small muted', text: `${formatNumber(type.size)} ${t('respondents')} · ${regions}` }),
+				el('ul', { class: 'traits' }, type.traits.map(tr => el('li', {},
+					el('span', { text: label(tr.label) }),
+					el('span', { class: 'muted', text: ` — ${share(tr.share_in_type)} ${t('vsAll')} ${share(tr.share_overall)}` })))),
+				el('button', { class: 'link-btn small', type: 'button', text: t('showTypePins'), onclick: () => focus('farmer_type', type.code) })));
+		}
+	}
+	for (const d of Object.values(insights.drivers)) {
+		const regions = Object.entries(d.prevalence_by_region).map(([k, v]) => `${regionName(k)} ${share(v)}`).join(' · ');
+		parts.push(el('h3', { text: label(d.label) }),
+			el('p', { class: 'small', text: `${label(d.definition)}. ${t('prevalence')}: ${share(d.prevalence)} (${regions}); n = ${formatNumber(d.n)}.` }),
+			el('p', { class: 'small' }, el('strong', { text: verdict(d.model) }), ' ',
+				t('modelDetail', d.model.auc, d.model.auc_ci, d.model.baseline_auc)));
+		if (d.findings.length) {
+			parts.push(el('ul', { class: 'findings' }, d.findings.map(f => el('li', {},
+				el('button', { class: 'link-btn', type: 'button', text: label(f.label), onclick: () => focus(f.field, f.code) }),
+				el('div', { class: 'small', text: t('findingRates', share(f.rate_with), f.n_with, share(f.rate_without), f.n_without) }),
+				el('div', { class: 'or-row small' }, orBar(f.or, f.ci), el('span', { text: t('findingOr', f.or, f.ci, f.q < 0.001 ? '< 0.001' : `= ${f.q}`) }))))));
+		} else {
+			parts.push(el('p', { class: 'muted small', text: t('noFindings', d.tests_run) }));
+		}
+		parts.push(el('p', { class: 'muted small', text: `${t('caveatLabel')}: ${label(d.caveat)}` }));
+	}
+	parts.push(el('h3', { text: t('howToRead') }), el('ul', { class: 'caveats' },
+		['readNotCausal', 'readSample', 'readOr', 'readValidation'].map(key => el('li', { text: t(key) }))));
+	open(t('insightsTitle'), parts);
 }
 
 function datasetLink(layer) {
@@ -160,8 +238,9 @@ export function showDataset(layer) {
 
 // Keyboard- and screen-reader-accessible list of a layer's features.
 export function showList(layer, features, select) {
-	const nameOf = (p) => p.entity_type === 'survey_respondent'
-		? `${p.respondent_id} — ${label({ en: p.name_latin || p.name_arabic, ar: p.name_arabic || p.name_latin })} (${label({ en: p.locality_name_en, ar: p.locality_name_ar })})`
+	const nameOf = (p) => p.respondent_id
+		? [p.respondent_id, p.name_latin || p.name_arabic, `(${label({ en: p.area_name_en, ar: p.area_name_ar })})`]
+			.filter(Boolean).join(' ')
 		: label({ en: p.name_en ?? p.name, ar: p.name_ar ?? p.name });
 	const items = features
 		.map(f => ({ f, name: nameOf(f.properties) }))

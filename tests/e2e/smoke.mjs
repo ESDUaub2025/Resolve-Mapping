@@ -51,13 +51,37 @@ expect(await js(`document.querySelector('.layer-controls select')?.options.lengt
 expect(await js(`document.querySelectorAll('.legend li').length`) >= 3, 'legend missing');
 expect(await js(`document.getElementById('tier-banner').hidden`) === true, 'public site must not show the research banner');
 
-await js(`[...document.querySelectorAll('.layer')].find(l => l.querySelector('.layer-controls select'))?.querySelector('.layer-head .icon-btn:last-child').click()`);
-await sleep(500);
-expect(await js(`document.querySelectorAll('.place-list li').length`) > 0, 'accessible place list is empty');
-await js(`document.querySelector('.place-list .link-btn').click()`);
-await sleep(1000);
+const openList = async (titlePart) => {
+	await js(`[...document.querySelectorAll('.layer')].find(l => l.querySelector('.check span').textContent.toLowerCase().includes('${titlePart}'))
+		?.querySelector('.layer-head .icon-btn:last-child').click()`);
+	await sleep(500);
+	await js(`document.querySelector('.place-list .link-btn').click()`);
+	await sleep(1000);
+};
+
+// Village summary: distributions and location precision.
+await openList('village');
 expect(await js(`document.querySelectorAll('.details-body .indicator').length`) > 5, 'survey summary did not render indicators');
-expect(/Cadastral|منطقة عقارية|District|القضاء/.test(await js(`document.querySelector('.details-body .precision')?.textContent || ''`)), 'location precision not shown');
+expect(/Cadastral/.test(await js(`document.querySelector('.details-body .precision')?.textContent || ''`)), 'location precision not shown');
+
+// Respondent pin: ID title, approximate-position note, answers, and no identity block.
+await openList('respondents');
+expect(/Respondent (CH|BQ)-/.test(await js(`document.getElementById('details-title').textContent`)), 'pin popup has no ID');
+expect(await js(`document.querySelectorAll('.details-body .props .row').length`) > 10, 'pin popup shows too few answers');
+expect(await js(`document.querySelector('.details-body .identity') === null`), 'public pin shows an identity block');
+
+// Pin filters change the number of pins shown.
+const before = await js(`document.querySelector('[id^=count-]')?.textContent || ''`);
+await js(`(() => { const s = [...document.querySelectorAll('.filters select')][0]; s.selectedIndex = 1; s.dispatchEvent(new Event('change')); })()`);
+await sleep(600);
+const after = await js(`document.querySelector('[id^=count-]')?.textContent || ''`);
+expect(before && after && before !== after, `pin filter did not change the count (${before} -> ${after})`);
+
+// Insights: farmer types and driver findings.
+await js(`document.getElementById('open-insights').click()`);
+await sleep(600);
+expect(await js(`document.querySelectorAll('.insight-card').length`) >= 2, 'insights: farmer types missing');
+expect(await js(`document.querySelectorAll('.findings li').length`) >= 1, 'insights: findings missing');
 
 await js(`document.getElementById('toggle-lang').click()`);
 await sleep(500);
@@ -66,5 +90,5 @@ expect(errors.length === 0, `console errors: ${errors.join(' | ')}`);
 expect(httpFailures.length === 0, `failed requests: ${httpFailures.join(', ')}`);
 
 if (failures.length) { console.error('E2E FAILED:\n  ' + failures.join('\n  ')); cleanup(1); }
-console.log(`E2E OK: ${layers} layers, summary, place list, legend, RTL, no console errors`);
+console.log(`E2E OK: ${layers} layers, summary, pin, pin filter (${before} -> ${after}), insights, RTL, no console errors`);
 cleanup(0);
