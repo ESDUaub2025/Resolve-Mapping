@@ -383,13 +383,23 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "9cd01174e8cb45c9ab7ac5c59290fedc",
-      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T092129+0000-9cd01174.json",
-      "verified_at": "2026-09-29T09:21:29+00:00",
-      "self_fingerprint": "sha256:1b2458f394df98880c803d519f98ff860ecdeebee80d85ba45f49d09ee3d78bd",
+      "evidence_id": "65e04745acbc49889b5eab9293784187",
+      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T092507+0000-65e04745.json",
+      "verified_at": "2026-09-29T09:25:07+00:00",
+      "self_fingerprint": "sha256:71f40613d3302a9397696d80c7785c24f0e6dfc94f1ef24382524ffd6a806725",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "72d3ba8768cebab9fe5885e96e5e04eb3756e209",
-      "attestations": [],
+      "git_commit": "2848fc0f4edaad4806a9701ca8131b05488cdc04",
+      "attestations": [
+        {
+          "item": 1,
+          "text": "git log --all over the removed paths is empty on the public remote after the history rewrite",
+          "note": "curl on 2026-09-29 after Pages build of 2848fc0: 8 removed survey/ML paths return 404 (MZSurvey CSVs, both xlsx, survey_by_theme, canonical _new, Model_Predictions, ml_prepared_data); index.html and fire.geojson 200.",
+          "actor": "cli",
+          "at": "2026-09-29T09:25:06+00:00",
+          "git_commit": "2848fc0f4edaad4806a9701ca8131b05488cdc04",
+          "kind": "human-asserted"
+        }
+      ],
       "history": [
         {
           "at": "2026-09-29T09:14:15+00:00",
@@ -422,6 +432,19 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "9cd01174e8cb45c9ab7ac5c59290fedc"
+        },
+        {
+          "at": "2026-09-29T09:25:06+00:00",
+          "event": "attest",
+          "actor": "cli",
+          "item": 1
+        },
+        {
+          "at": "2026-09-29T09:25:07+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "65e04745acbc49889b5eab9293784187"
         }
       ]
     }

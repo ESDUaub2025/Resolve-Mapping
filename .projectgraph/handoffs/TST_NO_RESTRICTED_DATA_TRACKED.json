@@ -16,5 +16,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
     }
+  },
+  {
+    "node": "TST_NO_RESTRICTED_DATA_TRACKED",
+    "note": "History rewritten with git filter-repo and force-pushed (main 2848fc0); local all-history scan: 0 of 158 blobs contain names/phones. BUT old commit SHAs (3f51024, ac7e7fd, 4582930, b0c93e3, de7ef09, 72d3ba8) still serve raw files via raw.githubusercontent.com until GitHub Support purges them.",
+    "next_action": "Repo owner files GitHub Support sensitive-data removal request listing the old SHAs; once raw.githubusercontent.com/<old sha>/data/MZSurvey... returns 404, attest item 2 and re-verify.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-09-29T09:25:06.644929+00:00",
+    "git": {
+      "available": true,
+      "commit": "2848fc0f4edaad4806a9701ca8131b05488cdc04",
+      "short_commit": "2848fc0f4eda",
+      "branch": "main",
+      "dirty": true,
+      "worktree": "D:\\Programing\\ResolveMaping_final2",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+    }
   }
 ]
