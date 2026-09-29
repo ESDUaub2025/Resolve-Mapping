@@ -1,11 +1,11 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T10:11:03+00:00",
+  "generated_at": "2026-09-29T10:21:23+00:00",
   "project": "RESOLVE Mapping Platform",
   "git": {
     "available": true,
-    "commit": "b8594ed44c1973ae742d08b9beb7e4efb17c3d11",
-    "short_commit": "b8594ed44c19",
+    "commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+    "short_commit": "ffa8764d87b7",
     "branch": "main",
     "dirty": true,
     "worktree": "D:\\Programing\\ResolveMaping_final2",
@@ -19,53 +19,57 @@
   },
   "counts": {
     "DECLARED": 0,
-    "READY": 17,
-    "ACTIVE": 0,
-    "IMPLEMENTED": 1,
+    "READY": 9,
+    "ACTIVE": 18,
+    "IMPLEMENTED": 6,
     "VERIFYING": 0,
-    "VERIFIED": 0,
+    "VERIFIED": 4,
     "FAILED": 0,
     "BLOCKED": 0,
-    "STALE": 19,
+    "STALE": 0,
     "SUPERSEDED": 5
   },
-  "progress": 0.0,
+  "progress": 0.1333,
   "coverage": 0.8108,
-  "stale": [
-    "M0_CONTAINMENT",
-    "M1_SCAFFOLDING",
-    "M2_DICTIONARY",
-    "M3_ADAPTERS",
-    "M4_CANONICAL",
-    "M5_PUBLISH_SDC",
-    "M6_FRONTEND_REGISTRY",
-    "M7_GIS_UX",
-    "M8_RESEARCH_TIER",
-    "REQ_CONSISTENT_MAP_UX",
-    "REQ_DATASET_PROVENANCE_LICENCE",
-    "REQ_DEFINED_SCHEMAS_STABLE_IDS",
-    "REQ_DETERMINISTIC_PUBLIC_BUILD",
-    "REQ_LOCATION_PROVENANCE",
-    "REQ_MISSING_VALUE_SEMANTICS",
-    "REQ_NO_RESTRICTED_DATA_PUBLIC",
-    "REQ_PREDICTABLE_NEW_DATASET",
-    "RESOLVEMAPING_FINAL2",
-    "TST_NO_RESTRICTED_DATA_TRACKED"
-  ],
+  "stale": [],
   "blocked": [],
   "failed": [],
   "next": [
-    {
-      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
-      "type": "TEST",
-      "status": "STALE",
-      "title": "Privacy invariant - no restricted survey data tracked or served"
-    },
     {
       "id": "CFG_PROJECT_MANIFESTS",
       "type": "CONFIG",
       "status": "IMPLEMENTED",
       "title": "Project manifests"
+    },
+    {
+      "id": "TST_DICTIONARY",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "title": "Dictionary, vocabulary and text-normalization tests"
+    },
+    {
+      "id": "TST_MAP_E2E",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "title": "End-to-end browser test of the public map"
+    },
+    {
+      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "title": "Privacy invariant - no restricted survey data tracked or served"
+    },
+    {
+      "id": "TST_RESEARCH_TIER",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "title": "Local research release with identities builds"
+    },
+    {
+      "id": "TST_TEST_SUITE",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "title": "Full automated test suite (CI gate)"
     },
     {
       "id": "CMP_DICTIONARY",
@@ -90,30 +94,6 @@
       "type": "COMPONENT",
       "status": "READY",
       "title": "Registry-driven web map"
-    },
-    {
-      "id": "CFG_CI",
-      "type": "CONFIG",
-      "status": "READY",
-      "title": "CI and packaging"
-    },
-    {
-      "id": "DATA_PUBLIC_RELEASE",
-      "type": "DATA",
-      "status": "READY",
-      "title": "Public release"
-    },
-    {
-      "id": "TST_CANONICAL_VALID",
-      "type": "TEST",
-      "status": "READY",
-      "title": "Canonical records pass all critical validation rules"
-    },
-    {
-      "id": "TST_DICTIONARY",
-      "type": "TEST",
-      "status": "READY",
-      "title": "Dictionary, vocabulary and text-normalization tests"
     }
   ],
   "cycles": []

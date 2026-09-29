@@ -1,0 +1,47 @@
+{
+  "node": "TST_NO_RESTRICTED_DATA_TRACKED",
+  "evidence_id": "a30f458182784202abcf71f5102b6f4d",
+  "result": "PASS",
+  "started_at": "2026-09-29T10:20:43+00:00",
+  "finished_at": "2026-09-29T10:20:44+00:00",
+  "git": {
+    "available": true,
+    "commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+    "short_commit": "ffa8764d87b7",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:67a607c4bf4f033c0bef283db542c64b7b7ef310b841e6d27ad821a7599d0b03",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "tests/privacy/test_no_restricted_data.py",
+      "hash": "729199da24fb1212ccbb705e6f74e0ace554a455ec553a66c2cdf39a501911a4"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "tests/privacy/test_no_restricted_data.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "privacy-invariant",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m pytest tests/privacy -q",
+      "exit_code": 0,
+      "duration_s": 0.516,
+      "stdout_digest": "sha256:368a0f6bf97c6404fce903b6f5b895894a5cde03eb8e0224476ae992a19751ca",
+      "output_tail": "..............................                                           [100%]\n30 passed in 0.20s\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

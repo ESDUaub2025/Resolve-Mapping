@@ -1,0 +1,75 @@
+{
+  "node": "TST_DICTIONARY",
+  "evidence_id": "401b70ebcf09420a8d715418bb3af2f9",
+  "result": "PASS",
+  "started_at": "2026-09-29T10:20:46+00:00",
+  "finished_at": "2026-09-29T10:20:46+00:00",
+  "git": {
+    "available": true,
+    "commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+    "short_commit": "ffa8764d87b7",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:fd7c5d5fd37d6b3ef3a20501bb8c79e0168d23872c1ca6a47980bc4ce6dff110",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "dictionary/fields.yaml",
+      "hash": "34f7ca2ed0e96f18cf3e4e030c5bf26e7d121055fe0893e702721918cbb01ee0"
+    },
+    {
+      "path": "dictionary/vocabularies.yaml",
+      "hash": "a6b9d90abeb8f1692053b669a7b1deff891e9ed16ddb3248577bd3d9a5df948c"
+    },
+    {
+      "path": "ref/localities.csv",
+      "hash": "e26f72d112bb69eb9045a9783b61552d4f7133b36d2d709927454616a9c656ed"
+    },
+    {
+      "path": "tests/test_dictionary.py",
+      "hash": "4b11495d0386ecf65ffb96782a595a2cd22a8db8889f6cd675e61cf90d795b21"
+    },
+    {
+      "path": "tests/test_textnorm.py",
+      "hash": "e47ee59ac80f0657da46b254913dff2ecb3d5479d99b96a56b65653438853f07"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "dictionary/fields.yaml",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "dictionary/vocabularies.yaml",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "ref/localities.csv",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "dictionary-tests",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m pytest -q tests/test_dictionary.py tests/test_textnorm.py",
+      "exit_code": 0,
+      "duration_s": 0.437,
+      "stdout_digest": "sha256:b3f5be60daf7f2cf7a27b02c77f6d2b0df2bfedda69a831236dc086fe14dc15e",
+      "output_tail": "...............................                                          [100%]\n31 passed in 0.11s\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

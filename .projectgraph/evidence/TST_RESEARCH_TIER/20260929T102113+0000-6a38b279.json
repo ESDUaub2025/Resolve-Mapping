@@ -1,0 +1,47 @@
+{
+  "node": "TST_RESEARCH_TIER",
+  "evidence_id": "6a38b27999724cc880f978ad3c555351",
+  "result": "PASS",
+  "started_at": "2026-09-29T10:21:11+00:00",
+  "finished_at": "2026-09-29T10:21:13+00:00",
+  "git": {
+    "available": true,
+    "commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+    "short_commit": "ffa8764d87b7",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:2d319a7b67bbf895c088fb275ed994138ef3a914e4e7c9190ca410cdbe685d58",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "resolve/serve.py",
+      "hash": "5a63ba03756eb6cc6e04a0276a1b5fd4f1d2a42527738bdbd08ec2c52b5ba9b3"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "resolve/serve.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "research-build",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m resolve build --tier research",
+      "exit_code": 0,
+      "duration_s": 1.891,
+      "stdout_digest": "sha256:6906d9258161a96d7ac2a3bdc94c6669ddba294889a1b99c0aa2e80c4ff0a8ab",
+      "output_tail": "{\n \"raw_files_verified\": 75,\n \"records\": 208,\n \"new_ids\": 0,\n \"review_issues\": 31,\n \"research\": {\n  \"dir\": \"D:\\\\Programing\\\\RESOLVE-data-private\\\\build\\\\research\\\\data\",\n  \"respondent_points\": 206,\n  \"holding_points\": 3\n }\n}\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

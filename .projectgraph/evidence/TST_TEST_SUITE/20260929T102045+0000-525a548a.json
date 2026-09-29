@@ -1,0 +1,105 @@
+{
+  "node": "TST_TEST_SUITE",
+  "evidence_id": "525a548a017d45bfaec39fd3e47da3bc",
+  "result": "PASS",
+  "started_at": "2026-09-29T10:20:45+00:00",
+  "finished_at": "2026-09-29T10:20:45+00:00",
+  "git": {
+    "available": true,
+    "commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+    "short_commit": "ffa8764d87b7",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:175a2069c37b5f414a273d75d431c68c36afbc7c754a910534fa147394c1bba7",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": ".github/workflows/pages.yml",
+      "hash": "9dc86d6c4781ec6dcc3ff9241b4149052b989d3f3d924f39115a86297689edb7"
+    },
+    {
+      "path": "pytest.ini",
+      "hash": "c809c969ec7e11b9ff37784e9c6fcc0b7c5148d168e18b05aed797e03fbd6ead"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "hash": "2b8246c29d063b05106827cf4809b59ee0b8b5cbb6cf6aad907b4116dfb540f5"
+    },
+    {
+      "path": "requirements.txt",
+      "hash": "c207a7f1ebd82d73843d5dc5fef63daecf8767f1d129e60441d7b028914ac483"
+    },
+    {
+      "path": "tests/e2e/smoke.mjs",
+      "hash": "0d10a39d62ddc1cf1cb967d49decd32cd0ef8c53af004cf168b17459ce02eee4"
+    },
+    {
+      "path": "tests/privacy/test_no_restricted_data.py",
+      "hash": "729199da24fb1212ccbb705e6f74e0ace554a455ec553a66c2cdf39a501911a4"
+    },
+    {
+      "path": "tests/test_dictionary.py",
+      "hash": "4b11495d0386ecf65ffb96782a595a2cd22a8db8889f6cd675e61cf90d795b21"
+    },
+    {
+      "path": "tests/test_frontend.py",
+      "hash": "12aa605e80ce5eb1ddd8a344a4c5f2cf0fd23d1097bf4ef3a8024c8561ffc11e"
+    },
+    {
+      "path": "tests/test_public_release.py",
+      "hash": "2f2aa6e8bd26ae3334b5567e5bfd78f04c94370e119c889023b9d6aeaebb463e"
+    },
+    {
+      "path": "tests/test_sdc.py",
+      "hash": "3e54f716d063f0abc395917fbd2726cc2eadadd35699cd5eb53c820fcac2fb38"
+    },
+    {
+      "path": "tests/test_textnorm.py",
+      "hash": "e47ee59ac80f0657da46b254913dff2ecb3d5479d99b96a56b65653438853f07"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": ".github/workflows/pages.yml",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "pytest.ini",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "requirements.txt",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "requirements-dev.txt",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "pytest",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m pytest -q",
+      "exit_code": 0,
+      "duration_s": 0.765,
+      "stdout_digest": "sha256:aa06187cc43dd70e2805ecbd1c2f39397d797626bddca0e1a64b1c5d6b6f7263",
+      "output_tail": "........................................................................ [ 88%]\n.........                                                                [100%]\n81 passed in 0.43s\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

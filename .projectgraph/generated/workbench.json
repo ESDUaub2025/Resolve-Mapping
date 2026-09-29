@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T10:11:03+00:00",
+  "generated_at": "2026-09-29T10:21:23+00:00",
   "rule": "workbench.project.v1",
   "default_scale": "portfolio",
   "scales": [
@@ -27,7 +27,7 @@
           "label": "Stage 0 - Containment",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -36,7 +36,7 @@
           "label": "Stage 1 - Baseline and scaffolding",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -45,7 +45,7 @@
           "label": "Stage 2 - Field dictionary, vocabularies, gazetteer",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -54,7 +54,7 @@
           "label": "Stage 3 - Adapters to staging with lineage",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -63,7 +63,7 @@
           "label": "Stage 4 - Validation and canonical tier",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -72,7 +72,7 @@
           "label": "Stage 5 - Publishing with statistical disclosure control",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -81,7 +81,7 @@
           "label": "Stage 6 - Registry-driven frontend",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -90,7 +90,7 @@
           "label": "Stage 7 - GIS and UX corrections",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -99,7 +99,7 @@
           "label": "Stage 8 - Research tier and ML (optional)",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -108,7 +108,7 @@
           "label": "RESOLVE Mapping Platform",
           "type": "PROJECT",
           "tier": 0,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "type:PROJECT"
         },
         {
@@ -301,7 +301,7 @@
             "SYS_WEB_MAP"
           ],
           "size": 12,
-          "status": "STALE"
+          "status": "READY"
         },
         {
           "id": "type:PROJECT",
@@ -311,7 +311,7 @@
             "RESOLVEMAPING_FINAL2"
           ],
           "size": 1,
-          "status": "STALE"
+          "status": "ACTIVE"
         }
       ],
       "rule": "workbench.project.v1"
@@ -338,7 +338,7 @@
           "label": "Stage 0 - Containment",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -347,7 +347,7 @@
           "label": "Stage 1 - Baseline and scaffolding",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -356,7 +356,7 @@
           "label": "Stage 2 - Field dictionary, vocabularies, gazetteer",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -365,7 +365,7 @@
           "label": "Stage 3 - Adapters to staging with lineage",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -374,7 +374,7 @@
           "label": "Stage 4 - Validation and canonical tier",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -383,7 +383,7 @@
           "label": "Stage 5 - Publishing with statistical disclosure control",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -392,7 +392,7 @@
           "label": "Stage 6 - Registry-driven frontend",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -401,7 +401,7 @@
           "label": "Stage 7 - GIS and UX corrections",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -410,7 +410,7 @@
           "label": "Stage 8 - Research tier and ML (optional)",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -419,7 +419,7 @@
           "label": "Consistent popups (AR/EN parity), legends and info cards on all layers",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -428,7 +428,7 @@
           "label": "Every dataset has source, licence, collection period, method and schema version",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -437,7 +437,7 @@
           "label": "Every dataset follows a defined schema with stable IDs",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -446,7 +446,7 @@
           "label": "Public release regenerates deterministically from private raw sources",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -455,7 +455,7 @@
           "label": "Every geometry carries origin and spatial precision; no baked displacement",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -464,7 +464,7 @@
           "label": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -473,7 +473,7 @@
           "label": "No restricted farmer data reaches unauthorized clients",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -482,7 +482,7 @@
           "label": "New dataset needs only an adapter, dictionary rows and a registry entry",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "parent:RESOLVEMAPING_FINAL2"
         },
         {
@@ -491,7 +491,7 @@
           "label": "RESOLVE Mapping Platform",
           "type": "PROJECT",
           "tier": 0,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "type:PROJECT"
         }
       ],
@@ -760,7 +760,7 @@
             "REQ_PREDICTABLE_NEW_DATASET"
           ],
           "size": 17,
-          "status": "STALE"
+          "status": "ACTIVE"
         },
         {
           "id": "type:PROJECT",
@@ -770,7 +770,7 @@
             "RESOLVEMAPING_FINAL2"
           ],
           "size": 1,
-          "status": "STALE"
+          "status": "ACTIVE"
         }
       ],
       "rule": "workbench.project.v1"
@@ -1222,8 +1222,8 @@
           "label": "Stage 0 - Containment",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M1_SCAFFOLDING",
@@ -1231,8 +1231,8 @@
           "label": "Stage 1 - Baseline and scaffolding",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M2_DICTIONARY",
@@ -1240,8 +1240,8 @@
           "label": "Stage 2 - Field dictionary, vocabularies, gazetteer",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M3_ADAPTERS",
@@ -1249,8 +1249,8 @@
           "label": "Stage 3 - Adapters to staging with lineage",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M4_CANONICAL",
@@ -1258,8 +1258,8 @@
           "label": "Stage 4 - Validation and canonical tier",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M5_PUBLISH_SDC",
@@ -1267,8 +1267,8 @@
           "label": "Stage 5 - Publishing with statistical disclosure control",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M6_FRONTEND_REGISTRY",
@@ -1276,8 +1276,8 @@
           "label": "Stage 6 - Registry-driven frontend",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M7_GIS_UX",
@@ -1285,8 +1285,8 @@
           "label": "Stage 7 - GIS and UX corrections",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         },
         {
           "id": "M8_RESEARCH_TIER",
@@ -1294,8 +1294,8 @@
           "label": "Stage 8 - Research tier and ML (optional)",
           "type": "MILESTONE",
           "tier": 2,
-          "status": "STALE",
-          "cluster": "status:STALE"
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
         }
       ],
       "edges": [
@@ -1393,8 +1393,8 @@
       ],
       "clusters": [
         {
-          "id": "status:STALE",
-          "label": "STALE",
+          "id": "status:ACTIVE",
+          "label": "ACTIVE",
           "strategy": "status",
           "members": [
             "M0_CONTAINMENT",
@@ -1408,7 +1408,7 @@
             "M8_RESEARCH_TIER"
           ],
           "size": 9,
-          "status": "STALE"
+          "status": "ACTIVE"
         },
         {
           "id": "status:READY",
@@ -1535,7 +1535,7 @@
           "label": "Consistent popups (AR/EN parity), legends and info cards on all layers",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1544,7 +1544,7 @@
           "label": "Every dataset has source, licence, collection period, method and schema version",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1553,7 +1553,7 @@
           "label": "Every dataset follows a defined schema with stable IDs",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1562,7 +1562,7 @@
           "label": "Public release regenerates deterministically from private raw sources",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1571,7 +1571,7 @@
           "label": "Every geometry carries origin and spatial precision; no baked displacement",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1580,7 +1580,7 @@
           "label": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1589,7 +1589,7 @@
           "label": "No restricted farmer data reaches unauthorized clients",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1598,7 +1598,7 @@
           "label": "New dataset needs only an adapter, dictionary rows and a registry entry",
           "type": "REQUIREMENT",
           "tier": 2,
-          "status": "STALE",
+          "status": "ACTIVE",
           "cluster": "evidence:none"
         },
         {
@@ -1607,7 +1607,7 @@
           "label": "Canonical records pass all critical validation rules",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
         },
         {
@@ -1616,7 +1616,7 @@
           "label": "Dictionary, vocabulary and text-normalization tests",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "evidence:commands"
         },
         {
@@ -1625,7 +1625,7 @@
           "label": "Frontend is generic, injection-free, pinned and bilingual",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
         },
         {
@@ -1634,7 +1634,7 @@
           "label": "End-to-end browser test of the public map",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "evidence:commands"
         },
         {
@@ -1643,7 +1643,7 @@
           "label": "Privacy invariant - no restricted survey data tracked or served",
           "type": "TEST",
           "tier": 6,
-          "status": "STALE",
+          "status": "IMPLEMENTED",
           "cluster": "evidence:commands"
         },
         {
@@ -1652,7 +1652,7 @@
           "label": "Public release rebuilds byte-identically from the private raw store",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
         },
         {
@@ -1661,7 +1661,7 @@
           "label": "Public release and disclosure-control invariants",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
         },
         {
@@ -1670,7 +1670,7 @@
           "label": "Local research release with identities builds",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "evidence:commands"
         },
         {
@@ -1679,7 +1679,7 @@
           "label": "Full automated test suite (CI gate)",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "evidence:commands"
         }
       ],
@@ -1762,7 +1762,7 @@
             "TST_TEST_SUITE"
           ],
           "size": 9,
-          "status": "STALE"
+          "status": "IMPLEMENTED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -1863,7 +1863,7 @@
           "label": "Canonical records pass all critical validation rules",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "parent:M4_CANONICAL"
         },
         {
@@ -1872,7 +1872,7 @@
           "label": "Dictionary, vocabulary and text-normalization tests",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "parent:M2_DICTIONARY"
         },
         {
@@ -1881,7 +1881,7 @@
           "label": "Frontend is generic, injection-free, pinned and bilingual",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "parent:M6_FRONTEND_REGISTRY"
         },
         {
@@ -1890,7 +1890,7 @@
           "label": "End-to-end browser test of the public map",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "parent:M7_GIS_UX"
         },
         {
@@ -1899,7 +1899,7 @@
           "label": "Privacy invariant - no restricted survey data tracked or served",
           "type": "TEST",
           "tier": 6,
-          "status": "STALE",
+          "status": "IMPLEMENTED",
           "cluster": "parent:M0_CONTAINMENT"
         },
         {
@@ -1908,7 +1908,7 @@
           "label": "Public release rebuilds byte-identically from the private raw store",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "parent:M3_ADAPTERS"
         },
         {
@@ -1917,7 +1917,7 @@
           "label": "Public release and disclosure-control invariants",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "VERIFIED",
           "cluster": "parent:M5_PUBLISH_SDC"
         },
         {
@@ -1926,7 +1926,7 @@
           "label": "Local research release with identities builds",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "parent:M8_RESEARCH_TIER"
         },
         {
@@ -1935,7 +1935,7 @@
           "label": "Full automated test suite (CI gate)",
           "type": "TEST",
           "tier": 6,
-          "status": "READY",
+          "status": "IMPLEMENTED",
           "cluster": "parent:M1_SCAFFOLDING"
         }
       ],
@@ -2011,7 +2011,7 @@
             "TST_NO_RESTRICTED_DATA_TRACKED"
           ],
           "size": 1,
-          "status": "STALE"
+          "status": "IMPLEMENTED"
         },
         {
           "id": "parent:M1_SCAFFOLDING",
@@ -2021,7 +2021,7 @@
             "TST_TEST_SUITE"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "IMPLEMENTED"
         },
         {
           "id": "parent:M2_DICTIONARY",
@@ -2031,7 +2031,7 @@
             "TST_DICTIONARY"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "IMPLEMENTED"
         },
         {
           "id": "parent:M3_ADAPTERS",
@@ -2041,7 +2041,7 @@
             "TST_PIPELINE_REPRODUCIBLE"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "VERIFIED"
         },
         {
           "id": "parent:M4_CANONICAL",
@@ -2051,7 +2051,7 @@
             "TST_CANONICAL_VALID"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "VERIFIED"
         },
         {
           "id": "parent:M5_PUBLISH_SDC",
@@ -2061,7 +2061,7 @@
             "TST_PUBLIC_RELEASE"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "VERIFIED"
         },
         {
           "id": "parent:M6_FRONTEND_REGISTRY",
@@ -2071,7 +2071,7 @@
             "TST_FRONTEND"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "VERIFIED"
         },
         {
           "id": "parent:M7_GIS_UX",
@@ -2081,7 +2081,7 @@
             "TST_MAP_E2E"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "IMPLEMENTED"
         },
         {
           "id": "parent:M8_RESEARCH_TIER",
@@ -2091,7 +2091,7 @@
             "TST_RESEARCH_TIER"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "IMPLEMENTED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -2109,11 +2109,11 @@
     {
       "requirement": "REQ_CONSISTENT_MAP_UX",
       "title": "Consistent popups (AR/EN parity), legends and info cards on all layers",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M7_GIS_UX",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2128,11 +2128,11 @@
     {
       "requirement": "REQ_DATASET_PROVENANCE_LICENCE",
       "title": "Every dataset has source, licence, collection period, method and schema version",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M5_PUBLISH_SDC",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2147,11 +2147,11 @@
     {
       "requirement": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
       "title": "Every dataset follows a defined schema with stable IDs",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M4_CANONICAL",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2166,11 +2166,11 @@
     {
       "requirement": "REQ_DETERMINISTIC_PUBLIC_BUILD",
       "title": "Public release regenerates deterministically from private raw sources",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M5_PUBLISH_SDC",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2185,11 +2185,11 @@
     {
       "requirement": "REQ_LOCATION_PROVENANCE",
       "title": "Every geometry carries origin and spatial precision; no baked displacement",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M4_CANONICAL",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2204,11 +2204,11 @@
     {
       "requirement": "REQ_MISSING_VALUE_SEMANTICS",
       "title": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M4_CANONICAL",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2223,11 +2223,11 @@
     {
       "requirement": "REQ_NO_RESTRICTED_DATA_PUBLIC",
       "title": "No restricted farmer data reaches unauthorized clients",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M0_CONTAINMENT",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2236,7 +2236,7 @@
         },
         {
           "fulfiller": "M5_PUBLISH_SDC",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2251,11 +2251,11 @@
     {
       "requirement": "REQ_PREDICTABLE_NEW_DATASET",
       "title": "New dataset needs only an adapter, dictionary rows and a registry entry",
-      "status": "STALE",
+      "status": "ACTIVE",
       "chains": [
         {
           "fulfiller": "M6_FRONTEND_REGISTRY",
-          "fulfiller_status": "STALE",
+          "fulfiller_status": "ACTIVE",
           "tests": [],
           "evidence": null,
           "verified_at": null,
@@ -2279,155 +2279,145 @@
     "rule": "workbench.project.v1"
   },
   "temporal": {
-    "baseline": "2026-09-29T09:13:59+00:00",
+    "baseline": "2026-09-29T10:11:03+00:00",
     "comparable": true,
-    "added": [
-      "CFG_CI",
-      "CMP_DICTIONARY",
-      "CMP_ML_RESEARCH",
-      "CMP_PIPELINE",
-      "CMP_WEB_APP",
-      "DATA_PUBLIC_RELEASE",
-      "TST_CANONICAL_VALID",
-      "TST_DICTIONARY",
-      "TST_FRONTEND",
-      "TST_MAP_E2E",
-      "TST_PIPELINE_REPRODUCIBLE",
-      "TST_PUBLIC_RELEASE",
-      "TST_RESEARCH_TIER",
-      "TST_TEST_SUITE"
-    ],
+    "added": [],
     "removed": [],
     "status_changes": [
       {
-        "id": "CMP_APP_CONFIG",
-        "from": "IMPLEMENTED",
-        "to": "SUPERSEDED"
-      },
-      {
-        "id": "CMP_APP_MODULES",
-        "from": "IMPLEMENTED",
-        "to": "SUPERSEDED"
-      },
-      {
-        "id": "CMP_APP_SHELL",
-        "from": "READY",
-        "to": "SUPERSEDED"
-      },
-      {
-        "id": "CMP_SCRIPTS",
-        "from": "IMPLEMENTED",
-        "to": "SUPERSEDED"
-      },
-      {
-        "id": "DATA_PUBLISHED_GEOJSON",
-        "from": "READY",
-        "to": "SUPERSEDED"
-      },
-      {
         "id": "M0_CONTAINMENT",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M1_SCAFFOLDING",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M2_DICTIONARY",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M3_ADAPTERS",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M4_CANONICAL",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M5_PUBLISH_SDC",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M6_FRONTEND_REGISTRY",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M7_GIS_UX",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "M8_RESEARCH_TIER",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_CONSISTENT_MAP_UX",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_DATASET_PROVENANCE_LICENCE",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_DETERMINISTIC_PUBLIC_BUILD",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_LOCATION_PROVENANCE",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_MISSING_VALUE_SEMANTICS",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_NO_RESTRICTED_DATA_PUBLIC",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "REQ_PREDICTABLE_NEW_DATASET",
-        "from": "READY",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
         "id": "RESOLVEMAPING_FINAL2",
-        "from": "ACTIVE",
-        "to": "STALE"
+        "from": "STALE",
+        "to": "ACTIVE"
       },
       {
-        "id": "SYS_DATA_PIPELINE",
-        "from": "ACTIVE",
-        "to": "READY"
+        "id": "TST_CANONICAL_VALID",
+        "from": "READY",
+        "to": "VERIFIED"
       },
       {
-        "id": "SYS_WEB_MAP",
-        "from": "ACTIVE",
-        "to": "READY"
+        "id": "TST_DICTIONARY",
+        "from": "READY",
+        "to": "IMPLEMENTED"
+      },
+      {
+        "id": "TST_FRONTEND",
+        "from": "READY",
+        "to": "VERIFIED"
+      },
+      {
+        "id": "TST_MAP_E2E",
+        "from": "READY",
+        "to": "IMPLEMENTED"
       },
       {
         "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+        "from": "STALE",
+        "to": "IMPLEMENTED"
+      },
+      {
+        "id": "TST_PIPELINE_REPRODUCIBLE",
         "from": "READY",
-        "to": "STALE"
+        "to": "VERIFIED"
+      },
+      {
+        "id": "TST_PUBLIC_RELEASE",
+        "from": "READY",
+        "to": "VERIFIED"
+      },
+      {
+        "id": "TST_RESEARCH_TIER",
+        "from": "READY",
+        "to": "IMPLEMENTED"
+      },
+      {
+        "id": "TST_TEST_SUITE",
+        "from": "READY",
+        "to": "IMPLEMENTED"
       }
     ],
     "quiet": false,
@@ -2437,7 +2427,7 @@
     "available": true,
     "overall": 0.0,
     "band": "poor",
-    "weakest_plane": "state",
+    "weakest_plane": "structural",
     "planes": {
       "structural": {
         "score": 0.0,
@@ -2450,9 +2440,9 @@
         "gaps": 8
       },
       "state": {
-        "score": 0.0,
+        "score": 0.1333,
         "band": "poor",
-        "gaps": 30
+        "gaps": 26
       },
       "task_context": {
         "score": 1.0,

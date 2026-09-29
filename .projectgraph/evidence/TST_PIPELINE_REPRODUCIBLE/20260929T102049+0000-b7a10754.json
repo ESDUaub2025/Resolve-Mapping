@@ -1,0 +1,57 @@
+{
+  "node": "TST_PIPELINE_REPRODUCIBLE",
+  "evidence_id": "b7a10754a9284be5b27e8e04a722702e",
+  "result": "PASS",
+  "started_at": "2026-09-29T10:20:47+00:00",
+  "finished_at": "2026-09-29T10:20:49+00:00",
+  "git": {
+    "available": true,
+    "commit": "ffa8764d87b7451f47b17f262fb50424b6166e4b",
+    "short_commit": "ffa8764d87b7",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:5a62fcadf1319a6adbcab8ca914f55de39b8c1bdce0d367237fac5540ad41508",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "resolve/publish.py",
+      "hash": "a323ccf7064597e63ecbf07bde60d25ee56b28c14cb2aeb158c50ee4dd67b37f"
+    },
+    {
+      "path": "resolve/survey.py",
+      "hash": "1ee807857693bcb231a422a974bcb61a8b701540efc739659606d91908987fee"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "resolve/survey.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "resolve/publish.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "rebuild-public-identical",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m resolve build --tier public && git diff --exit-code -- public/data",
+      "exit_code": 0,
+      "duration_s": 1.843,
+      "stdout_digest": "sha256:e7a430d6eb51234deaf267edde59ae42a2c951b40e3084e7481a4e290c24a24c",
+      "output_tail": "{\n \"raw_files_verified\": 75,\n \"records\": 208,\n \"new_ids\": 0,\n \"review_issues\": 31,\n \"public\": {\n  \"id\": \"2866779f2b1a\",\n  \"villages_published\": 12,\n  \"districts_published\": 3,\n  \"respondents_in_summaries\": 203,\n  \"respondents_excluded_no_location\": 1\n }\n}\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}
