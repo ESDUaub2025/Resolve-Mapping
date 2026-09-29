@@ -1,0 +1,47 @@
+{
+  "node": "TST_NO_RESTRICTED_DATA_TRACKED",
+  "evidence_id": "d72a29b2639e4ecdaae505991b983fdc",
+  "result": "FAIL",
+  "started_at": "2026-09-29T09:21:15+00:00",
+  "finished_at": "2026-09-29T09:21:15+00:00",
+  "git": {
+    "available": true,
+    "commit": "72d3ba8768cebab9fe5885e96e5e04eb3756e209",
+    "short_commit": "72d3ba8768ce",
+    "branch": "stage0-containment",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:6c04011993083fdf322ef49835610ca1c2a7164053f2a93ec44db386be2fe3f8",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "tests/privacy/test_no_restricted_data.py",
+      "hash": "92dd27e17d76067df1a3a0f82f39be1e0e7bafc3816b2b74e0fe491823bc4621"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "tests/privacy/test_no_restricted_data.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "privacy-invariant",
+      "ok": false,
+      "detail": "exit 1 (expected 0)",
+      "run": ".venv/Scripts/python.exe -m pytest tests/privacy -q",
+      "exit_code": 1,
+      "duration_s": 0.015,
+      "stdout_digest": "sha256:73fc8fcf5974c4ece9c8bf187e713ac309cf783e79341e839736925b993e0c35",
+      "output_tail": "'.venv' is not recognized as an internal or external command,\noperable program or batch file.\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

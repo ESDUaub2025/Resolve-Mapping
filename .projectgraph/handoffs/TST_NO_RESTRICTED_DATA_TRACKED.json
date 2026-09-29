@@ -1,0 +1,20 @@
+[
+  {
+    "node": "TST_NO_RESTRICTED_DATA_TRACKED",
+    "note": "Stage 0 committed locally on branch stage0-containment (72d3ba8): restricted files untracked and deleted from working tree (byte-verified copies + full-history bundle in D:/Programing/ResolveMaping_PRIVATE_BACKUP_2026-09-29), site loads fire+protected areas only (CDP smoke test: no exceptions/404s), privacy test passes. NOT pushed; history not rewritten.",
+    "next_action": "With user approval: merge to main, git filter-repo over the removed paths (+ data/MZSurvey farmers ENGLISH_BACKUP_20260119.csv), force-push, GitHub Support cache purge, then curl-check 404s and attest both acceptance items.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-09-29T09:21:38.597867+00:00",
+    "git": {
+      "available": true,
+      "commit": "72d3ba8768cebab9fe5885e96e5e04eb3756e209",
+      "short_commit": "72d3ba8768ce",
+      "branch": "stage0-containment",
+      "dirty": true,
+      "worktree": "D:\\Programing\\ResolveMaping_final2",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+    }
+  }
+]

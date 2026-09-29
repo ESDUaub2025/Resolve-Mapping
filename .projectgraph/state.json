@@ -380,15 +380,15 @@
       "history": []
     },
     "TST_NO_RESTRICTED_DATA_TRACKED": {
-      "lifecycle": "ACTIVE",
+      "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
+      "result": "PASS",
+      "evidence_id": "9cd01174e8cb45c9ab7ac5c59290fedc",
+      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T092129+0000-9cd01174.json",
+      "verified_at": "2026-09-29T09:21:29+00:00",
+      "self_fingerprint": "sha256:1b2458f394df98880c803d519f98ff860ecdeebee80d85ba45f49d09ee3d78bd",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "72d3ba8768cebab9fe5885e96e5e04eb3756e209",
       "attestations": [],
       "history": [
         {
@@ -396,6 +396,32 @@
           "event": "begin",
           "actor": "cli",
           "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T09:21:14+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T09:21:15+00:00",
+          "event": "verify",
+          "result": "FAIL",
+          "actor": "cli",
+          "evidence_id": "d72a29b2639e4ecdaae505991b983fdc"
+        },
+        {
+          "at": "2026-09-29T09:21:21+00:00",
+          "event": "verify",
+          "result": "FAIL",
+          "actor": "cli",
+          "evidence_id": "f41abfe7fdc24b3387fc4045271efbc3"
+        },
+        {
+          "at": "2026-09-29T09:21:29+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "9cd01174e8cb45c9ab7ac5c59290fedc"
         }
       ]
     }
