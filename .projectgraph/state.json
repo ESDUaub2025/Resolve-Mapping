@@ -899,12 +899,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "7bd7284d39a746d392205f4ad7cd5856",
-      "evidence_path": ".projectgraph/evidence/TST_RESEARCH_TIER/20260929T143109+0000-7bd7284d.json",
-      "verified_at": "2026-09-29T14:31:09+00:00",
+      "evidence_id": "0968a59429c04c5cb669c36b47e4a58e",
+      "evidence_path": ".projectgraph/evidence/TST_RESEARCH_TIER/20260929T143526+0000-0968a594.json",
+      "verified_at": "2026-09-29T14:35:26+00:00",
       "self_fingerprint": "sha256:4e9761c441184a28dfc44422edf72f5cde2f813b3b96b91921ef80450de7f55d",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
+      "git_commit": "d19b77033168d6edb7a1811fc265eae59b2f247b",
       "attestations": [
         {
           "item": 0,
@@ -961,6 +961,13 @@
           "event": "attest",
           "actor": "cli",
           "item": 0
+        },
+        {
+          "at": "2026-09-29T14:35:26+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "0968a59429c04c5cb669c36b47e4a58e"
         }
       ]
     },
@@ -968,12 +975,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "1b158a4ed1af419f95767870331aff1f",
-      "evidence_path": ".projectgraph/evidence/TST_TEST_SUITE/20260929T142833+0000-1b158a4e.json",
-      "verified_at": "2026-09-29T14:28:33+00:00",
-      "self_fingerprint": "sha256:ceb9701d168cff8587ab0c1286e46f253ccfda66fd4bc881e9efa22b036a1820",
+      "evidence_id": "4937e791f93d41d78a971fcf9915fc92",
+      "evidence_path": ".projectgraph/evidence/TST_TEST_SUITE/20260929T143529+0000-4937e791.json",
+      "verified_at": "2026-09-29T14:35:29+00:00",
+      "self_fingerprint": "sha256:bda0c1da40a6d1475d27d16aeb5bec3f1c2f37b271ae53bb2e9e423486c686b0",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
+      "git_commit": "d19b77033168d6edb7a1811fc265eae59b2f247b",
       "attestations": [],
       "history": [
         {
@@ -1007,6 +1014,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "1b158a4ed1af419f95767870331aff1f"
+        },
+        {
+          "at": "2026-09-29T14:35:29+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "4937e791f93d41d78a971fcf9915fc92"
         }
       ]
     }

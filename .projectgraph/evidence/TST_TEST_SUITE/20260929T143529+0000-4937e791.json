@@ -1,0 +1,109 @@
+{
+  "node": "TST_TEST_SUITE",
+  "evidence_id": "4937e791f93d41d78a971fcf9915fc92",
+  "result": "PASS",
+  "started_at": "2026-09-29T14:35:27+00:00",
+  "finished_at": "2026-09-29T14:35:29+00:00",
+  "git": {
+    "available": true,
+    "commit": "d19b77033168d6edb7a1811fc265eae59b2f247b",
+    "short_commit": "d19b77033168",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:bda0c1da40a6d1475d27d16aeb5bec3f1c2f37b271ae53bb2e9e423486c686b0",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": ".github/workflows/pages.yml",
+      "hash": "9dc86d6c4781ec6dcc3ff9241b4149052b989d3f3d924f39115a86297689edb7"
+    },
+    {
+      "path": "pytest.ini",
+      "hash": "c809c969ec7e11b9ff37784e9c6fcc0b7c5148d168e18b05aed797e03fbd6ead"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "hash": "30df2ae1edb62b4326774be97557d04c608d7435500178373f4cf453a1b46ded"
+    },
+    {
+      "path": "requirements.txt",
+      "hash": "7ecb66b340eb628c9071d68a80398af311f693138366820cbbefa372386a5c4a"
+    },
+    {
+      "path": "tests/e2e/smoke.mjs",
+      "hash": "667a5a886c8293b0cd720dfcbb10fe39978d79253569bfbed5984d75eff62cff"
+    },
+    {
+      "path": "tests/privacy/test_no_restricted_data.py",
+      "hash": "4208d1e1f9caabd21ea3b695c14638198ca1c54661490869419a2d31046e4cd9"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "hash": "67123915a18461762e775f77f4861287e206ad710c840aac8685fd6a591f024c"
+    },
+    {
+      "path": "tests/test_dictionary.py",
+      "hash": "4b11495d0386ecf65ffb96782a595a2cd22a8db8889f6cd675e61cf90d795b21"
+    },
+    {
+      "path": "tests/test_frontend.py",
+      "hash": "12aa605e80ce5eb1ddd8a344a4c5f2cf0fd23d1097bf4ef3a8024c8561ffc11e"
+    },
+    {
+      "path": "tests/test_public_release.py",
+      "hash": "b61569ada9309c8349b853025dde70d0588286e8edcc18167a24b3c71f821873"
+    },
+    {
+      "path": "tests/test_sdc.py",
+      "hash": "3e54f716d063f0abc395917fbd2726cc2eadadd35699cd5eb53c820fcac2fb38"
+    },
+    {
+      "path": "tests/test_textnorm.py",
+      "hash": "e47ee59ac80f0657da46b254913dff2ecb3d5479d99b96a56b65653438853f07"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": ".github/workflows/pages.yml",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "pytest.ini",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "requirements.txt",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "requirements-dev.txt",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "pytest",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m pytest -q",
+      "exit_code": 0,
+      "duration_s": 2.344,
+      "stdout_digest": "sha256:75cc21180a0c50bc92e14a1136effe78ca95bb0a1d231acae3f8c62d821fbb71",
+      "output_tail": "........................................................................ [ 80%]\n..................                                                       [100%]\n90 passed in 1.81s\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}
