@@ -155,7 +155,7 @@ def _reference_layers(out_dir, files):
     files.update({fire_file: fire_body, pa_file: pa_body})
     layers = [
         {"id": "protected-areas", "dataset": "protected_areas", "file": f"data/{pa_file}", "renderer": "polygons",
-         "title": {"en": "Protected areas", "ar": "المحميات"}, "color": "#2e8b57", "visible": True,
+         "title": {"en": "Protected areas", "ar": "المحميات"}, "color": "#1b4332", "dash": True, "visible": True,
          "label_property": "name", "popup_properties": ["name", "name_original", "designation", "designation_type",
                                                          "governance", "reported_area_km2", "gis_area_km2", "verification"]},
         {"id": "fire", "dataset": "fire_detections", "file": f"data/{fire_file}", "renderer": "points",
@@ -209,7 +209,7 @@ def build_public(records, k=DEFAULT_K):
         shutil.rmtree(tmp)
         raise ValidationError(problems)
 
-    (tmp / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (tmp / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     _replace_dir(tmp, PUBLIC_DATA)
     return catalog, log
 
@@ -286,7 +286,7 @@ def build_research(records, identity):
          "visible": True, "popup_properties": ["respondent_id", "spatial_precision", "uncertainty_m"]},
     ] + [l for l in ref_layers if l["id"] != "protected-areas"]
     catalog["district_sensitive_indicators"] = district_codes
-    (out_dir / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (out_dir / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     return out_dir, sum(1 for f in features if f["geometry"]), len(holdings)
 
 
@@ -321,4 +321,4 @@ def build(tier="all", k=DEFAULT_K):
 
 def _json_write(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")

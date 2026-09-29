@@ -1549,7 +1549,8 @@
     "en": "Protected areas",
     "ar": "المحميات"
    },
-   "color": "#2e8b57",
+   "color": "#1b4332",
+   "dash": true,
    "visible": true,
    "label_property": "name",
    "popup_properties": [

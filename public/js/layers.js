@@ -35,8 +35,9 @@ const polygons = {
 	interactive: (l) => [`${l.id}-fill`],
 	add(map, l, data) {
 		map.addSource(l.id, { type: 'geojson', data });
-		map.addLayer({ id: `${l.id}-fill`, type: 'fill', source: l.id, paint: { 'fill-color': l.color, 'fill-opacity': 0.12 } });
-		map.addLayer({ id: `${l.id}-line`, type: 'line', source: l.id, paint: { 'line-color': l.color, 'line-width': 1.5 } });
+		map.addLayer({ id: `${l.id}-fill`, type: 'fill', source: l.id, paint: { 'fill-color': l.color, 'fill-opacity': 0.06 } });
+		map.addLayer({ id: `${l.id}-line`, type: 'line', source: l.id,
+			paint: { 'line-color': l.color, 'line-width': 1.8, ...(l.dash ? { 'line-dasharray': [3, 2] } : {}) } });
 		map.addLayer({ id: `${l.id}-selected`, type: 'line', source: l.id, filter: ['==', ['get', 'fid'], ''],
 			paint: { 'line-color': '#111111', 'line-width': 3 } });
 	},

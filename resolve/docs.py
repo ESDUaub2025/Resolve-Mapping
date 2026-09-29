@@ -53,5 +53,5 @@ def write_data_dictionary():
         lines.append("")
     path = REPO / "docs" / "data-dictionary.md"
     path.parent.mkdir(exist_ok=True)
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return f"wrote {path.relative_to(REPO)}"

@@ -7,6 +7,7 @@ import { closePanel, initPanel, showDataset, showFeature, showList, showResponde
 const LEBANON = [[35.1, 33.05], [36.62, 34.69]];
 const BASEMAPS = {
 	light: { label: { en: 'Light grey', ar: 'رمادي فاتح' }, tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}'],
+		labels: ['https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}'],
 		attribution: 'Basemap © Esri, HERE, Garmin, © OpenStreetMap contributors', maxzoom: 16 },
 	osm: { label: { en: 'Streets', ar: 'شوارع' }, tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
 		attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' },
@@ -47,7 +48,10 @@ function buildBasemaps() {
 			el('input', { type: 'radio', name: 'basemap', value: id, checked: id === state.basemap,
 				onchange: () => {
 					state.basemap = id;
-					for (const other of Object.keys(BASEMAPS)) map.setLayoutProperty(`basemap-${other}`, 'visibility', other === id ? 'visible' : 'none');
+					for (const [other, spec] of Object.entries(BASEMAPS)) {
+						map.setLayoutProperty(`basemap-${other}`, 'visibility', other === id ? 'visible' : 'none');
+						if (spec.labels) map.setLayoutProperty(`basemap-${other}-labels`, 'visibility', other === id ? 'visible' : 'none');
+					}
 				} }),
 			el('span', { text: label(b.label) })));
 	}
@@ -91,7 +95,8 @@ function layerControls(layer) {
 		box.append(el('p', { class: 'small muted', text: t('colouredBy') }), legend);
 	} else {
 		box.append(el('ul', { class: 'legend' }, el('li', {},
-			el('span', { class: `swatch ${layer.renderer === 'polygons' ? '' : 'round'}`, style: { background: layer.color } }),
+			el('span', { class: `swatch ${layer.renderer === 'polygons' ? '' : 'round'}`,
+				style: layer.dash ? { background: 'transparent', border: `2px dashed ${layer.color}` } : { background: layer.color } }),
 			label(layer.title))));
 	}
 	if (layer.heatmap) {
@@ -233,6 +238,13 @@ async function start() {
 				map.on('mouseenter', id, () => { map.getCanvas().style.cursor = 'pointer'; });
 				map.on('mouseleave', id, () => { map.getCanvas().style.cursor = ''; });
 			}
+		}
+		// Basemap place names go above the data so they stay readable over filled areas.
+		for (const [id, b] of Object.entries(BASEMAPS)) {
+			if (!b.labels) continue;
+			map.addSource(`basemap-${id}-labels`, { type: 'raster', tiles: b.labels, tileSize: 256, maxzoom: b.maxzoom || 19 });
+			map.addLayer({ id: `basemap-${id}-labels`, type: 'raster', source: `basemap-${id}-labels`,
+				layout: { visibility: id === state.basemap ? 'visible' : 'none' } });
 		}
 		map.on('click', onMapClick);
 		buildBasemaps();

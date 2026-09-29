@@ -25,7 +25,7 @@ def _sha256(path):
 def write_manifest():
     raw = private_root() / "raw"
     lines = [f"{_sha256(p)}  {p.relative_to(raw).as_posix()}" for p in _files(raw)]
-    (raw / MANIFEST).write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (raw / MANIFEST).write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return len(lines)
 
 
