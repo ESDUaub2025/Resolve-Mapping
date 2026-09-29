@@ -1,0 +1,62 @@
+locality_id,kind,name_en,name_ar,adm3_pcode,adm3_name_en,adm3_name_ar,adm2_pcode,adm2_name_en,adm2_name_ar,adm1_pcode,adm1_name_en,adm1_name_ar,lon,lat,point_source,uncertainty_m
+adm3:23111,cadastral,Damour,الدامور,23111,Damour,الدامور,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.45398,33.71168,COD-AB cadastral unit centre,1800
+adm3:23171,cadastral,Mechref,مشرف,23171,Mechref,مشرف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.47647,33.70793,COD-AB cadastral unit centre,1100
+adm3:23211,cadastral,Chhim,شحيم,23211,Chhim,شحيم,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.48823,33.62744,COD-AB cadastral unit centre,1600
+adm3:23215,cadastral,Mazboud,مزبود,23215,Mazboud,مزبود,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.48111,33.60815,COD-AB cadastral unit centre,1200
+adm3:23227,cadastral,Daraiya Ech-Chouf,داريا الشوف,23227,Daraiya Ech-Chouf,داريا الشوف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.51583,33.64829,COD-AB cadastral unit centre,1200
+adm3:23239,cadastral,Aanout,عانوت,23239,Aanout,عانوت,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.51508,33.62320,COD-AB cadastral unit centre,1600
+adm3:23251,cadastral,Barja,برجا,23251,Barja,برجا,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.43804,33.64443,COD-AB cadastral unit centre,1500
+adm3:23259,cadastral,Dibbiyeh,دبية,23259,Dibbiyeh,دبية,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.47287,33.67559,COD-AB cadastral unit centre,2400
+adm3:23311,cadastral,Aalmane Ech-Chouf,علمان الشوف,23311,Aalmane Ech-Chouf,علمان الشوف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.41226,33.59196,COD-AB cadastral unit centre,1100
+adm3:23341,cadastral,Mghairiyeh Ech-Chouf,مغيرية الشوف,23341,Mghairiyeh Ech-Chouf,مغيرية الشوف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.45756,33.60137,COD-AB cadastral unit centre,1200
+adm3:23361,cadastral,Mazmoura,مزمورة,23361,Mazmoura,مزمورة,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.50894,33.59446,COD-AB cadastral unit centre,500
+adm3:23365,cadastral,Mtolleh,مطله,23365,Mtolleh,مطله,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.53745,33.60804,COD-AB cadastral unit centre,600
+adm3:23371,cadastral,Khirbet Bisri,خربة بسري,23371,Khirbet Bisri,خربة بسري,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.52300,33.58398,COD-AB cadastral unit centre,700
+adm3:23413,cadastral,Deir El-Qamar,دير القمر,23413,Deir El-Qamar,دير القمر,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.55755,33.69746,COD-AB cadastral unit centre,1500
+adm3:23417,cadastral,Semqaniyeh,سمقانية,23417,Semqaniyeh,سمقانية,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.59063,33.67609,COD-AB cadastral unit centre,1400
+adm3:23423,cadastral,Bchtfine,بشتفين,23423,Bchtfine,بشتفين,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.55125,33.71231,COD-AB cadastral unit centre,900
+adm3:23433,cadastral,Kfar Faqoud,كفرفاقود,23433,Kfar Faqoud,كفرفاقود,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.53702,33.70284,COD-AB cadastral unit centre,900
+adm3:23435,cadastral,Deir Baba,دير بابا,23435,Deir Baba,دير بابا,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.51934,33.69830,COD-AB cadastral unit centre,800
+adm3:23439,cadastral,Kfar Him,كفرحيم,23439,Kfar Him,كفرحيم,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.52525,33.68847,COD-AB cadastral unit centre,600
+adm3:23445,cadastral,Majdel El-Meouch,مجدل المعوش,23445,Majdel El-Meouch,مجدل المعوش,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.62212,33.72622,COD-AB cadastral unit centre,1600
+adm3:23447,cadastral,Dmit,دميت,23447,Dmit,دميت,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.50060,33.69540,COD-AB cadastral unit centre,1100
+adm3:23459,cadastral,Brih,بريح,23459,Brih,بريح,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.65395,33.71548,COD-AB cadastral unit centre,1000
+adm3:23463,cadastral,Ouarhaniyeh,ورهانية,23463,Ouarhaniyeh,ورهانية,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.67040,33.71781,COD-AB cadastral unit centre,800
+adm3:23469,cadastral,Aain Zhalta,عين زحلتا,23469,Aain Zhalta,عين زحلتا,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.72507,33.73713,COD-AB cadastral unit centre,2600
+adm3:23511,cadastral,Baaqline,بعقلين,23511,Baaqline,بعقلين,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.54094,33.66790,COD-AB cadastral unit centre,2000
+adm3:23522,cadastral,Deir Dourit,دير دوريت,23522,Deir Dourit,دير دوريت,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.53578,33.67726,COD-AB cadastral unit centre,900
+adm3:23544,cadastral,Aathrine,عترين,23544,Aathrine,عترين,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.57464,33.66235,COD-AB cadastral unit centre,1100
+adm3:23566,cadastral,Gharifeh,غريفة,23566,Gharifeh,غريفة,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.55800,33.63081,COD-AB cadastral unit centre,1700
+adm3:23577,cadastral,Jahliyeh,جاهلية,23577,Jahliyeh,جاهلية,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.51176,33.66196,COD-AB cadastral unit centre,1000
+adm3:23611,cadastral,Moukhtara,مختارة,23611,Moukhtara,مختارة,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.61010,33.65721,COD-AB cadastral unit centre,900
+adm3:23615,cadastral,Botmeh,بطمة,23615,Botmeh,بطمة,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.64175,33.67121,COD-AB cadastral unit centre,1300
+adm3:23619,cadastral,Aain Qania,عين قني,23619,Aain Qania,عين قني,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.60082,33.64478,COD-AB cadastral unit centre,700
+adm3:23623,cadastral,Jdeidet Ech-Chouf,جديدة الشوف,23623,Jdeidet Ech-Chouf,جديدة الشوف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.60563,33.66917,COD-AB cadastral unit centre,1100
+adm3:23625,cadastral,Niha El-Chouf,نيحا,23625,Niha El-Chouf,نيحا,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.62279,33.54729,COD-AB cadastral unit centre,3500
+adm3:23627,cadastral,Aain Ouzain,عين وزين,23627,Aain Ouzain,عين وزين,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.62552,33.67864,COD-AB cadastral unit centre,1200
+adm3:23631,cadastral,Baadarane,بعدران,23631,Baadarane,بعدران,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.62833,33.63233,COD-AB cadastral unit centre,1600
+adm3:23635,cadastral,Khereibet Ech-Chouf,خريبة الشوف,23635,Khereibet Ech-Chouf,خريبة الشوف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.64677,33.64514,COD-AB cadastral unit centre,1500
+adm3:23639,cadastral,Aammatour,عمّاطور,23639,Aammatour,عمّاطور,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.60068,33.61505,COD-AB cadastral unit centre,1400
+adm3:23643,cadastral,Kahlouniet Ech-Chouf,كحلونية الشوف,23643,Kahlouniet Ech-Chouf,كحلونية الشوف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.59263,33.64839,COD-AB cadastral unit centre,1000
+adm3:23647,cadastral,Haret Jandal,حارة جندل,23647,Haret Jandal,حارة جندل,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.61569,33.62145,COD-AB cadastral unit centre,1000
+adm3:23651,cadastral,Mazraat Ech-Chouf,مزرعة,23651,Mazraat Ech-Chouf,مزرعة,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.57070,33.62135,COD-AB cadastral unit centre,2100
+adm3:23655,cadastral,Kfar Nabrakh,كفرنبرخ,23655,Kfar Nabrakh,كفرنبرخ,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.63089,33.69785,COD-AB cadastral unit centre,1700
+adm3:23659,cadastral,Mristi,مرستى,23659,Mristi,مرستى,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.65655,33.62055,COD-AB cadastral unit centre,1400
+adm3:23663,cadastral,Batloun,بتلون,23663,Batloun,بتلون,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.65260,33.69324,COD-AB cadastral unit centre,1300
+adm3:23667,cadastral,Maasser Ech-Chouf,معاصر الشوف,23667,Maasser Ech-Chouf,معاصر الشوف,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.66686,33.66086,COD-AB cadastral unit centre,2400
+adm3:23675,cadastral,Bater,باتر,23675,Bater,باتر,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.60104,33.59064,COD-AB cadastral unit centre,1300
+adm3:23679,cadastral,Barouk,الباروك,23679,Barouk,الباروك,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.70198,33.69463,COD-AB cadastral unit centre,2400
+adm3:24444,cadastral,Charoun,شارون,24444,Charoun,شارون,LB31,Aley,عاليه,LB3,Mount Lebanon,جبل لبنان,35.69372,33.77688,COD-AB cadastral unit centre,1700
+adm3:51311,cadastral,Riyaq,رياق,51311,Riyaq,رياق,LB25,Zahle,زحلة,LB2,Bekaa,البقاع,36.01890,33.85241,COD-AB cadastral unit centre,1000
+adm3:51323,cadastral,Aali En-Nahri,علي النهري,51323,Aali En-Nahri,علي النهري,LB25,Zahle,زحلة,LB2,Bekaa,البقاع,36.03175,33.86186,COD-AB cadastral unit centre,1200
+adm3:51365,cadastral,Terbol Zahleh,تربل,51365,Terbol Zahleh,تربل,LB25,Zahle,زحلة,LB2,Bekaa,البقاع,35.99246,33.81179,COD-AB cadastral unit centre,2300
+adm3:51383,cadastral,Dalhamiyet Zahleh,دلهميه,51383,Dalhamiyet Zahleh,دلهميه,LB25,Zahle,زحلة,LB2,Bekaa,البقاع,35.95838,33.81597,COD-AB cadastral unit centre,1300
+adm3:52111,cadastral,Machghara,مشغرة,52111,Machghara,مشغرة,LB24,West Bekaa,البقاع الغربي,LB2,Bekaa,البقاع,35.65686,33.52185,COD-AB cadastral unit centre,2800
+adm3:53214,cadastral,Fekehe,فاكهة,53214,Fekehe,فاكهة,LB21,Baalbek,بعلبك,LB8,Baalbek-El Hermel,بعلبك - الهرمل,36.36707,34.25016,COD-AB cadastral unit centre,4300
+adm3:53234,cadastral,Laboueh,لبوة,53234,Laboueh,لبوة,LB21,Baalbek,بعلبك,LB8,Baalbek-El Hermel,بعلبك - الهرمل,36.34823,34.19224,COD-AB cadastral unit centre,2700
+adm3:53445,cadastral,Nabi Chit,نبي شيت,53445,Nabi Chit,نبي شيت,LB21,Baalbek,بعلبك,LB8,Baalbek-El Hermel,بعلبك - الهرمل,36.11742,33.89033,COD-AB cadastral unit centre,2400
+loc:haret_el_fikani,unverified_place,Haret El-Fikani,حارة الفيكاني,,,,LB25,Zahle,زحلة,LB2,Bekaa,البقاع,35.93440,33.81470,Legacy RESOLVE gazetteer (hand-typed; unverified),5000
+loc:masma,unresolved,Masma,ماسما,,,,,,,,,,36.03940,33.75280,Legacy RESOLVE gazetteer (hand-typed; unverified),5000
+loc:saadiyat,place,Saadiyat,السعديات,23111,Damour,الدامور,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.42611,33.69500,OpenStreetMap node 564351992 (ODbL),1000
+loc:shawalik_deir_el_qamar,place,Shawalik Deir El-Qamar,شواليق دير القمر,23413,Deir El-Qamar,دير القمر,LB33,Chouf,الشوف,LB3,Mount Lebanon,جبل لبنان,35.54773,33.69220,OpenStreetMap node 383510688 (ODbL),1000
+loc:zahle_city,unverified_place,Zahle,زحلة,,,,LB25,Zahle,زحلة,LB2,Bekaa,البقاع,35.90180,33.84630,Legacy RESOLVE gazetteer (Google Maps + OSM; unverified),3000

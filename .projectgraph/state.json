@@ -16,7 +16,7 @@
       "history": []
     },
     "CMP_APP_CONFIG": {
-      "lifecycle": "IMPLEMENTED",
+      "lifecycle": "SUPERSEDED",
       "run_status": "IDLE",
       "result": null,
       "evidence_id": null,
@@ -26,10 +26,18 @@
       "dep_fingerprint": null,
       "git_commit": null,
       "attestations": [],
-      "history": []
+      "history": [
+        {
+          "at": "2026-09-29T10:10:52+00:00",
+          "event": "supersede",
+          "actor": "cli",
+          "by": "CMP_WEB_APP",
+          "note": "Replaced in the 2026-09-29 refactor"
+        }
+      ]
     },
     "CMP_APP_MODULES": {
-      "lifecycle": "IMPLEMENTED",
+      "lifecycle": "SUPERSEDED",
       "run_status": "IDLE",
       "result": null,
       "evidence_id": null,
@@ -39,10 +47,18 @@
       "dep_fingerprint": null,
       "git_commit": null,
       "attestations": [],
-      "history": []
+      "history": [
+        {
+          "at": "2026-09-29T10:10:51+00:00",
+          "event": "supersede",
+          "actor": "cli",
+          "by": "CMP_WEB_APP",
+          "note": "Replaced in the 2026-09-29 refactor"
+        }
+      ]
     },
     "CMP_APP_SHELL": {
-      "lifecycle": "DECLARED",
+      "lifecycle": "SUPERSEDED",
       "run_status": "IDLE",
       "result": null,
       "evidence_id": null,
@@ -52,10 +68,18 @@
       "dep_fingerprint": null,
       "git_commit": null,
       "attestations": [],
-      "history": []
+      "history": [
+        {
+          "at": "2026-09-29T10:10:51+00:00",
+          "event": "supersede",
+          "actor": "cli",
+          "by": "CMP_WEB_APP",
+          "note": "Replaced in the 2026-09-29 refactor"
+        }
+      ]
     },
     "CMP_SCRIPTS": {
-      "lifecycle": "IMPLEMENTED",
+      "lifecycle": "SUPERSEDED",
       "run_status": "IDLE",
       "result": null,
       "evidence_id": null,
@@ -65,10 +89,18 @@
       "dep_fingerprint": null,
       "git_commit": null,
       "attestations": [],
-      "history": []
+      "history": [
+        {
+          "at": "2026-09-29T10:10:51+00:00",
+          "event": "supersede",
+          "actor": "cli",
+          "by": "CMP_PIPELINE",
+          "note": "Replaced in the 2026-09-29 refactor"
+        }
+      ]
     },
     "DATA_PUBLISHED_GEOJSON": {
-      "lifecycle": "DECLARED",
+      "lifecycle": "SUPERSEDED",
       "run_status": "IDLE",
       "result": null,
       "evidence_id": null,
@@ -78,7 +110,15 @@
       "dep_fingerprint": null,
       "git_commit": null,
       "attestations": [],
-      "history": []
+      "history": [
+        {
+          "at": "2026-09-29T10:10:52+00:00",
+          "event": "supersede",
+          "actor": "cli",
+          "by": "DATA_PUBLIC_RELEASE",
+          "note": "Replaced in the 2026-09-29 refactor"
+        }
+      ]
     },
     "M0_CONTAINMENT": {
       "lifecycle": "DECLARED",

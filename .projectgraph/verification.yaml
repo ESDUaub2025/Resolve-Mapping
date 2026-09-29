@@ -9,3 +9,65 @@ TST_NO_RESTRICTED_DATA_TRACKED:
   acceptance:
   - "Removed survey/PII paths return HTTP 404 on https://esduaub2025.github.io/Resolve-Mapping/"
   - "git log --all over the removed paths is empty on the public remote after the history rewrite"
+TST_TEST_SUITE:
+  required_files:
+  - .github/workflows/pages.yml
+  - pytest.ini
+  - requirements.txt
+  - requirements-dev.txt
+  commands:
+  - name: pytest
+    run: '.venv\Scripts\python.exe -m pytest -q'
+  acceptance:
+  - "The GitHub Actions workflow ran green on main and Pages is deployed from public/ only"
+TST_DICTIONARY:
+  required_files:
+  - dictionary/fields.yaml
+  - dictionary/vocabularies.yaml
+  - ref/localities.csv
+  commands:
+  - name: dictionary-tests
+    run: '.venv\Scripts\python.exe -m pytest -q tests/test_dictionary.py tests/test_textnorm.py'
+  acceptance:
+  - "The survey team reviewed the Arabic/English vocabulary labels and the village alias table"
+TST_PIPELINE_REPRODUCIBLE:
+  required_files:
+  - resolve/survey.py
+  - resolve/publish.py
+  commands:
+  - name: rebuild-public-identical
+    run: '.venv\Scripts\python.exe -m resolve build --tier public && git diff --exit-code -- public/data'
+TST_CANONICAL_VALID:
+  required_files:
+  - resolve/validate.py
+  commands:
+  - name: build-with-validation
+    run: '.venv\Scripts\python.exe -m resolve build --tier research'
+TST_PUBLIC_RELEASE:
+  required_files:
+  - public/data/catalog.json
+  commands:
+  - name: release-and-sdc-tests
+    run: '.venv\Scripts\python.exe -m pytest -q tests/test_public_release.py tests/test_sdc.py tests/privacy'
+TST_FRONTEND:
+  required_files:
+  - public/js/main.js
+  commands:
+  - name: frontend-tests
+    run: '.venv\Scripts\python.exe -m pytest -q tests/test_frontend.py'
+TST_MAP_E2E:
+  required_files:
+  - tests/e2e/smoke.mjs
+  commands:
+  - name: browser-smoke
+    run: 'node tests/e2e/smoke.mjs'
+  acceptance:
+  - "A person checked the public map on a phone-sized screen and with a screen reader or keyboard only"
+TST_RESEARCH_TIER:
+  required_files:
+  - resolve/serve.py
+  commands:
+  - name: research-build
+    run: '.venv\Scripts\python.exe -m resolve build --tier research'
+  acceptance:
+  - "ML analyses rebuilt on the standardized research records with out-of-sample validation (optional stage; not done)"

@@ -17,8 +17,9 @@ import pytest
 
 REPO = Path(__file__).resolve().parents[2]
 
-# Paths removed in Stage 0; none may come back.
+# Paths removed in Stage 0; none may come back. Survey data lives only in the private store.
 FORBIDDEN_PATHS = [
+    "data/*",
     "data/*.xlsx",
     "data/*.xls",
     "data/MZSurvey*",
@@ -59,6 +60,10 @@ IDENTIFIER_MARKERS = [
 SURVEY_PROPERTY_KEYS = {"القرية", "القرية:", "4. Village", "4.القرية:", "Village", "Village_Name", "respondent_id"}
 
 # Lebanese mobile numbers; lookarounds exclude digits inside decimals, IDs and hex hashes.
+# Respondent IDs (see resolve/ids.py) must never leave the private store. Documentation
+# examples use a "0", which is outside the ID alphabet, so they cannot match.
+RESPONDENT_ID_RE = re.compile(r"(CH|BQ)-[2-9A-HJ-NP-Z]{6}")
+
 PHONE_RE = re.compile(r"(?<![\w.])(?:\+?961[\s-]?|0)?(?:3|7[01689]|81)[\s-]?\d{3}[\s-]?\d{3}(?![\w.])")
 
 
@@ -109,3 +114,19 @@ def test_no_survey_derived_features(path):
                 keys.update(nested)
     overlap = keys & SURVEY_PROPERTY_KEYS
     assert not overlap, f"{path} carries survey-derived properties {sorted(overlap)}"
+
+
+def test_geojson_only_in_public_release():
+    offending = [p for p in tracked_files() if p.endswith(".geojson") and not p.startswith("public/data/")]
+    assert offending == [], f"GeoJSON outside public/data: {offending}"
+
+
+def test_no_respondent_ids_in_tracked_files():
+    offending = []
+    for path in tracked_files():
+        if Path(path).suffix.lower() in {".png", ".jpg", ".ico", ".zip"} or path.startswith(".projectgraph/"):
+            continue
+        text = (REPO / path).read_text(encoding="utf-8", errors="ignore")
+        if RESPONDENT_ID_RE.search(text):
+            offending.append(path)
+    assert offending == [], f"respondent IDs found in {offending}"

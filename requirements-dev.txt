@@ -1,1 +1,4 @@
+# Enough to run the test suite in CI (no private data needed).
+PyYAML==6.0.3
+shapely==2.1.2
 pytest==9.1.1

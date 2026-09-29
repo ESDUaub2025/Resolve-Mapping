@@ -1,0 +1,31 @@
+# Survey instruments (waves). Paths are relative to the private data store
+# (RESOLVE_PRIVATE_DATA); raw files never live in this repository.
+
+chouf_2026:
+  title: {en: "Chouf / Mount Lebanon farmer survey", ar: "استبيان مزارعي الشوف / جبل لبنان"}
+  region: Chouf and Aley districts, Mount Lebanon
+  collected: "2025–2026 (exact interview dates not recorded; workbook dated 2026-02-27)"
+  mode: Paper/Excel questionnaire, English translation prepared by the survey team
+  source_file: raw/chouf_survey/2026-02-27/Farmers survey 27-2-2026.xlsx
+  source_sheet: "WiTHOUT DUPLICATES FS (2)"
+  source_note: >-
+    De-duplicated sheet chosen as source of truth (decision 2026-09-29). Individual crop answers
+    are only in the 204-row "English FS" sheet and are joined by respondent name.
+  joins:
+    english_fs:
+      sheet: "English FS"
+      key: name_arabic
+  respondent_key: [name_arabic]
+  id_prefix: CH
+
+beqaa_2026:
+  title: {en: "Beqaa farmer survey (MZSurvey)", ar: "استبيان مزارعي البقاع"}
+  region: Zahle, West Beqaa and Baalbek districts
+  collected: "2026-01-04"
+  mode: KoBoToolbox-style form export (select_multiple one-hot columns)
+  source_file: raw/beqaa_survey/2026-01-04/MZSurvey farmers ENGLISH.csv
+  source_note: >-
+    Sections not administered in this wave (e.g. rodents, regenerative-agriculture techniques,
+    labour, machinery) are empty for every respondent and are recorded as not_asked.
+  respondent_key: [name_arabic, phone]
+  id_prefix: BQ

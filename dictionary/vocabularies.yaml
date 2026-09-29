@@ -1,0 +1,246 @@
+# Controlled vocabularies for RESOLVE survey fields.
+#
+# Each code has bilingual labels and `match` patterns: case-insensitive regular expressions
+# searched in the normalized source text (lower-case, whitespace collapsed, Arabic letters
+# normalized - see resolve/textnorm.py). The original answer is always preserved in
+# staging as <field>__raw; normalization never destroys the source value.
+#
+# Codes are listed in display order. For ordinal vocabularies the order is the scale order.
+# `expands_to` replaces a code by other codes (e.g. "all of the above").
+# `exclusive: true` marks answers such as "none" that cannot co-occur with other codes.
+
+yes_no:
+  kind: categorical
+  codes:
+    - code: "yes"
+      label: {en: "Yes", ar: "نعم"}
+      match: ['^yes\b', '^نعم']
+    - code: "no"
+      label: {en: "No", ar: "لا"}
+      match: ['^no$', '^no\b', '^لا$', '^لا\b']
+
+age_group:
+  kind: ordinal
+  codes:
+    - {code: age_18_25, label: {en: "18–25", ar: "18–25"}, match: ['\b(18|20)\s*-\s*25\b', 'من 20 الى 25']}
+    - {code: age_26_35, label: {en: "26–35", ar: "26–35"}, match: ['\b26\s*-\s*35\b', 'من 26 الى 35']}
+    - {code: age_36_45, label: {en: "36–45", ar: "36–45"}, match: ['\b36\s*-\s*45\b', 'من 36 الى 45']}
+    - {code: age_46_55, label: {en: "46–55", ar: "46–55"}, match: ['\b46\s*-\s*55\b', 'من 46 الى 55']}
+    - {code: age_over_55, label: {en: "Over 55", ar: "أكثر من 55"}, match: ['>\s*55', 'اكثر من 55']}
+
+gender:
+  kind: categorical
+  codes:
+    - {code: male, label: {en: "Male", ar: "ذكر"}, match: ['^male', '^ذكر']}
+    - {code: female, label: {en: "Female", ar: "أنثى"}, match: ['^female', '^انثي']}
+
+income_source:
+  kind: multi
+  codes:
+    - {code: crops, label: {en: "Crop cultivation", ar: "زراعة المحاصيل"}, match: ['crop', 'زراعه المحاصيل']}
+    - {code: livestock, label: {en: "Livestock raising", ar: "تربية المواشي"}, match: ['livestock', 'تربيه المواشي']}
+    - {code: non_ag_labour, label: {en: "Non-agricultural work", ar: "العمل غير الزراعي"}, match: ['non-?\s?agricultural', 'non-?\s?ag\b', 'العمل غير الزراعي']}
+    - {code: ag_labour, label: {en: "Agricultural work (labour)", ar: "العمل الزراعي"}, match: ['(?<!non-)(?<!non )agricultural work', '(?<!non-)(?<!non )\bag labor', '(?<!غير )الزراعي$', 'العمل الزراعي(?! غير)']}
+    - {code: government, label: {en: "Government services", ar: "الخدمات الحكومية"}, match: ['government', 'الخدمات الحكوميه']}
+    - {code: business, label: {en: "Business", ar: "الأعمال التجارية"}, match: ['business', 'الاعمال التجاريه']}
+    - {code: remittances, label: {en: "Financial remittances", ar: "التحويلات المالية"}, match: ['remittance', 'التحويلات']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+land_size_band:
+  kind: ordinal
+  note: >-
+    Bands overlap as asked in the questionnaire (< 5 dunums is also < 1 hectare). Stored as the
+    answered band; never converted to a numeric area.
+  codes:
+    - {code: lt_5_dunum, label: {en: "< 5 dunums (< 0.5 ha)", ar: "أقل من 5 دونم"}, match: ['5\s*dun', 'اقل من 5 دونم']}
+    - {code: lt_1_ha, label: {en: "< 1 hectare", ar: "أقل من 1 هكتار"}, match: ['less than 1 hectare', '<\s*1\s*hectare', 'اقل من 1 هكتار']}
+    - {code: gt_1_ha, label: {en: "> 1 hectare", ar: "أكثر من 1 هكتار"}, match: ['more than 1 hectare', '>\s*1\s*hectare', 'اكثر من 1 هكتار']}
+    - {code: gt_2_ha, label: {en: "> 2 hectares", ar: "أكثر من 2 هكتار"}, match: ['more than 2 hectare', '>\s*2\s*hectare', 'اكثر من 2 هكتار']}
+
+soil_type:
+  kind: multi
+  codes:
+    - {code: loamy, label: {en: "Loamy / silty (clay and sand)", ar: "تربة طمية (طينية ورملية)"}, match: ['silty', 'loam', 'طميه']}
+    - {code: clay, label: {en: "Clay", ar: "تربة طينية"}, match: ['clay', 'طينيه']}
+    - {code: sandy, label: {en: "Sandy", ar: "تربة رملية"}, match: ['sandy', 'رمليه']}
+    - {code: calcareous, label: {en: "Calcareous", ar: "تربة كلسية"}, match: ['calcareous', 'كلسيه']}
+    - {code: acidic, label: {en: "Acidic", ar: "تربة حمضية"}, match: ['acidic']}
+
+water_source:
+  kind: multi
+  codes:
+    - {code: rain, label: {en: "Rainwater", ar: "مياه الأمطار"}, match: ['rain', 'الامطار']}
+    - {code: river, label: {en: "River / stream", ar: "نهر / مجرى مائي"}, match: ['river', 'stream', 'نهر']}
+    - {code: well, label: {en: "Groundwater well", ar: "بئر جوفي"}, match: ['well', 'بئر']}
+    - {code: tanker, label: {en: "Water tanker delivery", ar: "نقل المياه بالصهاريج"}, match: ['tanker', 'transport', 'الصهاريج']}
+    - {code: canal, label: {en: "Irrigation canal", ar: "قنوات ري"}, match: ['canal', 'channel', 'tunnel', 'قنوات']}
+    - {code: spring, label: {en: "Spring", ar: "نبع"}, match: ['spring', 'shafa', 'نبع']}
+    - {code: public_network, label: {en: "Public / state water network", ar: "مياه الدولة"}, match: ['state', 'drinking water', 'home water', 'piped', 'municipal']}
+    - {code: storage, label: {en: "Storage tank / pond / pool", ar: "خزان / بركة"}, match: ['tank', 'pool', 'pond', 'lake', 'خزان']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+energy_source:
+  kind: multi
+  codes:
+    - {code: manual, label: {en: "Manual (no energy)", ar: "يدوياً (بدون طاقة)"}, match: ['manual', 'يدويا']}
+    - {code: grid, label: {en: "Grid electricity", ar: "الكهرباء من الشبكة"}, match: ['grid', 'electric motor', 'الشبكه']}
+    - {code: diesel, label: {en: "Diesel generator / engine", ar: "مولد ديزل"}, match: ['diesel', 'monthly generator', 'ديزل']}
+    - {code: solar, label: {en: "Solar", ar: "الطاقة الشمسية"}, match: ['solar', 'الشمسيه']}
+    - {code: gasoline, label: {en: "Gasoline / petrol", ar: "بنزين"}, match: ['gasoline', 'petrol', 'benzine', 'بنزين']}
+    - {code: gravity, label: {en: "Gravity / piped pressure (no energy)", ar: "ضغط طبيعي"}, match: ['natural pressure', 'piped water']}
+    - {code: none, label: {en: "No energy used", ar: "لا يوجد استخدام للطاقة"}, exclusive: true, match: ["don't need", 'no energy', 'not available']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+water_availability:
+  kind: ordinal
+  codes:
+    - {code: always, label: {en: "Always enough", ar: "دائماً كافية"}, match: ['always', 'دائما']}
+    - {code: sometimes, label: {en: "Sometimes enough", ar: "أحياناً كافية"}, match: ['sometimes', 'احيانا']}
+    - {code: rarely, label: {en: "Rarely enough", ar: "نادراً ما تكون كافية"}, match: ['rarely', 'نادرا']}
+    - {code: never, label: {en: "Completely insufficient", ar: "غير كافية تماماً"}, match: ['completely insufficient', 'totally insufficient', 'غير كافيه تماما']}
+
+irrigation_need_change:
+  kind: categorical
+  codes:
+    - {code: increase, label: {en: "Increased", ar: "زيادة في الاحتياج"}, match: ['increase', 'زياده']}
+    - {code: decrease, label: {en: "Decreased", ar: "انخفاض في الاحتياج"}, match: ['decrease', 'انخفاض']}
+    - {code: no_change, label: {en: "No change", ar: "لا يوجد تغيير"}, match: ['no change', 'لا يوجد تغيير']}
+    - {code: unsure, label: {en: "Not sure", ar: "غير متأكد"}, match: ['not sure', 'unsure']}
+
+production_level:
+  kind: ordinal
+  codes:
+    - {code: small, label: {en: "Small (mainly home use)", ar: "إنتاج صغير"}, match: ['^small', 'انتاج صغير']}
+    - {code: medium, label: {en: "Medium (local use, some sales)", ar: "إنتاج متوسط"}, match: ['^medium', 'انتاج متوسط']}
+    - {code: large, label: {en: "Large (regular market sales)", ar: "إنتاج كبير"}, match: ['^large', 'انتاج كبير']}
+
+homes_share:
+  kind: ordinal
+  codes:
+    - {code: few, label: {en: "Few homes (< 30%)", ar: "عدد قليل من المنازل (< 30%)"}, match: ['^few', 'عدد قليل']}
+    - {code: some, label: {en: "Some homes (30–60%)", ar: "بعض المنازل (30–60%)"}, match: ['^some', 'بعض المنازل']}
+    - {code: most, label: {en: "Most homes (60–80%)", ar: "معظم المنازل (60–80%)"}, match: ['^most', 'معظم المنازل']}
+    - {code: almost_all, label: {en: "Almost all homes", ar: "جميع المنازل تقريباً"}, match: ['almost all', 'جميع المنازل']}
+
+coop_size:
+  kind: ordinal
+  codes:
+    - {code: small_1_20, label: {en: "Small (1–20 members)", ar: "صغير (1–20 عضو)"}, match: ['صغير', 'small']}
+    - {code: medium_21_50, label: {en: "Medium (21–50 members)", ar: "متوسط (21–50 عضو)"}, match: ['متوسط', 'medium']}
+    - {code: large_over_50, label: {en: "Large (> 50 members)", ar: "كبير (أكثر من 50 عضو)"}, match: ['كبير', 'large']}
+
+seed_criteria:
+  kind: multi
+  codes:
+    - {code: price, label: {en: "Price", ar: "السعر"}, match: ['price', 'السعر']}
+    - {code: productivity, label: {en: "Productivity", ar: "الإنتاجية"}, match: ['prod', 'الانتاجيه']}
+    - {code: pest_resistance, label: {en: "Pest resistance", ar: "مقاومة الآفات"}, match: ['pest', 'مقاومه الافات']}
+    - {code: all, label: {en: "All of the above", ar: "جميع ما سبق"}, match: ['all', 'جميع ما سبق'], expands_to: [price, productivity, pest_resistance]}
+    - {code: none, label: {en: "None of the above", ar: "لا شيء مما سبق"}, exclusive: true, match: ['none of the above', 'لا شيء مما سبق']}
+
+seed_source:
+  kind: multi
+  codes:
+    - {code: shop, label: {en: "Agricultural shop / pharmacy (imported seed)", ar: "صيدليات زراعية / محلات تجارية"}, match: ['stores?', 'shops?', 'pharmacy', 'الصيدليات']}
+    - {code: nursery, label: {en: "Nursery", ar: "مشاتل"}, match: ['nurser', 'nuseries', 'مشاتل']}
+    - {code: neighbour, label: {en: "Neighbouring farmer (exchange)", ar: "مزارع مجاور"}, match: ['neighbo', 'مزارع مجاور']}
+    - {code: association, label: {en: "Associations / municipalities / donors", ar: "جمعيات / بلديات / جهات مانحة"}, match: ['association', 'جمعيات']}
+    - {code: own_harvest, label: {en: "Own harvest (self-produced)", ar: "محصول السنة الماضية"}, match: ['last season', "last year", 'self-produced', 'محصول السنه']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+seed_challenge:
+  kind: multi
+  codes:
+    - {code: high_cost, label: {en: "High cost", ar: "التكلفة العالية"}, match: ['cost', 'التكلفه']}
+    - {code: low_availability, label: {en: "Limited availability of good seed", ar: "قلة توفر البذور الجيدة"}, match: ['availab', 'قله توفر']}
+    - {code: unreliable_suppliers, label: {en: "Unreliable suppliers", ar: "عدم وجود موردين موثوقين"}, match: ['supplier', 'unreliable', 'موردين']}
+    - {code: unsuitable, label: {en: "Unsuitable for local climate/soil", ar: "عدم ملاءمة البذور للمناخ أو التربة"}, match: ['not suitable', 'unsuitable', 'non-local', 'ملاءمه']}
+    - {code: none, label: {en: "No challenges", ar: "لا توجد تحديات"}, exclusive: true, match: ['no challenge', 'لا توجد تحديات']}
+
+soil_enhancer:
+  kind: multi
+  codes:
+    - {code: chemical, label: {en: "Chemical fertilizers", ar: "أسمدة كيميائية"}, match: ['chem', 'كيميائيه']}
+    - {code: compost, label: {en: "Organic compost", ar: "كمبوست عضوي"}, match: ['compost', '\bcomp\b', 'كمبوست']}
+    - {code: biofertilizer, label: {en: "Biofertilizers", ar: "مخصبات حيوية"}, match: ['bio', 'مخصبات حيويه']}
+    - {code: manure, label: {en: "Animal manure", ar: "روث حيواني"}, match: ['manure', 'روث']}
+    - {code: none, label: {en: "Nothing used", ar: "لا شيء"}, exclusive: true, match: ['nothing used', '^none', 'لا شيء']}
+
+reliance:
+  kind: ordinal
+  note: >-
+    Source translations "Partial credit" and "Full accreditation" are machine-translation errors
+    for اعتماد جزئي / اعتماد كامل (partial / total reliance) and are mapped accordingly.
+  codes:
+    - {code: not_used, label: {en: "Not used", ar: "لا يتم استخدامها"}, match: ['not used', 'لا يتم استخدام']}
+    - {code: partial, label: {en: "Partial reliance", ar: "اعتماد جزئي"}, match: ['partial', 'جزئي']}
+    - {code: total, label: {en: "Total reliance", ar: "اعتماد كامل"}, match: ['total', 'full', 'كامل', 'كلي']}
+
+cost_share:
+  kind: ordinal
+  codes:
+    - {code: lt_20, label: {en: "< 20% of costs", ar: "أقل من 20%"}, match: ['less than 20', '<\s*20', 'اقل من 20']}
+    - {code: "20_50", label: {en: "20–50% of costs", ar: "من 20% إلى 50%"}, match: ['20%? to 50', '20\s*-\s*50', 'من 20% الي 50']}
+    - {code: gt_50, label: {en: "> 50% of costs", ar: "أكثر من 50%"}, match: ['more than 50', '>\s*50', 'اكثر من 50']}
+
+pest_control:
+  kind: multi
+  codes:
+    - {code: chemical, label: {en: "Chemical pesticides", ar: "مكافحة كيميائية (مبيدات)"}, match: ['chem', 'كيميائيه']}
+    - {code: biological, label: {en: "Biological control", ar: "مكافحة بيولوجية"}, match: ['bio', 'بيولوجيه']}
+    - {code: physical, label: {en: "Physical control (traps etc.)", ar: "مكافحة فيزيائية"}, match: ['physical', 'فيزيائيه']}
+    - {code: local, label: {en: "Local / homemade pesticides", ar: "مبيدات محلية الصنع"}, match: ['local', 'محليه الصنع']}
+
+marketing_challenge:
+  kind: multi
+  codes:
+    - {code: low_prices, label: {en: "Low prices", ar: "انخفاض الأسعار"}, match: ['low price', 'انخفاض الاسعار']}
+    - {code: weak_demand, label: {en: "Weak demand", ar: "ضعف الطلب"}, match: ['demand', 'ضعف الطلب']}
+    - {code: far_markets, label: {en: "Markets are far", ar: "بُعد الأسواق"}, match: ['far', 'بعد الاسواق']}
+    - {code: no_transport, label: {en: "Lack of transportation", ar: "نقص وسائل النقل"}, match: ['transport', 'نقص وسائل النقل']}
+    - {code: poor_packaging, label: {en: "Poor packaging", ar: "ضعف في التغليف أو التعبئة"}, match: ['pack', 'wrapping', 'التغليف']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+logistics_challenge:
+  kind: multi
+  codes:
+    - {code: high_transport_cost, label: {en: "High transportation cost", ar: "كلفة النقل المرتفعة"}, match: ['high transport', 'transportation cost', 'كلفه النقل']}
+    - {code: no_paved_roads, label: {en: "No paved roads", ar: "لا توجد طرق معبدة"}, match: ['paved', 'poor roads', 'طرق معبده']}
+    - {code: no_transport, label: {en: "Lack of transportation", ar: "نقص وسائل النقل"}, match: ['lack of transport', '/\s*trans\b', 'نقص وسائل النقل']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+climate_change:
+  kind: multi
+  codes:
+    - {code: temperature_rise, label: {en: "Rising temperatures", ar: "ارتفاع درجات الحرارة"}, match: ['temp', 'high temperatures', '^heat(?!wave)', 'heat/', 'ارتفاع درجات الحراره']}
+    - {code: rainfall_decrease, label: {en: "Less rainfall", ar: "نقص هطول الأمطار"}, match: ['rain', 'نقص هطول']}
+    - {code: heatwaves, label: {en: "More heatwaves", ar: "زيادة موجات الحر"}, match: ['heatwave', 'heat wave', '/heat$', 'temp/rain/heat', 'موجات الحر']}
+    - {code: frost, label: {en: "More frost", ar: "زيادة الصقيع"}, match: ['frost', 'الصقيع']}
+    - {code: less_snow, label: {en: "Less snow", ar: "قلة الثلوج"}, match: ['snow', 'الثلوج']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+climate_impact:
+  kind: multi
+  codes:
+    - {code: production_decrease, label: {en: "Lower production", ar: "انخفاض الإنتاج"}, match: ['decrease in production', 'low prod', 'reduced production', 'انخفاض الانتاج']}
+    - {code: season_delay, label: {en: "Delayed seasons", ar: "تأخير في المواسم الزراعية"}, match: ['delay', 'تاخير في المواسم']}
+    - {code: pests_diseases, label: {en: "More pests and diseases", ar: "زيادة الآفات والأمراض"}, match: ['pest', 'الافات']}
+    - {code: pollination, label: {en: "Pollination / fruiting problems", ar: "صعوبات في التلقيح والإثمار"}, match: ['pollinat', 'التلقيح']}
+    - {code: no_major_impact, label: {en: "No major impact", ar: "لا يوجد تأثير كبير"}, exclusive: true, match: ['no significant impact', 'no major impact', 'لا يوجد تاثير كبير']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+info_source:
+  kind: multi
+  codes:
+    - {code: social_media, label: {en: "Social media", ar: "وسائل التواصل الاجتماعي"}, match: ['social media']}
+    - {code: extension_agents, label: {en: "Agricultural extension agents", ar: "المرشدون الزراعيون"}, match: ['extension']}
+    - {code: supply_shops, label: {en: "Agricultural supply shops", ar: "محلات المستلزمات الزراعية"}, match: ['supply shop']}
+    - {code: television, label: {en: "Television", ar: "التلفزيون"}, match: ['television', '\btv\b']}
+    - {code: other, label: {en: "Other", ar: "أخرى"}, match: ['^other', 'اخري']}
+
+poultry_purpose:
+  kind: multi
+  codes:
+    - {code: home_consumption, label: {en: "Home consumption", ar: "الاستهلاك المنزلي"}, match: ['home consumption']}
+    - {code: local_sale, label: {en: "Sale in local market", ar: "البيع في السوق المحلي"}, match: ['sale', 'market']}
+    - {code: gifts, label: {en: "Gifts / social occasions", ar: "هدايا / مناسبات"}, match: ['gift', 'occasion']}

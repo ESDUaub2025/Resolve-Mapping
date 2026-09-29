@@ -1,0 +1,460 @@
+# RESOLVE farmer-survey field dictionary: the single semantic source for the pipeline,
+# validation, the public catalog, popups, legends and filters.
+#
+# privacy:
+#   identity        direct identifiers; only in the private identity table, never in any build
+#   research        standardized but never published (free text, precise location, small-n)
+#   public_district published only as disclosure-controlled aggregates at district (caza) level
+#   public_village  published as disclosure-controlled aggregates at cadastral (village) level
+#
+# sources: per instrument, where the answer comes from.
+#   column   source column (text answer)       onehot  prefix of KoBo select_multiple columns
+#   strip    regexes removed before matching    join    value comes from a joined source row
+# A field with no source in an instrument gets status `not_asked` for that instrument.
+#
+# applies_if: skip logic. When the condition is false and no answer exists, the status is
+# `not_applicable` instead of `not_provided`.
+
+groups:
+  profile: {en: "Respondent profile", ar: "بيانات المستجيب"}
+  land: {en: "Land", ar: "الأرض"}
+  water: {en: "Water", ar: "المياه"}
+  energy: {en: "Energy", ar: "الطاقة"}
+  food: {en: "Food production", ar: "إنتاج الغذاء"}
+  seeds: {en: "Seeds", ar: "البذور"}
+  soil: {en: "Soil fertility", ar: "خصوبة التربة"}
+  pests: {en: "Pest control", ar: "مكافحة الآفات"}
+  market: {en: "Markets", ar: "الأسواق"}
+  climate: {en: "Climate change", ar: "التغير المناخي"}
+  livestock: {en: "Poultry", ar: "الدواجن"}
+  knowledge: {en: "Information", ar: "مصادر المعلومات"}
+
+fields:
+  # ── identity (never published) ──────────────────────────────────────────
+  - code: name_latin
+    label: {en: "Respondent name (Latin script)", ar: "اسم المستجيب (بالأحرف اللاتينية)"}
+    type: text
+    privacy: identity
+    group: profile
+    sources:
+      chouf_2026: {column: "Name of respondent"}
+      beqaa_2026: {column: "1. Respondent Name"}
+  - code: name_arabic
+    label: {en: "Respondent name (Arabic)", ar: "اسم المستجيب"}
+    type: text
+    privacy: identity
+    group: profile
+    sources:
+      chouf_2026: {column: "Name of respondent.1"}
+      beqaa_2026: {column: "1.اسم المُستجيب:"}
+  - code: phone
+    label: {en: "Phone number", ar: "رقم الهاتف"}
+    type: text
+    privacy: identity
+    group: profile
+    sources:
+      beqaa_2026: {column: "رقم الهاتف"}
+
+  # ── profile ─────────────────────────────────────────────────────────────
+  - code: survey_date
+    label: {en: "Interview date", ar: "تاريخ المقابلة"}
+    type: date
+    privacy: research
+    group: profile
+    sources:
+      beqaa_2026: {column: "start"}
+  - code: village_reported
+    label: {en: "Village (as reported)", ar: "القرية (كما وردت)"}
+    type: text
+    privacy: research
+    group: profile
+    note: Resolved to an official cadastral unit via ref/locality_aliases.csv.
+    sources:
+      chouf_2026: {column: "Village"}
+      beqaa_2026: {column: "4.القرية:"}
+  - code: age_group
+    label: {en: "Age group", ar: "الفئة العمرية"}
+    type: ordinal
+    vocab: age_group
+    privacy: public_district
+    group: profile
+    sources:
+      beqaa_2026: {column: "2. Age Group"}
+  - code: gender
+    label: {en: "Gender", ar: "الجنس"}
+    type: categorical
+    vocab: gender
+    privacy: public_district
+    group: profile
+    sources:
+      beqaa_2026: {column: "3. Gender"}
+  - code: income_sources
+    label: {en: "Main income sources", ar: "مصادر الدخل الرئيسية"}
+    type: multi
+    vocab: income_source
+    privacy: public_district
+    group: profile
+    sources:
+      chouf_2026: {column: "Main source of income", strip: ['\s[–-]\s.*$']}
+      beqaa_2026: {onehot: "7. ما هو مصدر دخلك الرئيسي؟", column: "7. Main Income Source"}
+  - code: income_other_text
+    label: {en: "Other income source (text)", ar: "مصدر دخل آخر"}
+    type: text
+    privacy: research
+    group: profile
+    sources:
+      beqaa_2026: {column: "أخرى (يرجى التحديد): ____________"}
+
+  # ── land ────────────────────────────────────────────────────────────────
+  - code: owns_land
+    label: {en: "Owns agricultural land", ar: "يمتلك أرضاً زراعية"}
+    type: categorical
+    vocab: yes_no
+    privacy: public_village
+    group: land
+    sources:
+      chouf_2026: {column: "Do you own agricultural land?"}
+      beqaa_2026: {column: "5. Own Farmland?"}
+  - code: land_location_text
+    label: {en: "Land location (as described)", ar: "موقع الأرض"}
+    type: text
+    privacy: research
+    group: land
+    note: May contain GPS coordinates or map links; parsed into a holding point in the research tier only.
+    sources:
+      chouf_2026: {column: "Location of your land"}
+      beqaa_2026: {column: " 6.موقع أرضك:"}
+  - code: land_size_band
+    label: {en: "Landholding size", ar: "حجم الحيازة الزراعية"}
+    type: ordinal
+    vocab: land_size_band
+    privacy: public_village
+    group: land
+    sources:
+      chouf_2026: {column: "Size of landholding"}
+      beqaa_2026: {column: "8.ما هو حجم الحيازة الزراعية الخاصة بك؟"}
+  - code: soil_types
+    label: {en: "Soil type", ar: "نوع التربة"}
+    type: multi
+    vocab: soil_type
+    privacy: public_village
+    group: land
+    sources:
+      chouf_2026: {column: "Soil type", strip: ['\([^)]*\)']}
+      beqaa_2026: {onehot: "9.ما هو نوع التربة في أرضك؟", column: "9.ما هو نوع التربة في أرضك؟"}
+  - code: main_crops_text
+    label: {en: "Main crops (as reported)", ar: "المحاصيل الرئيسية"}
+    type: text
+    privacy: research
+    group: land
+    sources:
+      chouf_2026: {join: english_fs, column: "Main crops "}
+      beqaa_2026: {column: "10. Main Crops"}
+  - code: village_crop_profile_text
+    label: {en: "Village crop profile (survey team summary)", ar: "المحاصيل في القرية (ملخص فريق المسح)"}
+    type: text
+    privacy: research
+    group: land
+    note: Repeated per village in the Chouf sheet; a village-level summary, not an individual answer.
+    sources:
+      chouf_2026: {column: "MAIN CROPS "}
+
+  # ── water ───────────────────────────────────────────────────────────────
+  - code: water_sources
+    label: {en: "Main irrigation water source", ar: "المصدر الرئيسي لمياه الري"}
+    type: multi
+    vocab: water_source
+    privacy: public_village
+    group: water
+    sources:
+      chouf_2026: {column: "Main water source for irrigation"}
+      beqaa_2026: {onehot: "13.ما هو المصدر الرئيسي للمياه المستخدمة في الري؟", column: "13. Water Source"}
+  - code: water_availability
+    label: {en: "Water availability in the growing season", ar: "توفر المياه خلال موسم الزراعة"}
+    type: ordinal
+    vocab: water_availability
+    privacy: public_village
+    group: water
+    sources:
+      chouf_2026: {column: "Water availability during the season"}
+      beqaa_2026: {column: "16. Water Availability"}
+  - code: water_scarcity
+    label: {en: "Months with water scarcity", ar: "أشهر شح المياه"}
+    type: categorical
+    vocab: yes_no
+    privacy: public_village
+    group: water
+    sources:
+      chouf_2026: {column: "Months with water scarcity"}
+      beqaa_2026: {column: "17. Are there months during the year when you suffer from water scarcity?"}
+  - code: water_scarcity_months_text
+    label: {en: "Scarcity months (as reported)", ar: "أشهر الشح"}
+    type: text
+    privacy: research
+    group: water
+    applies_if: {field: water_scarcity, in: ["yes"]}
+    sources:
+      beqaa_2026: {column: "ما أشهر  الذي  تعاني فيها من شح المياه؟"}
+  - code: irrigation_need_change
+    label: {en: "Change in irrigation needs (10 years)", ar: "التغير في احتياجات الري"}
+    type: categorical
+    vocab: irrigation_need_change
+    privacy: public_village
+    group: water
+    sources:
+      chouf_2026: {column: "Change in irrigation needs over last 10 years?"}
+      beqaa_2026: {column: "18. Change in Irrigation Needs"}
+
+  # ── energy ──────────────────────────────────────────────────────────────
+  - code: energy_sources
+    label: {en: "Main energy source for irrigation/farming", ar: "مصدر الطاقة الرئيسي"}
+    type: multi
+    vocab: energy_source
+    privacy: public_village
+    group: energy
+    sources:
+      chouf_2026: {column: "Main energy source for irrigation/agriculture", strip: ['\([^)]*\)']}
+      beqaa_2026: {onehot: "14.ما هو مصدر الطاقة الرئيسي الذي تستخدمه للري والعمليات الزراعية؟", column: "14. Energy Source"}
+  - code: energy_use_text
+    label: {en: "Energy use in peak season (as reported)", ar: "كمية الطاقة المستخدمة في موسم الذروة"}
+    type: text
+    privacy: research
+    group: energy
+    sources:
+      chouf_2026: {column: "Energy used during peak season"}
+      beqaa_2026: {column: "أخرى (يرجى التحديد): ____________.3"}
+
+  # ── food ────────────────────────────────────────────────────────────────
+  - code: production_level
+    label: {en: "Food production level", ar: "مستوى إنتاج الغذاء"}
+    type: ordinal
+    vocab: production_level
+    privacy: public_village
+    group: food
+    sources:
+      chouf_2026: {column: "Food production level"}
+      beqaa_2026: {column: "19. Food Production Level"}
+  - code: coop_member
+    label: {en: "Member of a food cooperative", ar: "عضو في تعاونية"}
+    type: categorical
+    vocab: yes_no
+    privacy: public_village
+    group: food
+    sources:
+      chouf_2026: {column: "Cooperative member (food/trad. product)?"}
+      beqaa_2026: {column: "20. Coop Member?"}
+  - code: coop_size
+    label: {en: "Cooperative size", ar: "حجم التعاونية"}
+    type: ordinal
+    vocab: coop_size
+    privacy: research
+    group: food
+    applies_if: {field: coop_member, in: ["yes"]}
+    sources:
+      beqaa_2026: {column: "إذا كانت الإجابة نعم: ما هو العدد التقريبي للأعضاء النشطين في التعاونية؟"}
+  - code: homes_trad_food
+    label: {en: "Homes in village making traditional food", ar: "نسبة المنازل المنتجة للمؤونة"}
+    type: ordinal
+    vocab: homes_share
+    privacy: public_village
+    group: food
+    sources:
+      chouf_2026: {column: "% of homes making traditional food"}
+      beqaa_2026: {column: "24. % Village Participation"}
+
+  # ── seeds ───────────────────────────────────────────────────────────────
+  - code: seed_criteria
+    label: {en: "Seed purchase criteria", ar: "معايير شراء البذور"}
+    type: multi
+    vocab: seed_criteria
+    privacy: public_village
+    group: seeds
+    sources:
+      chouf_2026: {column: "Criteria for seedling/seed purchase"}
+      beqaa_2026: {onehot: "34.ما هي المعايير التي تعتمدها عند شراء البذور/الشتول؟", column: "34. Seed Selection Criteria"}
+  - code: seed_sources
+    label: {en: "Seed sources", ar: "مصادر البذور"}
+    type: multi
+    vocab: seed_source
+    privacy: public_village
+    group: seeds
+    sources:
+      chouf_2026: {column: "How do you obtain seeds/seedlings?"}
+      beqaa_2026: {onehot: "35.كيف تحصل على البذور/الشتول؟", column: "35. Seed Source"}
+  - code: seed_challenges
+    label: {en: "Main challenge obtaining seeds", ar: "التحدي الأكبر في الحصول على البذور"}
+    type: multi
+    vocab: seed_challenge
+    privacy: public_village
+    group: seeds
+    sources:
+      chouf_2026: {column: "Main challenge in obtaining seeds"}
+      beqaa_2026: {onehot: "36.ما هو التحدي الأكبر في الحصول على البذور/الشتول؟", column: "36. Seed Challenges"}
+  - code: traditional_seed_knowledge
+    label: {en: "Knows traditional seed preservation", ar: "معرفة بطرق تقليدية لحفظ البذور"}
+    type: categorical
+    vocab: yes_no
+    privacy: public_village
+    group: seeds
+    sources:
+      chouf_2026: {column: "Know any traditional seed preservation methods?"}
+      beqaa_2026: {column: "37.هل تعرف أي طريقة تقليدية لحفظ/معالجة البذور؟"}
+  - code: traditional_seed_method_text
+    label: {en: "Seed preservation method (as described)", ar: "طريقة حفظ البذور"}
+    type: text
+    privacy: research
+    group: seeds
+    applies_if: {field: traditional_seed_knowledge, in: ["yes"]}
+    sources:
+      chouf_2026: {column: "نعم (يرجى التوضيح)"}
+      beqaa_2026: {column: "نعم (يرجى التوضيح)"}
+
+  # ── soil ────────────────────────────────────────────────────────────────
+  - code: soil_enhancers
+    label: {en: "Soil enhancers used", ar: "المحسنات المستخدمة في التربة"}
+    type: multi
+    vocab: soil_enhancer
+    privacy: public_village
+    group: soil
+    sources:
+      chouf_2026: {column: "Soil enhancers used"}
+      beqaa_2026: {onehot: "38.ما هي أنواع المحسنات التي تستخدمها في التربة؟", column: "38. Soil Enhancers"}
+  - code: chem_fertilizer_reliance
+    label: {en: "Reliance on chemical fertilizers", ar: "الاعتماد على الأسمدة الكيميائية"}
+    type: ordinal
+    vocab: reliance
+    privacy: public_village
+    group: soil
+    sources:
+      chouf_2026: {column: "Dependence on chemical fertilizers"}
+      beqaa_2026: {column: "39.ما مدى اعتمادك على الأسمدة الكيميائية؟"}
+  - code: fertilizer_cost_share
+    label: {en: "Fertilizer share of total costs", ar: "نسبة تكلفة الأسمدة من التكاليف"}
+    type: ordinal
+    vocab: cost_share
+    privacy: public_district
+    group: soil
+    applies_if: {field: chem_fertilizer_reliance, in: [partial, total]}
+    sources:
+      chouf_2026: {column: "Fertilizer cost % of total"}
+      beqaa_2026: {column: "40. Fertilizer Cost %"}
+
+  # ── pests ───────────────────────────────────────────────────────────────
+  - code: pest_control
+    label: {en: "Pest control methods", ar: "طرق مكافحة الآفات"}
+    type: multi
+    vocab: pest_control
+    privacy: public_village
+    group: pests
+    sources:
+      chouf_2026: {column: "How do you control pests?"}
+      beqaa_2026: {onehot: "43.كيف تقوم بمكافحة الآفات؟", column: "43. Pest Control Method"}
+  - code: pesticide_reliance
+    label: {en: "Reliance on chemical pesticides", ar: "الاعتماد على المبيدات الكيميائية"}
+    type: ordinal
+    vocab: reliance
+    privacy: public_village
+    group: pests
+    sources:
+      chouf_2026: {column: "Dependence on chemical pesticides"}
+      beqaa_2026: {column: "44.ما مدى اعتمادك على المبيدات الكيميائية؟"}
+  - code: pesticide_cost_share
+    label: {en: "Pesticide share of total costs", ar: "نسبة تكلفة المبيدات من التكاليف"}
+    type: ordinal
+    vocab: cost_share
+    privacy: public_district
+    group: pests
+    applies_if: {field: pesticide_reliance, in: [partial, total]}
+    sources:
+      chouf_2026: {column: "Pesticide cost % of total"}
+      beqaa_2026: {column: "45. Pesticide Cost %"}
+
+  # ── market ──────────────────────────────────────────────────────────────
+  - code: marketing_challenges
+    label: {en: "Biggest marketing challenges", ar: "أكبر تحديات التسويق"}
+    type: multi
+    vocab: marketing_challenge
+    privacy: public_village
+    group: market
+    sources:
+      chouf_2026: {column: "Biggest marketing challenge"}
+      beqaa_2026: {onehot: "50. ما هي أكبر التحديات التي تواجهك في تسويق منتجاتك؟  ", column: "50. Marketing Challenges"}
+  - code: logistics_challenges
+    label: {en: "Logistics challenges", ar: "الصعوبات اللوجستية"}
+    type: multi
+    vocab: logistics_challenge
+    privacy: public_village
+    group: market
+    sources:
+      chouf_2026: {column: "Logistics challenge"}
+      beqaa_2026: {onehot: "51. ما هي الصعوبات اللوجستية التي تواجهك في نقل منتجاتك؟", column: "51. Logistics Challenges"}
+
+  # ── climate ─────────────────────────────────────────────────────────────
+  - code: climate_change_noticed
+    label: {en: "Noticed climate change affecting farming", ar: "لاحظ تغيرات مناخية أثرت على الزراعة"}
+    type: categorical
+    vocab: yes_no
+    privacy: public_village
+    group: climate
+    sources:
+      chouf_2026: {column: "Climate Change Effects "}
+      beqaa_2026: {column: "52. Climate Change Noticed?"}
+  - code: climate_changes
+    label: {en: "Main observed changes", ar: "أهم التغيرات الملحوظة"}
+    type: multi
+    vocab: climate_change
+    privacy: public_village
+    group: climate
+    applies_if: {field: climate_change_noticed, in: ["yes"]}
+    sources:
+      chouf_2026: {column: "Main observed changes"}
+      beqaa_2026: {onehot: '53. إذا كانت الإجابة "نعم"، يرجى تحديد أهمها', column: "53. Climate Changes"}
+  - code: climate_impacts
+    label: {en: "Impact on production", ar: "التأثير على الإنتاج"}
+    type: multi
+    vocab: climate_impact
+    privacy: public_village
+    group: climate
+    applies_if: {field: climate_change_noticed, in: ["yes"]}
+    sources:
+      chouf_2026: {column: "Impact on production"}
+      beqaa_2026: {onehot: "54.كيف أثرت هذه التغيرات على إنتاجك الزراعي؟", column: "54. Impact on Production"}
+
+  # ── knowledge ───────────────────────────────────────────────────────────
+  - code: info_sources
+    label: {en: "Sources of agricultural information", ar: "مصادر المعلومات الزراعية"}
+    type: multi
+    vocab: info_source
+    privacy: public_village
+    group: knowledge
+    sources:
+      chouf_2026: {column: "Info source for agriculture"}
+
+  # ── livestock ───────────────────────────────────────────────────────────
+  - code: raises_poultry
+    label: {en: "Raises poultry", ar: "يربي الدواجن"}
+    type: categorical
+    vocab: yes_no
+    privacy: public_village
+    group: livestock
+    sources:
+      chouf_2026: {column: "Do you raise poultry?"}
+      beqaa_2026: {column: "63. Raise Poultry?"}
+  - code: poultry_purpose
+    label: {en: "Main purpose of poultry", ar: "الغرض الرئيسي من تربية الدواجن"}
+    type: multi
+    vocab: poultry_purpose
+    privacy: public_village
+    group: livestock
+    applies_if: {field: raises_poultry, in: ["yes"]}
+    sources:
+      chouf_2026: {column: "Main purpose for poultry?"}
+  - code: poultry_production_text
+    label: {en: "Poultry production (as reported)", ar: "إنتاج الدواجن"}
+    type: text
+    privacy: research
+    group: livestock
+    applies_if: {field: raises_poultry, in: ["yes"]}
+    sources:
+      chouf_2026: {column: "PRODUCTION POULTRY"}
+      beqaa_2026: {column: "• بيض (عدد أو كرتونة): ____________ • لحم (كغ تقريباً): ____________"}

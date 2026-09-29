@@ -1,21 +1,4 @@
-# Core data science
-pandas
-numpy
-scipy
-scikit-learn
-xgboost
-joblib
-seaborn
-matplotlib
-
-# Excel I/O (required by integrate_new_survey_27_2_2026.py)
-openpyxl
-
-# Geospatial
-geopandas
-shapely
-pyproj
-geopy
-
-# HTTP / utilities
-requests
+pandas==3.0.1
+openpyxl==3.1.5
+PyYAML==6.0.3
+shapely==2.1.2

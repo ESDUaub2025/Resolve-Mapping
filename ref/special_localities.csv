@@ -1,0 +1,6 @@
+locality_id,name_en,name_ar,lon,lat,point_source,uncertainty_m,adm3_pcode,note
+loc:saadiyat,Saadiyat,السعديات,35.4261111,33.6950000,OpenStreetMap node 564351992 (ODbL),1000,23111,Coastal locality inside the Damour cadastral unit
+loc:shawalik_deir_el_qamar,Shawalik Deir El-Qamar,شواليق دير القمر,35.5477253,33.6922005,OpenStreetMap node 383510688 (ODbL),1000,23413,Neighbourhood of Deir El-Qamar
+loc:zahle_city,Zahle,زحلة,35.9018,33.8463,Legacy RESOLVE gazetteer (Google Maps + OSM; unverified),3000,,City spread over several cadastral units; district-level only
+loc:masma,Masma,ماسما,36.0394,33.7528,Legacy RESOLVE gazetteer (hand-typed; unverified),5000,,Not found in COD-AB or OSM; legacy point falls outside Lebanon - unresolved
+loc:haret_el_fikani,Haret El-Fikani,حارة الفيكاني,35.9344,33.8147,Legacy RESOLVE gazetteer (hand-typed; unverified),5000,,Not found in COD-AB or OSM; point used only to assign the district

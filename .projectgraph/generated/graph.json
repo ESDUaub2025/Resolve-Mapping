@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T09:13:59+00:00",
+  "generated_at": "2026-09-29T10:11:03+00:00",
   "project": {
     "name": "RESOLVE Mapping Platform",
     "id": "RESOLVEMAPING_FINAL2",
@@ -41,7 +41,15 @@
     "SYS_DATA_PIPELINE",
     "SYS_PUBLIC_RELEASE",
     "SYS_WEB_MAP",
-    "TST_NO_RESTRICTED_DATA_TRACKED"
+    "TST_CANONICAL_VALID",
+    "TST_DICTIONARY",
+    "TST_FRONTEND",
+    "TST_MAP_E2E",
+    "TST_NO_RESTRICTED_DATA_TRACKED",
+    "TST_PIPELINE_REPRODUCIBLE",
+    "TST_PUBLIC_RELEASE",
+    "TST_RESEARCH_TIER",
+    "TST_TEST_SUITE"
   ],
   "tiers": {
     "0": "root",
@@ -73,6 +81,47 @@
     "VALIDATION": 6
   },
   "nodes": [
+    {
+      "id": "CFG_CI",
+      "type": "CONFIG",
+      "title": "CI and packaging",
+      "summary": "GitHub Actions test+deploy (only public/), pinned requirements, pytest config.",
+      "artifacts": [
+        ".github/workflows/**",
+        "pytest.ini",
+        "requirements.txt",
+        "requirements-dev.txt",
+        ".gitattributes",
+        ".gitignore"
+      ],
+      "tier": 4,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
     {
       "id": "CFG_PROJECT_MANIFESTS",
       "type": "CONFIG",
@@ -113,17 +162,14 @@
       "id": "CMP_APP_CONFIG",
       "type": "COMPONENT",
       "title": "Layer manifest",
-      "summary": "app/config/manifest.js layer registry (to become a generated catalog).",
+      "summary": "app/config/manifest.js layer registry (to become a generated catalog). Removed 2026-09-29; kept in git history.",
       "tags": [
         "legacy"
       ],
-      "artifacts": [
-        "app/config/**"
-      ],
       "confidence": "medium",
       "tier": 3,
-      "status": "IMPLEMENTED",
-      "lifecycle": "IMPLEMENTED",
+      "status": "SUPERSEDED",
+      "lifecycle": "SUPERSEDED",
       "has_contract": false,
       "evidence_strength": {
         "contract_kind": "no-machine-checks",
@@ -135,8 +181,8 @@
       },
       "reasons": [
         {
-          "code": "implemented",
-          "detail": "Implementation asserted; verification has not passed yet."
+          "code": "superseded",
+          "detail": "Node was explicitly superseded."
         }
       ],
       "blocked_by": [],
@@ -153,17 +199,14 @@
       "id": "CMP_APP_MODULES",
       "type": "COMPONENT",
       "title": "App modules",
-      "summary": "loader, store, property-schemas, and the unused filter-engine.",
+      "summary": "loader, store, property-schemas, and the unused filter-engine. Removed 2026-09-29; kept in git history.",
       "tags": [
         "legacy"
       ],
-      "artifacts": [
-        "app/modules/**"
-      ],
       "confidence": "medium",
       "tier": 3,
-      "status": "IMPLEMENTED",
-      "lifecycle": "IMPLEMENTED",
+      "status": "SUPERSEDED",
+      "lifecycle": "SUPERSEDED",
       "has_contract": false,
       "evidence_strength": {
         "contract_kind": "no-machine-checks",
@@ -175,8 +218,8 @@
       },
       "reasons": [
         {
-          "code": "implemented",
-          "detail": "Implementation asserted; verification has not passed yet."
+          "code": "superseded",
+          "detail": "Node was explicitly superseded."
         }
       ],
       "blocked_by": [],
@@ -193,16 +236,198 @@
       "id": "CMP_APP_SHELL",
       "type": "COMPONENT",
       "title": "App shell and main logic",
-      "summary": "index.html, app.js (layers, popups, filters, i18n, legend), style.css; decomposed in Stage 6.",
+      "summary": "index.html, app.js (layers, popups, filters, i18n, legend), style.css; decomposed in Stage 6. Removed 2026-09-29; kept in git history.",
       "tags": [
         "legacy"
       ],
+      "confidence": "medium",
+      "tier": 3,
+      "status": "SUPERSEDED",
+      "lifecycle": "SUPERSEDED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "superseded",
+          "detail": "Node was explicitly superseded."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_WEB_MAP"
+      ]
+    },
+    {
+      "id": "CMP_DICTIONARY",
+      "type": "COMPONENT",
+      "title": "Field dictionary and gazetteer",
+      "summary": "dictionary/*.yaml (fields, vocabularies, instruments, dataset cards) and ref/*.csv (localities).",
       "artifacts": [
-        "index.html",
-        "app.js",
-        "style.css"
+        "dictionary/**",
+        "ref/**"
+      ],
+      "tier": 3,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_DATA_PIPELINE"
+      ]
+    },
+    {
+      "id": "CMP_ML_RESEARCH",
+      "type": "COMPONENT",
+      "title": "Withdrawn ML experiments",
+      "summary": "Former AI layers; not published, not maintained.",
+      "tags": [
+        "withdrawn"
+      ],
+      "artifacts": [
+        "research/**"
+      ],
+      "tier": 3,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_DATA_PIPELINE"
+      ]
+    },
+    {
+      "id": "CMP_PIPELINE",
+      "type": "COMPONENT",
+      "title": "resolve pipeline",
+      "summary": "Adapters, validation, disclosure control, releases (python -m resolve).",
+      "artifacts": [
+        "resolve/**"
+      ],
+      "tier": 3,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_DATA_PIPELINE"
+      ]
+    },
+    {
+      "id": "CMP_SCRIPTS",
+      "type": "COMPONENT",
+      "title": "Legacy processing scripts",
+      "summary": "Active and archived one-off scripts; replaced by the adapter pipeline in Stage 3. Removed 2026-09-29; kept in git history.",
+      "tags": [
+        "legacy"
       ],
       "confidence": "medium",
+      "tier": 3,
+      "status": "SUPERSEDED",
+      "lifecycle": "SUPERSEDED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "superseded",
+          "detail": "Node was explicitly superseded."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_DATA_PIPELINE"
+      ]
+    },
+    {
+      "id": "CMP_WEB_APP",
+      "type": "COMPONENT",
+      "title": "Registry-driven web map",
+      "summary": "public/index.html, public/js, public/css: generic MapLibre app driven by catalog.json.",
+      "artifacts": [
+        "public/index.html",
+        "public/js/**",
+        "public/css/**"
+      ],
       "tier": 3,
       "status": "READY",
       "lifecycle": "DECLARED",
@@ -232,54 +457,13 @@
       ]
     },
     {
-      "id": "CMP_SCRIPTS",
-      "type": "COMPONENT",
-      "title": "Legacy processing scripts",
-      "summary": "Active and archived one-off scripts; replaced by the adapter pipeline in Stage 3.",
-      "tags": [
-        "legacy"
-      ],
-      "artifacts": [
-        "scripts/**"
-      ],
-      "confidence": "medium",
-      "tier": 3,
-      "status": "IMPLEMENTED",
-      "lifecycle": "IMPLEMENTED",
-      "has_contract": false,
-      "evidence_strength": {
-        "contract_kind": "no-machine-checks",
-        "executed_commands": [],
-        "structural_checks": 0,
-        "attestations": 0,
-        "attestation_identity": "caller-supplied; not authenticated human approval",
-        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
-      },
-      "reasons": [
-        {
-          "code": "implemented",
-          "detail": "Implementation asserted; verification has not passed yet."
-        }
-      ],
-      "blocked_by": [],
-      "waiting_on": [],
-      "stale_causes": [],
-      "verified_at": null,
-      "evidence_path": null,
-      "children": [],
-      "parents": [
-        "SYS_DATA_PIPELINE"
-      ]
-    },
-    {
-      "id": "DATA_PUBLISHED_GEOJSON",
+      "id": "DATA_PUBLIC_RELEASE",
       "type": "DATA",
-      "title": "Published GeoJSON",
-      "summary": "Files the browser loads; currently under data/geojson/.",
+      "title": "Public release",
+      "summary": "public/data: catalog.json + content-hashed GeoJSON (disclosure-controlled).",
       "artifacts": [
-        "data/geojson/**"
+        "public/data/**"
       ],
-      "confidence": "medium",
       "tier": 4,
       "status": "READY",
       "lifecycle": "DECLARED",
@@ -309,12 +493,49 @@
       ]
     },
     {
+      "id": "DATA_PUBLISHED_GEOJSON",
+      "type": "DATA",
+      "title": "Published GeoJSON",
+      "summary": "Files the browser loads; currently under data/geojson/. Removed 2026-09-29; kept in git history.",
+      "tags": [
+        "legacy"
+      ],
+      "confidence": "medium",
+      "tier": 4,
+      "status": "SUPERSEDED",
+      "lifecycle": "SUPERSEDED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "superseded",
+          "detail": "Node was explicitly superseded."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_PUBLIC_RELEASE"
+      ]
+    },
+    {
       "id": "M0_CONTAINMENT",
       "type": "MILESTONE",
       "title": "Stage 0 - Containment",
       "summary": "Remove PII, survey-derived and ML data from the public site and git history; site keeps fire + protected areas.",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -332,7 +553,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "TST_NO_RESTRICTED_DATA_TRACKED"
           ]
@@ -340,7 +561,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "TST_NO_RESTRICTED_DATA_TRACKED",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [
@@ -356,7 +583,7 @@
       "title": "Stage 1 - Baseline and scaffolding",
       "summary": "Private/public split, pinned deps, CI, Pages deployed from public/, baseline metrics.",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -377,7 +604,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M0_CONTAINMENT"
           ]
@@ -387,10 +614,18 @@
       "waiting_on": [
         "M0_CONTAINMENT"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M0_CONTAINMENT",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_TEST_SUITE"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -400,7 +635,7 @@
       "type": "MILESTONE",
       "title": "Stage 2 - Field dictionary, vocabularies, gazetteer",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -421,7 +656,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M1_SCAFFOLDING"
           ]
@@ -431,10 +666,18 @@
       "waiting_on": [
         "M1_SCAFFOLDING"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M1_SCAFFOLDING",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_DICTIONARY"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -444,7 +687,7 @@
       "type": "MILESTONE",
       "title": "Stage 3 - Adapters to staging with lineage",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -465,7 +708,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M2_DICTIONARY"
           ]
@@ -475,10 +718,18 @@
       "waiting_on": [
         "M2_DICTIONARY"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M2_DICTIONARY",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_PIPELINE_REPRODUCIBLE"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -488,7 +739,7 @@
       "type": "MILESTONE",
       "title": "Stage 4 - Validation and canonical tier",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -509,7 +760,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M3_ADAPTERS"
           ]
@@ -519,10 +770,18 @@
       "waiting_on": [
         "M3_ADAPTERS"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M3_ADAPTERS",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_CANONICAL_VALID"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -532,7 +791,7 @@
       "type": "MILESTONE",
       "title": "Stage 5 - Publishing with statistical disclosure control",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -553,7 +812,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M4_CANONICAL"
           ]
@@ -563,10 +822,18 @@
       "waiting_on": [
         "M4_CANONICAL"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M4_CANONICAL",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_PUBLIC_RELEASE"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -576,7 +843,7 @@
       "type": "MILESTONE",
       "title": "Stage 6 - Registry-driven frontend",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -597,7 +864,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M5_PUBLISH_SDC"
           ]
@@ -607,10 +874,18 @@
       "waiting_on": [
         "M5_PUBLISH_SDC"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M5_PUBLISH_SDC",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_FRONTEND"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -620,7 +895,7 @@
       "type": "MILESTONE",
       "title": "Stage 7 - GIS and UX corrections",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -641,7 +916,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M6_FRONTEND_REGISTRY"
           ]
@@ -651,10 +926,18 @@
       "waiting_on": [
         "M6_FRONTEND_REGISTRY"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M6_FRONTEND_REGISTRY",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_MAP_E2E"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -664,7 +947,7 @@
       "type": "MILESTONE",
       "title": "Stage 8 - Research tier and ML (optional)",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -685,7 +968,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from member nodes (READY).",
+          "detail": "Derived from member nodes (STALE).",
           "refs": [
             "M4_CANONICAL"
           ]
@@ -695,10 +978,18 @@
       "waiting_on": [
         "M4_CANONICAL"
       ],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M4_CANONICAL",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
-      "children": [],
+      "children": [
+        "TST_RESEARCH_TIER"
+      ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
@@ -708,7 +999,7 @@
       "type": "REQUIREMENT",
       "title": "Consistent popups (AR/EN parity), legends and info cards on all layers",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -726,7 +1017,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M7_GIS_UX"
           ]
@@ -734,7 +1025,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M7_GIS_UX",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -747,7 +1044,7 @@
       "type": "REQUIREMENT",
       "title": "Every dataset has source, licence, collection period, method and schema version",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -765,7 +1062,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M5_PUBLISH_SDC"
           ]
@@ -773,7 +1070,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M5_PUBLISH_SDC",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -786,7 +1089,7 @@
       "type": "REQUIREMENT",
       "title": "Every dataset follows a defined schema with stable IDs",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -804,7 +1107,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M4_CANONICAL"
           ]
@@ -812,7 +1115,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M4_CANONICAL",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -825,7 +1134,7 @@
       "type": "REQUIREMENT",
       "title": "Public release regenerates deterministically from private raw sources",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -843,7 +1152,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M5_PUBLISH_SDC"
           ]
@@ -851,7 +1160,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M5_PUBLISH_SDC",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -864,7 +1179,7 @@
       "type": "REQUIREMENT",
       "title": "Every geometry carries origin and spatial precision; no baked displacement",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -882,7 +1197,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M4_CANONICAL"
           ]
@@ -890,7 +1205,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M4_CANONICAL",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -903,7 +1224,7 @@
       "type": "REQUIREMENT",
       "title": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -921,7 +1242,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M4_CANONICAL"
           ]
@@ -929,7 +1250,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M4_CANONICAL",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -943,7 +1270,7 @@
       "title": "No restricted farmer data reaches unauthorized clients",
       "summary": "No direct identifiers, respondent-level records or n<k aggregates in anything Pages serves, nor in public git history.",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -961,7 +1288,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M0_CONTAINMENT",
             "M5_PUBLISH_SDC"
@@ -970,7 +1297,18 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M0_CONTAINMENT",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M5_PUBLISH_SDC",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -983,7 +1321,7 @@
       "type": "REQUIREMENT",
       "title": "New dataset needs only an adapter, dictionary rows and a registry entry",
       "tier": 2,
-      "status": "READY",
+      "status": "STALE",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -1001,7 +1339,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from fulfilling nodes (READY).",
+          "detail": "Derived from fulfilling nodes (STALE).",
           "refs": [
             "M6_FRONTEND_REGISTRY"
           ]
@@ -1009,7 +1347,13 @@
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M6_FRONTEND_REGISTRY",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [],
@@ -1023,7 +1367,7 @@
       "title": "RESOLVE Mapping Platform",
       "summary": "Lebanon agricultural/environmental GIS map (static site on GitHub Pages).",
       "tier": 0,
-      "status": "ACTIVE",
+      "status": "STALE",
       "lifecycle": "ACTIVE",
       "has_contract": false,
       "evidence_strength": {
@@ -1041,17 +1385,117 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (ACTIVE).",
+          "detail": "Derived from contained nodes (STALE).",
           "refs": [
-            "CFG_PROJECT_MANIFESTS",
-            "SYS_DATA_PIPELINE",
-            "SYS_WEB_MAP"
+            "M0_CONTAINMENT",
+            "M1_SCAFFOLDING",
+            "M2_DICTIONARY",
+            "M3_ADAPTERS",
+            "M4_CANONICAL",
+            "M5_PUBLISH_SDC",
+            "M6_FRONTEND_REGISTRY",
+            "M7_GIS_UX",
+            "M8_RESEARCH_TIER",
+            "REQ_CONSISTENT_MAP_UX",
+            "REQ_DATASET_PROVENANCE_LICENCE",
+            "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+            "REQ_DETERMINISTIC_PUBLIC_BUILD",
+            "REQ_LOCATION_PROVENANCE",
+            "REQ_MISSING_VALUE_SEMANTICS",
+            "REQ_NO_RESTRICTED_DATA_PUBLIC",
+            "REQ_PREDICTABLE_NEW_DATASET"
           ]
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [],
+      "stale_causes": [
+        {
+          "kind": "member",
+          "path": "M0_CONTAINMENT",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M1_SCAFFOLDING",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M2_DICTIONARY",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M3_ADAPTERS",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M4_CANONICAL",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M5_PUBLISH_SDC",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M6_FRONTEND_REGISTRY",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M7_GIS_UX",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "M8_RESEARCH_TIER",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_CONSISTENT_MAP_UX",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_DATASET_PROVENANCE_LICENCE",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_LOCATION_PROVENANCE",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_MISSING_VALUE_SEMANTICS",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+          "change": "stale"
+        },
+        {
+          "kind": "member",
+          "path": "REQ_PREDICTABLE_NEW_DATASET",
+          "change": "stale"
+        }
+      ],
       "verified_at": null,
       "evidence_path": null,
       "children": [
@@ -1059,6 +1503,7 @@
         "SYS_WEB_MAP",
         "SYS_PUBLIC_RELEASE",
         "CFG_PROJECT_MANIFESTS",
+        "CFG_CI",
         "REQ_NO_RESTRICTED_DATA_PUBLIC",
         "REQ_DEFINED_SCHEMAS_STABLE_IDS",
         "REQ_LOCATION_PROVENANCE",
@@ -1085,7 +1530,7 @@
       "title": "Data pipeline",
       "summary": "Offline Python processing from raw sources to published datasets.",
       "tier": 1,
-      "status": "ACTIVE",
+      "status": "READY",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -1103,9 +1548,11 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (ACTIVE).",
+          "detail": "Derived from contained nodes (READY).",
           "refs": [
-            "CMP_SCRIPTS"
+            "CMP_DICTIONARY",
+            "CMP_ML_RESEARCH",
+            "CMP_PIPELINE"
           ]
         }
       ],
@@ -1115,7 +1562,10 @@
       "verified_at": null,
       "evidence_path": null,
       "children": [
-        "CMP_SCRIPTS"
+        "CMP_SCRIPTS",
+        "CMP_PIPELINE",
+        "CMP_DICTIONARY",
+        "CMP_ML_RESEARCH"
       ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
@@ -1147,7 +1597,7 @@
           "code": "derived-from-members",
           "detail": "Derived from contained nodes (READY).",
           "refs": [
-            "DATA_PUBLISHED_GEOJSON"
+            "DATA_PUBLIC_RELEASE"
           ]
         }
       ],
@@ -1157,7 +1607,8 @@
       "verified_at": null,
       "evidence_path": null,
       "children": [
-        "DATA_PUBLISHED_GEOJSON"
+        "DATA_PUBLISHED_GEOJSON",
+        "DATA_PUBLIC_RELEASE"
       ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
@@ -1169,7 +1620,7 @@
       "title": "Web map",
       "summary": "Static MapLibre GL frontend (no build step).",
       "tier": 1,
-      "status": "ACTIVE",
+      "status": "READY",
       "lifecycle": "DECLARED",
       "has_contract": false,
       "evidence_strength": {
@@ -1187,10 +1638,9 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (ACTIVE).",
+          "detail": "Derived from contained nodes (READY).",
           "refs": [
-            "CMP_APP_CONFIG",
-            "CMP_APP_MODULES"
+            "CMP_WEB_APP"
           ]
         }
       ],
@@ -1202,19 +1652,52 @@
       "children": [
         "CMP_APP_SHELL",
         "CMP_APP_MODULES",
-        "CMP_APP_CONFIG"
+        "CMP_APP_CONFIG",
+        "CMP_WEB_APP"
       ],
       "parents": [
         "RESOLVEMAPING_FINAL2"
       ]
     },
     {
-      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "id": "TST_CANONICAL_VALID",
       "type": "TEST",
-      "title": "Privacy invariant - no restricted survey data tracked or served",
-      "summary": "Scans tracked files for survey PII columns, phone numbers and forbidden paths.",
+      "title": "Canonical records pass all critical validation rules",
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M4_CANONICAL"
+      ]
+    },
+    {
+      "id": "TST_DICTIONARY",
+      "type": "TEST",
+      "title": "Dictionary, vocabulary and text-normalization tests",
       "artifacts": [
-        "tests/privacy/**"
+        "tests/test_dictionary.py",
+        "tests/test_textnorm.py"
       ],
       "tier": 6,
       "status": "READY",
@@ -1241,7 +1724,257 @@
       "evidence_path": null,
       "children": [],
       "parents": [
+        "M2_DICTIONARY"
+      ]
+    },
+    {
+      "id": "TST_FRONTEND",
+      "type": "TEST",
+      "title": "Frontend is generic, injection-free, pinned and bilingual",
+      "artifacts": [
+        "tests/test_frontend.py"
+      ],
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M6_FRONTEND_REGISTRY"
+      ]
+    },
+    {
+      "id": "TST_MAP_E2E",
+      "type": "TEST",
+      "title": "End-to-end browser test of the public map",
+      "artifacts": [
+        "tests/e2e/**"
+      ],
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M7_GIS_UX"
+      ]
+    },
+    {
+      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "type": "TEST",
+      "title": "Privacy invariant - no restricted survey data tracked or served",
+      "summary": "Scans tracked files for survey PII columns, phone numbers and forbidden paths.",
+      "artifacts": [
+        "tests/privacy/**"
+      ],
+      "tier": 6,
+      "status": "STALE",
+      "lifecycle": "IMPLEMENTED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [
+          "privacy-invariant"
+        ],
+        "structural_checks": 1,
+        "attestations": 1,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "own-inputs-changed",
+          "detail": "Files or contract covered by this node changed since verification."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [
+        {
+          "kind": "self",
+          "path": "tests/privacy/test_no_restricted_data.py",
+          "change": "modified"
+        }
+      ],
+      "verified_at": "2026-09-29T09:25:07+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T092507+0000-65e04745.json",
+      "children": [],
+      "parents": [
         "M0_CONTAINMENT"
+      ]
+    },
+    {
+      "id": "TST_PIPELINE_REPRODUCIBLE",
+      "type": "TEST",
+      "title": "Public release rebuilds byte-identically from the private raw store",
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M3_ADAPTERS"
+      ]
+    },
+    {
+      "id": "TST_PUBLIC_RELEASE",
+      "type": "TEST",
+      "title": "Public release and disclosure-control invariants",
+      "artifacts": [
+        "tests/test_public_release.py",
+        "tests/test_sdc.py"
+      ],
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M5_PUBLISH_SDC"
+      ]
+    },
+    {
+      "id": "TST_RESEARCH_TIER",
+      "type": "TEST",
+      "title": "Local research release with identities builds",
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M8_RESEARCH_TIER"
+      ]
+    },
+    {
+      "id": "TST_TEST_SUITE",
+      "type": "TEST",
+      "title": "Full automated test suite (CI gate)",
+      "artifacts": [
+        "tests/**",
+        "pytest.ini"
+      ],
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M1_SCAFFOLDING"
       ]
     }
   ],
@@ -1322,6 +2055,104 @@
       "type": "CONSUMES",
       "gating": false,
       "staleness": true
+    },
+    {
+      "from": "SYS_DATA_PIPELINE",
+      "to": "CMP_PIPELINE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_DATA_PIPELINE",
+      "to": "CMP_DICTIONARY",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_DATA_PIPELINE",
+      "to": "CMP_ML_RESEARCH",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_WEB_MAP",
+      "to": "CMP_WEB_APP",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_PUBLIC_RELEASE",
+      "to": "DATA_PUBLIC_RELEASE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "CFG_CI",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "CMP_PIPELINE",
+      "to": "CMP_DICTIONARY",
+      "type": "CONSUMES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "CMP_PIPELINE",
+      "to": "DATA_PUBLIC_RELEASE",
+      "type": "PRODUCES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "CMP_WEB_APP",
+      "to": "DATA_PUBLIC_RELEASE",
+      "type": "CONSUMES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "CMP_PIPELINE",
+      "to": "CMP_SCRIPTS",
+      "type": "SUPERSEDES",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "CMP_WEB_APP",
+      "to": "CMP_APP_SHELL",
+      "type": "SUPERSEDES",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "CMP_WEB_APP",
+      "to": "CMP_APP_MODULES",
+      "type": "SUPERSEDES",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "CMP_WEB_APP",
+      "to": "CMP_APP_CONFIG",
+      "type": "SUPERSEDES",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "DATA_PUBLIC_RELEASE",
+      "to": "DATA_PUBLISHED_GEOJSON",
+      "type": "SUPERSEDES",
+      "gating": false,
+      "staleness": false
     },
     {
       "from": "RESOLVEMAPING_FINAL2",
@@ -1567,6 +2398,62 @@
       "type": "SATISFIES",
       "gating": false,
       "staleness": true
+    },
+    {
+      "from": "M1_SCAFFOLDING",
+      "to": "TST_TEST_SUITE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M2_DICTIONARY",
+      "to": "TST_DICTIONARY",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M3_ADAPTERS",
+      "to": "TST_PIPELINE_REPRODUCIBLE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M4_CANONICAL",
+      "to": "TST_CANONICAL_VALID",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M5_PUBLISH_SDC",
+      "to": "TST_PUBLIC_RELEASE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M6_FRONTEND_REGISTRY",
+      "to": "TST_FRONTEND",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M7_GIS_UX",
+      "to": "TST_MAP_E2E",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M8_RESEARCH_TIER",
+      "to": "TST_RESEARCH_TIER",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
     }
   ]
 }

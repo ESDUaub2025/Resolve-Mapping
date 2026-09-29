@@ -1,11 +1,11 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T09:13:59+00:00",
+  "generated_at": "2026-09-29T10:11:03+00:00",
   "project": "RESOLVE Mapping Platform",
   "git": {
     "available": true,
-    "commit": "3f510243dd7db91789b7de8e0d04114014c80b6f",
-    "short_commit": "3f510243dd7d",
+    "commit": "b8594ed44c1973ae742d08b9beb7e4efb17c3d11",
+    "short_commit": "b8594ed44c19",
     "branch": "main",
     "dirty": true,
     "worktree": "D:\\Programing\\ResolveMaping_final2",
@@ -13,45 +13,53 @@
     "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
   },
   "totals": {
-    "nodes": 28,
-    "edges": 46,
-    "verifiable": 22
+    "nodes": 42,
+    "edges": 68,
+    "verifiable": 30
   },
   "counts": {
     "DECLARED": 0,
-    "READY": 21,
-    "ACTIVE": 3,
-    "IMPLEMENTED": 4,
+    "READY": 17,
+    "ACTIVE": 0,
+    "IMPLEMENTED": 1,
     "VERIFYING": 0,
     "VERIFIED": 0,
     "FAILED": 0,
     "BLOCKED": 0,
-    "STALE": 0,
-    "SUPERSEDED": 0
+    "STALE": 19,
+    "SUPERSEDED": 5
   },
   "progress": 0.0,
-  "coverage": 0.7857,
-  "stale": [],
+  "coverage": 0.8108,
+  "stale": [
+    "M0_CONTAINMENT",
+    "M1_SCAFFOLDING",
+    "M2_DICTIONARY",
+    "M3_ADAPTERS",
+    "M4_CANONICAL",
+    "M5_PUBLISH_SDC",
+    "M6_FRONTEND_REGISTRY",
+    "M7_GIS_UX",
+    "M8_RESEARCH_TIER",
+    "REQ_CONSISTENT_MAP_UX",
+    "REQ_DATASET_PROVENANCE_LICENCE",
+    "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+    "REQ_DETERMINISTIC_PUBLIC_BUILD",
+    "REQ_LOCATION_PROVENANCE",
+    "REQ_MISSING_VALUE_SEMANTICS",
+    "REQ_NO_RESTRICTED_DATA_PUBLIC",
+    "REQ_PREDICTABLE_NEW_DATASET",
+    "RESOLVEMAPING_FINAL2",
+    "TST_NO_RESTRICTED_DATA_TRACKED"
+  ],
   "blocked": [],
   "failed": [],
   "next": [
     {
-      "id": "CMP_APP_CONFIG",
-      "type": "COMPONENT",
-      "status": "IMPLEMENTED",
-      "title": "Layer manifest"
-    },
-    {
-      "id": "CMP_APP_MODULES",
-      "type": "COMPONENT",
-      "status": "IMPLEMENTED",
-      "title": "App modules"
-    },
-    {
-      "id": "CMP_SCRIPTS",
-      "type": "COMPONENT",
-      "status": "IMPLEMENTED",
-      "title": "Legacy processing scripts"
+      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "type": "TEST",
+      "status": "STALE",
+      "title": "Privacy invariant - no restricted survey data tracked or served"
     },
     {
       "id": "CFG_PROJECT_MANIFESTS",
@@ -60,22 +68,52 @@
       "title": "Project manifests"
     },
     {
-      "id": "CMP_APP_SHELL",
+      "id": "CMP_DICTIONARY",
       "type": "COMPONENT",
       "status": "READY",
-      "title": "App shell and main logic"
+      "title": "Field dictionary and gazetteer"
     },
     {
-      "id": "DATA_PUBLISHED_GEOJSON",
+      "id": "CMP_ML_RESEARCH",
+      "type": "COMPONENT",
+      "status": "READY",
+      "title": "Withdrawn ML experiments"
+    },
+    {
+      "id": "CMP_PIPELINE",
+      "type": "COMPONENT",
+      "status": "READY",
+      "title": "resolve pipeline"
+    },
+    {
+      "id": "CMP_WEB_APP",
+      "type": "COMPONENT",
+      "status": "READY",
+      "title": "Registry-driven web map"
+    },
+    {
+      "id": "CFG_CI",
+      "type": "CONFIG",
+      "status": "READY",
+      "title": "CI and packaging"
+    },
+    {
+      "id": "DATA_PUBLIC_RELEASE",
       "type": "DATA",
       "status": "READY",
-      "title": "Published GeoJSON"
+      "title": "Public release"
     },
     {
-      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "id": "TST_CANONICAL_VALID",
       "type": "TEST",
       "status": "READY",
-      "title": "Privacy invariant - no restricted survey data tracked or served"
+      "title": "Canonical records pass all critical validation rules"
+    },
+    {
+      "id": "TST_DICTIONARY",
+      "type": "TEST",
+      "status": "READY",
+      "title": "Dictionary, vocabulary and text-normalization tests"
     }
   ],
   "cycles": []

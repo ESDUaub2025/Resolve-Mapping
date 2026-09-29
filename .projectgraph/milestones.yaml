@@ -1,4 +1,3 @@
-# Roadmap stages from the approved plan (section 20). Members are added as each stage starts.
 nodes:
 - id: M0_CONTAINMENT
   type: MILESTONE
@@ -35,31 +34,146 @@ nodes:
   summary: Scans tracked files for survey PII columns, phone numbers and forbidden paths.
   artifacts:
   - tests/privacy/**
+- id: TST_TEST_SUITE
+  type: TEST
+  title: Full automated test suite (CI gate)
+  artifacts:
+  - tests/**
+  - pytest.ini
+- id: TST_DICTIONARY
+  type: TEST
+  title: Dictionary, vocabulary and text-normalization tests
+  artifacts:
+  - tests/test_dictionary.py
+  - tests/test_textnorm.py
+- id: TST_PIPELINE_REPRODUCIBLE
+  type: TEST
+  title: Public release rebuilds byte-identically from the private raw store
+- id: TST_CANONICAL_VALID
+  type: TEST
+  title: Canonical records pass all critical validation rules
+- id: TST_PUBLIC_RELEASE
+  type: TEST
+  title: Public release and disclosure-control invariants
+  artifacts:
+  - tests/test_public_release.py
+  - tests/test_sdc.py
+- id: TST_FRONTEND
+  type: TEST
+  title: Frontend is generic, injection-free, pinned and bilingual
+  artifacts:
+  - tests/test_frontend.py
+- id: TST_MAP_E2E
+  type: TEST
+  title: End-to-end browser test of the public map
+  artifacts:
+  - tests/e2e/**
+- id: TST_RESEARCH_TIER
+  type: TEST
+  title: Local research release with identities builds
 edges:
-- {from: RESOLVEMAPING_FINAL2, to: M0_CONTAINMENT, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M1_SCAFFOLDING, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M2_DICTIONARY, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M3_ADAPTERS, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M4_CANONICAL, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M5_PUBLISH_SDC, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M6_FRONTEND_REGISTRY, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M7_GIS_UX, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: M8_RESEARCH_TIER, type: CONTAINS}
-- {from: M0_CONTAINMENT, to: TST_NO_RESTRICTED_DATA_TRACKED, type: CONTAINS}
-- {from: M1_SCAFFOLDING, to: M0_CONTAINMENT, type: DEPENDS_ON}
-- {from: M2_DICTIONARY, to: M1_SCAFFOLDING, type: DEPENDS_ON}
-- {from: M3_ADAPTERS, to: M2_DICTIONARY, type: DEPENDS_ON}
-- {from: M4_CANONICAL, to: M3_ADAPTERS, type: DEPENDS_ON}
-- {from: M5_PUBLISH_SDC, to: M4_CANONICAL, type: DEPENDS_ON}
-- {from: M6_FRONTEND_REGISTRY, to: M5_PUBLISH_SDC, type: DEPENDS_ON}
-- {from: M7_GIS_UX, to: M6_FRONTEND_REGISTRY, type: DEPENDS_ON}
-- {from: M8_RESEARCH_TIER, to: M4_CANONICAL, type: DEPENDS_ON}
-- {from: M0_CONTAINMENT, to: REQ_NO_RESTRICTED_DATA_PUBLIC, type: SATISFIES}
-- {from: M5_PUBLISH_SDC, to: REQ_NO_RESTRICTED_DATA_PUBLIC, type: SATISFIES}
-- {from: M4_CANONICAL, to: REQ_DEFINED_SCHEMAS_STABLE_IDS, type: SATISFIES}
-- {from: M4_CANONICAL, to: REQ_LOCATION_PROVENANCE, type: SATISFIES}
-- {from: M4_CANONICAL, to: REQ_MISSING_VALUE_SEMANTICS, type: SATISFIES}
-- {from: M5_PUBLISH_SDC, to: REQ_DATASET_PROVENANCE_LICENCE, type: SATISFIES}
-- {from: M5_PUBLISH_SDC, to: REQ_DETERMINISTIC_PUBLIC_BUILD, type: SATISFIES}
-- {from: M6_FRONTEND_REGISTRY, to: REQ_PREDICTABLE_NEW_DATASET, type: SATISFIES}
-- {from: M7_GIS_UX, to: REQ_CONSISTENT_MAP_UX, type: SATISFIES}
+- from: RESOLVEMAPING_FINAL2
+  to: M0_CONTAINMENT
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M1_SCAFFOLDING
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M2_DICTIONARY
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M3_ADAPTERS
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M4_CANONICAL
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M5_PUBLISH_SDC
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M6_FRONTEND_REGISTRY
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M7_GIS_UX
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: M8_RESEARCH_TIER
+  type: CONTAINS
+- from: M0_CONTAINMENT
+  to: TST_NO_RESTRICTED_DATA_TRACKED
+  type: CONTAINS
+- from: M1_SCAFFOLDING
+  to: M0_CONTAINMENT
+  type: DEPENDS_ON
+- from: M2_DICTIONARY
+  to: M1_SCAFFOLDING
+  type: DEPENDS_ON
+- from: M3_ADAPTERS
+  to: M2_DICTIONARY
+  type: DEPENDS_ON
+- from: M4_CANONICAL
+  to: M3_ADAPTERS
+  type: DEPENDS_ON
+- from: M5_PUBLISH_SDC
+  to: M4_CANONICAL
+  type: DEPENDS_ON
+- from: M6_FRONTEND_REGISTRY
+  to: M5_PUBLISH_SDC
+  type: DEPENDS_ON
+- from: M7_GIS_UX
+  to: M6_FRONTEND_REGISTRY
+  type: DEPENDS_ON
+- from: M8_RESEARCH_TIER
+  to: M4_CANONICAL
+  type: DEPENDS_ON
+- from: M0_CONTAINMENT
+  to: REQ_NO_RESTRICTED_DATA_PUBLIC
+  type: SATISFIES
+- from: M5_PUBLISH_SDC
+  to: REQ_NO_RESTRICTED_DATA_PUBLIC
+  type: SATISFIES
+- from: M4_CANONICAL
+  to: REQ_DEFINED_SCHEMAS_STABLE_IDS
+  type: SATISFIES
+- from: M4_CANONICAL
+  to: REQ_LOCATION_PROVENANCE
+  type: SATISFIES
+- from: M4_CANONICAL
+  to: REQ_MISSING_VALUE_SEMANTICS
+  type: SATISFIES
+- from: M5_PUBLISH_SDC
+  to: REQ_DATASET_PROVENANCE_LICENCE
+  type: SATISFIES
+- from: M5_PUBLISH_SDC
+  to: REQ_DETERMINISTIC_PUBLIC_BUILD
+  type: SATISFIES
+- from: M6_FRONTEND_REGISTRY
+  to: REQ_PREDICTABLE_NEW_DATASET
+  type: SATISFIES
+- from: M7_GIS_UX
+  to: REQ_CONSISTENT_MAP_UX
+  type: SATISFIES
+- from: M1_SCAFFOLDING
+  to: TST_TEST_SUITE
+  type: CONTAINS
+- from: M2_DICTIONARY
+  to: TST_DICTIONARY
+  type: CONTAINS
+- from: M3_ADAPTERS
+  to: TST_PIPELINE_REPRODUCIBLE
+  type: CONTAINS
+- from: M4_CANONICAL
+  to: TST_CANONICAL_VALID
+  type: CONTAINS
+- from: M5_PUBLISH_SDC
+  to: TST_PUBLIC_RELEASE
+  type: CONTAINS
+- from: M6_FRONTEND_REGISTRY
+  to: TST_FRONTEND
+  type: CONTAINS
+- from: M7_GIS_UX
+  to: TST_MAP_E2E
+  type: CONTAINS
+- from: M8_RESEARCH_TIER
+  to: TST_RESEARCH_TIER
+  type: CONTAINS

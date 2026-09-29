@@ -1,0 +1,1694 @@
+{
+ "schema_version": "1.0.0",
+ "tier": "public",
+ "k_min_respondents": 5,
+ "statuses": {
+  "reported": {
+   "en": "Reported",
+   "ar": "مُبلَّغ عنه"
+  },
+  "not_provided": {
+   "en": "Not provided",
+   "ar": "لم تتم الإجابة"
+  },
+  "not_asked": {
+   "en": "Not asked in this survey",
+   "ar": "لم يُطرح في هذا الاستبيان"
+  },
+  "not_applicable": {
+   "en": "Not applicable",
+   "ar": "لا ينطبق"
+  },
+  "invalid": {
+   "en": "Unreadable / ambiguous answer",
+   "ar": "إجابة غير واضحة"
+  },
+  "suppressed": {
+   "en": "Hidden to protect privacy",
+   "ar": "مخفي لحماية الخصوصية"
+  }
+ },
+ "precisions": {
+  "exact": {
+   "en": "Exact (GPS reported by respondent)",
+   "ar": "دقيق (إحداثيات من المستجيب)"
+  },
+  "cadastral_unit": {
+   "en": "Cadastral area (not a farm location)",
+   "ar": "منطقة عقارية (ليست موقع المزرعة)"
+  },
+  "locality": {
+   "en": "Locality point (approximate)",
+   "ar": "نقطة المنطقة (تقريبية)"
+  },
+  "unverified_locality": {
+   "en": "Unverified locality point",
+   "ar": "نقطة منطقة غير مؤكدة"
+  },
+  "district": {
+   "en": "District (caza)",
+   "ar": "القضاء"
+  },
+  "satellite_pixel": {
+   "en": "Satellite pixel centre (≈375 m–1 km)",
+   "ar": "مركز بكسل القمر الصناعي"
+  },
+  "source_polygon": {
+   "en": "Source polygon",
+   "ar": "مضلع المصدر"
+  },
+  "unknown": {
+   "en": "Unknown",
+   "ar": "غير معروف"
+  }
+ },
+ "groups": {
+  "profile": {
+   "en": "Respondent profile",
+   "ar": "بيانات المستجيب"
+  },
+  "land": {
+   "en": "Land",
+   "ar": "الأرض"
+  },
+  "water": {
+   "en": "Water",
+   "ar": "المياه"
+  },
+  "energy": {
+   "en": "Energy",
+   "ar": "الطاقة"
+  },
+  "food": {
+   "en": "Food production",
+   "ar": "إنتاج الغذاء"
+  },
+  "seeds": {
+   "en": "Seeds",
+   "ar": "البذور"
+  },
+  "soil": {
+   "en": "Soil fertility",
+   "ar": "خصوبة التربة"
+  },
+  "pests": {
+   "en": "Pest control",
+   "ar": "مكافحة الآفات"
+  },
+  "market": {
+   "en": "Markets",
+   "ar": "الأسواق"
+  },
+  "climate": {
+   "en": "Climate change",
+   "ar": "التغير المناخي"
+  },
+  "livestock": {
+   "en": "Poultry",
+   "ar": "الدواجن"
+  },
+  "knowledge": {
+   "en": "Information",
+   "ar": "مصادر المعلومات"
+  }
+ },
+ "fields": {
+  "age_group": {
+   "label": {
+    "en": "Age group",
+    "ar": "الفئة العمرية"
+   },
+   "type": "ordinal",
+   "group": "profile",
+   "privacy": "public_district",
+   "vocab": "age_group"
+  },
+  "gender": {
+   "label": {
+    "en": "Gender",
+    "ar": "الجنس"
+   },
+   "type": "categorical",
+   "group": "profile",
+   "privacy": "public_district",
+   "vocab": "gender"
+  },
+  "income_sources": {
+   "label": {
+    "en": "Main income sources",
+    "ar": "مصادر الدخل الرئيسية"
+   },
+   "type": "multi",
+   "group": "profile",
+   "privacy": "public_district",
+   "vocab": "income_source"
+  },
+  "owns_land": {
+   "label": {
+    "en": "Owns agricultural land",
+    "ar": "يمتلك أرضاً زراعية"
+   },
+   "type": "categorical",
+   "group": "land",
+   "privacy": "public_village",
+   "vocab": "yes_no"
+  },
+  "land_size_band": {
+   "label": {
+    "en": "Landholding size",
+    "ar": "حجم الحيازة الزراعية"
+   },
+   "type": "ordinal",
+   "group": "land",
+   "privacy": "public_village",
+   "vocab": "land_size_band"
+  },
+  "soil_types": {
+   "label": {
+    "en": "Soil type",
+    "ar": "نوع التربة"
+   },
+   "type": "multi",
+   "group": "land",
+   "privacy": "public_village",
+   "vocab": "soil_type"
+  },
+  "water_sources": {
+   "label": {
+    "en": "Main irrigation water source",
+    "ar": "المصدر الرئيسي لمياه الري"
+   },
+   "type": "multi",
+   "group": "water",
+   "privacy": "public_village",
+   "vocab": "water_source"
+  },
+  "water_availability": {
+   "label": {
+    "en": "Water availability in the growing season",
+    "ar": "توفر المياه خلال موسم الزراعة"
+   },
+   "type": "ordinal",
+   "group": "water",
+   "privacy": "public_village",
+   "vocab": "water_availability"
+  },
+  "water_scarcity": {
+   "label": {
+    "en": "Months with water scarcity",
+    "ar": "أشهر شح المياه"
+   },
+   "type": "categorical",
+   "group": "water",
+   "privacy": "public_village",
+   "vocab": "yes_no"
+  },
+  "irrigation_need_change": {
+   "label": {
+    "en": "Change in irrigation needs (10 years)",
+    "ar": "التغير في احتياجات الري"
+   },
+   "type": "categorical",
+   "group": "water",
+   "privacy": "public_village",
+   "vocab": "irrigation_need_change"
+  },
+  "energy_sources": {
+   "label": {
+    "en": "Main energy source for irrigation/farming",
+    "ar": "مصدر الطاقة الرئيسي"
+   },
+   "type": "multi",
+   "group": "energy",
+   "privacy": "public_village",
+   "vocab": "energy_source"
+  },
+  "production_level": {
+   "label": {
+    "en": "Food production level",
+    "ar": "مستوى إنتاج الغذاء"
+   },
+   "type": "ordinal",
+   "group": "food",
+   "privacy": "public_village",
+   "vocab": "production_level"
+  },
+  "coop_member": {
+   "label": {
+    "en": "Member of a food cooperative",
+    "ar": "عضو في تعاونية"
+   },
+   "type": "categorical",
+   "group": "food",
+   "privacy": "public_village",
+   "vocab": "yes_no"
+  },
+  "homes_trad_food": {
+   "label": {
+    "en": "Homes in village making traditional food",
+    "ar": "نسبة المنازل المنتجة للمؤونة"
+   },
+   "type": "ordinal",
+   "group": "food",
+   "privacy": "public_village",
+   "vocab": "homes_share"
+  },
+  "seed_criteria": {
+   "label": {
+    "en": "Seed purchase criteria",
+    "ar": "معايير شراء البذور"
+   },
+   "type": "multi",
+   "group": "seeds",
+   "privacy": "public_village",
+   "vocab": "seed_criteria"
+  },
+  "seed_sources": {
+   "label": {
+    "en": "Seed sources",
+    "ar": "مصادر البذور"
+   },
+   "type": "multi",
+   "group": "seeds",
+   "privacy": "public_village",
+   "vocab": "seed_source"
+  },
+  "seed_challenges": {
+   "label": {
+    "en": "Main challenge obtaining seeds",
+    "ar": "التحدي الأكبر في الحصول على البذور"
+   },
+   "type": "multi",
+   "group": "seeds",
+   "privacy": "public_village",
+   "vocab": "seed_challenge"
+  },
+  "traditional_seed_knowledge": {
+   "label": {
+    "en": "Knows traditional seed preservation",
+    "ar": "معرفة بطرق تقليدية لحفظ البذور"
+   },
+   "type": "categorical",
+   "group": "seeds",
+   "privacy": "public_village",
+   "vocab": "yes_no"
+  },
+  "soil_enhancers": {
+   "label": {
+    "en": "Soil enhancers used",
+    "ar": "المحسنات المستخدمة في التربة"
+   },
+   "type": "multi",
+   "group": "soil",
+   "privacy": "public_village",
+   "vocab": "soil_enhancer"
+  },
+  "chem_fertilizer_reliance": {
+   "label": {
+    "en": "Reliance on chemical fertilizers",
+    "ar": "الاعتماد على الأسمدة الكيميائية"
+   },
+   "type": "ordinal",
+   "group": "soil",
+   "privacy": "public_village",
+   "vocab": "reliance"
+  },
+  "fertilizer_cost_share": {
+   "label": {
+    "en": "Fertilizer share of total costs",
+    "ar": "نسبة تكلفة الأسمدة من التكاليف"
+   },
+   "type": "ordinal",
+   "group": "soil",
+   "privacy": "public_district",
+   "vocab": "cost_share"
+  },
+  "pest_control": {
+   "label": {
+    "en": "Pest control methods",
+    "ar": "طرق مكافحة الآفات"
+   },
+   "type": "multi",
+   "group": "pests",
+   "privacy": "public_village",
+   "vocab": "pest_control"
+  },
+  "pesticide_reliance": {
+   "label": {
+    "en": "Reliance on chemical pesticides",
+    "ar": "الاعتماد على المبيدات الكيميائية"
+   },
+   "type": "ordinal",
+   "group": "pests",
+   "privacy": "public_village",
+   "vocab": "reliance"
+  },
+  "pesticide_cost_share": {
+   "label": {
+    "en": "Pesticide share of total costs",
+    "ar": "نسبة تكلفة المبيدات من التكاليف"
+   },
+   "type": "ordinal",
+   "group": "pests",
+   "privacy": "public_district",
+   "vocab": "cost_share"
+  },
+  "marketing_challenges": {
+   "label": {
+    "en": "Biggest marketing challenges",
+    "ar": "أكبر تحديات التسويق"
+   },
+   "type": "multi",
+   "group": "market",
+   "privacy": "public_village",
+   "vocab": "marketing_challenge"
+  },
+  "logistics_challenges": {
+   "label": {
+    "en": "Logistics challenges",
+    "ar": "الصعوبات اللوجستية"
+   },
+   "type": "multi",
+   "group": "market",
+   "privacy": "public_village",
+   "vocab": "logistics_challenge"
+  },
+  "climate_change_noticed": {
+   "label": {
+    "en": "Noticed climate change affecting farming",
+    "ar": "لاحظ تغيرات مناخية أثرت على الزراعة"
+   },
+   "type": "categorical",
+   "group": "climate",
+   "privacy": "public_village",
+   "vocab": "yes_no"
+  },
+  "climate_changes": {
+   "label": {
+    "en": "Main observed changes",
+    "ar": "أهم التغيرات الملحوظة"
+   },
+   "type": "multi",
+   "group": "climate",
+   "privacy": "public_village",
+   "vocab": "climate_change"
+  },
+  "climate_impacts": {
+   "label": {
+    "en": "Impact on production",
+    "ar": "التأثير على الإنتاج"
+   },
+   "type": "multi",
+   "group": "climate",
+   "privacy": "public_village",
+   "vocab": "climate_impact"
+  },
+  "info_sources": {
+   "label": {
+    "en": "Sources of agricultural information",
+    "ar": "مصادر المعلومات الزراعية"
+   },
+   "type": "multi",
+   "group": "knowledge",
+   "privacy": "public_village",
+   "vocab": "info_source"
+  },
+  "raises_poultry": {
+   "label": {
+    "en": "Raises poultry",
+    "ar": "يربي الدواجن"
+   },
+   "type": "categorical",
+   "group": "livestock",
+   "privacy": "public_village",
+   "vocab": "yes_no"
+  },
+  "poultry_purpose": {
+   "label": {
+    "en": "Main purpose of poultry",
+    "ar": "الغرض الرئيسي من تربية الدواجن"
+   },
+   "type": "multi",
+   "group": "livestock",
+   "privacy": "public_village",
+   "vocab": "poultry_purpose"
+  }
+ },
+ "vocabularies": {
+  "age_group": {
+   "kind": "ordinal",
+   "codes": [
+    {
+     "code": "age_18_25",
+     "label": {
+      "en": "18–25",
+      "ar": "18–25"
+     }
+    },
+    {
+     "code": "age_26_35",
+     "label": {
+      "en": "26–35",
+      "ar": "26–35"
+     }
+    },
+    {
+     "code": "age_36_45",
+     "label": {
+      "en": "36–45",
+      "ar": "36–45"
+     }
+    },
+    {
+     "code": "age_46_55",
+     "label": {
+      "en": "46–55",
+      "ar": "46–55"
+     }
+    },
+    {
+     "code": "age_over_55",
+     "label": {
+      "en": "Over 55",
+      "ar": "أكثر من 55"
+     }
+    }
+   ]
+  },
+  "gender": {
+   "kind": "categorical",
+   "codes": [
+    {
+     "code": "male",
+     "label": {
+      "en": "Male",
+      "ar": "ذكر"
+     }
+    },
+    {
+     "code": "female",
+     "label": {
+      "en": "Female",
+      "ar": "أنثى"
+     }
+    }
+   ]
+  },
+  "income_source": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "crops",
+     "label": {
+      "en": "Crop cultivation",
+      "ar": "زراعة المحاصيل"
+     }
+    },
+    {
+     "code": "livestock",
+     "label": {
+      "en": "Livestock raising",
+      "ar": "تربية المواشي"
+     }
+    },
+    {
+     "code": "non_ag_labour",
+     "label": {
+      "en": "Non-agricultural work",
+      "ar": "العمل غير الزراعي"
+     }
+    },
+    {
+     "code": "ag_labour",
+     "label": {
+      "en": "Agricultural work (labour)",
+      "ar": "العمل الزراعي"
+     }
+    },
+    {
+     "code": "government",
+     "label": {
+      "en": "Government services",
+      "ar": "الخدمات الحكومية"
+     }
+    },
+    {
+     "code": "business",
+     "label": {
+      "en": "Business",
+      "ar": "الأعمال التجارية"
+     }
+    },
+    {
+     "code": "remittances",
+     "label": {
+      "en": "Financial remittances",
+      "ar": "التحويلات المالية"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "yes_no": {
+   "kind": "categorical",
+   "codes": [
+    {
+     "code": "yes",
+     "label": {
+      "en": "Yes",
+      "ar": "نعم"
+     }
+    },
+    {
+     "code": "no",
+     "label": {
+      "en": "No",
+      "ar": "لا"
+     }
+    }
+   ]
+  },
+  "land_size_band": {
+   "kind": "ordinal",
+   "codes": [
+    {
+     "code": "lt_5_dunum",
+     "label": {
+      "en": "< 5 dunums (< 0.5 ha)",
+      "ar": "أقل من 5 دونم"
+     }
+    },
+    {
+     "code": "lt_1_ha",
+     "label": {
+      "en": "< 1 hectare",
+      "ar": "أقل من 1 هكتار"
+     }
+    },
+    {
+     "code": "gt_1_ha",
+     "label": {
+      "en": "> 1 hectare",
+      "ar": "أكثر من 1 هكتار"
+     }
+    },
+    {
+     "code": "gt_2_ha",
+     "label": {
+      "en": "> 2 hectares",
+      "ar": "أكثر من 2 هكتار"
+     }
+    }
+   ]
+  },
+  "soil_type": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "loamy",
+     "label": {
+      "en": "Loamy / silty (clay and sand)",
+      "ar": "تربة طمية (طينية ورملية)"
+     }
+    },
+    {
+     "code": "clay",
+     "label": {
+      "en": "Clay",
+      "ar": "تربة طينية"
+     }
+    },
+    {
+     "code": "sandy",
+     "label": {
+      "en": "Sandy",
+      "ar": "تربة رملية"
+     }
+    },
+    {
+     "code": "calcareous",
+     "label": {
+      "en": "Calcareous",
+      "ar": "تربة كلسية"
+     }
+    },
+    {
+     "code": "acidic",
+     "label": {
+      "en": "Acidic",
+      "ar": "تربة حمضية"
+     }
+    }
+   ]
+  },
+  "water_source": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "rain",
+     "label": {
+      "en": "Rainwater",
+      "ar": "مياه الأمطار"
+     }
+    },
+    {
+     "code": "river",
+     "label": {
+      "en": "River / stream",
+      "ar": "نهر / مجرى مائي"
+     }
+    },
+    {
+     "code": "well",
+     "label": {
+      "en": "Groundwater well",
+      "ar": "بئر جوفي"
+     }
+    },
+    {
+     "code": "tanker",
+     "label": {
+      "en": "Water tanker delivery",
+      "ar": "نقل المياه بالصهاريج"
+     }
+    },
+    {
+     "code": "canal",
+     "label": {
+      "en": "Irrigation canal",
+      "ar": "قنوات ري"
+     }
+    },
+    {
+     "code": "spring",
+     "label": {
+      "en": "Spring",
+      "ar": "نبع"
+     }
+    },
+    {
+     "code": "public_network",
+     "label": {
+      "en": "Public / state water network",
+      "ar": "مياه الدولة"
+     }
+    },
+    {
+     "code": "storage",
+     "label": {
+      "en": "Storage tank / pond / pool",
+      "ar": "خزان / بركة"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "water_availability": {
+   "kind": "ordinal",
+   "codes": [
+    {
+     "code": "always",
+     "label": {
+      "en": "Always enough",
+      "ar": "دائماً كافية"
+     }
+    },
+    {
+     "code": "sometimes",
+     "label": {
+      "en": "Sometimes enough",
+      "ar": "أحياناً كافية"
+     }
+    },
+    {
+     "code": "rarely",
+     "label": {
+      "en": "Rarely enough",
+      "ar": "نادراً ما تكون كافية"
+     }
+    },
+    {
+     "code": "never",
+     "label": {
+      "en": "Completely insufficient",
+      "ar": "غير كافية تماماً"
+     }
+    }
+   ]
+  },
+  "irrigation_need_change": {
+   "kind": "categorical",
+   "codes": [
+    {
+     "code": "increase",
+     "label": {
+      "en": "Increased",
+      "ar": "زيادة في الاحتياج"
+     }
+    },
+    {
+     "code": "decrease",
+     "label": {
+      "en": "Decreased",
+      "ar": "انخفاض في الاحتياج"
+     }
+    },
+    {
+     "code": "no_change",
+     "label": {
+      "en": "No change",
+      "ar": "لا يوجد تغيير"
+     }
+    },
+    {
+     "code": "unsure",
+     "label": {
+      "en": "Not sure",
+      "ar": "غير متأكد"
+     }
+    }
+   ]
+  },
+  "energy_source": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "manual",
+     "label": {
+      "en": "Manual (no energy)",
+      "ar": "يدوياً (بدون طاقة)"
+     }
+    },
+    {
+     "code": "grid",
+     "label": {
+      "en": "Grid electricity",
+      "ar": "الكهرباء من الشبكة"
+     }
+    },
+    {
+     "code": "diesel",
+     "label": {
+      "en": "Diesel generator / engine",
+      "ar": "مولد ديزل"
+     }
+    },
+    {
+     "code": "solar",
+     "label": {
+      "en": "Solar",
+      "ar": "الطاقة الشمسية"
+     }
+    },
+    {
+     "code": "gasoline",
+     "label": {
+      "en": "Gasoline / petrol",
+      "ar": "بنزين"
+     }
+    },
+    {
+     "code": "gravity",
+     "label": {
+      "en": "Gravity / piped pressure (no energy)",
+      "ar": "ضغط طبيعي"
+     }
+    },
+    {
+     "code": "none",
+     "label": {
+      "en": "No energy used",
+      "ar": "لا يوجد استخدام للطاقة"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "production_level": {
+   "kind": "ordinal",
+   "codes": [
+    {
+     "code": "small",
+     "label": {
+      "en": "Small (mainly home use)",
+      "ar": "إنتاج صغير"
+     }
+    },
+    {
+     "code": "medium",
+     "label": {
+      "en": "Medium (local use, some sales)",
+      "ar": "إنتاج متوسط"
+     }
+    },
+    {
+     "code": "large",
+     "label": {
+      "en": "Large (regular market sales)",
+      "ar": "إنتاج كبير"
+     }
+    }
+   ]
+  },
+  "homes_share": {
+   "kind": "ordinal",
+   "codes": [
+    {
+     "code": "few",
+     "label": {
+      "en": "Few homes (< 30%)",
+      "ar": "عدد قليل من المنازل (< 30%)"
+     }
+    },
+    {
+     "code": "some",
+     "label": {
+      "en": "Some homes (30–60%)",
+      "ar": "بعض المنازل (30–60%)"
+     }
+    },
+    {
+     "code": "most",
+     "label": {
+      "en": "Most homes (60–80%)",
+      "ar": "معظم المنازل (60–80%)"
+     }
+    },
+    {
+     "code": "almost_all",
+     "label": {
+      "en": "Almost all homes",
+      "ar": "جميع المنازل تقريباً"
+     }
+    }
+   ]
+  },
+  "seed_criteria": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "price",
+     "label": {
+      "en": "Price",
+      "ar": "السعر"
+     }
+    },
+    {
+     "code": "productivity",
+     "label": {
+      "en": "Productivity",
+      "ar": "الإنتاجية"
+     }
+    },
+    {
+     "code": "pest_resistance",
+     "label": {
+      "en": "Pest resistance",
+      "ar": "مقاومة الآفات"
+     }
+    },
+    {
+     "code": "all",
+     "label": {
+      "en": "All of the above",
+      "ar": "جميع ما سبق"
+     }
+    },
+    {
+     "code": "none",
+     "label": {
+      "en": "None of the above",
+      "ar": "لا شيء مما سبق"
+     }
+    }
+   ]
+  },
+  "seed_source": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "shop",
+     "label": {
+      "en": "Agricultural shop / pharmacy (imported seed)",
+      "ar": "صيدليات زراعية / محلات تجارية"
+     }
+    },
+    {
+     "code": "nursery",
+     "label": {
+      "en": "Nursery",
+      "ar": "مشاتل"
+     }
+    },
+    {
+     "code": "neighbour",
+     "label": {
+      "en": "Neighbouring farmer (exchange)",
+      "ar": "مزارع مجاور"
+     }
+    },
+    {
+     "code": "association",
+     "label": {
+      "en": "Associations / municipalities / donors",
+      "ar": "جمعيات / بلديات / جهات مانحة"
+     }
+    },
+    {
+     "code": "own_harvest",
+     "label": {
+      "en": "Own harvest (self-produced)",
+      "ar": "محصول السنة الماضية"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "seed_challenge": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "high_cost",
+     "label": {
+      "en": "High cost",
+      "ar": "التكلفة العالية"
+     }
+    },
+    {
+     "code": "low_availability",
+     "label": {
+      "en": "Limited availability of good seed",
+      "ar": "قلة توفر البذور الجيدة"
+     }
+    },
+    {
+     "code": "unreliable_suppliers",
+     "label": {
+      "en": "Unreliable suppliers",
+      "ar": "عدم وجود موردين موثوقين"
+     }
+    },
+    {
+     "code": "unsuitable",
+     "label": {
+      "en": "Unsuitable for local climate/soil",
+      "ar": "عدم ملاءمة البذور للمناخ أو التربة"
+     }
+    },
+    {
+     "code": "none",
+     "label": {
+      "en": "No challenges",
+      "ar": "لا توجد تحديات"
+     }
+    }
+   ]
+  },
+  "soil_enhancer": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "chemical",
+     "label": {
+      "en": "Chemical fertilizers",
+      "ar": "أسمدة كيميائية"
+     }
+    },
+    {
+     "code": "compost",
+     "label": {
+      "en": "Organic compost",
+      "ar": "كمبوست عضوي"
+     }
+    },
+    {
+     "code": "biofertilizer",
+     "label": {
+      "en": "Biofertilizers",
+      "ar": "مخصبات حيوية"
+     }
+    },
+    {
+     "code": "manure",
+     "label": {
+      "en": "Animal manure",
+      "ar": "روث حيواني"
+     }
+    },
+    {
+     "code": "none",
+     "label": {
+      "en": "Nothing used",
+      "ar": "لا شيء"
+     }
+    }
+   ]
+  },
+  "reliance": {
+   "kind": "ordinal",
+   "codes": [
+    {
+     "code": "not_used",
+     "label": {
+      "en": "Not used",
+      "ar": "لا يتم استخدامها"
+     }
+    },
+    {
+     "code": "partial",
+     "label": {
+      "en": "Partial reliance",
+      "ar": "اعتماد جزئي"
+     }
+    },
+    {
+     "code": "total",
+     "label": {
+      "en": "Total reliance",
+      "ar": "اعتماد كامل"
+     }
+    }
+   ]
+  },
+  "cost_share": {
+   "kind": "ordinal",
+   "codes": [
+    {
+     "code": "lt_20",
+     "label": {
+      "en": "< 20% of costs",
+      "ar": "أقل من 20%"
+     }
+    },
+    {
+     "code": "20_50",
+     "label": {
+      "en": "20–50% of costs",
+      "ar": "من 20% إلى 50%"
+     }
+    },
+    {
+     "code": "gt_50",
+     "label": {
+      "en": "> 50% of costs",
+      "ar": "أكثر من 50%"
+     }
+    }
+   ]
+  },
+  "pest_control": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "chemical",
+     "label": {
+      "en": "Chemical pesticides",
+      "ar": "مكافحة كيميائية (مبيدات)"
+     }
+    },
+    {
+     "code": "biological",
+     "label": {
+      "en": "Biological control",
+      "ar": "مكافحة بيولوجية"
+     }
+    },
+    {
+     "code": "physical",
+     "label": {
+      "en": "Physical control (traps etc.)",
+      "ar": "مكافحة فيزيائية"
+     }
+    },
+    {
+     "code": "local",
+     "label": {
+      "en": "Local / homemade pesticides",
+      "ar": "مبيدات محلية الصنع"
+     }
+    }
+   ]
+  },
+  "marketing_challenge": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "low_prices",
+     "label": {
+      "en": "Low prices",
+      "ar": "انخفاض الأسعار"
+     }
+    },
+    {
+     "code": "weak_demand",
+     "label": {
+      "en": "Weak demand",
+      "ar": "ضعف الطلب"
+     }
+    },
+    {
+     "code": "far_markets",
+     "label": {
+      "en": "Markets are far",
+      "ar": "بُعد الأسواق"
+     }
+    },
+    {
+     "code": "no_transport",
+     "label": {
+      "en": "Lack of transportation",
+      "ar": "نقص وسائل النقل"
+     }
+    },
+    {
+     "code": "poor_packaging",
+     "label": {
+      "en": "Poor packaging",
+      "ar": "ضعف في التغليف أو التعبئة"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "logistics_challenge": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "high_transport_cost",
+     "label": {
+      "en": "High transportation cost",
+      "ar": "كلفة النقل المرتفعة"
+     }
+    },
+    {
+     "code": "no_paved_roads",
+     "label": {
+      "en": "No paved roads",
+      "ar": "لا توجد طرق معبدة"
+     }
+    },
+    {
+     "code": "no_transport",
+     "label": {
+      "en": "Lack of transportation",
+      "ar": "نقص وسائل النقل"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "climate_change": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "temperature_rise",
+     "label": {
+      "en": "Rising temperatures",
+      "ar": "ارتفاع درجات الحرارة"
+     }
+    },
+    {
+     "code": "rainfall_decrease",
+     "label": {
+      "en": "Less rainfall",
+      "ar": "نقص هطول الأمطار"
+     }
+    },
+    {
+     "code": "heatwaves",
+     "label": {
+      "en": "More heatwaves",
+      "ar": "زيادة موجات الحر"
+     }
+    },
+    {
+     "code": "frost",
+     "label": {
+      "en": "More frost",
+      "ar": "زيادة الصقيع"
+     }
+    },
+    {
+     "code": "less_snow",
+     "label": {
+      "en": "Less snow",
+      "ar": "قلة الثلوج"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "climate_impact": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "production_decrease",
+     "label": {
+      "en": "Lower production",
+      "ar": "انخفاض الإنتاج"
+     }
+    },
+    {
+     "code": "season_delay",
+     "label": {
+      "en": "Delayed seasons",
+      "ar": "تأخير في المواسم الزراعية"
+     }
+    },
+    {
+     "code": "pests_diseases",
+     "label": {
+      "en": "More pests and diseases",
+      "ar": "زيادة الآفات والأمراض"
+     }
+    },
+    {
+     "code": "pollination",
+     "label": {
+      "en": "Pollination / fruiting problems",
+      "ar": "صعوبات في التلقيح والإثمار"
+     }
+    },
+    {
+     "code": "no_major_impact",
+     "label": {
+      "en": "No major impact",
+      "ar": "لا يوجد تأثير كبير"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "info_source": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "social_media",
+     "label": {
+      "en": "Social media",
+      "ar": "وسائل التواصل الاجتماعي"
+     }
+    },
+    {
+     "code": "extension_agents",
+     "label": {
+      "en": "Agricultural extension agents",
+      "ar": "المرشدون الزراعيون"
+     }
+    },
+    {
+     "code": "supply_shops",
+     "label": {
+      "en": "Agricultural supply shops",
+      "ar": "محلات المستلزمات الزراعية"
+     }
+    },
+    {
+     "code": "television",
+     "label": {
+      "en": "Television",
+      "ar": "التلفزيون"
+     }
+    },
+    {
+     "code": "other",
+     "label": {
+      "en": "Other",
+      "ar": "أخرى"
+     }
+    }
+   ]
+  },
+  "poultry_purpose": {
+   "kind": "multi",
+   "codes": [
+    {
+     "code": "home_consumption",
+     "label": {
+      "en": "Home consumption",
+      "ar": "الاستهلاك المنزلي"
+     }
+    },
+    {
+     "code": "local_sale",
+     "label": {
+      "en": "Sale in local market",
+      "ar": "البيع في السوق المحلي"
+     }
+    },
+    {
+     "code": "gifts",
+     "label": {
+      "en": "Gifts / social occasions",
+      "ar": "هدايا / مناسبات"
+     }
+    }
+   ]
+  }
+ },
+ "property_labels": {
+  "acq_date": {
+   "en": "Detection date",
+   "ar": "تاريخ الرصد"
+  },
+  "acq_time_utc": {
+   "en": "Time (UTC)",
+   "ar": "الوقت (UTC)"
+  },
+  "day_night": {
+   "en": "Day / night pass",
+   "ar": "نهار / ليل"
+  },
+  "name": {
+   "en": "Name",
+   "ar": "الاسم"
+  },
+  "name_original": {
+   "en": "Original name",
+   "ar": "الاسم الأصلي"
+  },
+  "designation": {
+   "en": "Designation",
+   "ar": "التصنيف"
+  },
+  "designation_type": {
+   "en": "Designation level",
+   "ar": "مستوى التصنيف"
+  },
+  "governance": {
+   "en": "Governance",
+   "ar": "الإدارة"
+  },
+  "reported_area_km2": {
+   "en": "Reported area (km²)",
+   "ar": "المساحة المعلنة (كم²)"
+  },
+  "gis_area_km2": {
+   "en": "GIS area (km²)",
+   "ar": "المساحة المحسوبة (كم²)"
+  },
+  "verification": {
+   "en": "Verification",
+   "ar": "التحقق"
+  },
+  "respondent_id": {
+   "en": "ID",
+   "ar": "المعرّف"
+  },
+  "instrument": {
+   "en": "Survey",
+   "ar": "الاستبيان"
+  },
+  "locality_name_en": {
+   "en": "Locality",
+   "ar": "المنطقة"
+  },
+  "spatial_precision": {
+   "en": "Location precision",
+   "ar": "دقة الموقع"
+  },
+  "uncertainty_m": {
+   "en": "Location uncertainty (m)",
+   "ar": "هامش خطأ الموقع (م)"
+  }
+ },
+ "datasets": {
+  "farmer_survey": {
+   "title": {
+    "en": "Farmer survey (village summaries)",
+    "ar": "استبيان المزارعين (ملخصات القرى)"
+   },
+   "owner": "RESOLVE project team (ESDU, American University of Beirut)",
+   "source": "Direct farmer surveys - see instruments chouf_2026 and beqaa_2026",
+   "licence": "All rights reserved - research use; contact the RESOLVE team",
+   "consent": "Research use only. Public outputs are disclosure-controlled aggregates; no individual record is published.",
+   "method": "Answers standardized to controlled vocabularies, resolved to official cadastral units (OCHA COD-AB), and aggregated. A village is published only if at least k respondents answered; otherwise respondents are pooled at district (caza) level. Sensitive indicators (income, age, gender, cost shares) are published at district level only.",
+   "caveats": [
+    "Respondents were not randomly sampled; figures describe respondents, not whole villages.",
+    "Chouf interviews have no recorded dates; Beqaa interviews were on 2026-01-04.",
+    "Locations are cadastral areas, never farm or household locations."
+   ]
+  },
+  "fire_detections": {
+   "title": {
+    "en": "Satellite fire detections",
+    "ar": "رصد الحرائق بالأقمار الصناعية"
+   },
+   "owner": "Unknown - legacy RESOLVE file (fields match NASA FIRMS active-fire exports)",
+   "source": "Probably NASA FIRMS (LANCE). Sensor, product version and query are not recorded.",
+   "licence": "NASA FIRMS data are free to use with attribution (to be confirmed once the source is re-acquired)",
+   "citation": "NASA FIRMS, https://firms.modaps.eosdis.nasa.gov (assumed; unverified)",
+   "method": "Points are the centres of satellite pixels (375 m VIIRS or 1 km MODIS - unknown) flagged as thermal anomalies.",
+   "caveats": [
+    "Not all detections are wildfires; thermal anomalies include agricultural burning and industrial heat.",
+    "Detections in South Lebanon rise 4–8× in Sep–Oct 2024, consistent with conflict-related fires.",
+    "Confidence and fire radiative power were removed in the legacy file, so low-confidence detections cannot be filtered.",
+    "The point marks a pixel centre, not the exact fire location."
+   ]
+  },
+  "protected_areas": {
+   "title": {
+    "en": "Protected areas",
+    "ar": "المحميات"
+   },
+   "owner": "UNEP-WCMC / IUCN - World Database on Protected Areas (inferred from field names)",
+   "source": "Protected Planet WDPA extract; release/version not recorded in the legacy file",
+   "licence": "WDPA terms of use: attribution required, no commercial use, no redistribution as downloadable data without permission (to be confirmed with UNEP-WCMC)",
+   "citation": "UNEP-WCMC and IUCN, Protected Planet: The World Database on Protected Areas (WDPA), www.protectedplanet.net",
+   "method": "Polygons as published by WDPA; overlapping designations of the same site are kept as separate records.",
+   "caveats": [
+    "Some sites appear more than once because they carry several designations (e.g. national reserve and Ramsar site)."
+   ]
+  },
+  "admin_districts": {
+   "title": {
+    "en": "Administrative boundaries",
+    "ar": "الحدود الإدارية"
+   },
+   "owner": "OCHA / Council for Development and Reconstruction (Lebanon)",
+   "source": "OCHA COD-AB Lebanon (lbn_admin_boundaries), HDX, last modified 2026-01-26",
+   "licence": "CC BY-IGO",
+   "citation": "OCHA, Lebanon - Subnational Administrative Boundaries, https://data.humdata.org/dataset/cod-ab-lbn",
+   "method": "Cadastral (admin 3) and district (admin 2) polygons, simplified for web display.",
+   "caveats": [
+    "Simplified geometry is for display only; do not use it for area measurement."
+   ]
+  }
+ },
+ "instruments": {
+  "chouf_2026": {
+   "title": {
+    "en": "Chouf / Mount Lebanon farmer survey",
+    "ar": "استبيان مزارعي الشوف / جبل لبنان"
+   },
+   "collected": "2025–2026 (exact interview dates not recorded; workbook dated 2026-02-27)"
+  },
+  "beqaa_2026": {
+   "title": {
+    "en": "Beqaa farmer survey (MZSurvey)",
+    "ar": "استبيان مزارعي البقاع"
+   },
+   "collected": "2026-01-04"
+  }
+ },
+ "layers": [
+  {
+   "id": "protected-areas",
+   "dataset": "protected_areas",
+   "file": "data/protected_areas.fc5c009db0.geojson",
+   "renderer": "polygons",
+   "title": {
+    "en": "Protected areas",
+    "ar": "المحميات"
+   },
+   "color": "#2e8b57",
+   "visible": true,
+   "label_property": "name",
+   "popup_properties": [
+    "name",
+    "name_original",
+    "designation",
+    "designation_type",
+    "governance",
+    "reported_area_km2",
+    "gis_area_km2",
+    "verification"
+   ]
+  },
+  {
+   "id": "survey-districts",
+   "dataset": "farmer_survey",
+   "file": "data/survey_districts.22eb97847d.geojson",
+   "renderer": "survey_summary",
+   "title": {
+    "en": "Survey – district summaries",
+    "ar": "الاستبيان – ملخصات الأقضية"
+   },
+   "visible": true,
+   "indicators": [
+    "owns_land",
+    "land_size_band",
+    "soil_types",
+    "water_sources",
+    "water_availability",
+    "water_scarcity",
+    "irrigation_need_change",
+    "energy_sources",
+    "production_level",
+    "coop_member",
+    "homes_trad_food",
+    "seed_criteria",
+    "seed_sources",
+    "seed_challenges",
+    "traditional_seed_knowledge",
+    "soil_enhancers",
+    "chem_fertilizer_reliance",
+    "pest_control",
+    "pesticide_reliance",
+    "marketing_challenges",
+    "logistics_challenges",
+    "climate_change_noticed",
+    "climate_changes",
+    "climate_impacts",
+    "info_sources",
+    "raises_poultry",
+    "poultry_purpose"
+   ],
+   "sensitive_indicators": [
+    "age_group",
+    "gender",
+    "income_sources",
+    "fertilizer_cost_share",
+    "pesticide_cost_share"
+   ],
+   "summary_key": "remainder_indicators",
+   "default_indicator": "water_availability"
+  },
+  {
+   "id": "survey-villages",
+   "dataset": "farmer_survey",
+   "file": "data/survey_villages.b2ddc5663e.geojson",
+   "renderer": "survey_summary",
+   "title": {
+    "en": "Survey – village summaries",
+    "ar": "الاستبيان – ملخصات القرى"
+   },
+   "visible": true,
+   "indicators": [
+    "owns_land",
+    "land_size_band",
+    "soil_types",
+    "water_sources",
+    "water_availability",
+    "water_scarcity",
+    "irrigation_need_change",
+    "energy_sources",
+    "production_level",
+    "coop_member",
+    "homes_trad_food",
+    "seed_criteria",
+    "seed_sources",
+    "seed_challenges",
+    "traditional_seed_knowledge",
+    "soil_enhancers",
+    "chem_fertilizer_reliance",
+    "pest_control",
+    "pesticide_reliance",
+    "marketing_challenges",
+    "logistics_challenges",
+    "climate_change_noticed",
+    "climate_changes",
+    "climate_impacts",
+    "info_sources",
+    "raises_poultry",
+    "poultry_purpose"
+   ],
+   "summary_key": "indicators",
+   "default_indicator": "water_availability"
+  },
+  {
+   "id": "fire",
+   "dataset": "fire_detections",
+   "file": "data/fire_detections.db8b23597b.geojson",
+   "renderer": "points",
+   "title": {
+    "en": "Fire detections",
+    "ar": "رصد الحرائق"
+   },
+   "color": "#d7301f",
+   "cluster": true,
+   "visible": false,
+   "heatmap": true,
+   "popup_properties": [
+    "acq_date",
+    "acq_time_utc",
+    "day_night"
+   ],
+   "filters": [
+    {
+     "property": "acq_date",
+     "type": "date_range"
+    },
+    {
+     "property": "day_night",
+     "type": "choice"
+    }
+   ]
+  }
+ ],
+ "release": {
+  "id": "2866779f2b1a",
+  "villages_published": 12,
+  "districts_published": 3,
+  "respondents_in_summaries": 203,
+  "respondents_excluded_no_location": 1
+ }
+}

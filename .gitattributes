@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Published data is content-hashed: keep exact bytes.
+public/data/*.geojson -text
+*.png binary

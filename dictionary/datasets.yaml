@@ -1,0 +1,50 @@
+# Dataset cards. Published with every build in catalog.json and shown as layer info cards.
+
+farmer_survey:
+  title: {en: "Farmer survey (village summaries)", ar: "استبيان المزارعين (ملخصات القرى)"}
+  owner: RESOLVE project team (ESDU, American University of Beirut)
+  source: Direct farmer surveys - see instruments chouf_2026 and beqaa_2026
+  licence: "All rights reserved - research use; contact the RESOLVE team"
+  consent: Research use only. Public outputs are disclosure-controlled aggregates; no individual record is published.
+  method: >-
+    Answers standardized to controlled vocabularies, resolved to official cadastral units
+    (OCHA COD-AB), and aggregated. A village is published only if at least k respondents
+    answered; otherwise respondents are pooled at district (caza) level. Sensitive
+    indicators (income, age, gender, cost shares) are published at district level only.
+  caveats:
+    - Respondents were not randomly sampled; figures describe respondents, not whole villages.
+    - Chouf interviews have no recorded dates; Beqaa interviews were on 2026-01-04.
+    - Locations are cadastral areas, never farm or household locations.
+
+fire_detections:
+  title: {en: "Satellite fire detections", ar: "رصد الحرائق بالأقمار الصناعية"}
+  owner: Unknown - legacy RESOLVE file (fields match NASA FIRMS active-fire exports)
+  source: "Probably NASA FIRMS (LANCE). Sensor, product version and query are not recorded."
+  licence: "NASA FIRMS data are free to use with attribution (to be confirmed once the source is re-acquired)"
+  citation: "NASA FIRMS, https://firms.modaps.eosdis.nasa.gov (assumed; unverified)"
+  method: Points are the centres of satellite pixels (375 m VIIRS or 1 km MODIS - unknown) flagged as thermal anomalies.
+  caveats:
+    - Not all detections are wildfires; thermal anomalies include agricultural burning and industrial heat.
+    - "Detections in South Lebanon rise 4–8× in Sep–Oct 2024, consistent with conflict-related fires."
+    - Confidence and fire radiative power were removed in the legacy file, so low-confidence detections cannot be filtered.
+    - The point marks a pixel centre, not the exact fire location.
+
+protected_areas:
+  title: {en: "Protected areas", ar: "المحميات"}
+  owner: UNEP-WCMC / IUCN - World Database on Protected Areas (inferred from field names)
+  source: "Protected Planet WDPA extract; release/version not recorded in the legacy file"
+  licence: "WDPA terms of use: attribution required, no commercial use, no redistribution as downloadable data without permission (to be confirmed with UNEP-WCMC)"
+  citation: "UNEP-WCMC and IUCN, Protected Planet: The World Database on Protected Areas (WDPA), www.protectedplanet.net"
+  method: Polygons as published by WDPA; overlapping designations of the same site are kept as separate records.
+  caveats:
+    - Some sites appear more than once because they carry several designations (e.g. national reserve and Ramsar site).
+
+admin_districts:
+  title: {en: "Administrative boundaries", ar: "الحدود الإدارية"}
+  owner: OCHA / Council for Development and Reconstruction (Lebanon)
+  source: "OCHA COD-AB Lebanon (lbn_admin_boundaries), HDX, last modified 2026-01-26"
+  licence: "CC BY-IGO"
+  citation: "OCHA, Lebanon - Subnational Administrative Boundaries, https://data.humdata.org/dataset/cod-ab-lbn"
+  method: Cadastral (admin 3) and district (admin 2) polygons, simplified for web display.
+  caveats:
+    - Simplified geometry is for display only; do not use it for area measurement.

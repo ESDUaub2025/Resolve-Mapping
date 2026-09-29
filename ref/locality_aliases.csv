@@ -1,0 +1,64 @@
+alias,instrument,locality_id,resolution,confidence,adm2_fallback,note
+AL meshref,chouf_2026,adm3:23171,cadastral_name_match,high,,
+AL mgheyzieh,chouf_2026,adm3:23341,cadastral_name_match,medium,,Survey spelling المغيزيه vs cadastral مغيرية الشوف (ز/ر); assumed same place
+Aalman,chouf_2026,adm3:23311,cadastral_name_match,high,,
+Aamatour,chouf_2026,adm3:23639,cadastral_name_match,high,,
+Aanout,chouf_2026,adm3:23239,cadastral_name_match,high,,
+Ain kinye,chouf_2026,adm3:23619,cadastral_name_match,high,,Aain Qania (عين قني)
+Ain w zein,chouf_2026,adm3:23627,cadastral_name_match,high,,
+Ain zhalta,chouf_2026,adm3:23469,cadastral_name_match,high,,
+Al Barouk,chouf_2026,adm3:23679,cadastral_name_match,high,,
+Al jahliye,chouf_2026,adm3:23577,cadastral_name_match,high,,
+Al mokhtara,chouf_2026,adm3:23611,cadastral_name_match,high,,
+Al saadiyat,chouf_2026,loc:saadiyat,osm_point_in_cadastral,high,,OSM node 564351992 lies inside Damour cadastral unit
+Al warhaniyeh,chouf_2026,adm3:23463,cadastral_name_match,high,,
+Baakline,chouf_2026,adm3:23511,cadastral_name_match,high,,
+Baazran,chouf_2026,adm3:23631,cadastral_name_match,high,,Baadarane (بعدران)
+Barja,chouf_2026,adm3:23251,cadastral_name_match,high,,
+Bater,chouf_2026,adm3:23675,cadastral_name_match,high,,
+Batloun,chouf_2026,adm3:23663,cadastral_name_match,high,,
+Botme,chouf_2026,adm3:23615,cadastral_name_match,high,,
+Breeh,chouf_2026,adm3:23459,cadastral_name_match,high,,Brih (بريح)
+Bshetfin,chouf_2026,adm3:23423,cadastral_name_match,high,,
+Damour,chouf_2026,adm3:23111,cadastral_name_match,high,,
+Daraya,chouf_2026,adm3:23227,cadastral_name_match,high,,Daraiya Ech-Chouf
+Debiye,chouf_2026,adm3:23259,cadastral_name_match,high,,Dibbiyeh (دبية)
+Deir al qamar,chouf_2026,adm3:23413,cadastral_name_match,high,,
+Deir baba,chouf_2026,adm3:23435,cadastral_name_match,high,,
+Deir dourit,chouf_2026,adm3:23522,cadastral_name_match,high,,
+Derdoret Valley,chouf_2026,adm3:23522,cadastral_name_match,medium,,Valley of Deir Dourit
+Dmeet,chouf_2026,adm3:23447,cadastral_name_match,high,,Dmit (دميت)
+Gharifeh,chouf_2026,adm3:23566,cadastral_name_match,high,,
+Harat jandal,chouf_2026,adm3:23647,cadastral_name_match,high,,
+Itrin,chouf_2026,adm3:23544,cadastral_name_match,high,,Aathrine (عترين)
+Jdeideh al shou,chouf_2026,adm3:23623,cadastral_name_match,high,,Jdeidet Ech-Chouf
+Kahlounieh,chouf_2026,adm3:23643,cadastral_name_match,high,,
+Kfarfakoud,chouf_2026,adm3:23433,cadastral_name_match,high,,
+Kfarhim,chouf_2026,adm3:23439,cadastral_name_match,high,,
+Kfarnabrakh,chouf_2026,adm3:23655,cadastral_name_match,high,,
+Kherbet bessri,chouf_2026,adm3:23371,cadastral_name_match,high,,Khirbet Bisri
+Khreibet alshouf,chouf_2026,adm3:23635,cadastral_name_match,high,,
+Maaser Al shouf,chouf_2026,adm3:23667,cadastral_name_match,high,,
+Majdel Al maouch,chouf_2026,adm3:23445,cadastral_name_match,high,,
+Mazbood,chouf_2026,adm3:23215,cadastral_name_match,high,,Mazboud
+Mazmourk,chouf_2026,adm3:23361,cadastral_name_match,medium,,Mazmoura (مزمورة); survey spelling has a trailing k
+Mazraat Al shouf,chouf_2026,adm3:23651,cadastral_name_match,high,,
+Mresti,chouf_2026,adm3:23659,cadastral_name_match,high,,Mristi (مرستى)
+Mtole,chouf_2026,adm3:23365,cadastral_name_match,high,,Mtolleh (مطله)
+Niha,chouf_2026,adm3:23625,cadastral_name_match,high,,Niha El-Chouf
+Semkanieh,chouf_2026,adm3:23417,cadastral_name_match,high,,Semqaniyeh
+Sharoun,chouf_2026,adm3:24444,cadastral_name_match,high,,Charoun (Aley district)
+Shawalik deir al qamar,chouf_2026,loc:shawalik_deir_el_qamar,osm_point_in_cadastral,high,,OSM node 383510688 lies inside Deir El-Qamar cadastral unit
+"Shawalik deir al qamar, deir dourit",chouf_2026,,ambiguous,none,LB33,Two places given; respondent counted only at district level
+Shheem,chouf_2026,adm3:23211,cadastral_name_match,high,,Chhim (شحيم)
+مشغرة,beqaa_2026,adm3:52111,cadastral_name_match,high,,
+رياق,beqaa_2026,adm3:51311,cadastral_name_match,high,,
+تربل,beqaa_2026,adm3:51365,cadastral_name_match,high,,Terbol Zahleh
+دلهامية,beqaa_2026,adm3:51383,cadastral_name_match,high,,Dalhamiyet Zahleh (دلهميه)
+علي النهري,beqaa_2026,adm3:51323,cadastral_name_match,high,,
+نبي شيت,beqaa_2026,adm3:53445,cadastral_name_match,high,,
+الفاكهة,beqaa_2026,adm3:53214,cadastral_name_match,high,,Fekehe (Baalbek district); legacy gazetteer wrongly placed it in West Bekaa
+اللبوة,beqaa_2026,adm3:53234,cadastral_name_match,high,,Laboueh (Baalbek district); legacy coordinate was ~40 km off
+زحلة,beqaa_2026,loc:zahle_city,multi_cadastral_city,medium,,Zahle spans several cadastral units; respondent counted at district level
+ماسما,beqaa_2026,loc:masma,legacy_manual_point,none,,Not found in COD-AB or OpenStreetMap; legacy hand-typed point lies outside Lebanon - unresolved
+حارة الفيكاني,beqaa_2026,loc:haret_el_fikani,legacy_manual_point,low,,Not found in COD-AB or OpenStreetMap; legacy hand-typed point used for district assignment only

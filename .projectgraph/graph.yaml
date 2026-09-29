@@ -1,4 +1,3 @@
-# ProjectGraph structure: architecture as found (legacy, tagged) plus systems the plan targets.
 nodes:
 - id: RESOLVEMAPING_FINAL2
   type: PROJECT
@@ -25,53 +24,159 @@ nodes:
 - id: CMP_SCRIPTS
   type: COMPONENT
   title: Legacy processing scripts
-  summary: Active and archived one-off scripts; replaced by the adapter pipeline in Stage 3.
-  tags: [legacy]
-  artifacts:
-  - scripts/**
+  summary: Active and archived one-off scripts; replaced by the adapter pipeline in Stage 3. Removed 2026-09-29; kept in git
+    history.
+  tags:
+  - legacy
   confidence: medium
 - id: CMP_APP_SHELL
   type: COMPONENT
   title: App shell and main logic
-  summary: index.html, app.js (layers, popups, filters, i18n, legend), style.css; decomposed in Stage 6.
-  tags: [legacy]
-  artifacts:
-  - index.html
-  - app.js
-  - style.css
+  summary: index.html, app.js (layers, popups, filters, i18n, legend), style.css; decomposed in Stage 6. Removed 2026-09-29;
+    kept in git history.
+  tags:
+  - legacy
   confidence: medium
 - id: CMP_APP_MODULES
   type: COMPONENT
   title: App modules
-  summary: loader, store, property-schemas, and the unused filter-engine.
-  tags: [legacy]
-  artifacts:
-  - app/modules/**
+  summary: loader, store, property-schemas, and the unused filter-engine. Removed 2026-09-29; kept in git history.
+  tags:
+  - legacy
   confidence: medium
 - id: CMP_APP_CONFIG
   type: COMPONENT
   title: Layer manifest
-  summary: app/config/manifest.js layer registry (to become a generated catalog).
-  tags: [legacy]
-  artifacts:
-  - app/config/**
+  summary: app/config/manifest.js layer registry (to become a generated catalog). Removed 2026-09-29; kept in git history.
+  tags:
+  - legacy
   confidence: medium
 - id: DATA_PUBLISHED_GEOJSON
   type: DATA
   title: Published GeoJSON
-  summary: Files the browser loads; currently under data/geojson/.
-  artifacts:
-  - data/geojson/**
+  summary: Files the browser loads; currently under data/geojson/. Removed 2026-09-29; kept in git history.
   confidence: medium
+  tags:
+  - legacy
+- id: CMP_PIPELINE
+  type: COMPONENT
+  title: resolve pipeline
+  summary: Adapters, validation, disclosure control, releases (python -m resolve).
+  artifacts:
+  - resolve/**
+- id: CMP_DICTIONARY
+  type: COMPONENT
+  title: Field dictionary and gazetteer
+  summary: dictionary/*.yaml (fields, vocabularies, instruments, dataset cards) and ref/*.csv (localities).
+  artifacts:
+  - dictionary/**
+  - ref/**
+- id: CMP_ML_RESEARCH
+  type: COMPONENT
+  title: Withdrawn ML experiments
+  summary: Former AI layers; not published, not maintained.
+  tags:
+  - withdrawn
+  artifacts:
+  - research/**
+- id: CMP_WEB_APP
+  type: COMPONENT
+  title: Registry-driven web map
+  summary: 'public/index.html, public/js, public/css: generic MapLibre app driven by catalog.json.'
+  artifacts:
+  - public/index.html
+  - public/js/**
+  - public/css/**
+- id: DATA_PUBLIC_RELEASE
+  type: DATA
+  title: Public release
+  summary: 'public/data: catalog.json + content-hashed GeoJSON (disclosure-controlled).'
+  artifacts:
+  - public/data/**
+- id: CFG_CI
+  type: CONFIG
+  title: CI and packaging
+  summary: GitHub Actions test+deploy (only public/), pinned requirements, pytest config.
+  artifacts:
+  - .github/workflows/**
+  - pytest.ini
+  - requirements.txt
+  - requirements-dev.txt
+  - .gitattributes
+  - .gitignore
 edges:
-- {from: RESOLVEMAPING_FINAL2, to: SYS_DATA_PIPELINE, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: SYS_WEB_MAP, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: SYS_PUBLIC_RELEASE, type: CONTAINS}
-- {from: RESOLVEMAPING_FINAL2, to: CFG_PROJECT_MANIFESTS, type: CONTAINS}
-- {from: SYS_DATA_PIPELINE, to: CMP_SCRIPTS, type: CONTAINS}
-- {from: SYS_WEB_MAP, to: CMP_APP_SHELL, type: CONTAINS}
-- {from: SYS_WEB_MAP, to: CMP_APP_MODULES, type: CONTAINS}
-- {from: SYS_WEB_MAP, to: CMP_APP_CONFIG, type: CONTAINS}
-- {from: SYS_PUBLIC_RELEASE, to: DATA_PUBLISHED_GEOJSON, type: CONTAINS}
-- {from: CMP_SCRIPTS, to: DATA_PUBLISHED_GEOJSON, type: PRODUCES}
-- {from: CMP_APP_MODULES, to: DATA_PUBLISHED_GEOJSON, type: CONSUMES}
+- from: RESOLVEMAPING_FINAL2
+  to: SYS_DATA_PIPELINE
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: SYS_WEB_MAP
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: SYS_PUBLIC_RELEASE
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: CFG_PROJECT_MANIFESTS
+  type: CONTAINS
+- from: SYS_DATA_PIPELINE
+  to: CMP_SCRIPTS
+  type: CONTAINS
+- from: SYS_WEB_MAP
+  to: CMP_APP_SHELL
+  type: CONTAINS
+- from: SYS_WEB_MAP
+  to: CMP_APP_MODULES
+  type: CONTAINS
+- from: SYS_WEB_MAP
+  to: CMP_APP_CONFIG
+  type: CONTAINS
+- from: SYS_PUBLIC_RELEASE
+  to: DATA_PUBLISHED_GEOJSON
+  type: CONTAINS
+- from: CMP_SCRIPTS
+  to: DATA_PUBLISHED_GEOJSON
+  type: PRODUCES
+- from: CMP_APP_MODULES
+  to: DATA_PUBLISHED_GEOJSON
+  type: CONSUMES
+- from: SYS_DATA_PIPELINE
+  to: CMP_PIPELINE
+  type: CONTAINS
+- from: SYS_DATA_PIPELINE
+  to: CMP_DICTIONARY
+  type: CONTAINS
+- from: SYS_DATA_PIPELINE
+  to: CMP_ML_RESEARCH
+  type: CONTAINS
+- from: SYS_WEB_MAP
+  to: CMP_WEB_APP
+  type: CONTAINS
+- from: SYS_PUBLIC_RELEASE
+  to: DATA_PUBLIC_RELEASE
+  type: CONTAINS
+- from: RESOLVEMAPING_FINAL2
+  to: CFG_CI
+  type: CONTAINS
+- from: CMP_PIPELINE
+  to: CMP_DICTIONARY
+  type: CONSUMES
+- from: CMP_PIPELINE
+  to: DATA_PUBLIC_RELEASE
+  type: PRODUCES
+- from: CMP_WEB_APP
+  to: DATA_PUBLIC_RELEASE
+  type: CONSUMES
+- from: CMP_PIPELINE
+  to: CMP_SCRIPTS
+  type: SUPERSEDES
+- from: CMP_WEB_APP
+  to: CMP_APP_SHELL
+  type: SUPERSEDES
+- from: CMP_WEB_APP
+  to: CMP_APP_MODULES
+  type: SUPERSEDES
+- from: CMP_WEB_APP
+  to: CMP_APP_CONFIG
+  type: SUPERSEDES
+- from: DATA_PUBLIC_RELEASE
+  to: DATA_PUBLISHED_GEOJSON
+  type: SUPERSEDES
