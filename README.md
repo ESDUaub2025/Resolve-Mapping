@@ -69,6 +69,11 @@ are written to `<private store>/staging/review_issues.json`; critical problems s
 GitHub Actions (`.github/workflows/pages.yml`) runs the tests and deploys **only `public/`** to
 GitHub Pages. Nothing else in the repository is served.
 
+One-time admin step: Settings → Pages → Source: **GitHub Actions**, then add the repository
+variable `PAGES_FROM_ACTIONS` = `true`. Until then Pages builds from the repository root and the
+root `index.html` redirects to `public/` (the privacy tests keep the whole repository free of
+personal data either way).
+
 ## Data sources and licences
 
 See the dataset cards in `dictionary/datasets.yaml` (shown in the map under ⓘ). Admin boundaries:

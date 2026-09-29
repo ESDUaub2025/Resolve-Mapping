@@ -29,7 +29,9 @@ jobs:
 
   deploy:
     needs: test
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    # Requires Settings -> Pages -> Source "GitHub Actions" (admin), then the repository
+    # variable PAGES_FROM_ACTIONS=true. Until then Pages builds from the repository root.
+    if: vars.PAGES_FROM_ACTIONS == 'true' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       pages: write

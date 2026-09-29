@@ -2,6 +2,19 @@
   "schema_version": "1.1",
   "_comment": "ENGINE-OWNED FILE. Written by ProjectGraph; do not hand-edit. Statuses such as VERIFIED are derived, never stored here.",
   "nodes": {
+    "CFG_CI": {
+      "lifecycle": "DECLARED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
     "CFG_PROJECT_MANIFESTS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
@@ -78,6 +91,45 @@
         }
       ]
     },
+    "CMP_DICTIONARY": {
+      "lifecycle": "DECLARED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "CMP_ML_RESEARCH": {
+      "lifecycle": "DECLARED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "CMP_PIPELINE": {
+      "lifecycle": "DECLARED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
     "CMP_SCRIPTS": {
       "lifecycle": "SUPERSEDED",
       "run_status": "IDLE",
@@ -98,6 +150,32 @@
           "note": "Replaced in the 2026-09-29 refactor"
         }
       ]
+    },
+    "CMP_WEB_APP": {
+      "lifecycle": "DECLARED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "DATA_PUBLIC_RELEASE": {
+      "lifecycle": "DECLARED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
     },
     "DATA_PUBLISHED_GEOJSON": {
       "lifecycle": "SUPERSEDED",
@@ -419,16 +497,144 @@
       "attestations": [],
       "history": []
     },
+    "TST_CANONICAL_VALID": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "4efc76ed11b64101b7821217cdacf676",
+      "evidence_path": ".projectgraph/evidence/TST_CANONICAL_VALID/20260929T101442+0000-4efc76ed.json",
+      "verified_at": "2026-09-29T10:14:42+00:00",
+      "self_fingerprint": "sha256:1779c7be19a841227c6714353d24aacead619e2d420076be1ee211fc4fe05117",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:14:40+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:14:40+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:14:42+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "4efc76ed11b64101b7821217cdacf676"
+        }
+      ]
+    },
+    "TST_DICTIONARY": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "b9ef88cc724b488497d0bfe703fa03dd",
+      "evidence_path": ".projectgraph/evidence/TST_DICTIONARY/20260929T101435+0000-b9ef88cc.json",
+      "verified_at": "2026-09-29T10:14:35+00:00",
+      "self_fingerprint": "sha256:fd7c5d5fd37d6b3ef3a20501bb8c79e0168d23872c1ca6a47980bc4ce6dff110",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:14:34+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:14:34+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:14:35+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "b9ef88cc724b488497d0bfe703fa03dd"
+        }
+      ]
+    },
+    "TST_FRONTEND": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "8888e07888744492bbf0e2203887af42",
+      "evidence_path": ".projectgraph/evidence/TST_FRONTEND/20260929T101445+0000-8888e078.json",
+      "verified_at": "2026-09-29T10:14:45+00:00",
+      "self_fingerprint": "sha256:6726eab57c517af01e3737bede61b7f6f8c8ea786bdb0ea0bc15f5d46c0ea008",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:14:44+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:14:45+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:14:45+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "8888e07888744492bbf0e2203887af42"
+        }
+      ]
+    },
+    "TST_MAP_E2E": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "9cdb25d31ba142b19e81b6cb0fc33c88",
+      "evidence_path": ".projectgraph/evidence/TST_MAP_E2E/20260929T101501+0000-9cdb25d3.json",
+      "verified_at": "2026-09-29T10:15:01+00:00",
+      "self_fingerprint": "sha256:c5eae67a05323edcfefdf486fef9bbe6b6b87bc693119548244905f6a796bb13",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:14:46+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:14:46+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:15:01+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "9cdb25d31ba142b19e81b6cb0fc33c88"
+        }
+      ]
+    },
     "TST_NO_RESTRICTED_DATA_TRACKED": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "65e04745acbc49889b5eab9293784187",
-      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T092507+0000-65e04745.json",
-      "verified_at": "2026-09-29T09:25:07+00:00",
-      "self_fingerprint": "sha256:71f40613d3302a9397696d80c7785c24f0e6dfc94f1ef24382524ffd6a806725",
+      "evidence_id": "0dca4a68e1c446df98b40d0313af4d9b",
+      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T101431+0000-0dca4a68.json",
+      "verified_at": "2026-09-29T10:14:31+00:00",
+      "self_fingerprint": "sha256:67a607c4bf4f033c0bef283db542c64b7b7ef310b841e6d27ad821a7599d0b03",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "git_commit": "2848fc0f4edaad4806a9701ca8131b05488cdc04",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
       "attestations": [
         {
           "item": 1,
@@ -485,6 +691,152 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "65e04745acbc49889b5eab9293784187"
+        },
+        {
+          "at": "2026-09-29T10:14:30+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "STALE"
+        },
+        {
+          "at": "2026-09-29T10:14:30+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:14:31+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "0dca4a68e1c446df98b40d0313af4d9b"
+        }
+      ]
+    },
+    "TST_PIPELINE_REPRODUCIBLE": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "44d2f8f9dc3f46f08ea23664d0afbe1a",
+      "evidence_path": ".projectgraph/evidence/TST_PIPELINE_REPRODUCIBLE/20260929T101439+0000-44d2f8f9.json",
+      "verified_at": "2026-09-29T10:14:39+00:00",
+      "self_fingerprint": "sha256:335b2b226e5f173e1ffb64bc6ed68ec7f5bc598e5a72f82110effad482283a95",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:14:35+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:14:35+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:14:39+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "44d2f8f9dc3f46f08ea23664d0afbe1a"
+        }
+      ]
+    },
+    "TST_PUBLIC_RELEASE": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "ce1c9fa1dfc24d8c85566bf89bd4ef54",
+      "evidence_path": ".projectgraph/evidence/TST_PUBLIC_RELEASE/20260929T101444+0000-ce1c9fa1.json",
+      "verified_at": "2026-09-29T10:14:44+00:00",
+      "self_fingerprint": "sha256:34b137debe3bfbdd4376e89955b4d4df301ba7b67e79f32ef86580f91391ce34",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:14:42+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:14:43+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:14:44+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "ce1c9fa1dfc24d8c85566bf89bd4ef54"
+        }
+      ]
+    },
+    "TST_RESEARCH_TIER": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "00eb033a19df42629fb548eb8e4950ff",
+      "evidence_path": ".projectgraph/evidence/TST_RESEARCH_TIER/20260929T101504+0000-00eb033a.json",
+      "verified_at": "2026-09-29T10:15:04+00:00",
+      "self_fingerprint": "sha256:2d319a7b67bbf895c088fb275ed994138ef3a914e4e7c9190ca410cdbe685d58",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:15:02+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:15:02+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:15:04+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "00eb033a19df42629fb548eb8e4950ff"
+        }
+      ]
+    },
+    "TST_TEST_SUITE": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "10f026c8f61d4eb28a3d57a776b22354",
+      "evidence_path": ".projectgraph/evidence/TST_TEST_SUITE/20260929T101433+0000-10f026c8.json",
+      "verified_at": "2026-09-29T10:14:33+00:00",
+      "self_fingerprint": "sha256:55903df66fd86a8f56a9b540d646b92b526b586d3db53a258ed9c0681488effb",
+      "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-09-29T10:14:32+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-09-29T10:14:32+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-09-29T10:14:33+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "10f026c8f61d4eb28a3d57a776b22354"
         }
       ]
     }

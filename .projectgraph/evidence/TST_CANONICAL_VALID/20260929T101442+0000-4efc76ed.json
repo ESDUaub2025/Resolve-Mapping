@@ -1,0 +1,47 @@
+{
+  "node": "TST_CANONICAL_VALID",
+  "evidence_id": "4efc76ed11b64101b7821217cdacf676",
+  "result": "PASS",
+  "started_at": "2026-09-29T10:14:40+00:00",
+  "finished_at": "2026-09-29T10:14:42+00:00",
+  "git": {
+    "available": true,
+    "commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+    "short_commit": "c3787d1fb32d",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:1779c7be19a841227c6714353d24aacead619e2d420076be1ee211fc4fe05117",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "resolve/validate.py",
+      "hash": "ffbb2079af86a786b4dc0575dd69ac12b94a1159045770117da0e4de1c845fa7"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "resolve/validate.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "build-with-validation",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m resolve build --tier research",
+      "exit_code": 0,
+      "duration_s": 1.797,
+      "stdout_digest": "sha256:6906d9258161a96d7ac2a3bdc94c6669ddba294889a1b99c0aa2e80c4ff0a8ab",
+      "output_tail": "{\n \"raw_files_verified\": 75,\n \"records\": 208,\n \"new_ids\": 0,\n \"review_issues\": 31,\n \"research\": {\n  \"dir\": \"D:\\\\Programing\\\\RESOLVE-data-private\\\\build\\\\research\\\\data\",\n  \"respondent_points\": 206,\n  \"holding_points\": 3\n }\n}\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

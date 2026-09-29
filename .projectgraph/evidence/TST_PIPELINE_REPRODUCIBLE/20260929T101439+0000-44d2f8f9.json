@@ -1,0 +1,57 @@
+{
+  "node": "TST_PIPELINE_REPRODUCIBLE",
+  "evidence_id": "44d2f8f9dc3f46f08ea23664d0afbe1a",
+  "result": "PASS",
+  "started_at": "2026-09-29T10:14:36+00:00",
+  "finished_at": "2026-09-29T10:14:39+00:00",
+  "git": {
+    "available": true,
+    "commit": "c3787d1fb32d970ffd737fb0a9ea9919a007c739",
+    "short_commit": "c3787d1fb32d",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:335b2b226e5f173e1ffb64bc6ed68ec7f5bc598e5a72f82110effad482283a95",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "resolve/publish.py",
+      "hash": "215c6e41464ceabcf60cb89c7f0e63a69b39234228b9c12396f149e78befeed7"
+    },
+    {
+      "path": "resolve/survey.py",
+      "hash": "1ee807857693bcb231a422a974bcb61a8b701540efc739659606d91908987fee"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "resolve/survey.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "resolve/publish.py",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "rebuild-public-identical",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m resolve build --tier public && git diff --exit-code -- public/data",
+      "exit_code": 0,
+      "duration_s": 2.953,
+      "stdout_digest": "sha256:feac751fddfe23ad6234cab3bb069e5a9cb3db7c9d967197b0994b23b153ce2c",
+      "output_tail": "{\n \"raw_files_verified\": 75,\n \"records\": 208,\n \"new_ids\": 0,\n \"review_issues\": 31,\n \"public\": {\n  \"id\": \"2866779f2b1a\",\n  \"villages_published\": 12,\n  \"districts_published\": 3,\n  \"respondents_in_summaries\": 203,\n  \"respondents_excluded_no_location\": 1\n }\n}\nwarning: in the working copy of 'public/data/catalog.json', CRLF will be replaced by LF the next time Git touches it\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}
