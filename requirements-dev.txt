@@ -1,4 +1,8 @@
-# Enough to run the test suite in CI (no private data needed).
+# Everything the test suite imports (no private data needed).
 PyYAML==6.0.3
 shapely==2.1.2
+numpy==2.4.3
+scipy==1.17.1
+scikit-learn==1.8.0
+pyproj==3.7.2
 pytest==9.1.1

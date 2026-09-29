@@ -905,7 +905,17 @@
       "self_fingerprint": "sha256:4e9761c441184a28dfc44422edf72f5cde2f813b3b96b91921ef80450de7f55d",
       "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "git_commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
-      "attestations": [],
+      "attestations": [
+        {
+          "item": 0,
+          "text": "ML analyses rebuilt on the standardized research records with out-of-sample validation (optional stage; not done)",
+          "note": "resolve/analysis.py in build of f12cd6c: typology k=4, bootstrap ARI 0.701 (100 resamples, all types >= 45 respondents); water stress village-grouped CV AUC 0.669 (0.595-0.745) vs region baseline 0.49; chemical dependence AUC 0.605 (0.518-0.688) vs 0.457, labelled weak; MH/BH unit tests pass.",
+          "actor": "cli",
+          "at": "2026-09-29T14:34:56+00:00",
+          "git_commit": "ac73984977fcd89a5bf0ef54c0e882ea3c75be99",
+          "kind": "human-asserted"
+        }
+      ],
       "history": [
         {
           "at": "2026-09-29T10:15:02+00:00",
@@ -945,6 +955,12 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "7bd7284d39a746d392205f4ad7cd5856"
+        },
+        {
+          "at": "2026-09-29T14:34:56+00:00",
+          "event": "attest",
+          "actor": "cli",
+          "item": 0
         }
       ]
     },
