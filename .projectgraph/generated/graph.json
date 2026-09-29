@@ -1,0 +1,1572 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-09-29T09:13:59+00:00",
+  "project": {
+    "name": "RESOLVE Mapping Platform",
+    "id": "RESOLVEMAPING_FINAL2",
+    "summary": "Static MapLibre GIS map of Lebanon farmer-survey, fire and protected-area data. Being refactored per the approved audit plan into a private raw -> staging -> canonical pipeline with an allow-listed, disclosure-controlled public release.",
+    "root": "D:\\Programing\\ResolveMaping_final2"
+  },
+  "colors": {
+    "DECLARED": "#9e9e9e",
+    "READY": "#2f6fed",
+    "ACTIVE": "#e6b400",
+    "IMPLEMENTED": "#128f8f",
+    "VERIFYING": "#f08c00",
+    "VERIFIED": "#2e9b48",
+    "FAILED": "#d32f2f",
+    "BLOCKED": "#7b3fbf",
+    "STALE": "#8d6e3a",
+    "SUPERSEDED": "#c9c9c9"
+  },
+  "verifiable": [
+    "M0_CONTAINMENT",
+    "M1_SCAFFOLDING",
+    "M2_DICTIONARY",
+    "M3_ADAPTERS",
+    "M4_CANONICAL",
+    "M5_PUBLISH_SDC",
+    "M6_FRONTEND_REGISTRY",
+    "M7_GIS_UX",
+    "M8_RESEARCH_TIER",
+    "REQ_CONSISTENT_MAP_UX",
+    "REQ_DATASET_PROVENANCE_LICENCE",
+    "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+    "REQ_DETERMINISTIC_PUBLIC_BUILD",
+    "REQ_LOCATION_PROVENANCE",
+    "REQ_MISSING_VALUE_SEMANTICS",
+    "REQ_NO_RESTRICTED_DATA_PUBLIC",
+    "REQ_PREDICTABLE_NEW_DATASET",
+    "RESOLVEMAPING_FINAL2",
+    "SYS_DATA_PIPELINE",
+    "SYS_PUBLIC_RELEASE",
+    "SYS_WEB_MAP",
+    "TST_NO_RESTRICTED_DATA_TRACKED"
+  ],
+  "tiers": {
+    "0": "root",
+    "1": "organization",
+    "2": "intent",
+    "3": "design",
+    "4": "implementation",
+    "5": "operations",
+    "6": "assurance"
+  },
+  "node_tiers": {
+    "PROJECT": 0,
+    "DOMAIN": 1,
+    "SYSTEM": 1,
+    "SUBSYSTEM": 1,
+    "MILESTONE": 2,
+    "REQUIREMENT": 2,
+    "CAPABILITY": 2,
+    "COMPONENT": 3,
+    "MODULE": 3,
+    "FILE": 4,
+    "CLASS": 4,
+    "FUNCTION": 4,
+    "DATA": 4,
+    "SCHEMA": 4,
+    "CONFIG": 4,
+    "INFRASTRUCTURE": 5,
+    "TEST": 6,
+    "VALIDATION": 6
+  },
+  "nodes": [
+    {
+      "id": "CFG_PROJECT_MANIFESTS",
+      "type": "CONFIG",
+      "title": "Project manifests",
+      "summary": "Python dependency manifest (currently unpinned).",
+      "artifacts": [
+        "requirements.txt"
+      ],
+      "tier": 4,
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "CMP_APP_CONFIG",
+      "type": "COMPONENT",
+      "title": "Layer manifest",
+      "summary": "app/config/manifest.js layer registry (to become a generated catalog).",
+      "tags": [
+        "legacy"
+      ],
+      "artifacts": [
+        "app/config/**"
+      ],
+      "confidence": "medium",
+      "tier": 3,
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_WEB_MAP"
+      ]
+    },
+    {
+      "id": "CMP_APP_MODULES",
+      "type": "COMPONENT",
+      "title": "App modules",
+      "summary": "loader, store, property-schemas, and the unused filter-engine.",
+      "tags": [
+        "legacy"
+      ],
+      "artifacts": [
+        "app/modules/**"
+      ],
+      "confidence": "medium",
+      "tier": 3,
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_WEB_MAP"
+      ]
+    },
+    {
+      "id": "CMP_APP_SHELL",
+      "type": "COMPONENT",
+      "title": "App shell and main logic",
+      "summary": "index.html, app.js (layers, popups, filters, i18n, legend), style.css; decomposed in Stage 6.",
+      "tags": [
+        "legacy"
+      ],
+      "artifacts": [
+        "index.html",
+        "app.js",
+        "style.css"
+      ],
+      "confidence": "medium",
+      "tier": 3,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_WEB_MAP"
+      ]
+    },
+    {
+      "id": "CMP_SCRIPTS",
+      "type": "COMPONENT",
+      "title": "Legacy processing scripts",
+      "summary": "Active and archived one-off scripts; replaced by the adapter pipeline in Stage 3.",
+      "tags": [
+        "legacy"
+      ],
+      "artifacts": [
+        "scripts/**"
+      ],
+      "confidence": "medium",
+      "tier": 3,
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_DATA_PIPELINE"
+      ]
+    },
+    {
+      "id": "DATA_PUBLISHED_GEOJSON",
+      "type": "DATA",
+      "title": "Published GeoJSON",
+      "summary": "Files the browser loads; currently under data/geojson/.",
+      "artifacts": [
+        "data/geojson/**"
+      ],
+      "confidence": "medium",
+      "tier": 4,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_PUBLIC_RELEASE"
+      ]
+    },
+    {
+      "id": "M0_CONTAINMENT",
+      "type": "MILESTONE",
+      "title": "Stage 0 - Containment",
+      "summary": "Remove PII, survey-derived and ML data from the public site and git history; site keeps fire + protected areas.",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "TST_NO_RESTRICTED_DATA_TRACKED"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "TST_NO_RESTRICTED_DATA_TRACKED"
+      ],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M1_SCAFFOLDING",
+      "type": "MILESTONE",
+      "title": "Stage 1 - Baseline and scaffolding",
+      "summary": "Private/public split, pinned deps, CI, Pages deployed from public/, baseline metrics.",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M0_CONTAINMENT"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M0_CONTAINMENT"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M0_CONTAINMENT"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M2_DICTIONARY",
+      "type": "MILESTONE",
+      "title": "Stage 2 - Field dictionary, vocabularies, gazetteer",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M1_SCAFFOLDING"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M1_SCAFFOLDING"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M1_SCAFFOLDING"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M3_ADAPTERS",
+      "type": "MILESTONE",
+      "title": "Stage 3 - Adapters to staging with lineage",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M2_DICTIONARY"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M2_DICTIONARY"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M2_DICTIONARY"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M4_CANONICAL",
+      "type": "MILESTONE",
+      "title": "Stage 4 - Validation and canonical tier",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M3_ADAPTERS"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M3_ADAPTERS"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M3_ADAPTERS"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M5_PUBLISH_SDC",
+      "type": "MILESTONE",
+      "title": "Stage 5 - Publishing with statistical disclosure control",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M4_CANONICAL"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M4_CANONICAL"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M4_CANONICAL"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M6_FRONTEND_REGISTRY",
+      "type": "MILESTONE",
+      "title": "Stage 6 - Registry-driven frontend",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M5_PUBLISH_SDC"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M5_PUBLISH_SDC"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M5_PUBLISH_SDC"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M7_GIS_UX",
+      "type": "MILESTONE",
+      "title": "Stage 7 - GIS and UX corrections",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M6_FRONTEND_REGISTRY"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M6_FRONTEND_REGISTRY"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M6_FRONTEND_REGISTRY"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "M8_RESEARCH_TIER",
+      "type": "MILESTONE",
+      "title": "Stage 8 - Research tier and ML (optional)",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "waiting",
+          "detail": "Waiting on dependencies that are not yet satisfied.",
+          "refs": [
+            "M4_CANONICAL"
+          ]
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from member nodes (READY).",
+          "refs": [
+            "M4_CANONICAL"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [
+        "M4_CANONICAL"
+      ],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_CONSISTENT_MAP_UX",
+      "type": "REQUIREMENT",
+      "title": "Consistent popups (AR/EN parity), legends and info cards on all layers",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M7_GIS_UX"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_DATASET_PROVENANCE_LICENCE",
+      "type": "REQUIREMENT",
+      "title": "Every dataset has source, licence, collection period, method and schema version",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M5_PUBLISH_SDC"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+      "type": "REQUIREMENT",
+      "title": "Every dataset follows a defined schema with stable IDs",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M4_CANONICAL"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+      "type": "REQUIREMENT",
+      "title": "Public release regenerates deterministically from private raw sources",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M5_PUBLISH_SDC"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_LOCATION_PROVENANCE",
+      "type": "REQUIREMENT",
+      "title": "Every geometry carries origin and spatial precision; no baked displacement",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M4_CANONICAL"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_MISSING_VALUE_SEMANTICS",
+      "type": "REQUIREMENT",
+      "title": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M4_CANONICAL"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+      "type": "REQUIREMENT",
+      "title": "No restricted farmer data reaches unauthorized clients",
+      "summary": "No direct identifiers, respondent-level records or n<k aggregates in anything Pages serves, nor in public git history.",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M0_CONTAINMENT",
+            "M5_PUBLISH_SDC"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "REQ_PREDICTABLE_NEW_DATASET",
+      "type": "REQUIREMENT",
+      "title": "New dataset needs only an adapter, dictionary rows and a registry entry",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from fulfilling nodes (READY).",
+          "refs": [
+            "M6_FRONTEND_REGISTRY"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "RESOLVEMAPING_FINAL2",
+      "type": "PROJECT",
+      "title": "RESOLVE Mapping Platform",
+      "summary": "Lebanon agricultural/environmental GIS map (static site on GitHub Pages).",
+      "tier": 0,
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CFG_PROJECT_MANIFESTS",
+            "SYS_DATA_PIPELINE",
+            "SYS_WEB_MAP"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "SYS_DATA_PIPELINE",
+        "SYS_WEB_MAP",
+        "SYS_PUBLIC_RELEASE",
+        "CFG_PROJECT_MANIFESTS",
+        "REQ_NO_RESTRICTED_DATA_PUBLIC",
+        "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+        "REQ_LOCATION_PROVENANCE",
+        "REQ_MISSING_VALUE_SEMANTICS",
+        "REQ_DATASET_PROVENANCE_LICENCE",
+        "REQ_DETERMINISTIC_PUBLIC_BUILD",
+        "REQ_PREDICTABLE_NEW_DATASET",
+        "REQ_CONSISTENT_MAP_UX",
+        "M0_CONTAINMENT",
+        "M1_SCAFFOLDING",
+        "M2_DICTIONARY",
+        "M3_ADAPTERS",
+        "M4_CANONICAL",
+        "M5_PUBLISH_SDC",
+        "M6_FRONTEND_REGISTRY",
+        "M7_GIS_UX",
+        "M8_RESEARCH_TIER"
+      ],
+      "parents": []
+    },
+    {
+      "id": "SYS_DATA_PIPELINE",
+      "type": "SYSTEM",
+      "title": "Data pipeline",
+      "summary": "Offline Python processing from raw sources to published datasets.",
+      "tier": 1,
+      "status": "ACTIVE",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CMP_SCRIPTS"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "CMP_SCRIPTS"
+      ],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "SYS_PUBLIC_RELEASE",
+      "type": "SYSTEM",
+      "title": "Public release",
+      "summary": "Everything GitHub Pages serves to anonymous users.",
+      "tier": 1,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (READY).",
+          "refs": [
+            "DATA_PUBLISHED_GEOJSON"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "DATA_PUBLISHED_GEOJSON"
+      ],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "SYS_WEB_MAP",
+      "type": "SYSTEM",
+      "title": "Web map",
+      "summary": "Static MapLibre GL frontend (no build step).",
+      "tier": 1,
+      "status": "ACTIVE",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CMP_APP_CONFIG",
+            "CMP_APP_MODULES"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "CMP_APP_SHELL",
+        "CMP_APP_MODULES",
+        "CMP_APP_CONFIG"
+      ],
+      "parents": [
+        "RESOLVEMAPING_FINAL2"
+      ]
+    },
+    {
+      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "type": "TEST",
+      "title": "Privacy invariant - no restricted survey data tracked or served",
+      "summary": "Scans tracked files for survey PII columns, phone numbers and forbidden paths.",
+      "artifacts": [
+        "tests/privacy/**"
+      ],
+      "tier": 6,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "M0_CONTAINMENT"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "SYS_DATA_PIPELINE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "SYS_WEB_MAP",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "SYS_PUBLIC_RELEASE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "CFG_PROJECT_MANIFESTS",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_DATA_PIPELINE",
+      "to": "CMP_SCRIPTS",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_WEB_MAP",
+      "to": "CMP_APP_SHELL",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_WEB_MAP",
+      "to": "CMP_APP_MODULES",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_WEB_MAP",
+      "to": "CMP_APP_CONFIG",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_PUBLIC_RELEASE",
+      "to": "DATA_PUBLISHED_GEOJSON",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "CMP_SCRIPTS",
+      "to": "DATA_PUBLISHED_GEOJSON",
+      "type": "PRODUCES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "CMP_APP_MODULES",
+      "to": "DATA_PUBLISHED_GEOJSON",
+      "type": "CONSUMES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_LOCATION_PROVENANCE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_MISSING_VALUE_SEMANTICS",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_DATASET_PROVENANCE_LICENCE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_PREDICTABLE_NEW_DATASET",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "REQ_CONSISTENT_MAP_UX",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M0_CONTAINMENT",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M1_SCAFFOLDING",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M2_DICTIONARY",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M3_ADAPTERS",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M4_CANONICAL",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M5_PUBLISH_SDC",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M6_FRONTEND_REGISTRY",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M7_GIS_UX",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "RESOLVEMAPING_FINAL2",
+      "to": "M8_RESEARCH_TIER",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M0_CONTAINMENT",
+      "to": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "M1_SCAFFOLDING",
+      "to": "M0_CONTAINMENT",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M2_DICTIONARY",
+      "to": "M1_SCAFFOLDING",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M3_ADAPTERS",
+      "to": "M2_DICTIONARY",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M4_CANONICAL",
+      "to": "M3_ADAPTERS",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M5_PUBLISH_SDC",
+      "to": "M4_CANONICAL",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M6_FRONTEND_REGISTRY",
+      "to": "M5_PUBLISH_SDC",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M7_GIS_UX",
+      "to": "M6_FRONTEND_REGISTRY",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M8_RESEARCH_TIER",
+      "to": "M4_CANONICAL",
+      "type": "DEPENDS_ON",
+      "gating": true,
+      "staleness": true
+    },
+    {
+      "from": "M0_CONTAINMENT",
+      "to": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M5_PUBLISH_SDC",
+      "to": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M4_CANONICAL",
+      "to": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M4_CANONICAL",
+      "to": "REQ_LOCATION_PROVENANCE",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M4_CANONICAL",
+      "to": "REQ_MISSING_VALUE_SEMANTICS",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M5_PUBLISH_SDC",
+      "to": "REQ_DATASET_PROVENANCE_LICENCE",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M5_PUBLISH_SDC",
+      "to": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M6_FRONTEND_REGISTRY",
+      "to": "REQ_PREDICTABLE_NEW_DATASET",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    },
+    {
+      "from": "M7_GIS_UX",
+      "to": "REQ_CONSISTENT_MAP_UX",
+      "type": "SATISFIES",
+      "gating": false,
+      "staleness": true
+    }
+  ]
+}

@@ -1,0 +1,1719 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-09-29T09:13:59+00:00",
+  "rule": "workbench.project.v1",
+  "default_scale": "portfolio",
+  "scales": [
+    {
+      "scale": "portfolio",
+      "question": "Where does this project stand overall?",
+      "order": 0,
+      "cluster_by": "parent",
+      "node_types": [
+        "PROJECT",
+        "DOMAIN",
+        "SYSTEM",
+        "SUBSYSTEM",
+        "MILESTONE"
+      ],
+      "total_nodes": 13,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "M0_CONTAINMENT",
+          "composite": false,
+          "label": "Stage 0 - Containment",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M1_SCAFFOLDING",
+          "composite": false,
+          "label": "Stage 1 - Baseline and scaffolding",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M2_DICTIONARY",
+          "composite": false,
+          "label": "Stage 2 - Field dictionary, vocabularies, gazetteer",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M3_ADAPTERS",
+          "composite": false,
+          "label": "Stage 3 - Adapters to staging with lineage",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M4_CANONICAL",
+          "composite": false,
+          "label": "Stage 4 - Validation and canonical tier",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M5_PUBLISH_SDC",
+          "composite": false,
+          "label": "Stage 5 - Publishing with statistical disclosure control",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M6_FRONTEND_REGISTRY",
+          "composite": false,
+          "label": "Stage 6 - Registry-driven frontend",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M7_GIS_UX",
+          "composite": false,
+          "label": "Stage 7 - GIS and UX corrections",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M8_RESEARCH_TIER",
+          "composite": false,
+          "label": "Stage 8 - Research tier and ML (optional)",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "RESOLVEMAPING_FINAL2",
+          "composite": false,
+          "label": "RESOLVE Mapping Platform",
+          "type": "PROJECT",
+          "tier": 0,
+          "status": "ACTIVE",
+          "cluster": "type:PROJECT"
+        },
+        {
+          "id": "SYS_DATA_PIPELINE",
+          "composite": false,
+          "label": "Data pipeline",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "SYS_PUBLIC_RELEASE",
+          "composite": false,
+          "label": "Public release",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "SYS_WEB_MAP",
+          "composite": false,
+          "label": "Web map",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        }
+      ],
+      "edges": [
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "SYS_DATA_PIPELINE",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "SYS_WEB_MAP",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "SYS_PUBLIC_RELEASE",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M0_CONTAINMENT",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M1_SCAFFOLDING",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M2_DICTIONARY",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M3_ADAPTERS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M4_CANONICAL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M5_PUBLISH_SDC",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M6_FRONTEND_REGISTRY",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M7_GIS_UX",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M8_RESEARCH_TIER",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "M1_SCAFFOLDING",
+          "to": "M0_CONTAINMENT",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M2_DICTIONARY",
+          "to": "M1_SCAFFOLDING",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M3_ADAPTERS",
+          "to": "M2_DICTIONARY",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M4_CANONICAL",
+          "to": "M3_ADAPTERS",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M5_PUBLISH_SDC",
+          "to": "M4_CANONICAL",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M6_FRONTEND_REGISTRY",
+          "to": "M5_PUBLISH_SDC",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M7_GIS_UX",
+          "to": "M6_FRONTEND_REGISTRY",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M8_RESEARCH_TIER",
+          "to": "M4_CANONICAL",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        }
+      ],
+      "clusters": [
+        {
+          "id": "parent:RESOLVEMAPING_FINAL2",
+          "label": "RESOLVE Mapping Platform",
+          "strategy": "parent",
+          "members": [
+            "M0_CONTAINMENT",
+            "M1_SCAFFOLDING",
+            "M2_DICTIONARY",
+            "M3_ADAPTERS",
+            "M4_CANONICAL",
+            "M5_PUBLISH_SDC",
+            "M6_FRONTEND_REGISTRY",
+            "M7_GIS_UX",
+            "M8_RESEARCH_TIER",
+            "SYS_DATA_PIPELINE",
+            "SYS_PUBLIC_RELEASE",
+            "SYS_WEB_MAP"
+          ],
+          "size": 12,
+          "status": "READY"
+        },
+        {
+          "id": "type:PROJECT",
+          "label": "PROJECT",
+          "strategy": "parent",
+          "members": [
+            "RESOLVEMAPING_FINAL2"
+          ],
+          "size": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "intent",
+      "question": "What is this project trying to achieve?",
+      "order": 1,
+      "cluster_by": "parent",
+      "node_types": [
+        "PROJECT",
+        "MILESTONE",
+        "REQUIREMENT",
+        "CAPABILITY"
+      ],
+      "total_nodes": 18,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "M0_CONTAINMENT",
+          "composite": false,
+          "label": "Stage 0 - Containment",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M1_SCAFFOLDING",
+          "composite": false,
+          "label": "Stage 1 - Baseline and scaffolding",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M2_DICTIONARY",
+          "composite": false,
+          "label": "Stage 2 - Field dictionary, vocabularies, gazetteer",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M3_ADAPTERS",
+          "composite": false,
+          "label": "Stage 3 - Adapters to staging with lineage",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M4_CANONICAL",
+          "composite": false,
+          "label": "Stage 4 - Validation and canonical tier",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M5_PUBLISH_SDC",
+          "composite": false,
+          "label": "Stage 5 - Publishing with statistical disclosure control",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M6_FRONTEND_REGISTRY",
+          "composite": false,
+          "label": "Stage 6 - Registry-driven frontend",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M7_GIS_UX",
+          "composite": false,
+          "label": "Stage 7 - GIS and UX corrections",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "M8_RESEARCH_TIER",
+          "composite": false,
+          "label": "Stage 8 - Research tier and ML (optional)",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_CONSISTENT_MAP_UX",
+          "composite": false,
+          "label": "Consistent popups (AR/EN parity), legends and info cards on all layers",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_DATASET_PROVENANCE_LICENCE",
+          "composite": false,
+          "label": "Every dataset has source, licence, collection period, method and schema version",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+          "composite": false,
+          "label": "Every dataset follows a defined schema with stable IDs",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+          "composite": false,
+          "label": "Public release regenerates deterministically from private raw sources",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_LOCATION_PROVENANCE",
+          "composite": false,
+          "label": "Every geometry carries origin and spatial precision; no baked displacement",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_MISSING_VALUE_SEMANTICS",
+          "composite": false,
+          "label": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+          "composite": false,
+          "label": "No restricted farmer data reaches unauthorized clients",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "REQ_PREDICTABLE_NEW_DATASET",
+          "composite": false,
+          "label": "New dataset needs only an adapter, dictionary rows and a registry entry",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "RESOLVEMAPING_FINAL2",
+          "composite": false,
+          "label": "RESOLVE Mapping Platform",
+          "type": "PROJECT",
+          "tier": 0,
+          "status": "ACTIVE",
+          "cluster": "type:PROJECT"
+        }
+      ],
+      "edges": [
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_LOCATION_PROVENANCE",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_MISSING_VALUE_SEMANTICS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_DATASET_PROVENANCE_LICENCE",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_PREDICTABLE_NEW_DATASET",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "REQ_CONSISTENT_MAP_UX",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M0_CONTAINMENT",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M1_SCAFFOLDING",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M2_DICTIONARY",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M3_ADAPTERS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M4_CANONICAL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M5_PUBLISH_SDC",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M6_FRONTEND_REGISTRY",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M7_GIS_UX",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "RESOLVEMAPING_FINAL2",
+          "to": "M8_RESEARCH_TIER",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "M1_SCAFFOLDING",
+          "to": "M0_CONTAINMENT",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M2_DICTIONARY",
+          "to": "M1_SCAFFOLDING",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M3_ADAPTERS",
+          "to": "M2_DICTIONARY",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M4_CANONICAL",
+          "to": "M3_ADAPTERS",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M5_PUBLISH_SDC",
+          "to": "M4_CANONICAL",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M6_FRONTEND_REGISTRY",
+          "to": "M5_PUBLISH_SDC",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M7_GIS_UX",
+          "to": "M6_FRONTEND_REGISTRY",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M8_RESEARCH_TIER",
+          "to": "M4_CANONICAL",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M0_CONTAINMENT",
+          "to": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M5_PUBLISH_SDC",
+          "to": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M4_CANONICAL",
+          "to": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M4_CANONICAL",
+          "to": "REQ_LOCATION_PROVENANCE",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M4_CANONICAL",
+          "to": "REQ_MISSING_VALUE_SEMANTICS",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M5_PUBLISH_SDC",
+          "to": "REQ_DATASET_PROVENANCE_LICENCE",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M5_PUBLISH_SDC",
+          "to": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M6_FRONTEND_REGISTRY",
+          "to": "REQ_PREDICTABLE_NEW_DATASET",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "M7_GIS_UX",
+          "to": "REQ_CONSISTENT_MAP_UX",
+          "type": "SATISFIES",
+          "gating": false,
+          "staleness": true
+        }
+      ],
+      "clusters": [
+        {
+          "id": "parent:RESOLVEMAPING_FINAL2",
+          "label": "RESOLVE Mapping Platform",
+          "strategy": "parent",
+          "members": [
+            "M0_CONTAINMENT",
+            "M1_SCAFFOLDING",
+            "M2_DICTIONARY",
+            "M3_ADAPTERS",
+            "M4_CANONICAL",
+            "M5_PUBLISH_SDC",
+            "M6_FRONTEND_REGISTRY",
+            "M7_GIS_UX",
+            "M8_RESEARCH_TIER",
+            "REQ_CONSISTENT_MAP_UX",
+            "REQ_DATASET_PROVENANCE_LICENCE",
+            "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+            "REQ_DETERMINISTIC_PUBLIC_BUILD",
+            "REQ_LOCATION_PROVENANCE",
+            "REQ_MISSING_VALUE_SEMANTICS",
+            "REQ_NO_RESTRICTED_DATA_PUBLIC",
+            "REQ_PREDICTABLE_NEW_DATASET"
+          ],
+          "size": 17,
+          "status": "READY"
+        },
+        {
+          "id": "type:PROJECT",
+          "label": "PROJECT",
+          "strategy": "parent",
+          "members": [
+            "RESOLVEMAPING_FINAL2"
+          ],
+          "size": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "architecture",
+      "question": "What exists and how is it connected?",
+      "order": 2,
+      "cluster_by": "parent",
+      "node_types": [
+        "SYSTEM",
+        "SUBSYSTEM",
+        "COMPONENT",
+        "MODULE",
+        "SCHEMA",
+        "DATA",
+        "INFRASTRUCTURE",
+        "CONFIG"
+      ],
+      "total_nodes": 9,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CFG_PROJECT_MANIFESTS",
+          "composite": false,
+          "label": "Project manifests",
+          "type": "CONFIG",
+          "tier": 4,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "CMP_APP_CONFIG",
+          "composite": false,
+          "label": "Layer manifest",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_WEB_MAP"
+        },
+        {
+          "id": "CMP_APP_MODULES",
+          "composite": false,
+          "label": "App modules",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_WEB_MAP"
+        },
+        {
+          "id": "CMP_APP_SHELL",
+          "composite": false,
+          "label": "App shell and main logic",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "READY",
+          "cluster": "parent:SYS_WEB_MAP"
+        },
+        {
+          "id": "CMP_SCRIPTS",
+          "composite": false,
+          "label": "Legacy processing scripts",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_DATA_PIPELINE"
+        },
+        {
+          "id": "DATA_PUBLISHED_GEOJSON",
+          "composite": false,
+          "label": "Published GeoJSON",
+          "type": "DATA",
+          "tier": 4,
+          "status": "READY",
+          "cluster": "parent:SYS_PUBLIC_RELEASE"
+        },
+        {
+          "id": "SYS_DATA_PIPELINE",
+          "composite": false,
+          "label": "Data pipeline",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "SYS_PUBLIC_RELEASE",
+          "composite": false,
+          "label": "Public release",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "READY",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        },
+        {
+          "id": "SYS_WEB_MAP",
+          "composite": false,
+          "label": "Web map",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:RESOLVEMAPING_FINAL2"
+        }
+      ],
+      "edges": [
+        {
+          "from": "SYS_DATA_PIPELINE",
+          "to": "CMP_SCRIPTS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_WEB_MAP",
+          "to": "CMP_APP_SHELL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_WEB_MAP",
+          "to": "CMP_APP_MODULES",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_WEB_MAP",
+          "to": "CMP_APP_CONFIG",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_PUBLIC_RELEASE",
+          "to": "DATA_PUBLISHED_GEOJSON",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SCRIPTS",
+          "to": "DATA_PUBLISHED_GEOJSON",
+          "type": "PRODUCES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "CMP_APP_MODULES",
+          "to": "DATA_PUBLISHED_GEOJSON",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        }
+      ],
+      "clusters": [
+        {
+          "id": "parent:RESOLVEMAPING_FINAL2",
+          "label": "RESOLVE Mapping Platform",
+          "strategy": "parent",
+          "members": [
+            "CFG_PROJECT_MANIFESTS",
+            "SYS_DATA_PIPELINE",
+            "SYS_PUBLIC_RELEASE",
+            "SYS_WEB_MAP"
+          ],
+          "size": 4,
+          "status": "READY"
+        },
+        {
+          "id": "parent:SYS_WEB_MAP",
+          "label": "Web map",
+          "strategy": "parent",
+          "members": [
+            "CMP_APP_CONFIG",
+            "CMP_APP_MODULES",
+            "CMP_APP_SHELL"
+          ],
+          "size": 3,
+          "status": "READY"
+        },
+        {
+          "id": "parent:SYS_DATA_PIPELINE",
+          "label": "Data pipeline",
+          "strategy": "parent",
+          "members": [
+            "CMP_SCRIPTS"
+          ],
+          "size": 1,
+          "status": "IMPLEMENTED"
+        },
+        {
+          "id": "parent:SYS_PUBLIC_RELEASE",
+          "label": "Public release",
+          "strategy": "parent",
+          "members": [
+            "DATA_PUBLISHED_GEOJSON"
+          ],
+          "size": 1,
+          "status": "READY"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "execution",
+      "question": "What is happening now, and what is blocked or stale?",
+      "order": 3,
+      "cluster_by": "status",
+      "node_types": [
+        "MILESTONE",
+        "COMPONENT",
+        "MODULE",
+        "CAPABILITY"
+      ],
+      "total_nodes": 13,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CMP_APP_CONFIG",
+          "composite": false,
+          "label": "Layer manifest",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "status:IMPLEMENTED"
+        },
+        {
+          "id": "CMP_APP_MODULES",
+          "composite": false,
+          "label": "App modules",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "status:IMPLEMENTED"
+        },
+        {
+          "id": "CMP_APP_SHELL",
+          "composite": false,
+          "label": "App shell and main logic",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "CMP_SCRIPTS",
+          "composite": false,
+          "label": "Legacy processing scripts",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "status:IMPLEMENTED"
+        },
+        {
+          "id": "M0_CONTAINMENT",
+          "composite": false,
+          "label": "Stage 0 - Containment",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M1_SCAFFOLDING",
+          "composite": false,
+          "label": "Stage 1 - Baseline and scaffolding",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M2_DICTIONARY",
+          "composite": false,
+          "label": "Stage 2 - Field dictionary, vocabularies, gazetteer",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M3_ADAPTERS",
+          "composite": false,
+          "label": "Stage 3 - Adapters to staging with lineage",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M4_CANONICAL",
+          "composite": false,
+          "label": "Stage 4 - Validation and canonical tier",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M5_PUBLISH_SDC",
+          "composite": false,
+          "label": "Stage 5 - Publishing with statistical disclosure control",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M6_FRONTEND_REGISTRY",
+          "composite": false,
+          "label": "Stage 6 - Registry-driven frontend",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M7_GIS_UX",
+          "composite": false,
+          "label": "Stage 7 - GIS and UX corrections",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "M8_RESEARCH_TIER",
+          "composite": false,
+          "label": "Stage 8 - Research tier and ML (optional)",
+          "type": "MILESTONE",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "status:READY"
+        }
+      ],
+      "edges": [
+        {
+          "from": "M1_SCAFFOLDING",
+          "to": "M0_CONTAINMENT",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M2_DICTIONARY",
+          "to": "M1_SCAFFOLDING",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M3_ADAPTERS",
+          "to": "M2_DICTIONARY",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M4_CANONICAL",
+          "to": "M3_ADAPTERS",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M5_PUBLISH_SDC",
+          "to": "M4_CANONICAL",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M6_FRONTEND_REGISTRY",
+          "to": "M5_PUBLISH_SDC",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M7_GIS_UX",
+          "to": "M6_FRONTEND_REGISTRY",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        },
+        {
+          "from": "M8_RESEARCH_TIER",
+          "to": "M4_CANONICAL",
+          "type": "DEPENDS_ON",
+          "gating": true,
+          "staleness": true
+        }
+      ],
+      "clusters": [
+        {
+          "id": "status:READY",
+          "label": "READY",
+          "strategy": "status",
+          "members": [
+            "CMP_APP_SHELL",
+            "M0_CONTAINMENT",
+            "M1_SCAFFOLDING",
+            "M2_DICTIONARY",
+            "M3_ADAPTERS",
+            "M4_CANONICAL",
+            "M5_PUBLISH_SDC",
+            "M6_FRONTEND_REGISTRY",
+            "M7_GIS_UX",
+            "M8_RESEARCH_TIER"
+          ],
+          "size": 10,
+          "status": "READY"
+        },
+        {
+          "id": "status:IMPLEMENTED",
+          "label": "IMPLEMENTED",
+          "strategy": "status",
+          "members": [
+            "CMP_APP_CONFIG",
+            "CMP_APP_MODULES",
+            "CMP_SCRIPTS"
+          ],
+          "size": 3,
+          "status": "IMPLEMENTED"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "assurance",
+      "question": "Why does the system believe each answer?",
+      "order": 4,
+      "cluster_by": "evidence",
+      "node_types": [
+        "REQUIREMENT",
+        "CAPABILITY",
+        "COMPONENT",
+        "MODULE",
+        "TEST",
+        "VALIDATION"
+      ],
+      "total_nodes": 13,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CMP_APP_CONFIG",
+          "composite": false,
+          "label": "Layer manifest",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "CMP_APP_MODULES",
+          "composite": false,
+          "label": "App modules",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "CMP_APP_SHELL",
+          "composite": false,
+          "label": "App shell and main logic",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "CMP_SCRIPTS",
+          "composite": false,
+          "label": "Legacy processing scripts",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_CONSISTENT_MAP_UX",
+          "composite": false,
+          "label": "Consistent popups (AR/EN parity), legends and info cards on all layers",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_DATASET_PROVENANCE_LICENCE",
+          "composite": false,
+          "label": "Every dataset has source, licence, collection period, method and schema version",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+          "composite": false,
+          "label": "Every dataset follows a defined schema with stable IDs",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+          "composite": false,
+          "label": "Public release regenerates deterministically from private raw sources",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_LOCATION_PROVENANCE",
+          "composite": false,
+          "label": "Every geometry carries origin and spatial precision; no baked displacement",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_MISSING_VALUE_SEMANTICS",
+          "composite": false,
+          "label": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+          "composite": false,
+          "label": "No restricted farmer data reaches unauthorized clients",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "REQ_PREDICTABLE_NEW_DATASET",
+          "composite": false,
+          "label": "New dataset needs only an adapter, dictionary rows and a registry entry",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+          "composite": false,
+          "label": "Privacy invariant - no restricted survey data tracked or served",
+          "type": "TEST",
+          "tier": 6,
+          "status": "READY",
+          "cluster": "evidence:commands"
+        }
+      ],
+      "edges": [],
+      "clusters": [
+        {
+          "id": "evidence:none",
+          "label": "no contract",
+          "strategy": "evidence",
+          "members": [
+            "CMP_APP_CONFIG",
+            "CMP_APP_MODULES",
+            "CMP_APP_SHELL",
+            "CMP_SCRIPTS",
+            "REQ_CONSISTENT_MAP_UX",
+            "REQ_DATASET_PROVENANCE_LICENCE",
+            "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+            "REQ_DETERMINISTIC_PUBLIC_BUILD",
+            "REQ_LOCATION_PROVENANCE",
+            "REQ_MISSING_VALUE_SEMANTICS",
+            "REQ_NO_RESTRICTED_DATA_PUBLIC",
+            "REQ_PREDICTABLE_NEW_DATASET"
+          ],
+          "size": 12,
+          "status": "READY"
+        },
+        {
+          "id": "evidence:commands",
+          "label": "commands and structure",
+          "strategy": "evidence",
+          "members": [
+            "TST_NO_RESTRICTED_DATA_TRACKED"
+          ],
+          "size": 1,
+          "status": "READY"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "code",
+      "question": "What is actually in the files?",
+      "order": 5,
+      "cluster_by": "parent",
+      "node_types": [
+        "COMPONENT",
+        "MODULE",
+        "FILE",
+        "CLASS",
+        "FUNCTION",
+        "TEST"
+      ],
+      "total_nodes": 5,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CMP_APP_CONFIG",
+          "composite": false,
+          "label": "Layer manifest",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_WEB_MAP"
+        },
+        {
+          "id": "CMP_APP_MODULES",
+          "composite": false,
+          "label": "App modules",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_WEB_MAP"
+        },
+        {
+          "id": "CMP_APP_SHELL",
+          "composite": false,
+          "label": "App shell and main logic",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "READY",
+          "cluster": "parent:SYS_WEB_MAP"
+        },
+        {
+          "id": "CMP_SCRIPTS",
+          "composite": false,
+          "label": "Legacy processing scripts",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_DATA_PIPELINE"
+        },
+        {
+          "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+          "composite": false,
+          "label": "Privacy invariant - no restricted survey data tracked or served",
+          "type": "TEST",
+          "tier": 6,
+          "status": "READY",
+          "cluster": "parent:M0_CONTAINMENT"
+        }
+      ],
+      "edges": [],
+      "clusters": [
+        {
+          "id": "parent:SYS_WEB_MAP",
+          "label": "Web map",
+          "strategy": "parent",
+          "members": [
+            "CMP_APP_CONFIG",
+            "CMP_APP_MODULES",
+            "CMP_APP_SHELL"
+          ],
+          "size": 3,
+          "status": "READY"
+        },
+        {
+          "id": "parent:M0_CONTAINMENT",
+          "label": "Stage 0 - Containment",
+          "strategy": "parent",
+          "members": [
+            "TST_NO_RESTRICTED_DATA_TRACKED"
+          ],
+          "size": 1,
+          "status": "READY"
+        },
+        {
+          "id": "parent:SYS_DATA_PIPELINE",
+          "label": "Data pipeline",
+          "strategy": "parent",
+          "members": [
+            "CMP_SCRIPTS"
+          ],
+          "size": 1,
+          "status": "IMPLEMENTED"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    }
+  ],
+  "questions": {
+    "portfolio": "Where does this project stand overall?",
+    "intent": "What is this project trying to achieve?",
+    "architecture": "What exists and how is it connected?",
+    "execution": "What is happening now, and what is blocked or stale?",
+    "assurance": "Why does the system believe each answer?",
+    "code": "What is actually in the files?"
+  },
+  "requirement_traces": [
+    {
+      "requirement": "REQ_CONSISTENT_MAP_UX",
+      "title": "Consistent popups (AR/EN parity), legends and info cards on all layers",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M7_GIS_UX",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    },
+    {
+      "requirement": "REQ_DATASET_PROVENANCE_LICENCE",
+      "title": "Every dataset has source, licence, collection period, method and schema version",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M5_PUBLISH_SDC",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    },
+    {
+      "requirement": "REQ_DEFINED_SCHEMAS_STABLE_IDS",
+      "title": "Every dataset follows a defined schema with stable IDs",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M4_CANONICAL",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    },
+    {
+      "requirement": "REQ_DETERMINISTIC_PUBLIC_BUILD",
+      "title": "Public release regenerates deterministically from private raw sources",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M5_PUBLISH_SDC",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    },
+    {
+      "requirement": "REQ_LOCATION_PROVENANCE",
+      "title": "Every geometry carries origin and spatial precision; no baked displacement",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M4_CANONICAL",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    },
+    {
+      "requirement": "REQ_MISSING_VALUE_SEMANTICS",
+      "title": "Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M4_CANONICAL",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    },
+    {
+      "requirement": "REQ_NO_RESTRICTED_DATA_PUBLIC",
+      "title": "No restricted farmer data reaches unauthorized clients",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M0_CONTAINMENT",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        },
+        {
+          "fulfiller": "M5_PUBLISH_SDC",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    },
+    {
+      "requirement": "REQ_PREDICTABLE_NEW_DATASET",
+      "title": "New dataset needs only an adapter, dictionary rows and a registry entry",
+      "status": "READY",
+      "chains": [
+        {
+          "fulfiller": "M6_FRONTEND_REGISTRY",
+          "fulfiller_status": "READY",
+          "tests": [],
+          "evidence": null,
+          "verified_at": null,
+          "has_contract": false,
+          "complete": false
+        }
+      ],
+      "proven": false,
+      "gap": "a fulfiller has no current evidence",
+      "rule": "workbench.project.v1"
+    }
+  ],
+  "provenance": {
+    "by_generator": {
+      "authored": 46
+    },
+    "generated_edges": 0,
+    "authored_edges": 46,
+    "detail": [],
+    "detail_truncated": false,
+    "rule": "workbench.project.v1"
+  },
+  "temporal": {
+    "baseline": null,
+    "comparable": false,
+    "detail": "No previous snapshot, so there is nothing to compare against.",
+    "rule": "workbench.project.v1"
+  },
+  "health": {
+    "available": true,
+    "overall": 0.0,
+    "band": "poor",
+    "weakest_plane": "state",
+    "planes": {
+      "structural": {
+        "score": 0.0,
+        "band": "poor",
+        "gaps": 1
+      },
+      "intent": {
+        "score": 1.0,
+        "band": "strong",
+        "gaps": 8
+      },
+      "state": {
+        "score": 0.0,
+        "band": "poor",
+        "gaps": 22
+      },
+      "task_context": {
+        "score": 1.0,
+        "band": "strong",
+        "gaps": 0
+      }
+    },
+    "uncertainty": {
+      "unresolved": 0,
+      "ambiguous": 0,
+      "unsupported": 0,
+      "stale_facts": 0,
+      "contradictions": 0
+    }
+  },
+  "capability_evidence": {
+    "available": false
+  },
+  "colors": {
+    "DECLARED": "#9e9e9e",
+    "READY": "#2f6fed",
+    "ACTIVE": "#e6b400",
+    "IMPLEMENTED": "#128f8f",
+    "VERIFYING": "#f08c00",
+    "VERIFIED": "#2e9b48",
+    "FAILED": "#d32f2f",
+    "BLOCKED": "#7b3fbf",
+    "STALE": "#8d6e3a",
+    "SUPERSEDED": "#c9c9c9"
+  },
+  "limitation": "Every projection here is computed by the core. The viewer lays out what it is given and computes no status, clustering or path of its own (ARCHITECTURE.md decision D6)."
+}

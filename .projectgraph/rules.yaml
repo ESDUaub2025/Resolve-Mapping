@@ -1,0 +1,14 @@
+# ProjectGraph policy.
+dependencies:
+  default_required_state: VERIFIED
+verification:
+  require_machine_check: true
+  require_acceptance_attestation: true
+  default_timeout: 600
+detection:
+  substantial_threshold: 8
+  borderline_threshold: 5
+scan:
+  include_functions: true
+  include_classes: true
+  max_files: 4000

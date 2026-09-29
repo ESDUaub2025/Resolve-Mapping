@@ -24,6 +24,7 @@
 					aiIdxSustain: '<b>Composite of:</b> Organic enhancers, bio pest control, regen techniques, fertilizer reliance.<br><b>Scale:</b> 0 (conventional) → 100 (sustainable).<br><b>Importance:</b> Highlights adoption of sustainable practices.'
 				},
 				hint: 'Data loads automatically. Toggle layers and click pins to view details on the right.',
+				withdrawnNotice: 'Farmer survey and AI analysis layers are temporarily withdrawn while the data is reviewed for privacy and quality.',
 				enableFilters: 'Enable filters',
 				filterLabels: {
 					villageContains: 'Village contains', cropContains: 'Crop contains', irrigSource: 'Irrigation source', waterSuff: 'Water sufficiency', scarcityRange: 'Scarcity month range (1-12)', irrigFreq: 'Irrigation freq contains',
@@ -52,6 +53,7 @@
 					aiIdxSustain: '<b>مركب من:</b> المحسّنات العضوية، المكافحة الحيوية، تقنيات التجديد، الاعتماد على الأسمدة.<br><b>المقياس:</b> 0 (تقليدي) → 100 (مستدام).<br><b>الأهمية:</b> يُظهر مدى تبني الممارسات المستدامة.'
 				},
 				hint: 'تُحمّل البيانات تلقائيًا. فعّل الطبقات واضغط على العلامات لعرض التفاصيل على اليمين.',
+				withdrawnNotice: 'تم سحب طبقات استبيان المزارعين وتحليلات الذكاء الاصطناعي مؤقتًا ريثما تتم مراجعة البيانات من حيث الخصوصية والجودة.',
 				enableFilters: 'تفعيل المرشحات',
 				filterLabels: {
 					villageContains: 'اسم القرية يحتوي', cropContains: 'المحصول يحتوي', irrigSource: 'مصدر مياه الريّ', waterSuff: 'توفر المياه', scarcityRange: 'أشهر الشح (1-12)', irrigFreq: 'وتيرة الري تحتوي',
@@ -114,6 +116,7 @@
 			}
 
 			setText('i18n-hint', S.hint);
+			setText('i18n-withdrawn', S.withdrawnNotice);
 			setText('i18n-details-title', S.details);
 			
 			// dir + lang toggle label
@@ -2225,7 +2228,6 @@ function addTextControl(parent, labelText, onChange) {
 			'source_row': 'Source row',
 			// Farmer survey fields
 			'Farmer ID ': 'Farmer ID',
-			'1.اسم المُستجيب:': 'Farmer Name',
 			'4.القرية:': 'Village',
 			'8.ما هو حجم الحيازة الزراعية الخاصة بك؟': 'Farm Size',
 			'9.ما هو نوع التربة في أرضك؟': 'Soil Type',
@@ -2328,10 +2330,7 @@ function addTextControl(parent, labelText, onChange) {
 				if (src === 'farmers-points') {
 					const keyFields = [
 						'Farmer ID ',
-						'1.اسم المُستجيب:',
 						'4.القرية:',
-						'Y',
-						'X',
 						'8.ما هو حجم الحيازة الزراعية الخاصة بك؟',
 						'9.ما هو نوع التربة في أرضك؟',
 						'10.ما هما المحصولان الرئيسيان اللذان تزرعهما خلال السنة (حسب المساحة أو الدخل)؟',
@@ -2868,12 +2867,10 @@ function addTextControl(parent, labelText, onChange) {
 		// Store themes in state
 		StateStore.setState({ themes, themesLoaded: true });
 		
-		// Add canonical layers to map
-		addCanonicalLayer('water-points', themes.water);
-		addCanonicalLayer('energy-points', themes.energy);
-		addCanonicalLayer('food-points', themes.food);
-		addCanonicalLayer('general-points', themes.general);
-		addCanonicalLayer('regen-points', themes.regen);
+		// Add canonical layers to map (only themes the manifest publishes)
+		for (const [key, cfg] of Object.entries(M.THEMES)) {
+			addCanonicalLayer(cfg.layerId, themes[key]);
+		}
 		
 		// Load static layers (fire, preservations, predictions)
 		const staticLayers = await DataLoader.loadStaticLayers();
@@ -2897,8 +2894,8 @@ function addTextControl(parent, labelText, onChange) {
 			updateLayerCount('preservations-poly', staticLayers.preservations.features.length);
 		}
 		
-		// Boundary Layer
-		addBoundaryLayer();
+		// Boundary Layer (only when the manifest publishes one)
+		if (M.BOUNDARY) addBoundaryLayer();
 
 		// AI Layers (Heatmaps) – iterate from manifest
 		for (const [type, cfg] of Object.entries(M.AI_LAYERS)) {
@@ -2916,8 +2913,11 @@ function addTextControl(parent, labelText, onChange) {
 			preloadGeoJson('farmers-points')
 		]);
 
-		['water-points','energy-points','food-points','general-points','regen-points','fire-points','farmers-points'].forEach(id => bindPopup(id));
-		['water-points','energy-points','food-points','general-points','regen-points','fire-points','farmers-points'].forEach(bindClusterInteraction);
+		// Bind interactions only for point layers that were actually added
+		const pointLayerIds = ['water-points','energy-points','food-points','general-points','regen-points','fire-points','farmers-points']
+			.filter(id => map.getSource(id));
+		pointLayerIds.forEach(id => bindPopup(id));
+		pointLayerIds.forEach(bindClusterInteraction);
 		bindPolygonInteraction('preservations-poly');
 
 		// enable toggles

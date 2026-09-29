@@ -1,0 +1,25 @@
+# ProjectGraph project identity.
+schema_version: '1.1'
+name: RESOLVE Mapping Platform
+id: RESOLVEMAPING_FINAL2
+summary: >-
+  Static MapLibre GIS map of Lebanon farmer-survey, fire and protected-area data.
+  Being refactored per the approved audit plan into a private raw -> staging -> canonical
+  pipeline with an allow-listed, disclosure-controlled public release.
+created: '2026-09-29T09:10:26+00:00'
+created_by: projectgraph migrate (depth=semantic), then hand-authored from the approved audit plan
+detection:
+  classification: BORDERLINE
+  score: 6
+  reasons:
+  - '2 languages with real code volume: javascript, python (+2)'
+  - 61 source files (+2)
+  - 14 declared dependencies (+1)
+  - 'existing agent instructions: .github/copilot-instructions.md (+1)'
+migration:
+  source_files_scanned: 61
+  languages:
+    python: 55
+    javascript: 6
+  notes:
+  - Graph re-authored from the approved audit/refactoring plan (2026-09-29); stages are milestones M0-M8.

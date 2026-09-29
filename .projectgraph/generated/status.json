@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-09-29T09:13:59+00:00",
+  "project": "RESOLVE Mapping Platform",
+  "git": {
+    "available": true,
+    "commit": "3f510243dd7db91789b7de8e0d04114014c80b6f",
+    "short_commit": "3f510243dd7d",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "totals": {
+    "nodes": 28,
+    "edges": 46,
+    "verifiable": 22
+  },
+  "counts": {
+    "DECLARED": 0,
+    "READY": 21,
+    "ACTIVE": 3,
+    "IMPLEMENTED": 4,
+    "VERIFYING": 0,
+    "VERIFIED": 0,
+    "FAILED": 0,
+    "BLOCKED": 0,
+    "STALE": 0,
+    "SUPERSEDED": 0
+  },
+  "progress": 0.0,
+  "coverage": 0.7857,
+  "stale": [],
+  "blocked": [],
+  "failed": [],
+  "next": [
+    {
+      "id": "CMP_APP_CONFIG",
+      "type": "COMPONENT",
+      "status": "IMPLEMENTED",
+      "title": "Layer manifest"
+    },
+    {
+      "id": "CMP_APP_MODULES",
+      "type": "COMPONENT",
+      "status": "IMPLEMENTED",
+      "title": "App modules"
+    },
+    {
+      "id": "CMP_SCRIPTS",
+      "type": "COMPONENT",
+      "status": "IMPLEMENTED",
+      "title": "Legacy processing scripts"
+    },
+    {
+      "id": "CFG_PROJECT_MANIFESTS",
+      "type": "CONFIG",
+      "status": "IMPLEMENTED",
+      "title": "Project manifests"
+    },
+    {
+      "id": "CMP_APP_SHELL",
+      "type": "COMPONENT",
+      "status": "READY",
+      "title": "App shell and main logic"
+    },
+    {
+      "id": "DATA_PUBLISHED_GEOJSON",
+      "type": "DATA",
+      "status": "READY",
+      "title": "Published GeoJSON"
+    },
+    {
+      "id": "TST_NO_RESTRICTED_DATA_TRACKED",
+      "type": "TEST",
+      "status": "READY",
+      "title": "Privacy invariant - no restricted survey data tracked or served"
+    }
+  ],
+  "cycles": []
+}

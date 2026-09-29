@@ -1,0 +1,63 @@
+flowchart TB
+    M0_CONTAINMENT{{"Stage 0 - Containment<br/><small>MILESTONE - READY</small>"}}
+    M1_SCAFFOLDING{{"Stage 1 - Baseline and scaffolding<br/><small>MILESTONE - READY</small>"}}
+    M2_DICTIONARY{{"Stage 2 - Field dictionary, vocabularies, gazett<br/><small>MILESTONE - READY</small>"}}
+    M3_ADAPTERS{{"Stage 3 - Adapters to staging with lineage<br/><small>MILESTONE - READY</small>"}}
+    M4_CANONICAL{{"Stage 4 - Validation and canonical tier<br/><small>MILESTONE - READY</small>"}}
+    M5_PUBLISH_SDC{{"Stage 5 - Publishing with statistical disclosure<br/><small>MILESTONE - READY</small>"}}
+    M6_FRONTEND_REGISTRY{{"Stage 6 - Registry-driven frontend<br/><small>MILESTONE - READY</small>"}}
+    M7_GIS_UX{{"Stage 7 - GIS and UX corrections<br/><small>MILESTONE - READY</small>"}}
+    M8_RESEARCH_TIER{{"Stage 8 - Research tier and ML (optional)<br/><small>MILESTONE - READY</small>"}}
+    REQ_CONSISTENT_MAP_UX(["Consistent popups (AR/EN parity), legends and in<br/><small>REQUIREMENT - READY</small>"])
+    REQ_DATASET_PROVENANCE_LICENCE(["Every dataset has source, licence, collection pe<br/><small>REQUIREMENT - READY</small>"])
+    REQ_DEFINED_SCHEMAS_STABLE_IDS(["Every dataset follows a defined schema with stab<br/><small>REQUIREMENT - READY</small>"])
+    REQ_DETERMINISTIC_PUBLIC_BUILD(["Public release regenerates deterministically fro<br/><small>REQUIREMENT - READY</small>"])
+    REQ_LOCATION_PROVENANCE(["Every geometry carries origin and spatial precis<br/><small>REQUIREMENT - READY</small>"])
+    REQ_MISSING_VALUE_SEMANTICS(["Non-reported values carry an explicit status (no<br/><small>REQUIREMENT - READY</small>"])
+    REQ_NO_RESTRICTED_DATA_PUBLIC(["No restricted farmer data reaches unauthorized c<br/><small>REQUIREMENT - READY</small>"])
+    REQ_PREDICTABLE_NEW_DATASET(["New dataset needs only an adapter, dictionary ro<br/><small>REQUIREMENT - READY</small>"])
+    RESOLVEMAPING_FINAL2[["RESOLVE Mapping Platform<br/><small>PROJECT - ACTIVE</small>"]]
+    SYS_DATA_PIPELINE["Data pipeline<br/><small>SYSTEM - ACTIVE</small>"]
+    SYS_PUBLIC_RELEASE["Public release<br/><small>SYSTEM - READY</small>"]
+    SYS_WEB_MAP["Web map<br/><small>SYSTEM - ACTIVE</small>"]
+    RESOLVEMAPING_FINAL2 --> SYS_DATA_PIPELINE
+    RESOLVEMAPING_FINAL2 --> SYS_WEB_MAP
+    RESOLVEMAPING_FINAL2 --> SYS_PUBLIC_RELEASE
+    RESOLVEMAPING_FINAL2 --> REQ_NO_RESTRICTED_DATA_PUBLIC
+    RESOLVEMAPING_FINAL2 --> REQ_DEFINED_SCHEMAS_STABLE_IDS
+    RESOLVEMAPING_FINAL2 --> REQ_LOCATION_PROVENANCE
+    RESOLVEMAPING_FINAL2 --> REQ_MISSING_VALUE_SEMANTICS
+    RESOLVEMAPING_FINAL2 --> REQ_DATASET_PROVENANCE_LICENCE
+    RESOLVEMAPING_FINAL2 --> REQ_DETERMINISTIC_PUBLIC_BUILD
+    RESOLVEMAPING_FINAL2 --> REQ_PREDICTABLE_NEW_DATASET
+    RESOLVEMAPING_FINAL2 --> REQ_CONSISTENT_MAP_UX
+    RESOLVEMAPING_FINAL2 --> M0_CONTAINMENT
+    RESOLVEMAPING_FINAL2 --> M1_SCAFFOLDING
+    RESOLVEMAPING_FINAL2 --> M2_DICTIONARY
+    RESOLVEMAPING_FINAL2 --> M3_ADAPTERS
+    RESOLVEMAPING_FINAL2 --> M4_CANONICAL
+    RESOLVEMAPING_FINAL2 --> M5_PUBLISH_SDC
+    RESOLVEMAPING_FINAL2 --> M6_FRONTEND_REGISTRY
+    RESOLVEMAPING_FINAL2 --> M7_GIS_UX
+    RESOLVEMAPING_FINAL2 --> M8_RESEARCH_TIER
+    M0_CONTAINMENT -.->|SATISFIES| REQ_NO_RESTRICTED_DATA_PUBLIC
+    M5_PUBLISH_SDC -.->|SATISFIES| REQ_NO_RESTRICTED_DATA_PUBLIC
+    M4_CANONICAL -.->|SATISFIES| REQ_DEFINED_SCHEMAS_STABLE_IDS
+    M4_CANONICAL -.->|SATISFIES| REQ_LOCATION_PROVENANCE
+    M4_CANONICAL -.->|SATISFIES| REQ_MISSING_VALUE_SEMANTICS
+    M5_PUBLISH_SDC -.->|SATISFIES| REQ_DATASET_PROVENANCE_LICENCE
+    M5_PUBLISH_SDC -.->|SATISFIES| REQ_DETERMINISTIC_PUBLIC_BUILD
+    M6_FRONTEND_REGISTRY -.->|SATISFIES| REQ_PREDICTABLE_NEW_DATASET
+    M7_GIS_UX -.->|SATISFIES| REQ_CONSISTENT_MAP_UX
+    classDef declared fill:#9e9e9e,stroke:#333,stroke-width:1px,color:#333333;
+    classDef ready fill:#2f6fed,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef active fill:#e6b400,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef implemented fill:#128f8f,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef verifying fill:#f08c00,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef verified fill:#2e9b48,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef failed fill:#d32f2f,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef blocked fill:#7b3fbf,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef stale fill:#8d6e3a,stroke:#333,stroke-width:1px,color:#ffffff;
+    classDef superseded fill:#c9c9c9,stroke:#333,stroke-width:1px,color:#333333;
+    class RESOLVEMAPING_FINAL2,SYS_DATA_PIPELINE,SYS_WEB_MAP active;
+    class M0_CONTAINMENT,M1_SCAFFOLDING,M2_DICTIONARY,M3_ADAPTERS,M4_CANONICAL,M5_PUBLISH_SDC,M6_FRONTEND_REGISTRY,M7_GIS_UX,M8_RESEARCH_TIER,REQ_CONSISTENT_MAP_UX,REQ_DATASET_PROVENANCE_LICENCE,REQ_DEFINED_SCHEMAS_STABLE_IDS,REQ_DETERMINISTIC_PUBLIC_BUILD,REQ_LOCATION_PROVENANCE,REQ_MISSING_VALUE_SEMANTICS,REQ_NO_RESTRICTED_DATA_PUBLIC,REQ_PREDICTABLE_NEW_DATASET,SYS_PUBLIC_RELEASE ready;

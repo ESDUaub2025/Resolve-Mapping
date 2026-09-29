@@ -15,7 +15,7 @@
     const MANIFEST = {
 
         // ── Version & caching ───────────────────────────────────────
-        DATA_VERSION: '2.5.0',
+        DATA_VERSION: '3.0.0',
         CACHE_EXPIRY_DAYS: 7,
         DB_NAME: 'ResolveMapDB',
         DB_VERSION: 1,
@@ -32,83 +32,10 @@
 
         // ── Canonical survey themes ─────────────────────────────────
         // Each theme becomes a clustered point layer on the map.
-        THEMES: {
-            water: {
-                layerId: 'water-points',
-                canonicalFiles: [
-                    'data/geojson/canonical/Water.canonical.geojson',
-                    'data/geojson/canonical/Water_new.canonical.geojson'
-                ],
-                csvSources: {
-                    ar: 'data/layers/Arabic/Water_1.0.csv',
-                    en: 'data/layers/English/Water_1.0.en.csv'
-                },
-                color: '#1abc9c',
-                pixelOffset: [0, 0],
-                i18n: { en: 'Water', ar: 'المياه' },
-                icon: 'water'      // key into iconSvgs (defined in app.js)
-            },
-            energy: {
-                layerId: 'energy-points',
-                canonicalFiles: [
-                    'data/geojson/canonical/Energy.canonical.geojson',
-                    'data/geojson/canonical/Energy_new.canonical.geojson'
-                ],
-                csvSources: {
-                    ar: 'data/layers/Arabic/Energy_1.0.csv',
-                    en: 'data/layers/English/Energy_1.0.en.csv'
-                },
-                color: '#f39c12',
-                pixelOffset: [12, 12],
-                i18n: { en: 'Energy', ar: 'الطاقة' },
-                icon: 'energy'
-            },
-            food: {
-                layerId: 'food-points',
-                canonicalFiles: [
-                    'data/geojson/canonical/Food.canonical.geojson',
-                    'data/geojson/canonical/Food_new.canonical.geojson'
-                ],
-                csvSources: {
-                    ar: 'data/layers/Arabic/Food_1.0.csv',
-                    en: 'data/layers/English/Food_1.0.en.csv'
-                },
-                color: '#9b59b6',
-                pixelOffset: [-12, -12],
-                i18n: { en: 'Food', ar: 'الغذاء' },
-                icon: 'food'
-            },
-            general: {
-                layerId: 'general-points',
-                canonicalFiles: [
-                    'data/geojson/canonical/General_Info.canonical.geojson',
-                    'data/geojson/canonical/General_Info_new.canonical.geojson'
-                ],
-                csvSources: {
-                    ar: 'data/layers/Arabic/Generalinfo_1.0.csv',
-                    en: 'data/layers/English/Generalinfo_1.0.en.csv'
-                },
-                color: '#2980b9',
-                pixelOffset: [12, -12],
-                i18n: { en: 'General', ar: 'عام' },
-                icon: 'general'
-            },
-            regen: {
-                layerId: 'regen-points',
-                canonicalFiles: [
-                    'data/geojson/canonical/Regenerative_Agriculture.canonical.geojson',
-                    'data/geojson/canonical/Regenerative_Agriculture_new.canonical.geojson'
-                ],
-                csvSources: {
-                    ar: 'data/layers/Arabic/Regenerative_1.0.csv',
-                    en: 'data/layers/English/Regenerative_1.0.en.csv'
-                },
-                color: '#27ae60',
-                pixelOffset: [-12, 12],
-                i18n: { en: 'Regenerative Ag', ar: 'الزراعة التجديدية' },
-                icon: 'regen'
-            }
-        },
+        // Withdrawn 2026-09-29 (Stage 0 containment): survey-derived layers exposed
+        // respondent-level records and small-village aggregates. They return as
+        // disclosure-controlled aggregates in Stage 5 of the refactoring plan.
+        THEMES: {},
 
         // ── Static layers (non-canonical) ───────────────────────────
         STATIC_LAYERS: {
@@ -128,93 +55,12 @@
                 type: 'polygon',
                 i18n: { en: 'Preservations', ar: 'المحميات' },
                 icon: 'preservations'
-            },
-            farmers: {
-                layerId: 'farmers-points',
-                file: 'data/geojson/Model_Predictions.geojson',
-                color: '#16a085',
-                pixelOffset: [14, 0],
-                i18n: { en: 'Farmers Survey', ar: 'استبيان المزارعين' },
-                icon: 'farmers'
             }
         },
 
         // ── AI prediction layers ────────────────────────────────────
-        AI_LAYERS: {
-            regen: {
-                layerId: 'ai-regen',
-                sourceId: 'ai-predictions',
-                predictionProp: 'Pred_Regen_Adoption',
-                type: 'binary',
-                colorMap: { '0': '#e74c3c', '1': '#27ae60' },
-                i18n: { en: 'Regenerative Adoption', ar: 'تبني الزراعة التجديدية' },
-                icon: 'aiRegen'
-            },
-            water: {
-                layerId: 'ai-water',
-                sourceId: 'ai-predictions',
-                predictionProp: 'Pred_Water_Risk',
-                type: 'binary',
-                colorMap: { '0': '#27ae60', '1': '#e74c3c' },
-                i18n: { en: 'Water Risk', ar: 'مخاطر الأمن المائي' },
-                icon: 'aiWater'
-            },
-            econ: {
-                layerId: 'ai-econ',
-                sourceId: 'ai-predictions',
-                predictionProp: 'Pred_Production_Level',
-                type: 'ternary',
-                colorMap: { '0': '#e74c3c', '1': '#f39c12', '2': '#27ae60' },
-                i18n: { en: 'Economic Resilience', ar: 'المرونة الاقتصادية' },
-                icon: 'aiEcon'
-            },
-            climate: {
-                layerId: 'ai-climate',
-                sourceId: 'ai-predictions',
-                predictionProp: 'Pred_Climate_Vuln',
-                type: 'ternary',
-                colorMap: { '0': '#3498db', '1': '#9b59b6', '2': '#1abc9c' },
-                i18n: { en: 'Climate Vulnerability', ar: 'الضعف المناخي' },
-                icon: 'aiClimate'
-            },
-            // ── Unsupervised analysis layers ────────────────────────
-            clusters: {
-                layerId: 'ai-clusters',
-                sourceId: 'ai-predictions',
-                predictionProp: 'farmer_cluster',
-                type: 'categorical',
-                colorMap: { '0': '#3498db', '1': '#e67e22', '2': '#2ecc71' },
-                i18n: { en: 'Farmer Clusters', ar: 'مجموعات المزارعين' },
-                icon: 'aiCluster'
-            },
-            waterIdx: {
-                layerId: 'ai-idx-water',
-                sourceId: 'ai-predictions',
-                predictionProp: 'idx_water_vulnerability',
-                type: 'gradient',
-                colorStops: [[0, '#27ae60'], [50, '#f39c12'], [100, '#e74c3c']],
-                i18n: { en: 'Water Vulnerability Index', ar: 'مؤشر هشاشة المياه' },
-                icon: 'aiWaterIdx'
-            },
-            agriIdx: {
-                layerId: 'ai-idx-agri',
-                sourceId: 'ai-predictions',
-                predictionProp: 'idx_agricultural_capacity',
-                type: 'gradient',
-                colorStops: [[0, '#e74c3c'], [50, '#f39c12'], [100, '#27ae60']],
-                i18n: { en: 'Agricultural Capacity', ar: 'القدرة الزراعية' },
-                icon: 'aiAgriIdx'
-            },
-            sustainIdx: {
-                layerId: 'ai-idx-sustain',
-                sourceId: 'ai-predictions',
-                predictionProp: 'idx_sustainability_practices',
-                type: 'gradient',
-                colorStops: [[0, '#e74c3c'], [50, '#f39c12'], [100, '#27ae60']],
-                i18n: { en: 'Sustainability Practices', ar: 'ممارسات الاستدامة' },
-                icon: 'aiSustainIdx'
-            }
-        },
+        // Withdrawn 2026-09-29: models were not validated out-of-sample (see audit plan).
+        AI_LAYERS: {},
 
         // ── Heatmap layer (special) ─────────────────────────────────
         HEATMAP: {
@@ -224,17 +70,9 @@
             icon: 'fire'
         },
 
-        // ── AI Source ───────────────────────────────────────────────
-        AI_SOURCE: {
-            id: 'ai-predictions',
-            file: 'data/geojson/Model_Predictions.geojson',
-            promoteId: 'source_row'
-        },
-
-        // Boundary layer (generated by ML pipeline)
-        BOUNDARY: {
-            file: 'data/geojson/Farmers_Boundary.geojson'
-        }
+        // AI_SOURCE and BOUNDARY withdrawn with the AI layers.
+        AI_SOURCE: null,
+        BOUNDARY: null
     };
 
     // ── Helper: build lookup maps from manifest ─────────────────

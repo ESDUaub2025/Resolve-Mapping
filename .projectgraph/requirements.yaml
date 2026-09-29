@@ -1,0 +1,36 @@
+# Requirements = the approved plan's Definition of Done (section 27).
+nodes:
+- id: REQ_NO_RESTRICTED_DATA_PUBLIC
+  type: REQUIREMENT
+  title: No restricted farmer data reaches unauthorized clients
+  summary: No direct identifiers, respondent-level records or n<k aggregates in anything Pages serves, nor in public git history.
+- id: REQ_DEFINED_SCHEMAS_STABLE_IDS
+  type: REQUIREMENT
+  title: Every dataset follows a defined schema with stable IDs
+- id: REQ_LOCATION_PROVENANCE
+  type: REQUIREMENT
+  title: Every geometry carries origin and spatial precision; no baked displacement
+- id: REQ_MISSING_VALUE_SEMANTICS
+  type: REQUIREMENT
+  title: Non-reported values carry an explicit status (not provided, not asked, not applicable, suppressed ...)
+- id: REQ_DATASET_PROVENANCE_LICENCE
+  type: REQUIREMENT
+  title: Every dataset has source, licence, collection period, method and schema version
+- id: REQ_DETERMINISTIC_PUBLIC_BUILD
+  type: REQUIREMENT
+  title: Public release regenerates deterministically from private raw sources
+- id: REQ_PREDICTABLE_NEW_DATASET
+  type: REQUIREMENT
+  title: New dataset needs only an adapter, dictionary rows and a registry entry
+- id: REQ_CONSISTENT_MAP_UX
+  type: REQUIREMENT
+  title: Consistent popups (AR/EN parity), legends and info cards on all layers
+edges:
+- {from: RESOLVEMAPING_FINAL2, to: REQ_NO_RESTRICTED_DATA_PUBLIC, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: REQ_DEFINED_SCHEMAS_STABLE_IDS, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: REQ_LOCATION_PROVENANCE, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: REQ_MISSING_VALUE_SEMANTICS, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: REQ_DATASET_PROVENANCE_LICENCE, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: REQ_DETERMINISTIC_PUBLIC_BUILD, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: REQ_PREDICTABLE_NEW_DATASET, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: REQ_CONSISTENT_MAP_UX, type: CONTAINS}

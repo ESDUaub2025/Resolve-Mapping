@@ -1,0 +1,77 @@
+# ProjectGraph structure: architecture as found (legacy, tagged) plus systems the plan targets.
+nodes:
+- id: RESOLVEMAPING_FINAL2
+  type: PROJECT
+  title: RESOLVE Mapping Platform
+  summary: Lebanon agricultural/environmental GIS map (static site on GitHub Pages).
+- id: SYS_DATA_PIPELINE
+  type: SYSTEM
+  title: Data pipeline
+  summary: Offline Python processing from raw sources to published datasets.
+- id: SYS_WEB_MAP
+  type: SYSTEM
+  title: Web map
+  summary: Static MapLibre GL frontend (no build step).
+- id: SYS_PUBLIC_RELEASE
+  type: SYSTEM
+  title: Public release
+  summary: Everything GitHub Pages serves to anonymous users.
+- id: CFG_PROJECT_MANIFESTS
+  type: CONFIG
+  title: Project manifests
+  summary: Python dependency manifest (currently unpinned).
+  artifacts:
+  - requirements.txt
+- id: CMP_SCRIPTS
+  type: COMPONENT
+  title: Legacy processing scripts
+  summary: Active and archived one-off scripts; replaced by the adapter pipeline in Stage 3.
+  tags: [legacy]
+  artifacts:
+  - scripts/**
+  confidence: medium
+- id: CMP_APP_SHELL
+  type: COMPONENT
+  title: App shell and main logic
+  summary: index.html, app.js (layers, popups, filters, i18n, legend), style.css; decomposed in Stage 6.
+  tags: [legacy]
+  artifacts:
+  - index.html
+  - app.js
+  - style.css
+  confidence: medium
+- id: CMP_APP_MODULES
+  type: COMPONENT
+  title: App modules
+  summary: loader, store, property-schemas, and the unused filter-engine.
+  tags: [legacy]
+  artifacts:
+  - app/modules/**
+  confidence: medium
+- id: CMP_APP_CONFIG
+  type: COMPONENT
+  title: Layer manifest
+  summary: app/config/manifest.js layer registry (to become a generated catalog).
+  tags: [legacy]
+  artifacts:
+  - app/config/**
+  confidence: medium
+- id: DATA_PUBLISHED_GEOJSON
+  type: DATA
+  title: Published GeoJSON
+  summary: Files the browser loads; currently under data/geojson/.
+  artifacts:
+  - data/geojson/**
+  confidence: medium
+edges:
+- {from: RESOLVEMAPING_FINAL2, to: SYS_DATA_PIPELINE, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: SYS_WEB_MAP, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: SYS_PUBLIC_RELEASE, type: CONTAINS}
+- {from: RESOLVEMAPING_FINAL2, to: CFG_PROJECT_MANIFESTS, type: CONTAINS}
+- {from: SYS_DATA_PIPELINE, to: CMP_SCRIPTS, type: CONTAINS}
+- {from: SYS_WEB_MAP, to: CMP_APP_SHELL, type: CONTAINS}
+- {from: SYS_WEB_MAP, to: CMP_APP_MODULES, type: CONTAINS}
+- {from: SYS_WEB_MAP, to: CMP_APP_CONFIG, type: CONTAINS}
+- {from: SYS_PUBLIC_RELEASE, to: DATA_PUBLISHED_GEOJSON, type: CONTAINS}
+- {from: CMP_SCRIPTS, to: DATA_PUBLISHED_GEOJSON, type: PRODUCES}
+- {from: CMP_APP_MODULES, to: DATA_PUBLISHED_GEOJSON, type: CONSUMES}

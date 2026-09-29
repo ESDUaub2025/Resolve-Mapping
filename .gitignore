@@ -17,3 +17,13 @@ data/Processed_Training_Data.csv
 # OS
 .DS_Store
 Thumbs.db
+
+# Restricted survey data never belongs in this public repository (see tests/privacy).
+data/*.xlsx
+data/*.xls
+data/MZSurvey*
+data/survey_by_theme/
+data/layers/
+data/models/
+data/geojson/canonical/
+data-private/

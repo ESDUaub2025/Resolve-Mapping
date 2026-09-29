@@ -1,0 +1,11 @@
+# Verification contracts. Legacy components deliberately have none: they have no tests,
+# and a file-existence check would be meaningless. Contracts are added as stages start.
+TST_NO_RESTRICTED_DATA_TRACKED:
+  required_files:
+  - tests/privacy/test_no_restricted_data.py
+  commands:
+  - name: privacy-invariant
+    run: python -m pytest tests/privacy -q
+  acceptance:
+  - "Removed survey/PII paths return HTTP 404 on https://esduaub2025.github.io/Resolve-Mapping/"
+  - "git log --all over the removed paths is empty on the public remote after the history rewrite"
