@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T14:31:10+00:00",
+  "generated_at": "2026-09-30T10:23:19+00:00",
   "project": {
     "name": "RESOLVE Mapping Platform",
     "id": "RESOLVEMAPING_FINAL2",
@@ -925,8 +925,7 @@
           "code": "derived-from-members",
           "detail": "Derived from member nodes (ACTIVE).",
           "refs": [
-            "M4_CANONICAL",
-            "TST_RESEARCH_TIER"
+            "M4_CANONICAL"
           ]
         }
       ],
@@ -1492,14 +1491,14 @@
       "reasons": [
         {
           "code": "verified",
-          "detail": "Verification passed at 2026-09-29T14:29:32+00:00 (commit f12cd6cf91c8)."
+          "detail": "Verification passed at 2026-09-30T10:22:15+00:00 (commit 7b4d7a780ac1)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:29:32+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_CANONICAL_VALID/20260929T142932+0000-41cb335f.json",
+      "verified_at": "2026-09-30T10:22:15+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_CANONICAL_VALID/20260930T102215+0000-23c8d767.json",
       "children": [],
       "parents": [
         "M4_CANONICAL"
@@ -1539,8 +1538,8 @@
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:28:34+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_DICTIONARY/20260929T142834+0000-b71c11a4.json",
+      "verified_at": "2026-09-30T10:23:17+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_DICTIONARY/20260930T102317+0000-a5527ee1.json",
       "children": [],
       "parents": [
         "M2_DICTIONARY"
@@ -1570,14 +1569,14 @@
       "reasons": [
         {
           "code": "verified",
-          "detail": "Verification passed at 2026-09-29T14:29:35+00:00 (commit f12cd6cf91c8)."
+          "detail": "Verification passed at 2026-09-30T10:22:18+00:00 (commit 7b4d7a780ac1)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:29:35+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_FRONTEND/20260929T142935+0000-d69631b3.json",
+      "verified_at": "2026-09-30T10:22:18+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_FRONTEND/20260930T102218+0000-5913d34b.json",
       "children": [],
       "parents": [
         "M6_FRONTEND_REGISTRY"
@@ -1616,8 +1615,8 @@
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:29:52+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_MAP_E2E/20260929T142952+0000-fae710f8.json",
+      "verified_at": "2026-09-30T10:22:37+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_MAP_E2E/20260930T102237+0000-5a0f3ba0.json",
       "children": [],
       "parents": [
         "M7_GIS_UX"
@@ -1657,8 +1656,8 @@
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:30:26+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260929T143026+0000-23f21fb6.json",
+      "verified_at": "2026-09-30T10:23:18+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_NO_RESTRICTED_DATA_TRACKED/20260930T102318+0000-52cd4037.json",
       "children": [],
       "parents": [
         "M0_CONTAINMENT"
@@ -1685,14 +1684,14 @@
       "reasons": [
         {
           "code": "verified",
-          "detail": "Verification passed at 2026-09-29T14:29:03+00:00 (commit f12cd6cf91c8)."
+          "detail": "Verification passed at 2026-09-30T10:21:20+00:00 (commit 7b4d7a780ac1)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:29:03+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_PIPELINE_REPRODUCIBLE/20260929T142903+0000-a000e636.json",
+      "verified_at": "2026-09-30T10:21:20+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_PIPELINE_REPRODUCIBLE/20260930T102120+0000-f5c09d0f.json",
       "children": [],
       "parents": [
         "M3_ADAPTERS"
@@ -1723,14 +1722,14 @@
       "reasons": [
         {
           "code": "verified",
-          "detail": "Verification passed at 2026-09-29T14:29:34+00:00 (commit f12cd6cf91c8)."
+          "detail": "Verification passed at 2026-09-30T10:22:17+00:00 (commit 7b4d7a780ac1)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:29:34+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_PUBLIC_RELEASE/20260929T142934+0000-72ad3103.json",
+      "verified_at": "2026-09-30T10:22:17+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_PUBLIC_RELEASE/20260930T102217+0000-53bc6a7d.json",
       "children": [],
       "parents": [
         "M5_PUBLISH_SDC"
@@ -1741,7 +1740,7 @@
       "type": "TEST",
       "title": "Local research release with identities builds",
       "tier": 6,
-      "status": "IMPLEMENTED",
+      "status": "VERIFIED",
       "lifecycle": "IMPLEMENTED",
       "has_contract": true,
       "evidence_strength": {
@@ -1751,24 +1750,21 @@
           "research-build"
         ],
         "structural_checks": 2,
-        "attestations": 0,
+        "attestations": 1,
         "attestation_identity": "caller-supplied; not authenticated human approval",
         "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
       },
       "reasons": [
         {
-          "code": "acceptance-pending",
-          "detail": "1 acceptance condition(s) still require attestation.",
-          "refs": [
-            "ML analyses rebuilt on the standardized research records with out-of-sample validation (optional stage; not done)"
-          ]
+          "code": "verified",
+          "detail": "Verification passed at 2026-09-30T10:23:13+00:00 (commit 7b4d7a780ac1)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:31:09+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_RESEARCH_TIER/20260929T143109+0000-7bd7284d.json",
+      "verified_at": "2026-09-30T10:23:13+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_RESEARCH_TIER/20260930T102313+0000-e0d9c7cf.json",
       "children": [],
       "parents": [
         "M8_RESEARCH_TIER"
@@ -1808,8 +1804,8 @@
       "blocked_by": [],
       "waiting_on": [],
       "stale_causes": [],
-      "verified_at": "2026-09-29T14:28:33+00:00",
-      "evidence_path": ".projectgraph/evidence/TST_TEST_SUITE/20260929T142833+0000-1b158a4e.json",
+      "verified_at": "2026-09-30T10:23:16+00:00",
+      "evidence_path": ".projectgraph/evidence/TST_TEST_SUITE/20260930T102316+0000-4b4ee59e.json",
       "children": [],
       "parents": [
         "M1_SCAFFOLDING"

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T14:31:10+00:00",
+  "generated_at": "2026-09-30T10:23:19+00:00",
   "rule": "workbench.project.v1",
   "default_scale": "portfolio",
   "scales": [
@@ -1670,7 +1670,7 @@
           "label": "Local research release with identities builds",
           "type": "TEST",
           "tier": 6,
-          "status": "IMPLEMENTED",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
         },
         {
@@ -1926,7 +1926,7 @@
           "label": "Local research release with identities builds",
           "type": "TEST",
           "tier": 6,
-          "status": "IMPLEMENTED",
+          "status": "VERIFIED",
           "cluster": "parent:M8_RESEARCH_TIER"
         },
         {
@@ -2091,7 +2091,7 @@
             "TST_RESEARCH_TIER"
           ],
           "size": 1,
-          "status": "IMPLEMENTED"
+          "status": "VERIFIED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -2279,12 +2279,18 @@
     "rule": "workbench.project.v1"
   },
   "temporal": {
-    "baseline": "2026-09-29T10:21:23+00:00",
+    "baseline": "2026-09-29T14:31:10+00:00",
     "comparable": true,
     "added": [],
     "removed": [],
-    "status_changes": [],
-    "quiet": true,
+    "status_changes": [
+      {
+        "id": "TST_RESEARCH_TIER",
+        "from": "IMPLEMENTED",
+        "to": "VERIFIED"
+      }
+    ],
+    "quiet": false,
     "rule": "workbench.project.v1"
   },
   "health": {
@@ -2304,9 +2310,9 @@
         "gaps": 8
       },
       "state": {
-        "score": 0.1333,
+        "score": 0.1667,
         "band": "poor",
-        "gaps": 26
+        "gaps": 25
       },
       "task_context": {
         "score": 1.0,

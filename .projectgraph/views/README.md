@@ -10,14 +10,14 @@ connections, click one to see why it has the status it has, and
 double-click to drill in.
 
 - Nodes: **42**  |  Edges: **68**
-- Verified: **13%** of live nodes
+- Verified: **17%** of live nodes
 
 | Status | Nodes |
 |---|---|
 | READY | 9 |
 | ACTIVE | 18 |
-| IMPLEMENTED | 6 |
-| VERIFIED | 4 |
+| IMPLEMENTED | 5 |
+| VERIFIED | 5 |
 | SUPERSEDED | 5 |
 
 ## Mermaid sources

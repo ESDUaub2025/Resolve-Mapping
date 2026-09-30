@@ -1,0 +1,55 @@
+{
+  "node": "TST_PUBLIC_RELEASE",
+  "evidence_id": "53bc6a7dc2c34603b56639457f1148a1",
+  "result": "PASS",
+  "started_at": "2026-09-30T10:22:16+00:00",
+  "finished_at": "2026-09-30T10:22:17+00:00",
+  "git": {
+    "available": true,
+    "commit": "7b4d7a780ac1939e2fd8898966da56176c2ef58f",
+    "short_commit": "7b4d7a780ac1",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:526d4746d6d64007a1dd2bd8a2e4d4f9647c7d9dd1cff0f85984a688fda8ddcf",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "public/data/catalog.json",
+      "hash": "c961217434e98c8b12ab047ecef596e28bbef835baa50f740dd29c27aa189158"
+    },
+    {
+      "path": "tests/test_public_release.py",
+      "hash": "5472cec94f4de92ddc40192f7c932b9183ed1f99499fca39bbea7ebc9c8dec4d"
+    },
+    {
+      "path": "tests/test_sdc.py",
+      "hash": "3e54f716d063f0abc395917fbd2726cc2eadadd35699cd5eb53c820fcac2fb38"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "public/data/catalog.json",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "release-and-sdc-tests",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m pytest -q tests/test_public_release.py tests/test_sdc.py tests/privacy",
+      "exit_code": 0,
+      "duration_s": 0.875,
+      "stdout_digest": "sha256:52805a0d2a87efcf2aedf42238272ee042ca220eb3e7aaa3e4fdc4876358ce47",
+      "output_tail": "......................................................                   [100%]\n54 passed in 0.51s\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

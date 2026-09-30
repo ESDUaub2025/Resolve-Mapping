@@ -1,0 +1,51 @@
+{
+  "node": "TST_FRONTEND",
+  "evidence_id": "5913d34b44674416a0ab484e1cbcb70a",
+  "result": "PASS",
+  "started_at": "2026-09-30T10:22:18+00:00",
+  "finished_at": "2026-09-30T10:22:18+00:00",
+  "git": {
+    "available": true,
+    "commit": "7b4d7a780ac1939e2fd8898966da56176c2ef58f",
+    "short_commit": "7b4d7a780ac1",
+    "branch": "main",
+    "dirty": true,
+    "worktree": "D:\\Programing\\ResolveMaping_final2",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\ResolveMaping_final2\\.git"
+  },
+  "self_fingerprint": "sha256:9228ada0f4de7dc8df705f8bcdf9aaf84a9e6feaa5e935a0353d98b2219813ed",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "public/js/main.js",
+      "hash": "161f984a5c9a2215646c72c1af56dc2f60740680510236b50e7298389658d789"
+    },
+    {
+      "path": "tests/test_frontend.py",
+      "hash": "12aa605e80ce5eb1ddd8a344a4c5f2cf0fd23d1097bf4ef3a8024c8561ffc11e"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "public/js/main.js",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "frontend-tests",
+      "ok": true,
+      "detail": "exit 0",
+      "run": ".venv\\Scripts\\python.exe -m pytest -q tests/test_frontend.py",
+      "exit_code": 0,
+      "duration_s": 0.36,
+      "stdout_digest": "sha256:9310d484212a1fe2c33b4b8accdf50a2639f09ba039354f8448f8aa8d173e1ff",
+      "output_tail": ".....                                                                    [100%]\n5 passed in 0.01s\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

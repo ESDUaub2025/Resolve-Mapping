@@ -1,11 +1,11 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-09-29T14:31:10+00:00",
+  "generated_at": "2026-09-30T10:23:19+00:00",
   "project": "RESOLVE Mapping Platform",
   "git": {
     "available": true,
-    "commit": "f12cd6cf91c83b9cebdad8e450ab95733a81d1a4",
-    "short_commit": "f12cd6cf91c8",
+    "commit": "7b4d7a780ac1939e2fd8898966da56176c2ef58f",
+    "short_commit": "7b4d7a780ac1",
     "branch": "main",
     "dirty": true,
     "worktree": "D:\\Programing\\ResolveMaping_final2",
@@ -21,15 +21,15 @@
     "DECLARED": 0,
     "READY": 9,
     "ACTIVE": 18,
-    "IMPLEMENTED": 6,
+    "IMPLEMENTED": 5,
     "VERIFYING": 0,
-    "VERIFIED": 4,
+    "VERIFIED": 5,
     "FAILED": 0,
     "BLOCKED": 0,
     "STALE": 0,
     "SUPERSEDED": 5
   },
-  "progress": 0.1333,
+  "progress": 0.1667,
   "coverage": 0.8108,
   "stale": [],
   "blocked": [],
@@ -60,12 +60,6 @@
       "title": "Privacy invariant - no restricted survey data tracked or served"
     },
     {
-      "id": "TST_RESEARCH_TIER",
-      "type": "TEST",
-      "status": "IMPLEMENTED",
-      "title": "Local research release with identities builds"
-    },
-    {
       "id": "TST_TEST_SUITE",
       "type": "TEST",
       "status": "IMPLEMENTED",
@@ -94,6 +88,12 @@
       "type": "COMPONENT",
       "status": "READY",
       "title": "Registry-driven web map"
+    },
+    {
+      "id": "CFG_CI",
+      "type": "CONFIG",
+      "status": "READY",
+      "title": "CI and packaging"
     }
   ],
   "cycles": []
