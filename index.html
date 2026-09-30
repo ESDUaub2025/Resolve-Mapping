@@ -1,12 +1,121 @@
 <!doctype html>
-<!-- Temporary: Pages still builds from the repository root. Once Pages is switched to
-     "GitHub Actions" (only public/ is deployed), this file is no longer served. -->
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=public/">
-<link rel="icon" href="data:,">
-<title>RESOLVE Map</title>
+	<meta charset="utf-8">
+	<base href="public/">
+	<!-- Generated from public/index.html by `python -m resolve site`; do not edit. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>RESOLVE Map – Farming, Water &amp; Wildfire Map of Lebanon (Chouf &amp; Beqaa)</title>
+	<meta name="description" content="Free interactive map of farming practices in Mount Lebanon (Chouf) and the Beqaa valley: survey of 200+ farmers on water, energy, soil, pesticides, crops and climate change, with farmer types, satellite fire detections and protected areas. English and Arabic.">
+	<meta name="keywords" content="Lebanon agriculture map, Chouf, Beqaa, Mount Lebanon, farmers survey, water scarcity, irrigation, pesticides, fertilizers, climate change, wildfire map Lebanon, NASA FIRMS, protected areas, nature reserves, GIS, خريطة زراعية لبنان, الشوف, البقاع">
+	<meta name="robots" content="index, follow, max-image-preview:large">
+	<meta name="theme-color" content="#2e7d5b">
+	<link rel="canonical" href="https://esduaub2025.github.io/Resolve-Mapping/">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="RESOLVE Map">
+	<meta property="og:title" content="RESOLVE Map – Farming, Water &amp; Wildfire Map of Lebanon">
+	<meta property="og:description" content="Interactive bilingual map of 200+ farmers in Chouf and the Beqaa: water stress, chemical use, crops, farmer types, fire detections and protected areas.">
+	<meta property="og:url" content="https://esduaub2025.github.io/Resolve-Mapping/">
+	<meta property="og:image" content="https://esduaub2025.github.io/Resolve-Mapping/public/og-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Map of farmer survey pins in the Chouf and Beqaa, coloured by farmer type, with protected areas outlined">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:locale:alternate" content="ar_LB">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="RESOLVE Map – Farming, Water &amp; Wildfire Map of Lebanon">
+	<meta name="twitter:description" content="Interactive bilingual map of 200+ farmers in Chouf and the Beqaa, with fire detections and protected areas.">
+	<meta name="twitter:image" content="https://esduaub2025.github.io/Resolve-Mapping/public/og-image.png">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebApplication",
+				"name": "RESOLVE Map",
+				"url": "https://esduaub2025.github.io/Resolve-Mapping/",
+				"description": "Interactive bilingual map of farming practices in Mount Lebanon (Chouf) and the Beqaa valley, with farmer types, water-stress and chemical-dependence insights, satellite fire detections and protected areas.",
+				"applicationCategory": "ReferenceApplication",
+				"operatingSystem": "Any (web browser)",
+				"inLanguage": ["en", "ar"],
+				"isAccessibleForFree": true,
+				"offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+				"creator": {"@type": "Organization", "name": "RESOLVE project team (ESDU, American University of Beirut)"},
+				"image": "https://esduaub2025.github.io/Resolve-Mapping/public/og-image.png"
+			},
+			{
+				"@type": "Dataset",
+				"name": "RESOLVE farmer survey – village summaries and farmer types (Lebanon)",
+				"description": "Standardised, privacy-protected results of a survey of more than 200 farmers in the Chouf (Mount Lebanon) and the Beqaa valley on water sources and availability, irrigation energy, soil, fertilizer and pesticide use, crops, seeds, markets and climate change impacts, with a validated farmer typology.",
+				"url": "https://esduaub2025.github.io/Resolve-Mapping/",
+				"keywords": ["agriculture", "Lebanon", "farmers", "water scarcity", "pesticides", "climate change", "Chouf", "Beqaa"],
+				"creator": {"@type": "Organization", "name": "RESOLVE project team (ESDU, American University of Beirut)"},
+				"license": "https://github.com/ESDUaub2025/Resolve-Mapping#data-sources",
+				"isAccessibleForFree": true,
+				"temporalCoverage": "2025/2026",
+				"spatialCoverage": {"@type": "Place", "name": "Chouf, Aley, Zahle, West Beqaa and Baalbek districts, Lebanon",
+					"geo": {"@type": "GeoShape", "box": "33.45 35.35 34.30 36.45"}},
+				"distribution": [{"@type": "DataDownload", "encodingFormat": "application/json",
+					"contentUrl": "https://esduaub2025.github.io/Resolve-Mapping/public/data/catalog.json"}]
+			}
+		]
+	}
+	</script>
+
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232e7d5b'/></svg>">
+	<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+		integrity="sha384-MinO0mNliZ3vwppuPOUnGa+iq619pfMhLVUXfC4LHwSCvF9H+6P/KO4Q7qBOYV5V" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
 </head>
-<body><p><a href="public/">RESOLVE Map</a></p></body>
+<body>
+	<header class="topbar">
+		<button id="toggle-panel" class="icon-btn" aria-controls="panel" aria-expanded="true" data-i18n-title="layers">
+			<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+		</button>
+		<h1 class="title" data-i18n="title">RESOLVE Map</h1>
+		<button id="open-insights" class="text-btn" data-i18n="insights" hidden>Insights</button>
+		<button id="toggle-lang" class="text-btn" data-i18n="switchLang">العربية</button>
+	</header>
+	<div id="tier-banner" class="tier-banner" hidden></div>
+
+	<main class="layout">
+		<aside id="panel" class="panel" aria-label="Layers">
+			<section>
+				<h2 data-i18n="layers">Layers</h2>
+				<div id="layer-list" class="layer-list"></div>
+			</section>
+			<section>
+				<h2 data-i18n="basemap">Base map</h2>
+				<div id="basemaps" class="basemaps" role="radiogroup"></div>
+			</section>
+			<section class="about">
+				<h2 data-i18n="aboutTitle">About this map</h2>
+				<p class="small" data-i18n="aboutText">RESOLVE maps how farmers in the Chouf (Mount Lebanon) and the Beqaa valley manage water, energy, soil, pests and crops, and how they experience climate change. It combines a survey of more than 200 farmers with satellite fire detections and Lebanon's protected areas, and highlights where water stress and chemical dependence are most common.</p>
+			</section>
+			<p class="muted small" data-i18n="privacyNote"></p>
+		</aside>
+
+		<div id="map" class="map" role="region" aria-label="Map"></div>
+
+		<aside id="details" class="details" aria-labelledby="details-title" hidden>
+			<div class="details-head">
+				<h2 id="details-title"></h2>
+				<button id="details-close" class="icon-btn" data-i18n-title="close" aria-label="Close">×</button>
+			</div>
+			<div id="details-body" class="details-body"></div>
+		</aside>
+	</main>
+
+	<noscript>
+		<p class="noscript">RESOLVE Map is an interactive map of farming practices, water, wildfire detections and protected
+		areas in the Chouf (Mount Lebanon) and the Beqaa valley, Lebanon. Please enable JavaScript to use the map.</p>
+	</noscript>
+	<div id="status" class="status" role="status" aria-live="polite"></div>
+
+	<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"
+		integrity="sha384-SYKAG6cglRMN0RVvhNeBY0r3FYKNOJtznwA0v7B5Vp9tr31xAHsZC0DqkQ/pZDmj" crossorigin="anonymous"></script>
+	<script type="module" src="js/main.js"></script>
+</body>
 </html>

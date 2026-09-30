@@ -23,9 +23,11 @@ def test_no_html_injection_sinks():
 
 def test_cdn_assets_pinned_with_sri():
     html = (PUBLIC / "index.html").read_text(encoding="utf-8")
-    for tag in re.findall(r"<(?:script|link)[^>]+(?:src|href)=\"https://[^\"]+\"[^>]*>", html):
-        if "fonts" in tag:
-            continue
+    # Only resources the browser loads and executes/applies: scripts and stylesheets.
+    tags = re.findall(r"<script[^>]+src=\"https://[^\"]+\"[^>]*>", html)
+    tags += [t for t in re.findall(r"<link[^>]+href=\"https://[^\"]+\"[^>]*>", html) if 'rel="stylesheet"' in t]
+    assert tags, "expected CDN script and stylesheet tags"
+    for tag in tags:
         assert 'integrity="sha384-' in tag and 'crossorigin="anonymous"' in tag, tag
 
 
@@ -38,6 +40,19 @@ def test_ui_strings_exist_in_both_languages():
 
 
 def test_static_site_has_no_legacy_or_data_outside_release():
-    allowed_dirs = {"css", "js", "data"}
+    allowed = {"index.html", "og-image.png", "css", "js", "data"}
     for p in PUBLIC.iterdir():
-        assert p.is_file() and p.name == "index.html" or p.name in allowed_dirs, f"unexpected item in public/: {p.name}"
+        assert p.name in allowed, f"unexpected item in public/: {p.name}"
+
+
+def test_root_page_is_the_map_and_in_sync():
+    from resolve.paths import REPO
+    from resolve.site import root_index_html
+    assert (REPO / "index.html").read_text(encoding="utf-8") == root_index_html(), "run: python -m resolve site"
+
+
+def test_seo_metadata_present():
+    html = (PUBLIC / "index.html").read_text(encoding="utf-8")
+    for needle in ('<link rel="canonical"', 'name="description"', 'property="og:image"', 'application/ld+json',
+                   '"@type": "Dataset"', 'data-i18n="aboutText"'):
+        assert needle in html, needle

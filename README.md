@@ -1,82 +1,107 @@
-# RESOLVE Map
+# RESOLVE Map – Interactive Agriculture, Water and Wildfire Map of Lebanon
 
-Interactive map of farmer-survey results, satellite fire detections and protected areas for
-Mount Lebanon (Chouf) and the Beqaa, Lebanon. Public site: <https://esduaub2025.github.io/Resolve-Mapping/>
+**🌍 Open the map: <https://esduaub2025.github.io/Resolve-Mapping/>**
 
-## How it is organised
+RESOLVE Map is a free, bilingual (English / العربية) interactive web map of farming practices in
+**Mount Lebanon (Chouf and Aley)** and the **Beqaa valley (Zahle, West Beqaa, Baalbek)**. It brings
+together a survey of more than 200 farmers with satellite **fire detections** and Lebanon's
+**protected areas and nature reserves**, so that researchers, municipalities, cooperatives, NGOs and
+farmers can see how water, energy, soil, pest control, crops and climate change play out village by
+village.
 
-```
-dictionary/   field dictionary, controlled vocabularies, survey instruments, dataset cards (YAML)
-ref/          locality gazetteer: survey village spellings -> official cadastral units (OCHA COD-AB)
-resolve/      Python pipeline: adapters -> validation -> disclosure control -> releases
-public/       the static website (MapLibre, no build step) + public/data (the public release)
-tests/        privacy invariants, public-release checks, dictionary and pipeline unit tests
-research/     withdrawn ML experiments (not published, not maintained)
-docs/         architecture, data dictionary, metrics, decisions
-```
+> خريطة RESOLVE: خريطة تفاعلية مجانية باللغتين العربية والإنكليزية للممارسات الزراعية في الشوف وجبل
+> لبنان والبقاع. تجمع نتائج استبيان لأكثر من 200 مزارع حول المياه والطاقة والتربة والمبيدات والمحاصيل
+> والتغير المناخي، مع رصد الحرائق بالأقمار الصناعية والمحميات الطبيعية في لبنان.
 
-Survey data never lives in this repository. Raw files, the respondent ID registry, the
-standardized records and the research release are kept in a separate **private data store**
-(by default `../RESOLVE-data-private`, or set `RESOLVE_PRIVATE_DATA`).
+## Why this map exists
 
-## Privacy model
+Farmers in Lebanon face water scarcity, rising input costs and a changing climate, but information
+about how they actually farm is scattered and rarely mapped. RESOLVE turns survey answers into
+readable, comparable maps and evidence:
 
-Respondents consented to **research use only**. Therefore:
+- Where is water most often **insufficient** during the growing season, and what goes with it?
+- Where do farmers depend fully on **chemical fertilizers and pesticides**, and where are
+  **low-input practices** (compost, manure, biological pest control) already used?
+- Which **crops, energy sources and irrigation sources** dominate each village?
+- How close are farming villages to **protected areas** and to recent **fire activity**?
 
-| Tier | What | Where |
+## Features
+
+- **Farmer pins** – one pin per survey respondent, placed at the village they reported (or where
+  they said their land is). Pins show farming-practice answers only and are identified by a random
+  ID. Grouped pins are drawn as small **donut charts** showing the mix of answers inside the group.
+- **Village and district summaries** – colour-coded areas with the full distribution of answers for
+  every question, the number of respondents, and what was not asked or not answered.
+- **Farmer types** – four farmer profiles found by statistical clustering of farming practices
+  (e.g. intensive well-and-diesel irrigation with heavy chemical use, or low-input vegetable plots).
+- **Insights panel** – validated findings on **water stress** and **chemical dependence**, each with
+  percentages, odds ratios, confidence intervals and plain-language caveats.
+- **Filters and search** – filter pins by farmer type, water availability, water source, energy
+  source, crops, fertilizer and pesticide use, land size, production level and cooperative
+  membership; search pins by ID; live counts of what is shown.
+- **Fire detections** – satellite thermal-anomaly detections (2024–2025) as clustered points or a
+  density heatmap, with date and day/night filters.
+- **Protected areas** – nature reserves, biosphere reserves and Ramsar wetlands with clear borders and names.
+- **Bilingual and accessible** – full Arabic (right-to-left) and English interface, keyboard-accessible
+  lists of every area and pin, colour-blind-safe palettes, and a mobile-friendly layout.
+- **Transparent** – every layer has an ⓘ card with its source, licence, method and caveats.
+
+## Privacy by design
+
+The survey was collected for research. The public map never shows names, phone numbers, farm
+locations, free-text answers or sensitive answers (income, age, gender, costs). Pins are placed at
+the village level, not at farms; sensitive topics appear only as district-level summaries; and
+automated tests check every release before publication.
+
+## How it works
+
+1. **Standardisation** – survey answers from two questionnaires (Chouf 2025–26 and Beqaa 2026) are
+   mapped to one bilingual data dictionary with controlled answer codes, and every missing answer is
+   labelled as *not provided*, *not asked* or *not applicable*.
+2. **Geography** – reported village names (in Arabic and English, with many spellings) are matched to
+   Lebanon's official cadastral areas (OCHA COD-AB) and to village locations from OpenStreetMap.
+3. **Privacy and quality checks** – validation rules, disclosure control for summaries and automated
+   tests run on every build; the public release is reproducible byte for byte.
+4. **Analysis** – farmer typology (k-means with bootstrap stability testing) and region-adjusted
+   association analysis (Mantel–Haenszel odds ratios with false-discovery control, validated with
+   village-grouped cross-validation). Only results that pass these checks are published.
+5. **Web map** – a lightweight static site built with [MapLibre GL JS](https://maplibre.org/); it
+   reads a single catalogue file describing every layer, field, legend and filter.
+
+## Data sources
+
+| Layer | Source | Licence |
 |---|---|---|
-| Identity | names, phone numbers | private store only (`staging/survey_identity.json`) |
-| Research | standardized individual records with ID, name and phone, all villages, free text, GPS farm points | private store; viewed locally with `python -m resolve serve --tier research` |
-| Public | summaries of at least **k = 5** respondents per village (cadastral unit) or district; sensitive indicators (income, age, gender, costs) at district level only; one pin per respondent carrying only the random ID and farming-practice answers, placed at the village they reported (or where they said their land is), never at the farm; analysis insights; fire and protected-area layers | `public/data`, deployed to GitHub Pages |
+| Farmer survey | RESOLVE project surveys, Chouf / Mount Lebanon and Beqaa | Research use; published only as described above |
+| Administrative and cadastral boundaries | [OCHA COD-AB Lebanon](https://data.humdata.org/dataset/cod-ab-lbn) (HDX) | CC BY-IGO |
+| Village locations | [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors | ODbL |
+| Fire detections | NASA FIRMS (VIIRS) active-fire data | Free to use with attribution |
+| Protected areas | [Protected Planet / WDPA](https://www.protectedplanet.net/) (UNEP-WCMC & IUCN) | WDPA terms of use |
+| Basemaps | Esri, OpenStreetMap | Provider terms |
 
-Every respondent has a random, stable **ID** (e.g. `CH-0EXAMP`, `BQ-0EXAMP`) that replaces the
-name everywhere outside the identity table. Names, phone numbers, farm locations, free text and
-sensitive answers never reach the public site; `tests/` fail the build if they do.
+## Project
 
-## Common tasks
+RESOLVE is developed by the RESOLVE project team (ESDU, American University of Beirut) to support
+evidence-based work on water, energy and food in Lebanese agriculture. For questions, data requests
+or collaboration, please open an issue in this repository.
+
+### For developers
+
+The site is plain HTML, CSS and JavaScript (no build step) in `public/`; the data pipeline is a
+Python package in `resolve/` driven by the data dictionary in `dictionary/`. Survey data is not
+stored in this repository. Run the automated checks with:
 
 ```bash
-python -m venv .venv && .venv/Scripts/pip install -r requirements.txt -r requirements-dev.txt
-
-python -m resolve build                 # adapters -> validation -> public + research releases
-python -m resolve serve --tier public    # http://127.0.0.1:8000  (what Pages serves)
-python -m resolve serve --tier research # local research view with identities (127.0.0.1 only)
-python -m pytest                        # all checks (run before committing public/data)
-python -m resolve metrics               # measures for docs/metrics.md
-python -m resolve docs                  # regenerate docs/data-dictionary.md
-python -m resolve gazetteer             # regenerate ref/localities.csv after editing aliases
-python -m resolve raw-manifest          # record hashes after adding a raw file version
+pip install -r requirements-dev.txt
+python -m pytest
 ```
 
-A build is deterministic: rebuilding from the same private store gives byte-identical
-`public/data`. Review items (unmapped answers, conflicting duplicates, unresolved villages)
-are written to `<private store>/staging/review_issues.json`; critical problems stop the build.
+Technical documentation: [development guide](docs/development.md) · [architecture](docs/architecture.md) ·
+[data dictionary](docs/data-dictionary.md) · [design decisions](docs/decisions.md) ·
+[quality metrics](docs/metrics.md).
 
-## Adding data
-
-- **A new survey wave**: add the raw file under `<private store>/raw/<source>/<version>/`,
-  describe it in `dictionary/instruments.yaml`, add its columns to the `sources` of each field in
-  `dictionary/fields.yaml`, add any new village spellings to `ref/locality_aliases.csv`, run
-  `python -m resolve gazetteer` and `python -m resolve build`. No frontend change is needed.
-- **A new answer option**: add a code with `en`/`ar` labels and `match` patterns to
-  `dictionary/vocabularies.yaml`.
-- **A new reference layer**: add an adapter in `resolve/reference.py`, a dataset card in
-  `dictionary/datasets.yaml` and a layer entry in `resolve/publish.py`; the map renders it from
-  `catalog.json` using one of the generic renderers (`polygons`, `points`, `survey_summary`).
-
-## Deployment
-
-GitHub Pages deploys from the `main` branch (repository root). The root `index.html` redirects
-to the map in `public/`. Every tracked file is therefore publicly served, which is why the privacy
-tests check the whole repository and survey data lives only in the private store.
-
-GitHub Actions (`.github/workflows/pages.yml`) runs all tests on every push and pull request. Its
-deploy job, which would publish only `public/`, is optional: it runs only if Pages is switched to
-"GitHub Actions" and the repository variable `PAGES_FROM_ACTIONS` is `true`. Note that branch
-deployment publishes a push even when the tests fail, so run `python -m pytest` before pushing.
-
-## Data sources and licences
-
-See the dataset cards in `dictionary/datasets.yaml` (shown in the map under ⓘ). Admin boundaries:
-OCHA COD-AB Lebanon (CC BY-IGO). Protected areas: WDPA (UNEP-WCMC/IUCN) terms of use. Fire
-detections: legacy file, probably NASA FIRMS (source to be re-confirmed). Basemaps: Esri, OpenStreetMap.
+**Keywords:** Lebanon agriculture map, Chouf farmers, Beqaa valley farming, Mount Lebanon, water
+scarcity Lebanon, irrigation, agricultural survey, regenerative agriculture, pesticides and
+fertilizers, climate change impacts, wildfire map Lebanon, NASA FIRMS, protected areas Lebanon,
+nature reserves, Shouf Biosphere Reserve, interactive GIS map, MapLibre, خريطة زراعية لبنان،
+مزارعو الشوف، البقاع، شح المياه، المحميات الطبيعية، حرائق لبنان

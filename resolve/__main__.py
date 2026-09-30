@@ -7,6 +7,7 @@
   serve [--tier public|research] [--port N]    local web server for the map
   metrics                                      measure the public release (see docs/metrics.md)
   docs                                         regenerate docs/data-dictionary.md
+  site                                         regenerate the root index.html from public/index.html
 """
 import argparse
 import json
@@ -28,6 +29,7 @@ def main(argv=None):
     s.add_argument("--port", type=int, default=8000)
     sub.add_parser("metrics")
     sub.add_parser("docs")
+    sub.add_parser("site")
     args = parser.parse_args(argv)
 
     if args.command == "build":
@@ -50,6 +52,9 @@ def main(argv=None):
     elif args.command == "metrics":
         from .metrics import measure
         print(json.dumps(measure(), ensure_ascii=False, indent=1))
+    elif args.command == "site":
+        from .site import write_root_index
+        print(write_root_index())
     elif args.command == "docs":
         from .docs import write_data_dictionary
         print(write_data_dictionary())

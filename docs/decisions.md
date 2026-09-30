@@ -38,6 +38,4 @@ Short records of decisions taken in the 2026-09-29 refactor (full reasoning in t
 - **Basemap terms**: confirm Esri basemap usage terms for this site, or move to OpenFreeMap vector tiles.
 - **Unresolved places**: Masma (ماسما) and Haret El-Fikani (حارة الفيكاني) need confirmation from the survey team.
 - **Chouf interview dates**: not recorded in the source; ask the survey team.
-- **Older local copies**: `D:\Programing\ResolveMaping_final` contains respondent names and
-  coordinates (`data/CLEANED_Farmers*.csv`); decide whether to delete it or move it into the private store.
 - **Legal**: data owner to check notification duties for the earlier public exposure (e.g. Lebanese Law No. 81/2018).

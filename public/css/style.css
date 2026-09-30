@@ -120,6 +120,10 @@ button, input, select { font: inherit; }
 .cluster-donut { pointer-events: none; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35)); }
 .cluster-donut svg { display: block; }
 
+.about { border-top: 1px solid var(--line); margin-top: 8px; }
+.about p { margin: 4px 0 8px; line-height: 1.45; }
+.noscript { padding: 16px; max-width: 60ch; }
+
 .status {
 	position: absolute; inset-block-end: 12px; inset-inline-start: 50%; transform: translateX(-50%);
 	background: rgba(31, 41, 51, 0.88); color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; z-index: 5;
