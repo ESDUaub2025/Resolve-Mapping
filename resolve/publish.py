@@ -12,7 +12,7 @@ import hashlib
 import json
 import shutil
 
-from . import SCHEMA_VERSION, analysis, rawstore, reference, sdc, survey
+from . import SCHEMA_VERSION, analysis, placement, rawstore, reference, sdc, survey
 from .dictionary import CODED_TYPES, STATUSES, load
 from .gazetteer import localities
 from .paths import PUBLIC_DATA, private_root
@@ -23,7 +23,6 @@ DEFAULT_INDICATOR = "farmer_type"
 PIN_FILTER_FIELDS = ["farmer_type", "water_availability", "water_sources", "energy_sources", "crop_groups",
                      "chem_fertilizer_reliance", "pesticide_reliance", "low_input_practices", "land_size_band",
                      "production_level", "coop_member"]
-PIN_SPREAD_M = {"cadastral_unit": 150, "locality": 150, "unverified_locality": 150, "district": 500}
 
 
 def _dump(obj):
@@ -203,25 +202,27 @@ def _primary(value):
     return value[0] if isinstance(value, list) else value
 
 
-def _pins(records, codes, anchor, extra=None):
-    """One point per respondent at an honest anchor (cadastral or district centre).
+def _pins(records, codes, placer, extra=None):
+    """One pin per respondent, placed by resolve.placement (best location evidence available).
 
-    `anchor(record)` returns (lon, lat, geom_origin, spatial_precision, area names) or None.
-    The map spreads pins that share an anchor at display time; coordinates here are never displaced.
+    The geometry is the display position: the area's settlement point plus a small spread so pins
+    do not overlap. The anchor, the evidence used and the offset are recorded on every pin.
     """
     d = load()
     coded = {f.code for f in d.fields if f.type in CODED_TYPES}
+    placed = [(r, a) for r in records if (a := placer.anchor(r)) is not None]
+    positions = placer.layout(placed)
     features = []
-    for r in records:
-        a = anchor(r)
-        if a is None:
-            continue
-        lon, lat, origin, precision, area = a
+    for r, a in placed:
+        lon, lat, offset = positions[r["response_id"]]
         props = {
             "entity_type": "survey_respondent_public" if extra is None else "survey_respondent",
             "respondent_id": r["respondent_id"], "instrument": r["instrument"],
-            **area, "geom_origin": origin, "spatial_precision": precision,
-            "spread_m": PIN_SPREAD_M[precision],
+            "area_name_en": a["area_name_en"], "area_name_ar": a["area_name_ar"],
+            "district_en": a["district_en"], "district_ar": a["district_ar"],
+            "location_basis": a["location_basis"], "geom_origin": a["geom_origin"],
+            "spatial_precision": a["spatial_precision"], "anchor": [round(a["lon"], 5), round(a["lat"], 5)],
+            "display_offset_m": offset,
             **{f"c__{c}": _primary(r["values"][c]) for c in codes if c in coded and r["status"][c] == "reported"},
             "values": {c: r["values"][c] for c in codes},
             "status": {c: r["status"][c] for c in codes},
@@ -229,7 +230,7 @@ def _pins(records, codes, anchor, extra=None):
         if extra:
             props.update(extra(r))
         features.append({"type": "Feature", "id": r["response_id"],
-                         "geometry": {"type": "Point", "coordinates": [round(lon, 5), round(lat, 5)]}, "properties": props})
+                         "geometry": {"type": "Point", "coordinates": [lon, lat]}, "properties": props})
     features.sort(key=lambda f: f["id"])
     return features
 
@@ -269,26 +270,9 @@ def build_public(records, report, fire, areas, context, k=DEFAULT_K):
     villages, districts, log = sdc.summarize(records, k)
     village_feats, district_feats = _survey_features(villages, districts, context)
 
-    # Pins: village anchor only where the village summary is published (>= k respondents);
-    # otherwise the district centre if the district is published; otherwise no pin.
-    locs = localities()
-    published_villages = {v["adm3_pcode"] for v in villages}
-    district_units = reference.admin_units(2, {x["adm2_pcode"] for x in districts}, simplify=None)
-
-    def anchor(r):
-        loc = r["location"]
-        if loc["adm3_pcode"] in published_villages:
-            l = locs[f"adm3:{loc['adm3_pcode']}"]
-            return (float(l["lon"]), float(l["lat"]), "cadastral_unit_centre", "cadastral_unit",
-                    {"area_name_en": l["adm3_name_en"], "area_name_ar": l["adm3_name_ar"]})
-        if loc["adm2_pcode"] in district_units:
-            p = district_units[loc["adm2_pcode"]]["properties"]
-            return (p["center_lon"], p["center_lat"], "district_centre", "district",
-                    {"area_name_en": p["adm2_name"], "area_name_ar": p["adm2_name1"]})
-        return None
-
+    # Pins: every respondent in their best-evidenced village area (user decision 2026-09-30).
     pin_codes = [f.code for f in d.fields if f.privacy == "public_village"]
-    pins = _pins(records, pin_codes, anchor)
+    pins = _pins(records, pin_codes, placement.Placer())
 
     tmp = _fresh_dir(PUBLIC_DATA.parent / "data.tmp")
     files = {}
@@ -315,7 +299,8 @@ def build_public(records, report, fire, areas, context, k=DEFAULT_K):
         "id": hashlib.sha256(b"".join(files[n] for n in sorted(files))).hexdigest()[:12],
         "villages_published": len(village_feats), "districts_published": len(district_feats),
         "respondent_pins": len(pins),
-        "respondent_pins_at_district_level": sum(1 for p in pins if p["properties"]["spatial_precision"] == "district"),
+        "respondent_pins_by_location_basis": {b: sum(1 for p in pins if p["properties"]["location_basis"] == b)
+                                              for b in ("gps_area", "farm_area_reported", "residence_village")},
         "respondents_in_summaries": sum(x["n_respondents"] for x in districts),
         "respondents_excluded_no_location": len(log["excluded_no_location"]),
     }
@@ -337,21 +322,13 @@ def build_research(records, identity, report, fire, areas, context):
     ident = {i["respondent_id"]: i for i in identity}
     locs = localities()
 
-    def anchor(r):
-        loc = r["location"]
-        if loc["lon"] is None:
-            return None
-        l = locs.get(loc["locality_id"], {})
-        return (loc["lon"], loc["lat"], loc["geom_origin"], loc["spatial_precision"],
-                {"area_name_en": l.get("name_en"), "area_name_ar": l.get("name_ar")})
-
     def extra(r):
         loc = r["location"]
         return {**{k: ident[r["respondent_id"]].get(k) for k in ("name_latin", "name_arabic", "phone")},
                 "uncertainty_m": loc["uncertainty_m"], "point_source": loc["point_source"], "source": r["source"]}
 
     all_codes = [f.code for f in d.fields if f.privacy != "identity"]
-    pins = _pins(records, all_codes, anchor, extra)
+    pins = _pins(records, all_codes, placement.Placer(), extra)
     holdings = [{"type": "Feature", "id": f"holding:{r['respondent_id']}",
                  "geometry": {"type": "Point", "coordinates": [r["holding"]["lon"], r["holding"]["lat"]]},
                  "properties": {"entity_type": "holding", "respondent_id": r["respondent_id"],

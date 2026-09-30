@@ -100,10 +100,12 @@ def check_public_catalog(catalog, feature_collections, k):
                 for summary in list(props.get("indicators", {}).values()) + list(props.get("remainder_indicators", {}).values()):
                     if summary.get("counts") is not None and summary["n_answered"] < k:
                         problems.append(f"{name}/{fid}: distribution published from fewer than k answers")
-    # Public respondent pins: ID only, public village-level answers only, honest anchors, >= k per village.
+    # Public respondent pins: ID only, public village-level answers only, placed near a real
+    # settlement point of the respondent's village/farm area, with the evidence recorded.
     village_fields = {f.code for f in d.fields if f.privacy == "public_village"}
     identity_keys = {f.code for f in d.fields if f.privacy == "identity"}
-    per_village = {}
+    origins = {"osm_settlement_point", "point_inside_cadastral_area", "osm_place_point", "legacy_manual_point"}
+    bases = {"gps_area", "farm_area_reported", "residence_village"}
     for name, fc in feature_collections.items():
         for feat in fc["features"]:
             p = feat["properties"]
@@ -115,15 +117,14 @@ def check_public_catalog(catalog, feature_collections, k):
             extra = (set(p.get("values", {})) | set(p.get("status", {}))) - village_fields
             if extra:
                 problems.append(f"{name}/{fid}: non-village-level fields on a public pin {sorted(extra)}")
-            if (p.get("geom_origin"), p.get("spatial_precision")) not in {("cadastral_unit_centre", "cadastral_unit"),
-                                                                          ("district_centre", "district")}:
-                problems.append(f"{name}/{fid}: pin anchor must be a cadastral or district centre")
-            if p.get("spatial_precision") == "cadastral_unit":
-                key = tuple(feat["geometry"]["coordinates"])
-                per_village[key] = per_village.get(key, 0) + 1
-    for key, n in per_village.items():
-        if n < k:
-            problems.append(f"village anchor {key} has {n} public pins (< k={k})")
+            if p.get("geom_origin") not in origins or p.get("location_basis") not in bases:
+                problems.append(f"{name}/{fid}: pin placement must record a known origin and evidence")
+            if p.get("spatial_precision") not in ("locality", "unverified_locality"):
+                problems.append(f"{name}/{fid}: pins are locality-level, never exact")
+            alon, alat = p.get("anchor", (None, None))
+            lon, lat = feat["geometry"]["coordinates"]
+            if alon is None or ((lon - alon) * 92.5) ** 2 + ((lat - alat) * 111.0) ** 2 > 1.0:
+                problems.append(f"{name}/{fid}: pin more than 1 km from its settlement anchor")
     for layer in catalog["layers"]:
         for code in layer.get("indicators", []):
             if code not in public_fields:

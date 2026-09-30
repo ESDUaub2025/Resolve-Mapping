@@ -54,12 +54,26 @@ const polygons = {
 	},
 };
 
+// Per-answer counts inside each cluster, for the donut charts (see clusters.js).
+function clusterProperties(indicator) {
+	const props = {};
+	codeColors(indicator).forEach(([code], i) => {
+		props[`k${i}`] = ['+', ['case', ['==', ['get', `c__${indicator}`], code], 1, 0]];
+	});
+	return props;
+}
+
 function clusteredPoints(radius, colorBy) {
-	return {
-		layerIds: (l) => [`${l.id}-clusters`, `${l.id}-count`, `${l.id}-points`, `${l.id}-selected`].concat(l.heatmap ? [`${l.id}-heat`] : []),
+	const ids = (l) => [`${l.id}-clusters`, `${l.id}-count`, `${l.id}-points`, `${l.id}-selected`].concat(l.heatmap ? [`${l.id}-heat`] : []);
+	const r = {
+		layerIds: ids,
 		interactive: (l) => [`${l.id}-clusters`, `${l.id}-points`],
 		add(map, l, data, state) {
-			map.addSource(l.id, { type: 'geojson', data, cluster: !!l.cluster, clusterRadius: colorBy ? 25 : 40, clusterMaxZoom: colorBy ? 10 : 13 });
+			map.addSource(l.id, {
+				type: 'geojson', data, cluster: !!l.cluster,
+				clusterRadius: colorBy ? 28 : 40, clusterMaxZoom: colorBy ? 12 : 13,
+				...(colorBy ? { clusterProperties: clusterProperties(state.indicator) } : {}),
+			});
 			if (l.heatmap) {
 				map.addLayer({ id: `${l.id}-heat`, type: 'heatmap', source: l.id, layout: { visibility: 'none' },
 					paint: {
@@ -69,14 +83,19 @@ function clusteredPoints(radius, colorBy) {
 							0, 'rgba(255,255,178,0)', 0.2, '#fecc5c', 0.5, '#fd8d3c', 0.8, '#f03b20', 1, '#bd0026'],
 					} });
 			}
+			// Pins: the cluster circle stays (nearly) invisible for clicking; donut markers draw it.
 			map.addLayer({ id: `${l.id}-clusters`, type: 'circle', source: l.id, filter: ['has', 'point_count'],
 				paint: {
-					'circle-color': l.color, 'circle-opacity': 0.8, 'circle-stroke-color': '#fff', 'circle-stroke-width': 2,
-					'circle-radius': ['step', ['get', 'point_count'], 12, 10, 16, 50, 21, 200, 27],
+					'circle-color': l.color, 'circle-opacity': colorBy ? 0.01 : 0.8,
+					'circle-stroke-color': '#fff', 'circle-stroke-width': colorBy ? 0 : 2,
+					'circle-radius': colorBy ? ['step', ['get', 'point_count'], 17, 10, 20, 30, 23, 100, 27]
+						: ['step', ['get', 'point_count'], 12, 10, 16, 50, 21, 200, 27],
 				} });
-			map.addLayer({ id: `${l.id}-count`, type: 'symbol', source: l.id, filter: ['has', 'point_count'],
-				layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': FONT, 'text-size': 12 },
-				paint: { 'text-color': '#ffffff' } });
+			if (!colorBy) {
+				map.addLayer({ id: `${l.id}-count`, type: 'symbol', source: l.id, filter: ['has', 'point_count'],
+					layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': FONT, 'text-size': 12 },
+					paint: { 'text-color': '#ffffff' } });
+			}
 			map.addLayer({ id: `${l.id}-points`, type: 'circle', source: l.id, filter: ['!', ['has', 'point_count']],
 				paint: {
 					'circle-color': colorBy ? matchColor(`c__${state.indicator}`, state.indicator) : l.color,
@@ -86,14 +105,24 @@ function clusteredPoints(radius, colorBy) {
 			map.addLayer({ id: `${l.id}-selected`, type: 'circle', source: l.id, filter: ['==', ['get', 'fid'], ''],
 				paint: { 'circle-radius': radius + 5, 'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': '#111', 'circle-stroke-width': 3 } });
 		},
-		setIndicator: colorBy ? (map, l, indicator) => {
-			map.setPaintProperty(`${l.id}-points`, 'circle-color', matchColor(`c__${indicator}`, indicator));
-		} : undefined,
 		setHeatmap(map, l, on) {
-			setVisibility(map, [`${l.id}-heat`], on);
-			setVisibility(map, [`${l.id}-clusters`, `${l.id}-count`, `${l.id}-points`], !on);
+			for (const id of [`${l.id}-heat`]) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+			for (const id of [`${l.id}-clusters`, `${l.id}-count`, `${l.id}-points`]) {
+				if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'none' : 'visible');
+			}
 		},
 	};
+	if (colorBy) {
+		// Cluster counts depend on the indicator, so the source is rebuilt when it changes.
+		r.setIndicator = (map, l, indicator, data, state) => {
+			const before = map.getStyle().layers.map(x => x.id).find((id, i, all) => i > all.indexOf(`${l.id}-selected`));
+			for (const id of ids(l)) if (map.getLayer(id)) map.removeLayer(id);
+			map.removeSource(l.id);
+			r.add(map, l, data, { ...state, indicator });
+			if (before) for (const id of ids(l)) if (map.getLayer(id)) map.moveLayer(id, before);
+		};
+	}
+	return r;
 }
 
 export const RENDERERS = {
@@ -120,31 +149,4 @@ export function highlight(map, layers, layerId, featureId) {
 		const id = `${l.id}-selected`;
 		if (map.getLayer(id)) map.setFilter(id, ['==', ['get', 'fid'], l.id === layerId ? featureId : '']);
 	}
-}
-
-// Pins that share an anchor (a village or district centre) are laid out in a sunflower pattern
-// around it so each one can be clicked. Only the displayed position moves; the data keeps the
-// honest anchor, and the popup says the position is approximate.
-export function spreadPins(features) {
-	const groups = new Map();
-	for (const f of features) {
-		const key = f.geometry.coordinates.join(',');
-		if (!groups.has(key)) groups.set(key, []);
-		groups.get(key).push(f);
-	}
-	const golden = Math.PI * (3 - Math.sqrt(5));
-	for (const group of groups.values()) {
-		const [lon, lat] = group[0].geometry.coordinates;
-		const step = (group[0].properties.spread_m || 150) / Math.sqrt(Math.max(group.length, 1)) * 1.4;
-		group.forEach((f, i) => {
-			if (i === 0 && group.length === 1) return;
-			const r = step * Math.sqrt(i + 0.5);
-			const a = i * golden;
-			const dLat = (r * Math.sin(a)) / 111320;
-			const dLon = (r * Math.cos(a)) / (111320 * Math.cos((lat * Math.PI) / 180));
-			f.properties.anchor = [lon, lat];
-			f.geometry = { type: 'Point', coordinates: [lon + dLon, lat + dLat] };
-		});
-	}
-	return features;
 }

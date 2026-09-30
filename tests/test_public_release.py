@@ -119,11 +119,15 @@ def test_pins_carry_only_public_village_answers(collections):
         p = f["properties"]
         assert set(p["values"]) <= allowed and set(p["status"]) <= allowed, f["id"]
         assert not identity & set(p), f["id"]
-        assert p["spatial_precision"] in ("cadastral_unit", "district")
+        assert p["spatial_precision"] in ("locality", "unverified_locality")
 
 
-def test_every_village_pin_group_has_at_least_k(catalog, collections):
-    from collections import Counter
+def test_pins_sit_near_their_village_settlement(collections):
     pins = [f for fc in collections.values() for f in fc["features"] if f["properties"]["entity_type"] == "survey_respondent_public"]
-    groups = Counter(tuple(f["geometry"]["coordinates"]) for f in pins if f["properties"]["spatial_precision"] == "cadastral_unit")
-    assert min(groups.values()) >= catalog["k_min_respondents"]
+    for f in pins:
+        p = f["properties"]
+        lon, lat = f["geometry"]["coordinates"]
+        alon, alat = p["anchor"]
+        assert ((lon - alon) * 92.5) ** 2 + ((lat - alat) * 111.0) ** 2 <= 1.0, f["id"]
+        assert p["location_basis"] in ("gps_area", "farm_area_reported", "residence_village")
+        assert p["spatial_precision"] in ("locality", "unverified_locality")

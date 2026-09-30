@@ -55,7 +55,7 @@
 |---|---|---|---|
 | Survey – village summaries | `village_survey_summary` | cadastral polygon | ≥ k respondents in the cadastral unit |
 | Survey – district summaries | `district_survey_summary` | district polygon | sensitive indicators for all district respondents (≥ k); other indicators for respondents *outside* published villages (≥ k) |
-| Survey respondents (pins) | `survey_respondent_public` | point at the cadastral centre (≥ k respondents) or district centre | random ID + farming-practice answers only; spread around the anchor at display time |
+| Survey respondents (pins) | `survey_respondent_public` | point near the village's OpenStreetMap place point (resolve/placement.py) | random ID + farming-practice answers only; evidence (`location_basis`), anchor and offset recorded |
 | Protected areas | `protected_area` | WDPA polygons, simplified | attribution; licence terms in the dataset card |
 | Fire detections | `fire_detection` | satellite pixel centre | caveats in the dataset card |
 

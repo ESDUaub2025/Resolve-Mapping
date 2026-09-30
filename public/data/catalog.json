@@ -1654,7 +1654,7 @@
    "method": "Answers standardized to controlled vocabularies, resolved to official cadastral units (OCHA COD-AB), and aggregated. A village is published only if at least k respondents answered; otherwise respondents are pooled at district (caza) level. Sensitive indicators (income, age, gender, cost shares) are published at district level only.",
    "caveats": [
     "Respondents were not randomly sampled; figures describe respondents, not whole villages.",
-    "Pins are placed around the village centre (or the district centre where fewer than k people answered), never at the farm; positions are spread only so each pin can be clicked.",
+    "Each pin sits at the village the respondent reported (or the village they named as the location of their land), at that village's OpenStreetMap place point, spread by up to ~250 m so pins do not overlap. It is never the farm location.",
     "Farmer types and the water-stress / chemical-dependence findings are statistical associations, not causes; see the Insights panel for methods and validation.",
     "Chouf interviews have no recorded dates; Beqaa interviews were on 2026-01-04.",
     "Locations are cadastral areas, never farm or household locations."
@@ -2348,7 +2348,7 @@
   {
    "id": "survey-respondents",
    "dataset": "farmer_survey",
-   "file": "data/survey_respondents.1edb9d3aa0.geojson",
+   "file": "data/survey_respondents.5bdafe0211.geojson",
    "renderer": "pins",
    "title": {
     "en": "Survey respondents (approximate pins)",
@@ -2407,11 +2407,15 @@
   }
  ],
  "release": {
-  "id": "e35b67dfd1dd",
+  "id": "f9470e985a79",
   "villages_published": 12,
   "districts_published": 3,
-  "respondent_pins": 203,
-  "respondent_pins_at_district_level": 86,
+  "respondent_pins": 207,
+  "respondent_pins_by_location_basis": {
+   "gps_area": 3,
+   "farm_area_reported": 9,
+   "residence_village": 195
+  },
   "respondents_in_summaries": 203,
   "respondents_excluded_no_location": 1
  }

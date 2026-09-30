@@ -101,11 +101,29 @@ def build_localities():
             "uncertainty_m": str(int(round(radius, -2))),
         }
 
+    # Cadastral units named as farm areas in reviewed land-location answers (P-codes only).
+    for extra in _read_csv(REF / "farm_area_units.csv"):
+        alias_like = {"locality_id": f"adm3:{extra['adm3_pcode']}"}
+        if alias_like["locality_id"] in rows:
+            continue
+        props = adm3[extra["adm3_pcode"]]["properties"]
+        radius = math.sqrt(props["area_sqkm"] / math.pi) * 1000
+        rows[alias_like["locality_id"]] = {
+            "locality_id": alias_like["locality_id"], "kind": "cadastral",
+            "name_en": props["adm3_name"], "name_ar": props["adm3_name1"],
+            "adm3_pcode": props["adm3_pcode"], "adm3_name_en": props["adm3_name"], "adm3_name_ar": props["adm3_name1"],
+            "adm2_pcode": props["adm2_pcode"], "adm2_name_en": props["adm2_name"], "adm2_name_ar": props["adm2_name1"],
+            "adm1_pcode": props["adm1_pcode"], "adm1_name_en": props["adm1_name"], "adm1_name_ar": props["adm1_name1"],
+            "lon": f"{props['center_lon']:.5f}", "lat": f"{props['center_lat']:.5f}",
+            "point_source": "COD-AB cadastral unit centre",
+            "uncertainty_m": str(int(round(radius, -2))),
+        }
+
     for special in _read_csv(REF / "special_localities.csv"):
         lon, lat = float(special["lon"]), float(special["lat"])
         row = {
             "locality_id": special["locality_id"],
-            "kind": "place" if special["adm3_pcode"] else "unverified_place",
+            "kind": "place" if "OpenStreetMap" in special["point_source"] else "unverified_place",
             "name_en": special["name_en"], "name_ar": special["name_ar"],
             "adm3_pcode": "", "adm3_name_en": "", "adm3_name_ar": "",
             "lon": f"{lon:.5f}", "lat": f"{lat:.5f}",

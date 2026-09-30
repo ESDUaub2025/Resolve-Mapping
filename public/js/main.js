@@ -1,7 +1,8 @@
 import { codeColors, codeLabel, fieldLabel, groupLabel, field, getCatalog, loadCatalog, NO_DATA_COLOR, propertyLabel, vocabOf } from './catalog.js';
 import { clear, el } from './dom.js';
-import { getLang, label, setLang, t } from './i18n.js';
-import { highlight, renderer, setLayerVisible, spreadPins } from './layers.js';
+import { formatNumber, getLang, label, setLang, t } from './i18n.js';
+import { ClusterDonuts } from './clusters.js';
+import { highlight, renderer, setLayerVisible } from './layers.js';
 import { closePanel, initPanel, showDataset, showFeature, showInsights, showList, showPin, showSummary } from './panel.js';
 
 const LEBANON = [[35.1, 33.05], [36.62, 34.69]];
@@ -15,7 +16,7 @@ const BASEMAPS = {
 		attribution: 'Imagery © Esri, Maxar, Earthstar Geographics, and the GIS User Community' },
 };
 
-const state = { layers: [], data: {}, index: {}, ui: {}, basemap: 'light' };
+const state = { layers: [], data: {}, index: {}, ui: {}, donuts: {}, basemap: 'light' };
 let map;
 
 function setStatus(text) { document.getElementById('status').textContent = text || ''; }
@@ -66,7 +67,6 @@ async function loadLayerData(layer) {
 		f.properties.fid = f.id;  // MapLibre drops string ids; keep them as a property
 		state.index[layer.id].set(f.id, f);
 	}
-	if (layer.renderer === 'pins') spreadPins(fc.features);
 	state.data[layer.id] = fc;
 	return fc;
 }
@@ -88,21 +88,69 @@ function indicatorControls(layer) {
 	}
 	select.append(...byGroup.values());
 	box.push(el('label', { class: 'field' }, el('span', { class: 'small muted', text: t('indicator') }), select));
-	const legend = el('ul', { class: 'legend', 'aria-label': t('legend') });
-	for (const [code, color] of codeColors(state.indicator)) {
-		legend.append(el('li', {}, el('span', { class: 'swatch round', style: { background: color } }), codeLabel(state.indicator, code)));
-	}
-	legend.append(el('li', {}, el('span', { class: 'swatch round', style: { background: NO_DATA_COLOR } }), t('noData')));
-	const multi = field(state.indicator)?.type === 'multi';
-	box.push(el('p', { class: 'small muted', text: t('colouredBy') + (multi ? ` ${t('firstAnswer')}` : '') }), legend);
+	box.push(legendBlock());
 	return box;
+}
+
+function legendBlock() {
+	const legend = el('ul', { class: 'legend', 'aria-label': t('legend') });
+	const dist = pinDistribution(state.indicator);
+	const max = dist ? Math.max(1, ...Object.values(dist.counts), dist.none) : 1;
+	const entry = (color, text, n) => el('li', { class: dist ? 'with-count' : '' },
+		el('span', { class: 'swatch round', style: { background: color } }), el('span', { class: 'legend-text', text }),
+		dist ? el('span', { class: 'legend-bar', 'aria-hidden': 'true' },
+			el('span', { style: { width: `${(100 * n) / max}%`, background: color } })) : null,
+		dist ? el('span', { class: 'legend-count', text: formatNumber(n) }) : null);
+	for (const [code, color] of codeColors(state.indicator)) {
+		legend.append(entry(color, codeLabel(state.indicator, code), dist ? dist.counts[code] || 0 : 0));
+	}
+	legend.append(entry(NO_DATA_COLOR, t('noData'), dist ? dist.none : 0));
+	const multi = field(state.indicator)?.type === 'multi';
+	return el('div', { id: 'indicator-legend' },
+		el('p', { class: 'small muted', text: t('colouredBy') + (multi ? ` ${t('firstAnswer')}` : '') }), legend,
+		dist ? el('p', { class: 'small muted', text: t('distributionOf', dist.total) }) : null);
+}
+
+function updateLegend() {
+	const node = document.getElementById('indicator-legend');
+	if (node) node.replaceWith(legendBlock());
+}
+
+// Distribution of the current indicator among the pins currently shown (respects filters).
+function pinDistribution(code) {
+	const pins = state.layers.find(l => l.renderer === 'pins' && state.ui[l.id].visible);
+	if (!pins) return null;
+	const features = state.ui[pins.id].current?.features || state.data[pins.id].features;
+	const counts = {};
+	let none = 0;
+	for (const f of features) {
+		const p = f.properties;
+		if (p.status?.[code] !== 'reported') { none += 1; continue; }
+		const v = p.values[code];
+		const first = Array.isArray(v) ? v[0] : v;
+		counts[first] = (counts[first] || 0) + 1;
+	}
+	return { counts, none, total: features.length };
+}
+
+function refreshDonuts(layer) {
+	const donuts = state.donuts[layer.id];
+	if (!donuts) return;
+	donuts.configure(codeColors(state.indicator).map(([c]) => c), codeColors(state.indicator).map(([, col]) => col));
+	donuts.setEnabled(state.ui[layer.id].visible && !state.ui[layer.id].heatmap);
 }
 
 function setIndicator(code) {
 	state.indicator = code;
 	for (const layer of state.layers) {
 		const r = renderer(layer);
-		if (layer.indicators && r.setIndicator) r.setIndicator(map, layer, code);
+		if (!layer.indicators || !r.setIndicator) continue;
+		const current = state.ui[layer.id]?.current || state.data[layer.id];
+		r.setIndicator(map, layer, code, current, state);
+		if (layer.renderer === 'pins') {
+			setLayerVisible(map, layer, state.ui[layer.id].visible, state.ui[layer.id]);
+			refreshDonuts(layer);
+		}
 	}
 	buildLayerList();
 }
@@ -189,8 +237,12 @@ function applyFilters(layer) {
 	const preds = Object.values(state.ui[layer.id].filters || {}).filter(Boolean);
 	const all = state.data[layer.id].features;
 	const features = preds.length ? all.filter(f => preds.every(fn => fn(f))) : all;
-	map.getSource(layer.id).setData({ type: 'FeatureCollection', features });
+	const current = { type: 'FeatureCollection', features };
+	map.getSource(layer.id).setData(current);
 	state.ui[layer.id].shown = features.length;
+	state.ui[layer.id].current = current;
+	if (state.donuts[layer.id]) state.donuts[layer.id].clear();
+	if (layer.indicators) updateLegend();
 	const count = document.getElementById(`count-${layer.id}`);
 	const text = t('showing', features.length, all.length);
 	if (count) count.textContent = text;
@@ -230,7 +282,9 @@ function buildLayerList() {
 			el('div', { class: 'layer-head' },
 				el('label', { class: 'check' },
 					el('input', { type: 'checkbox', checked: ui.visible, onchange: (e) => {
-						ui.visible = e.target.checked; setLayerVisible(map, layer, ui.visible, ui); buildLayerList();
+						ui.visible = e.target.checked; setLayerVisible(map, layer, ui.visible, ui);
+						if (state.donuts[layer.id]) state.donuts[layer.id].setEnabled(ui.visible && !ui.heatmap);
+						buildLayerList();
 					} }),
 					el('span', { text: label(layer.title) })),
 				el('button', { class: 'icon-btn small', type: 'button', title: t('about'), 'aria-label': `${t('about')}: ${label(layer.title)}`,
@@ -347,6 +401,16 @@ async function start() {
 			map.addLayer({ id: `basemap-${id}-labels`, type: 'raster', source: `basemap-${id}-labels`,
 				layout: { visibility: id === state.basemap ? 'visible' : 'none' } }, before);
 		}
+		for (const layer of state.layers.filter(l => l.renderer === 'pins' && l.cluster)) {
+			state.donuts[layer.id] = new ClusterDonuts(map, layer.id);
+			refreshDonuts(layer);
+		}
+		let pending = false;
+		map.on('render', () => {
+			if (pending) return;
+			pending = true;
+			requestAnimationFrame(() => { pending = false; for (const d of Object.values(state.donuts)) d.update(); });
+		});
 		map.on('click', onMapClick);
 		// Open framed on the survey respondents (the map's main subject), not on all of Lebanon.
 		const pins = state.layers.find(l => l.renderer === 'pins');

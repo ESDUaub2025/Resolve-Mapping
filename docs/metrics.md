@@ -6,7 +6,7 @@
 | Area | Metric | Before | After |
 |---|---|---|---|
 | Privacy | Direct identifiers publicly downloadable | names + phones of 29 respondents, names of 204 rows, in 8+ files (HTTP 200) | 0 (files removed; history rewritten; tests block re-adding) |
-| Privacy | Respondent-level features on the public map | 145 (29 Beqaa respondents × 5 themes) with village + age/gender-linked answers at fake-precise points | 203 pins by user decision: random ID + practice answers only, cadastral/district anchor, none in villages below k |
+| Privacy | Respondent-level features on the public map | 145 (29 Beqaa respondents × 5 themes) with village + age/gender-linked answers at fake-precise points | 207 pins by user decision: random ID + practice answers only, placed at their own village (201 at OSM settlement points, median 87 m spread) |
 | Privacy | Public "aggregates" of fewer than 5 respondents | up to 29 of ~50 villages had ≤ 2 respondents | 0 (every summary ≥ k = 5; indicators need ≥ 5 answers) |
 | Privacy | Identity fields in the public catalog | n/a (no catalog) | 0 |
 | Location | Features declaring origin + precision | 0 % | 100 % |

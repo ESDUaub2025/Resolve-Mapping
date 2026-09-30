@@ -50,6 +50,9 @@ expect(layers >= 4, `expected >= 4 layers, got ${layers}`);
 expect(await js(`document.querySelector('.layer-controls select')?.options.length`) > 10, 'indicator selector missing');
 expect(await js(`document.querySelectorAll('.legend li').length`) >= 3, 'legend missing');
 expect(await js(`document.getElementById('tier-banner').hidden`) === true, 'public site must not show the research banner');
+// Grouped pins show the mix of answers as donut charts; the legend shows counts per answer.
+expect(await js(`document.querySelectorAll('.cluster-donut svg path, .cluster-donut svg circle').length`) > 0, 'cluster donuts not drawn');
+expect(await js(`document.querySelectorAll('.legend-count').length`) >= 3, 'legend counts missing');
 
 const openList = async (titlePart) => {
 	await js(`[...document.querySelectorAll('.layer')].find(l => l.querySelector('.check span').textContent.toLowerCase().includes('${titlePart}'))

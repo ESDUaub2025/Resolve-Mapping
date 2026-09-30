@@ -3,6 +3,7 @@
   build [--tier public|research|all] [--k 5]   run the pipeline and write releases
   gazetteer                                    regenerate ref/localities.csv from COD-AB
   raw-manifest                                 record hashes of raw inputs (after adding a raw version)
+  settlements                                  look up village settlement points in OpenStreetMap (network)
   serve [--tier public|research] [--port N]    local web server for the map
   metrics                                      measure the public release (see docs/metrics.md)
   docs                                         regenerate docs/data-dictionary.md
@@ -21,6 +22,7 @@ def main(argv=None):
     b.add_argument("--k", type=int, default=5)
     sub.add_parser("gazetteer")
     sub.add_parser("raw-manifest")
+    sub.add_parser("settlements")
     s = sub.add_parser("serve")
     s.add_argument("--tier", choices=["public", "research"], default="research")
     s.add_argument("--port", type=int, default=8000)
@@ -37,6 +39,11 @@ def main(argv=None):
     elif args.command == "raw-manifest":
         from .rawstore import write_manifest
         print(f"{write_manifest()} raw files recorded in raw/manifest.sha256")
+    elif args.command == "settlements":
+        from .settlements import build_settlements
+        rows = build_settlements()
+        osm = sum(1 for r in rows if r["osm_ref"])
+        print(f"{len(rows)} settlement points written to ref/settlement_points.csv ({osm} from OpenStreetMap)")
     elif args.command == "serve":
         from .serve import serve
         serve(args.tier, args.port)

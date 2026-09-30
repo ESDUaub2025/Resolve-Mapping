@@ -137,7 +137,8 @@ export function showPin(layer, feature) {
 	blocks.push(el('p', { class: 'lead', text: area }),
 		el('p', { class: 'precision small', text: `${t('precision')}: ${precisionLabel(p.spatial_precision)}`
 			+ (p.uncertainty_m ? ` (±${formatNumber(p.uncertainty_m)} m)` : '') }),
-		el('p', { class: 'muted small', text: p.spatial_precision === 'district' ? t('pinDistrictNote') : t('pinSpreadNote') }),
+		el('p', { class: 'small', text: t(`basis_${p.location_basis}`) }),
+		el('p', { class: 'muted small', text: t('pinSpreadNote', formatNumber(p.display_offset_m ?? 0)) }),
 		el('p', { class: 'muted small', text: label(getCatalog().instruments[p.instrument]?.title) }));
 	const byGroup = new Map();
 	for (const [code, def] of Object.entries(getCatalog().fields)) {
