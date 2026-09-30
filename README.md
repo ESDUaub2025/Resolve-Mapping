@@ -66,13 +66,14 @@ are written to `<private store>/staging/review_issues.json`; critical problems s
 
 ## Deployment
 
-GitHub Actions (`.github/workflows/pages.yml`) runs the tests and deploys **only `public/`** to
-GitHub Pages. Nothing else in the repository is served.
+GitHub Pages deploys from the `main` branch (repository root). The root `index.html` redirects
+to the map in `public/`. Every tracked file is therefore publicly served, which is why the privacy
+tests check the whole repository and survey data lives only in the private store.
 
-One-time admin step: Settings → Pages → Source: **GitHub Actions**, then add the repository
-variable `PAGES_FROM_ACTIONS` = `true`. Until then Pages builds from the repository root and the
-root `index.html` redirects to `public/` (the privacy tests keep the whole repository free of
-personal data either way).
+GitHub Actions (`.github/workflows/pages.yml`) runs all tests on every push and pull request. Its
+deploy job, which would publish only `public/`, is optional: it runs only if Pages is switched to
+"GitHub Actions" and the repository variable `PAGES_FROM_ACTIONS` is `true`. Note that branch
+deployment publishes a push even when the tests fail, so run `python -m pytest` before pushing.
 
 ## Data sources and licences
 
